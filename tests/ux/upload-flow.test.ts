@@ -41,7 +41,7 @@ describe("POST /api/ux/upload", () => {
   });
 
   it("re-checks fields on the server", async () => {
-    const res = await POST(uploadRequest({ ...good, store: "B9", durationSec: "30" }, clip()));
+    const res = await POST(uploadRequest({ ...good, store: "B9", durationSec: "400" }, clip()));
     const body = await res.json();
     expect(res.status).toBe(400);
     expect(body.stage).toBe("validate");

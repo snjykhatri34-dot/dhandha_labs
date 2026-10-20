@@ -32,8 +32,10 @@ describe("validateClip", () => {
     expect(validateClip(null)).toMatch(/Choose/);
     expect(validateClip({ type: "application/pdf", sizeBytes: MB, durationSec: 120 })).toMatch(/isn't a video/);
   });
-  it("enforces 1 to 5 minutes", () => {
-    expect(validateClip({ type: "video/mp4", sizeBytes: MB, durationSec: 59 })).toMatch(/at least 1 minute/);
+  it("has no minimum length, a 5-minute maximum, and rejects empty clips", () => {
+    expect(validateClip({ type: "video/mp4", sizeBytes: MB, durationSec: 8 })).toBeNull();
+    expect(validateClip({ type: "video/mp4", sizeBytes: MB, durationSec: 59 })).toBeNull();
+    expect(validateClip({ type: "video/mp4", sizeBytes: MB, durationSec: 0 })).toMatch(/empty/);
     expect(validateClip({ type: "video/mp4", sizeBytes: MB, durationSec: 301 })).toMatch(/5 minutes or less/);
     expect(validateClip({ type: "video/mp4", sizeBytes: MB, durationSec: 60 })).toBeNull();
     expect(validateClip({ type: "video/mp4", sizeBytes: MB, durationSec: 300 })).toBeNull();
