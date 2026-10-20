@@ -1,0 +1,126 @@
+{
+  "visit_id": "B2-1019",
+  "store": "B2",
+  "salesperson": "Rohit",
+  "date": "2026-10-17",
+  "outcome": "walked_out",
+  "asked_for": {
+    "category": "bangle",
+    "weight_band": null,
+    "occasion": null,
+    "budget_inr": null
+  },
+  "shown": [
+    "bangle"
+  ],
+  "reason_not_bought": "old_gold_exchange_rate",
+  "objections": [
+    {
+      "type": "old_gold_exchange_rate",
+      "at": "00:10",
+      "quote": "First tell me what rate you'll give for the old gold.",
+      "competitor_mentioned": true
+    },
+    {
+      "type": "purity_trust",
+      "at": "00:36",
+      "quote": "And do these new bangles have a HUID? Show me the hallmark.",
+      "competitor_mentioned": false
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:10",
+      "who": "customer",
+      "emotion": "concerned",
+      "cue": "words"
+    },
+    {
+      "at": "00:28",
+      "who": "customer",
+      "emotion": "skeptical",
+      "cue": "words"
+    },
+    {
+      "at": "00:36",
+      "who": "customer",
+      "emotion": "skeptical",
+      "cue": "words"
+    },
+    {
+      "at": "00:44",
+      "who": "customer",
+      "emotion": "hesitant",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "concerned -> hesitant",
+  "handling_score": 2,
+  "coaching_tip": "When a customer asks about the old-gold rate, offer to test it at the counter right away and explain how the deduction is worked out, rather than saying you will only know after testing.",
+  "lost_demand": false,
+  "flags": [
+    "no weight stated",
+    "outcome borderline: 'we'll think about it and come back' gives no time or contact, scored walked_out",
+    "party unclear: two customers, relationship not stated; scored group",
+    "decision maker unclear between Speaker B and Speaker C"
+  ],
+  "customer": {
+    "party": "group",
+    "decision_maker": "unclear; Speaker C leads on old gold, Speaker B closes",
+    "intent": "medium",
+    "intent_evidence": "00:05 asked to exchange old gold and buy a pair of bangles"
+  },
+  "key_moments": [
+    {
+      "at": "00:25",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "gave no deduction estimate, only 'after testing'"
+    },
+    {
+      "at": "00:28",
+      "by": "customer",
+      "effect": "hurt",
+      "what": "cited another shop offering the full rate"
+    },
+    {
+      "at": "00:32",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "dismissed competitor comparison with 'this is how we do it'"
+    },
+    {
+      "at": "00:41",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "confirmed HUID and showed the hallmark"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "00:16",
+      "what": "no offer to test the old gold on the spot"
+    },
+    {
+      "at": "00:32",
+      "what": "no explanation of how the exchange rate and deduction are calculated"
+    },
+    {
+      "at": "00:44",
+      "what": "no number taken and no return visit time set"
+    }
+  ],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": null,
+    "total_quoted_inr": null,
+    "breakup_given": false,
+    "notes": "deduction amount withheld until testing at 00:25"
+  },
+  "not_available": [],
+  "competitor": {
+    "named": "the other shop",
+    "claim": "full rate for old gold",
+    "at": "00:28"
+  }
+}

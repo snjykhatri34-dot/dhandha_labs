@@ -1,0 +1,116 @@
+{
+ "visits": 102,
+ "bought": 42,
+ "conversion_pct": 41,
+ "sales_value_inr": 11926399,
+ "reasons_not_bought": [
+  [
+   "weight_mismatch",
+   16
+  ],
+  [
+   "price_making_charge",
+   12
+  ],
+  [
+   "family_decision",
+   9
+  ],
+  [
+   "design_not_available",
+   9
+  ],
+  [
+   "old_gold_exchange_rate",
+   6
+  ],
+  [
+   "purity_trust",
+   4
+  ],
+  [
+   "just_browsing",
+   4
+  ]
+ ],
+ "by_store": {
+  "B1": [
+   16,
+   40
+  ],
+  "B2": [
+   12,
+   34
+  ],
+  "B3": [
+   14,
+   28
+  ]
+ },
+ "by_salesperson": [
+  [
+   "Priya",
+   8,
+   10
+  ],
+  [
+   "Neha",
+   6,
+   10
+  ],
+  [
+   "Kavya",
+   6,
+   12
+  ],
+  [
+   "Vikram",
+   4,
+   8
+  ],
+  [
+   "Harish",
+   8,
+   19
+  ],
+  [
+   "Suresh",
+   4,
+   10
+  ],
+  [
+   "Rohit",
+   4,
+   16
+  ],
+  [
+   "Meena",
+   2,
+   9
+  ],
+  [
+   "Akshay",
+   0,
+   8
+  ]
+ ],
+ "b2_light_necklace_asks": 12,
+ "b2_light_necklace_lost": 11,
+ "b3_exchange_share_of_losses": "5/14",
+ "competitor_mentions": 7,
+ "busiest_hours": [
+  [
+   19,
+   21
+  ],
+  [
+   18,
+   18
+  ],
+  [
+   17,
+   17
+  ]
+ ],
+ "follow_ups_due": 23
+}

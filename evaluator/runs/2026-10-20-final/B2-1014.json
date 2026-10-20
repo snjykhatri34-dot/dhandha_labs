@@ -1,0 +1,118 @@
+{
+  "visit_id": "B2-1014",
+  "store": "B2",
+  "salesperson": "Akshay",
+  "date": "2026-10-15",
+  "outcome": "walked_out",
+  "asked_for": {
+    "category": "necklace",
+    "weight_band": "20-35",
+    "occasion": "office wear",
+    "budget_inr": null
+  },
+  "shown": [
+    "necklace 52 g"
+  ],
+  "reason_not_bought": "weight_mismatch",
+  "objections": [
+    {
+      "type": "weight",
+      "at": "00:24",
+      "quote": "That's far too heavy"
+    },
+    {
+      "type": "price_making_charge",
+      "at": "00:44",
+      "quote": "Another showroom quoted me twelve",
+      "competitor_mentioned": true
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:09",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:24",
+      "who": "customer",
+      "emotion": "disappointed",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> disappointed",
+  "handling_score": 2,
+  "coaching_tip": "When she asked for a 30 g necklace and we had none, offer to bring one from another branch or place an order, and take her number so you can call her the day it arrives.",
+  "lost_demand": true,
+  "flags": [
+    "salesperson's 'maybe next week' at 01:02 had no number or date taken, so outcome scored walked_out"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer",
+    "intent": "high",
+    "intent_evidence": "00:09 named a 30-35 g ceiling and daily office use"
+  },
+  "key_moments": [
+    {
+      "at": "00:16",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "showed a 52 g piece after a 35 g ask"
+    },
+    {
+      "at": "00:44",
+      "by": "customer",
+      "effect": "hurt",
+      "what": "compared making charge with another showroom's 12%"
+    },
+    {
+      "at": "00:50",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "called the rate fixed instead of explaining it"
+    },
+    {
+      "at": "01:02",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "said nothing in 30 g range, offered no sourcing"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "00:24",
+      "what": "no lighter piece offered after 'far too heavy'"
+    },
+    {
+      "at": "00:50",
+      "what": "no price breakup given against the competitor quote"
+    },
+    {
+      "at": "01:02",
+      "what": "no offer to source it from another branch or order, and no number taken"
+    }
+  ],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": 18,
+    "total_quoted_inr": null,
+    "breakup_given": false,
+    "notes": "rate called fixed at 00:50"
+  },
+  "not_available": [
+    {
+      "item": "necklace 20-35 g",
+      "at": "01:02",
+      "quote": "Not in that range right now, ma'am.",
+      "said_by": "salesperson",
+      "resolution": "none"
+    }
+  ],
+  "competitor": {
+    "named": "another showroom",
+    "claim": "twelve percent making",
+    "at": "00:44"
+  }
+}

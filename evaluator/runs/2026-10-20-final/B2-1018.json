@@ -1,0 +1,86 @@
+{
+  "visit_id": "B2-1018",
+  "store": "B2",
+  "salesperson": "Akshay",
+  "date": "2026-10-17",
+  "outcome": "bought",
+  "asked_for": {
+    "category": "ring",
+    "weight_band": "5-10",
+    "occasion": null,
+    "budget_inr": null
+  },
+  "shown": [
+    "ring 6.8 g"
+  ],
+  "reason_not_bought": null,
+  "objections": [],
+  "emotions": [
+    {
+      "at": "00:06",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:36",
+      "who": "customer",
+      "emotion": "satisfied",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> satisfied",
+  "handling_score": 4,
+  "coaching_tip": "After the size checks out, give the gold, making and GST breakup on the ninety-four thousand and suggest a matching piece before packing the ring.",
+  "lost_demand": false,
+  "flags": [],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer",
+    "intent": "high",
+    "intent_evidence": "00:06 asked for a simple men's ring of six or seven grams"
+  },
+  "key_moments": [
+    {
+      "at": "00:12",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed a 6.8 g matte ring matching the asked weight"
+    },
+    {
+      "at": "00:22",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "quoted 14% making and a total of about 94,000 upfront"
+    },
+    {
+      "at": "00:33",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "confirmed the size fit, leading straight to the close"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "00:22",
+      "what": "no breakup into gold, making and GST given with the total"
+    },
+    {
+      "at": "00:36",
+      "what": "no add-on suggested before packing"
+    },
+    {
+      "at": "00:36",
+      "what": "no number taken for future follow-up"
+    }
+  ],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": 14,
+    "total_quoted_inr": 94000,
+    "breakup_given": false,
+    "notes": "making and approximate total quoted at 00:22"
+  },
+  "not_available": [],
+  "competitor": null
+}

@@ -1,0 +1,127 @@
+{
+  "visit_id": "B2-1016",
+  "store": "B2",
+  "salesperson": "Akshay",
+  "date": "2026-10-16",
+  "outcome": "walked_out",
+  "asked_for": {
+    "category": "necklace",
+    "weight_band": "20-35",
+    "occasion": "gift for daughter's new job",
+    "budget_inr": null
+  },
+  "shown": [
+    "necklace set 58 g",
+    "chain with pendant",
+    "bangles"
+  ],
+  "reason_not_bought": "weight_mismatch",
+  "objections": [
+    {
+      "type": "weight",
+      "at": "00:23",
+      "quote": "she won't wear something that big. Show us something smaller."
+    },
+    {
+      "type": "design_not_available",
+      "at": "00:36",
+      "quote": "She already has a chain. We wanted a necklace."
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:09",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:23",
+      "who": "customer",
+      "emotion": "disappointed",
+      "cue": "words"
+    },
+    {
+      "at": "00:46",
+      "who": "customer",
+      "emotion": "dismissive",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> dismissive",
+  "handling_score": 1,
+  "coaching_tip": "When parents ask for a slim 25-30 g necklace and we don't have one here, keep the talk on that necklace: offer to bring one from another branch or order it, and take their number instead of moving them to chains or bangles.",
+  "lost_demand": true,
+  "flags": [
+    "58 g piece described as a 'set'; recorded as a necklace set",
+    "chain with pendant and bangles were named without weights",
+    "decision maker split between two parents; Speaker C ended the visit"
+  ],
+  "customer": {
+    "party": "family",
+    "decision_maker": "parents (uncle and aunty); gift for their daughter",
+    "intent": "high",
+    "intent_evidence": "00:09 named an occasion (daughter's new job), a slim necklace and 25-30 grams"
+  },
+  "key_moments": [
+    {
+      "at": "00:17",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "showed a 58 g set after a 25-30 g ask"
+    },
+    {
+      "at": "00:29",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "said few smaller pieces, switched to a chain with pendant"
+    },
+    {
+      "at": "00:41",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "switched category again to bangles"
+    },
+    {
+      "at": "00:46",
+      "by": "customer",
+      "effect": "hurt",
+      "what": "left to try the showroom in Shimla"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "00:17",
+      "what": "no necklace in the asked 25-30 g range shown first"
+    },
+    {
+      "at": "00:29",
+      "what": "no offer to source it from another branch or order, and no number taken"
+    },
+    {
+      "at": "00:46",
+      "what": "no number taken before the family left"
+    }
+  ],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": null,
+    "total_quoted_inr": null,
+    "breakup_given": false,
+    "notes": null
+  },
+  "not_available": [
+    {
+      "item": "necklace 20-35 g",
+      "at": "00:29",
+      "quote": "We don't have much variety in smaller pieces right now.",
+      "said_by": "salesperson",
+      "resolution": "none"
+    }
+  ],
+  "competitor": {
+    "named": "the showroom in Shimla",
+    "claim": null,
+    "at": "00:46"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "visit_id": "B2-1019",
+  "branch": "B2",
+  "salesperson": "Rohit",
+  "date": "2026-10-17",
+  "outcome": "walked_out",
+  "asked_for": {
+    "category": "bangle",
+    "weight_band": "unknown",
+    "occasion": "exchange old gold"
+  },
+  "shown": [
+    "bangle pair (HUID shown)"
+  ],
+  "objections": [
+    {
+      "type": "old_gold_exchange_rate",
+      "at": "00:10",
+      "competitor_mentioned": true
+    },
+    {
+      "type": "purity_trust",
+      "at": "00:36"
+    }
+  ],
+  "handling_score": 2,
+  "handling_evidence": "00:25 and 00:32 could not explain the deduction; no testing offered on the spot",
+  "customer_sentiment_arc": "skeptical -> skeptical",
+  "lost_demand": false,
+  "speakers": 3,
+  "coaching_tip": "Explain the exchange formula (purity x weight x today's rate, minus a stated deduction) and offer a free on-the-spot purity test.",
+  "reason_not_bought": "old_gold_exchange_rate",
+  "emotions": [
+    {
+      "at": "00:28",
+      "who": "customer",
+      "emotion": "skeptical",
+      "cue": "words: 'The other shop was offering the full rate'"
+    }
+  ],
+  "note": "Hand labels from the transcript only. With video, face/voice cues should add to 'emotions'."
+}

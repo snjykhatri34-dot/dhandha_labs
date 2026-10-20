@@ -1,0 +1,31 @@
+{
+  "visit_id": "B2-1018",
+  "branch": "B2",
+  "salesperson": "Akshay",
+  "date": "2026-10-17",
+  "outcome": "bought",
+  "asked_for": {
+    "category": "ring",
+    "weight_band": "5-10",
+    "occasion": "self"
+  },
+  "shown": [
+    "gents ring 6.8 g"
+  ],
+  "objections": [],
+  "handling_score": 4,
+  "handling_evidence": "00:12 matched the asked weight at once; quick, clean close",
+  "customer_sentiment_arc": "neutral -> positive",
+  "lost_demand": false,
+  "coaching_tip": "Fine for a decided buyer; could have suggested a matching chain.",
+  "reason_not_bought": null,
+  "emotions": [
+    {
+      "at": "00:36",
+      "who": "customer",
+      "emotion": "satisfied",
+      "cue": "words: 'Okay, pack it up'"
+    }
+  ],
+  "note": "Hand labels from the transcript only. With video, face/voice cues should add to 'emotions'."
+}

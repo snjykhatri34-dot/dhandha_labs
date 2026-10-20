@@ -1,0 +1,37 @@
+{
+  "visit_id": "B2-1017",
+  "branch": "B2",
+  "salesperson": "Priya",
+  "date": "2026-10-16",
+  "outcome": "deferred_with_follow_up",
+  "asked_for": {
+    "category": "bridal set",
+    "weight_band": "80-90 g set",
+    "occasion": "wedding, February"
+  },
+  "shown": [
+    "polki set 84 g",
+    "temple set 91 g"
+  ],
+  "objections": [
+    {
+      "type": "family_decision",
+      "at": "00:49"
+    }
+  ],
+  "handling_score": 5,
+  "handling_evidence": "00:40 gold-rate lock removes price risk; 00:56 held both sets and took the number for Sunday",
+  "customer_sentiment_arc": "positive -> positive",
+  "lost_demand": false,
+  "coaching_tip": "Strong. Log the Sunday follow-up so it is not missed.",
+  "reason_not_bought": "family_decision",
+  "emotions": [
+    {
+      "at": "00:49",
+      "who": "customer",
+      "emotion": "positive but undecided",
+      "cue": "words: family needs to see it"
+    }
+  ],
+  "note": "Hand labels from the transcript only. With video, face/voice cues should add to 'emotions'."
+}
