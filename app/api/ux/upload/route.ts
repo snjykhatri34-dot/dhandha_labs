@@ -1,78 +1,50 @@
-// POST /api/ux/upload (multipart): store the clip, create a pending visit, start analysis.
-// Fields: store, salesperson, recordedAt (ISO with offset), durationSec, clip (file).
+// Upload, step 1 of 2. POST /api/ux/upload (JSON, no file):
+//   { store, salesperson, recordedAt, fileName, contentType, sizeBytes, durationSec }
+// Checks the fields and returns a one-time link the browser uploads the clip to directly.
+// Step 2 is POST /api/ux/upload/complete once the upload has finished.
 import { NextResponse, type NextRequest } from "next/server";
-import { analyser, visits } from "@/lib/data";
 import { clipStore } from "@/lib/storage";
+import { message, type UploadFailure, type UploadStartBody, type UploadStartResponse } from "./shared";
 import { isStore, validateClip, validateFields } from "@/components/ux/upload/validate";
 
-export type UploadResponse =
-  | { ok: true; id: string }
-  | { ok: false; stage: "validate" | "store" | "create" | "analyse"; error: string; errors?: Record<string, string>; id?: string };
-
-function fail(status: number, body: Extract<UploadResponse, { ok: false }>) {
-  return NextResponse.json<UploadResponse>(body, { status });
-}
-
 export async function POST(req: NextRequest) {
-  let form: FormData;
-  try {
-    form = await req.formData();
-  } catch {
-    return fail(400, { ok: false, stage: "validate", error: "The upload didn't arrive as a form. Try again." });
-  }
+  const b = (await req.json().catch(() => null)) as Partial<UploadStartBody> | null;
+  if (!b) return fail(400, { ok: false, stage: "validate", error: "The request wasn't valid JSON." });
 
-  const store = String(form.get("store") ?? "");
-  const salesperson = String(form.get("salesperson") ?? "").trim();
-  const recordedAt = String(form.get("recordedAt") ?? "");
-  const durationRaw = Number(form.get("durationSec"));
-  const clip = form.get("clip");
-
+  const store = String(b.store ?? "");
+  const salesperson = String(b.salesperson ?? "").trim();
+  const recordedAt = String(b.recordedAt ?? "");
   // Check again on the server: the browser checks can be skipped.
   const errors: Record<string, string> = { ...validateFields({ store, salesperson, recordedAt }) } as Record<string, string>;
-  const file = clip instanceof File ? clip : null;
   const clipError = validateClip(
-    file ? { type: file.type, sizeBytes: file.size, durationSec: Number.isFinite(durationRaw) ? durationRaw : null } : null,
+    b.contentType
+      ? {
+          type: String(b.contentType),
+          sizeBytes: Number(b.sizeBytes) || 0,
+          durationSec: Number.isFinite(Number(b.durationSec)) && b.durationSec !== null ? Number(b.durationSec) : null,
+        }
+      : null,
   );
   if (clipError) errors.file = clipError;
-  if (Object.keys(errors).length > 0 || !file || !isStore(store)) {
+  if (Object.keys(errors).length > 0 || !isStore(store)) {
     return fail(400, { ok: false, stage: "validate", error: "Some fields need fixing.", errors });
   }
 
-  let mediaPath: string;
   try {
-    const saved = await clipStore.save({
+    const target = await clipStore.createUpload({
       store,
       salesperson,
       date: recordedAt.slice(0, 10),
-      fileName: file.name,
-      contentType: file.type,
-      bytes: new Uint8Array(await file.arrayBuffer()),
+      fileName: String(b.fileName ?? ""),
+      contentType: String(b.contentType),
     });
-    mediaPath = saved.path;
+    return NextResponse.json<UploadStartResponse>({ ok: true, ...target });
   } catch (e) {
-    console.error("[ux/upload] store failed", e);
-    return fail(500, { ok: false, stage: "store", error: `Couldn't save the clip: ${message(e)}` });
+    console.error("[ux/upload] couldn't create upload link", e);
+    return fail(500, { ok: false, stage: "start", error: `Couldn't prepare the upload: ${message(e)}` });
   }
-
-  let id: string;
-  try {
-    id = (await visits.create({ store, salesperson, recordedAt, mediaPath })).id;
-  } catch (e) {
-    console.error("[ux/upload] create failed", e);
-    return fail(500, { ok: false, stage: "create", error: `Saved the clip but couldn't create the visit: ${message(e)}` });
-  }
-
-  try {
-    await analyser.analyse(id);
-  } catch (e) {
-    console.error("[ux/upload] analyse failed", id, e);
-    return fail(502, { ok: false, stage: "analyse", id, error: `Visit ${id} was created but analysis didn't start: ${message(e)}` });
-  }
-
-  console.info("[ux/upload] ok", { id, store, salesperson, mediaPath });
-  return NextResponse.json<UploadResponse>({ ok: true, id });
 }
 
-function message(e: unknown) {
-  return e instanceof Error ? e.message : String(e);
+function fail(status: number, body: UploadFailure) {
+  return NextResponse.json<UploadFailure>(body, { status });
 }
