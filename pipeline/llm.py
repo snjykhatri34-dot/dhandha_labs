@@ -5,7 +5,10 @@ complete(system, user) tries, in order:
   2. Claude via the Claude Code CLI (`claude -p`), which needs no key inside a Claude Code session
   3. Gemini via its REST API, if GEMINI_API_KEY is set
 and returns (text, provider_name). The first provider that succeeds wins.
+
+gemini_media(system, user, path, mime) sends a video or audio clip to Gemini (the only provider that takes video).
 """
+import base64
 import json
 import os
 import shutil
@@ -80,16 +83,23 @@ def _claude_cli(system, user):
     return result["result"]
 
 
-def _gemini(system, user):
+GEMINI_API = "https://generativelanguage.googleapis.com"
+# Inline media is base64 (about 4/3 the size) and a request may be at most 100 MB, so bigger clips go
+# through the Files API instead.
+INLINE_MAX_BYTES = 70 * 1024 * 1024
+
+
+def _gemini(system, user, media_part=None):
     key = os.environ.get("GEMINI_API_KEY")
     if not key:
         raise LLMError("GEMINI_API_KEY not set")
     # Read at call time so a GEMINI_MODEL in .env (loaded by complete()) is honoured.
     model = os.environ.get("GEMINI_MODEL") or GEMINI_DEFAULT
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
+    url = f"{GEMINI_API}/v1beta/models/{model}:generateContent"
+    parts = ([media_part] if media_part else []) + [{"text": user}]
     body = {
         "systemInstruction": {"parts": [{"text": system}]},
-        "contents": [{"role": "user", "parts": [{"text": user}]}],
+        "contents": [{"role": "user", "parts": parts}],
         "generationConfig": {"temperature": 0.2},
     }
     for attempt in range(4):
@@ -131,6 +141,58 @@ def _gemini_retry_delay(code, detail, attempt):
             wait = 10 * 2 ** attempt
         return wait + 1 if wait <= 90 else None
     return None
+
+
+def gemini_media(system, user, media_path, mime_type):
+    """Ask Gemini about a video or audio clip. Returns the reply text. (Claude can't take video.)"""
+    load_env()
+    key = os.environ.get("GEMINI_API_KEY")
+    if not key:
+        raise LLMError("GEMINI_API_KEY not set")
+    data = Path(media_path).read_bytes()
+    if len(data) <= INLINE_MAX_BYTES:
+        part = {"inlineData": {"mimeType": mime_type, "data": base64.b64encode(data).decode()}}
+        return _gemini(system, user, part)
+    name, uri = _gemini_upload(key, data, mime_type, Path(media_path).name)
+    try:
+        return _gemini(system, user, {"fileData": {"mimeType": mime_type, "fileUri": uri}})
+    finally:
+        _gemini_call(key, "DELETE", f"/v1beta/{name}")
+
+
+def _gemini_upload(key, data, mime_type, display_name):
+    """Upload through the Files API (resumable, one chunk) and wait until the file is ACTIVE."""
+    start = urllib.request.Request(
+        f"{GEMINI_API}/upload/v1beta/files", method="POST",
+        data=json.dumps({"file": {"display_name": display_name}}).encode(),
+        headers={"x-goog-api-key": key, "Content-Type": "application/json",
+                 "X-Goog-Upload-Protocol": "resumable", "X-Goog-Upload-Command": "start",
+                 "X-Goog-Upload-Header-Content-Length": str(len(data)),
+                 "X-Goog-Upload-Header-Content-Type": mime_type},
+    )
+    with urllib.request.urlopen(start, timeout=60) as resp:
+        upload_url = resp.headers["X-Goog-Upload-URL"]
+    finish = urllib.request.Request(
+        upload_url, data=data, method="POST",
+        headers={"X-Goog-Upload-Offset": "0", "X-Goog-Upload-Command": "upload, finalize"},
+    )
+    with urllib.request.urlopen(finish, timeout=600) as resp:
+        info = json.load(resp)["file"]
+    for _ in range(60):  # video is processed after upload; wait up to ~5 minutes
+        if info.get("state") == "ACTIVE":
+            return info["name"], info["uri"]
+        if info.get("state") == "FAILED":
+            raise LLMError(f"Gemini could not process {display_name}")
+        time.sleep(5)
+        info = _gemini_call(key, "GET", f"/v1beta/{info['name']}")
+    raise LLMError(f"Gemini file {display_name} not ready after 5 minutes")
+
+
+def _gemini_call(key, method, path):
+    req = urllib.request.Request(f"{GEMINI_API}{path}", method=method, headers={"x-goog-api-key": key})
+    with urllib.request.urlopen(req, timeout=60) as resp:
+        body = resp.read()
+    return json.loads(body) if body else {}
 
 
 PROVIDERS = [
