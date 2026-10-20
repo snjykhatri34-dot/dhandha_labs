@@ -1,0 +1,105 @@
+{
+  "visit_id": "B1-1010",
+  "store": "B1",
+  "salesperson": "Harish",
+  "date": "2026-10-17",
+  "outcome": "bought",
+  "asked_for": {
+    "category": "ring",
+    "weight_band": "5-10",
+    "occasion": "engagement",
+    "budget_inr": null
+  },
+  "shown": [
+    "ring 7.4 g",
+    "ring 8 g"
+  ],
+  "reason_not_bought": null,
+  "objections": [
+    {
+      "type": "purity_trust",
+      "at": "01:06",
+      "quote": "is the gold hallmarked?"
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:31",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    },
+    {
+      "at": "01:17",
+      "who": "customer",
+      "emotion": "reassured",
+      "cue": "words"
+    },
+    {
+      "at": "01:21",
+      "who": "customer",
+      "emotion": "satisfied",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> satisfied",
+  "handling_score": 5,
+  "coaching_tip": "Keep doing what you did at 00:50: give the full price breakup with gold, making, diamond and GST as soon as the customer asks the price.",
+  "lost_demand": false,
+  "flags": [
+    "breakup at 00:50 names the diamond as priced separately but gives no diamond figure",
+    "purity question at 01:06 was a check, answered at 01:10, not pushback"
+  ],
+  "customer": {
+    "party": "couple",
+    "decision_maker": "fiancé with fiancée's agreement",
+    "intent": "high",
+    "intent_evidence": "00:08 engagement ring, gold, five to ten grams, centre diamond"
+  },
+  "key_moments": [
+    {
+      "at": "00:20",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed a 7.4 g ring inside the asked range"
+    },
+    {
+      "at": "00:31",
+      "by": "customer",
+      "effect": "helped",
+      "what": "fiancée loved the ring and asked to try it"
+    },
+    {
+      "at": "00:50",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "gave full breakup with making and GST, total quoted"
+    },
+    {
+      "at": "01:10",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "confirmed hallmark, HUID and diamond certificate"
+    }
+  ],
+  "missed_opportunities": [],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": 14,
+    "total_quoted_inr": 248270,
+    "breakup_given": true,
+    "notes": "breakup with 3% GST given at 00:50"
+  },
+  "not_available": [],
+  "competitor": null,
+  "start": "19:58",
+  "duration_min": 22,
+  "value_inr": 248270,
+  "competitor_mentioned": false
+}

@@ -1,0 +1,100 @@
+{
+  "visit_id": "B2-1044",
+  "store": "B2",
+  "salesperson": "Rohit",
+  "date": "2026-10-17",
+  "outcome": "bought",
+  "asked_for": {
+    "category": "chain",
+    "weight_band": "15-30",
+    "occasion": null,
+    "budget_inr": null
+  },
+  "shown": [
+    "chain 18 g",
+    "chain 24 g",
+    "chain 20 g"
+  ],
+  "reason_not_bought": null,
+  "objections": [
+    {
+      "type": "purity_trust",
+      "at": "00:33",
+      "quote": "Is it hallmarked?"
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:07",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "01:24",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> delighted",
+  "handling_score": 4,
+  "coaching_tip": "After he said 'I'll take it' at 01:24, suggest a pendant or another piece that goes with the curb chain before you make the bill.",
+  "lost_demand": false,
+  "flags": [
+    "purity_trust objection taken from a question; the salesperson answered it at 00:36",
+    "the 20 g curb chain shown at 00:27 was billed at 20.4 g at 00:55",
+    "flatter design asked at 00:22 and shown at 00:27; not recorded as an objection"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer",
+    "intent": "high",
+    "intent_evidence": "00:07 asked for a gold chain for himself between fifteen and thirty grams"
+  },
+  "key_moments": [
+    {
+      "at": "00:13",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed 18 g and 24 g chains inside the asked range"
+    },
+    {
+      "at": "00:27",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "offered a flat 20 g curb chain for the flatter design asked"
+    },
+    {
+      "at": "00:36",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "pointed to hallmark and HUID on hook, offered lens check"
+    },
+    {
+      "at": "00:55",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "gave weight, 12% making and GST before the total"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "01:24",
+      "what": "no add-on suggested after the customer agreed to buy"
+    }
+  ],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": 12,
+    "total_quoted_inr": 263905,
+    "breakup_given": true,
+    "notes": "weight, 12% making and 3% GST split at 00:55"
+  },
+  "not_available": [],
+  "competitor": null,
+  "start": "18:51",
+  "duration_min": 7,
+  "value_inr": 263905,
+  "competitor_mentioned": false
+}

@@ -1,0 +1,117 @@
+{
+  "visit_id": "B3-1089",
+  "store": "B3",
+  "salesperson": "Neha",
+  "date": "2026-10-17",
+  "outcome": "deferred_with_follow_up",
+  "asked_for": {
+    "category": "bangle",
+    "weight_band": "20-40",
+    "occasion": null,
+    "budget_inr": null
+  },
+  "shown": [
+    "bangle 24 g",
+    "bangle 31 g",
+    "bangle 38 g"
+  ],
+  "reason_not_bought": "price_making_charge",
+  "objections": [
+    {
+      "type": "price_making_charge",
+      "at": "00:46",
+      "quote": "Another showroom quoted me eight percent on almost the same design",
+      "competitor_mentioned": true
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:27",
+      "who": "customer",
+      "emotion": "curious",
+      "cue": "words"
+    },
+    {
+      "at": "00:46",
+      "who": "customer",
+      "emotion": "skeptical",
+      "cue": "words"
+    },
+    {
+      "at": "01:35",
+      "who": "customer",
+      "emotion": "hesitant",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> hesitant",
+  "handling_score": 5,
+  "coaching_tip": "Keep doing what you did at 00:53: explain why the handwork costs more, offer the plain pair at the lower making charge, and then hold the chosen pair and take the number when the customer isn't ready.",
+  "lost_demand": false,
+  "flags": [],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer",
+    "intent": "high",
+    "intent_evidence": "00:08 asked for a plain pair of bangles between 20 and 40 grams"
+  },
+  "key_moments": [
+    {
+      "at": "00:16",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed three pairs within the asked 20-40 g range"
+    },
+    {
+      "at": "00:46",
+      "by": "customer",
+      "effect": "hurt",
+      "what": "cited another showroom's 8% making on a similar design"
+    },
+    {
+      "at": "00:53",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "explained handwork labour and offered the 10% plain pair"
+    },
+    {
+      "at": "01:26",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "held the filigree pair until a Saturday meeting with the owner"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "00:34",
+      "what": "no total or gold, making and GST breakup for the filigree pair"
+    }
+  ],
+  "next_step": {
+    "what": "return visit to discuss making charge with the owner; filigree pair held",
+    "when": "Saturday morning",
+    "who": "Neha"
+  },
+  "price_talk": {
+    "making_pct": 14,
+    "total_quoted_inr": null,
+    "breakup_given": false,
+    "notes": "12% via owner suggested at 01:13"
+  },
+  "not_available": [],
+  "competitor": {
+    "named": "another showroom",
+    "claim": "eight percent making on almost the same design",
+    "at": "00:46"
+  },
+  "start": "17:31",
+  "duration_min": 7,
+  "value_inr": 0,
+  "competitor_mentioned": true
+}

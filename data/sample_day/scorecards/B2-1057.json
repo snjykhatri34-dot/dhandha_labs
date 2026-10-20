@@ -1,0 +1,136 @@
+{
+  "visit_id": "B2-1057",
+  "store": "B2",
+  "salesperson": "Rohit",
+  "date": "2026-10-17",
+  "outcome": "walked_out",
+  "asked_for": {
+    "category": "necklace",
+    "weight_band": "20-35",
+    "occasion": null,
+    "budget_inr": null
+  },
+  "shown": [
+    "necklace 48 g",
+    "necklace 52 g",
+    "necklace 44 g"
+  ],
+  "reason_not_bought": "weight_mismatch",
+  "objections": [
+    {
+      "type": "weight",
+      "at": "00:32",
+      "quote": "These are quite heavy. I said twenty to thirty-five grams."
+    },
+    {
+      "type": "price_budget",
+      "at": "01:08",
+      "quote": "That's far more than I planned."
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:32",
+      "who": "customer",
+      "emotion": "disappointed",
+      "cue": "words"
+    },
+    {
+      "at": "01:08",
+      "who": "customer",
+      "emotion": "concerned",
+      "cue": "words"
+    },
+    {
+      "at": "01:17",
+      "who": "customer",
+      "emotion": "frustrated",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> frustrated",
+  "handling_score": 2,
+  "coaching_tip": "When the customer repeats a 20-35 g range and we have no necklace that light, offer to bring one from another branch or have it made, and take her number so we can call her when it is ready.",
+  "lost_demand": true,
+  "flags": [
+    "no budget figure stated; price objection typed as price_budget from 'far more than I planned' at 01:08",
+    "occasion not stated; 'for myself' at 00:08 recorded only as self-purchase"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer",
+    "intent": "high",
+    "intent_evidence": "00:08 asked for a necklace for herself in a stated 20-35 g range"
+  },
+  "key_moments": [
+    {
+      "at": "00:24",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "showed 48 g and 52 g necklaces after a 20-35 g ask"
+    },
+    {
+      "at": "00:50",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "said most current stock is in the heavier range"
+    },
+    {
+      "at": "01:08",
+      "by": "customer",
+      "effect": "hurt",
+      "what": "said the 44 g price was far more than planned"
+    },
+    {
+      "at": "01:13",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "said no lighter necklaces now and offered nothing further"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "00:43",
+      "what": "no piece in the asked 25-30 g range shown after second request"
+    },
+    {
+      "at": "01:00",
+      "what": "no price breakup into gold, making and GST given"
+    },
+    {
+      "at": "01:13",
+      "what": "no offer to source it from another branch or order, and no number taken"
+    },
+    {
+      "at": "01:22",
+      "what": "no number taken to follow up before she left"
+    }
+  ],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": null,
+    "total_quoted_inr": 320000,
+    "breakup_given": false,
+    "notes": "44 g necklace quoted about 3.2 lakh all-in at 01:00"
+  },
+  "not_available": [
+    {
+      "item": "necklace 20-35 g",
+      "at": "01:13",
+      "quote": "Not in necklaces right now, ma'am.",
+      "said_by": "salesperson",
+      "resolution": "none"
+    }
+  ],
+  "competitor": null,
+  "start": "18:50",
+  "duration_min": 17,
+  "value_inr": 0,
+  "competitor_mentioned": false
+}

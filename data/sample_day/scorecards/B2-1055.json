@@ -1,0 +1,124 @@
+{
+  "visit_id": "B2-1055",
+  "store": "B2",
+  "salesperson": "Akshay",
+  "date": "2026-10-17",
+  "outcome": "deferred_with_follow_up",
+  "asked_for": {
+    "category": "bangle",
+    "weight_band": "20-40",
+    "occasion": "daughter's engagement",
+    "budget_inr": null
+  },
+  "shown": [
+    "bangles (several, weights not stated)",
+    "bangle carved pair (weight not confirmed, 'thirty-something' g)"
+  ],
+  "reason_not_bought": "family_decision",
+  "objections": [
+    {
+      "type": "family_decision",
+      "at": "00:43",
+      "quote": "my mother-in-law is paying for these"
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:22",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    },
+    {
+      "at": "00:43",
+      "who": "customer",
+      "emotion": "hesitant",
+      "cue": "words"
+    },
+    {
+      "at": "01:24",
+      "who": "customer",
+      "emotion": "frustrated",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> frustrated",
+  "handling_score": 2,
+  "coaching_tip": "When the customer says her mother-in-law must decide, offer to hold the pair and book that visit yourself, and read out the tag weight with a rough gold-plus-making estimate so she has numbers to share at home.",
+  "lost_demand": false,
+  "flags": [
+    "shown carved pair weight never confirmed: salesperson said 'thirty-something' at 00:27",
+    "party scored solo: one customer speaker; daughter and mother-in-law mentioned but absent",
+    "01:04 'designs keep moving' read as pressure, not as an item being unavailable",
+    "frustrated at 01:24 rests on 'Whatever' after the push at 00:52"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "mother-in-law; absent, must see the bangles before deciding",
+    "intent": "high",
+    "intent_evidence": "00:08 named the occasion (daughter's engagement) and a 20-40 g weight range"
+  },
+  "key_moments": [
+    {
+      "at": "00:22",
+      "by": "customer",
+      "effect": "helped",
+      "what": "liked the carved pair and asked its weight"
+    },
+    {
+      "at": "00:37",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "gave no price estimate, deferred it to the bill"
+    },
+    {
+      "at": "00:52",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "pushed her to decide without the mother-in-law"
+    },
+    {
+      "at": "01:19",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "agreed to hold the pair till Saturday and took her number"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "00:27",
+      "what": "did not check the tag and give the exact weight"
+    },
+    {
+      "at": "00:37",
+      "what": "no rough price or breakup of gold, making and GST given"
+    },
+    {
+      "at": "00:52",
+      "what": "did not offer to hold the pair for the mother-in-law's visit unprompted"
+    }
+  ],
+  "next_step": {
+    "what": "customer brings mother-in-law to see the carved pair; pair held, number taken",
+    "when": "Saturday morning",
+    "who": "customer and mother-in-law; Akshay holding the pair"
+  },
+  "price_talk": {
+    "making_pct": null,
+    "total_quoted_inr": null,
+    "breakup_given": false,
+    "notes": "price deferred to the bill at 00:37"
+  },
+  "not_available": [],
+  "competitor": null,
+  "start": "11:59",
+  "duration_min": 15,
+  "value_inr": 0,
+  "competitor_mentioned": false
+}

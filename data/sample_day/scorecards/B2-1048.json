@@ -1,0 +1,129 @@
+{
+  "visit_id": "B2-1048",
+  "store": "B2",
+  "salesperson": "Akshay",
+  "date": "2026-10-17",
+  "outcome": "deferred_with_follow_up",
+  "asked_for": {
+    "category": "pendant",
+    "weight_band": null,
+    "occasion": "daughter's birthday",
+    "budget_inr": null
+  },
+  "shown": [
+    "pendant 7 g",
+    "pendant 8.5 g"
+  ],
+  "reason_not_bought": "family_decision",
+  "objections": [
+    {
+      "type": "family_decision",
+      "at": "00:23",
+      "quote": "my husband will decide the final one"
+    },
+    {
+      "type": "other",
+      "at": "01:01",
+      "quote": "You can't tell me the exact amount?"
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:07",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:49",
+      "who": "customer",
+      "emotion": "frustrated",
+      "cue": "words"
+    },
+    {
+      "at": "01:01",
+      "who": "customer",
+      "emotion": "skeptical",
+      "cue": "words"
+    },
+    {
+      "at": "01:21",
+      "who": "customer",
+      "emotion": "skeptical",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> skeptical",
+  "handling_score": 2,
+  "coaching_tip": "When she said at 00:23 that her husband decides, accept it, offer to hold the 7 g pendant, and give her an exact breakup at today's rate so she can show him the full price.",
+  "lost_demand": false,
+  "flags": [
+    "no band for pendant; asked for 5-10 g",
+    "category 'pendant' used as stated; confirm it is in the CLAUDE.md category list",
+    "objection 'other': customer objected to a vague, inexact price at 01:01",
+    "price given only as a rough range of 75,000-80,000 at 00:55; total_quoted_inr left null"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer; husband must see and approve",
+    "intent": "high",
+    "intent_evidence": "00:07 asked for a 5-10 g gold pendant for her daughter's birthday"
+  },
+  "key_moments": [
+    {
+      "at": "00:14",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed 7 g and 8.5 g pendants within the asked range"
+    },
+    {
+      "at": "00:43",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "brushed off the husband's role in the decision"
+    },
+    {
+      "at": "01:05",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "refused an exact price; said rate changes daily"
+    },
+    {
+      "at": "01:17",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "agreed to hold the 7 g pendant till Saturday"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "00:31",
+      "what": "pressed for a sale today instead of offering to hold the piece"
+    },
+    {
+      "at": "00:55",
+      "what": "no breakup of gold, making and GST at today's rate"
+    },
+    {
+      "at": "01:17",
+      "what": "no number taken to confirm the Saturday visit"
+    }
+  ],
+  "next_step": {
+    "what": "husband visit; 7 g pendant held",
+    "when": "Saturday morning",
+    "who": "Akshay"
+  },
+  "price_talk": {
+    "making_pct": null,
+    "total_quoted_inr": null,
+    "breakup_given": false,
+    "notes": "only a rough 75-80 thousand quoted at 00:55"
+  },
+  "not_available": [],
+  "competitor": null,
+  "start": "19:37",
+  "duration_min": 17,
+  "value_inr": 0,
+  "competitor_mentioned": false
+}

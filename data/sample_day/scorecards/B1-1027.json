@@ -1,0 +1,113 @@
+{
+  "visit_id": "B1-1027",
+  "store": "B1",
+  "salesperson": "Kavya",
+  "date": "2026-10-17",
+  "outcome": "bought",
+  "asked_for": {
+    "category": "earrings",
+    "weight_band": "8-15",
+    "occasion": "engagement",
+    "budget_inr": null
+  },
+  "shown": [
+    "earrings 9 g",
+    "earrings 12 g",
+    "earrings 14 g"
+  ],
+  "reason_not_bought": null,
+  "objections": [
+    {
+      "type": "purity_trust",
+      "at": "00:30",
+      "quote": "Are those real diamonds?",
+      "competitor_mentioned": false
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "curious",
+      "cue": "words"
+    },
+    {
+      "at": "00:30",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "01:24",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    },
+    {
+      "at": "01:32",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "curious -> delighted",
+  "handling_score": 4,
+  "coaching_tip": "Your matching of the 8 to 15 gram ask and the full price breakup closed this sale, so next time, when a family is buying for an engagement, suggest a matching pendant or ring before you go to make the bill.",
+  "lost_demand": false,
+  "flags": [
+    "purity_trust raised as routine questions (00:30 diamonds, 00:41 hallmark) and answered at once; 00:41 treated as restatement",
+    "breakup_given true but diamond value and gold rate were not stated separately at 00:51",
+    "no add-on offered for engagement; scored 4 rather than 5"
+  ],
+  "customer": {
+    "party": "family",
+    "decision_maker": "mother",
+    "intent": "high",
+    "intent_evidence": "00:08 daughter's engagement next month, earrings 8-15 grams"
+  },
+  "key_moments": [
+    {
+      "at": "00:21",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed three pairs, all within the asked 8-15 g range"
+    },
+    {
+      "at": "00:43",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "pointed out hallmark and HUID on the piece"
+    },
+    {
+      "at": "00:51",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "gave weight, making, diamonds, GST and the total"
+    },
+    {
+      "at": "01:24",
+      "by": "customer",
+      "effect": "helped",
+      "what": "daughter tried them on and called them perfect"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "01:28",
+      "what": "no matching pendant or ring suggested for the engagement"
+    }
+  ],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": 15,
+    "total_quoted_inr": 328975,
+    "breakup_given": true,
+    "notes": "breakup with GST given at 00:51; diamond value not itemised"
+  },
+  "not_available": [],
+  "competitor": null,
+  "start": "17:29",
+  "duration_min": 14,
+  "value_inr": 328975,
+  "competitor_mentioned": false
+}

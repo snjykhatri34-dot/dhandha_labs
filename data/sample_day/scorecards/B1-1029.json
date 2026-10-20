@@ -1,0 +1,107 @@
+{
+  "visit_id": "B1-1029",
+  "store": "B1",
+  "salesperson": "Harish",
+  "date": "2026-10-17",
+  "outcome": "bought",
+  "asked_for": {
+    "category": "bangle",
+    "weight_band": "20-40",
+    "occasion": "daily wear",
+    "budget_inr": null
+  },
+  "shown": [
+    "bangle pair 22 g",
+    "bangle pair 28 g",
+    "bangle pair 34 g"
+  ],
+  "reason_not_bought": null,
+  "objections": [
+    {
+      "type": "other",
+      "at": "00:31",
+      "quote": "Will the pattern catch on clothes, though?"
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:31",
+      "who": "customer",
+      "emotion": "concerned",
+      "cue": "words"
+    },
+    {
+      "at": "01:06",
+      "who": "customer",
+      "emotion": "reassured",
+      "cue": "words"
+    },
+    {
+      "at": "01:42",
+      "who": "customer",
+      "emotion": "satisfied",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> satisfied",
+  "handling_score": 5,
+  "coaching_tip": "Keep doing what you did at 01:10: give the full gold, making and GST breakup the moment the customer asks for the price.",
+  "lost_demand": false,
+  "flags": [
+    "objection at 00:31 typed other: worry that the textured pattern would catch on clothes in daily wear",
+    "weight range stated for the pair (20-40 g); band applied to pair weight",
+    "hallmark request at 00:49 read as a requirement, not a purity doubt; not logged as an objection"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer",
+    "intent": "high",
+    "intent_evidence": "00:08 asked for a daily-wear bangle pair between twenty and forty grams"
+  },
+  "key_moments": [
+    {
+      "at": "00:16",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed three bangle pairs, all within the asked weight range"
+    },
+    {
+      "at": "00:54",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed HUID stamp and offered to print it on the bill"
+    },
+    {
+      "at": "01:10",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "gave full breakup of gold, making and GST"
+    },
+    {
+      "at": "01:42",
+      "by": "customer",
+      "effect": "helped",
+      "what": "chose the plain 22 g pair and agreed to buy"
+    }
+  ],
+  "missed_opportunities": [],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": 11,
+    "total_quoted_inr": 208974,
+    "breakup_given": true,
+    "notes": "full gold, making and GST breakup given at 01:10"
+  },
+  "not_available": [],
+  "competitor": null,
+  "start": "14:14",
+  "duration_min": 10,
+  "value_inr": 208974,
+  "competitor_mentioned": false
+}

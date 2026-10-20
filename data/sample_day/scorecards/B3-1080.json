@@ -1,0 +1,106 @@
+{
+  "visit_id": "B3-1080",
+  "store": "B3",
+  "salesperson": "Neha",
+  "date": "2026-10-17",
+  "outcome": "bought",
+  "asked_for": {
+    "category": "necklace",
+    "weight_band": "20-35",
+    "occasion": "cousin's wedding",
+    "budget_inr": null
+  },
+  "shown": [
+    "necklace 22 g",
+    "necklace 28 g",
+    "necklace 33 g"
+  ],
+  "reason_not_bought": null,
+  "objections": [],
+  "emotions": [
+    {
+      "at": "00:07",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "01:02",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    },
+    {
+      "at": "01:19",
+      "who": "customer",
+      "emotion": "satisfied",
+      "cue": "words"
+    },
+    {
+      "at": "01:23",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> delighted",
+  "handling_score": 4,
+  "coaching_tip": "Once the necklace for the wedding was settled at 01:19, suggest a pair of matching earrings before making the bill.",
+  "lost_demand": false,
+  "flags": [],
+  "customer": {
+    "party": "family",
+    "decision_maker": "mother",
+    "intent": "high",
+    "intent_evidence": "00:07 asked for a necklace between twenty and thirty-five grams; 00:14 for a cousin's wedding"
+  },
+  "key_moments": [
+    {
+      "at": "00:20",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed three necklaces inside the asked 20-35 g range"
+    },
+    {
+      "at": "00:34",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "confirmed hallmark and pointed out HUID on the clasp"
+    },
+    {
+      "at": "01:02",
+      "by": "customer",
+      "effect": "helped",
+      "what": "daughter tried it on and loved the fit"
+    },
+    {
+      "at": "01:12",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "quoted the final GST-inclusive amount clearly"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "01:12",
+      "what": "no breakup into gold, making and GST given with the total"
+    },
+    {
+      "at": "01:19",
+      "what": "no matching earrings suggested for the wedding"
+    }
+  ],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": 12,
+    "total_quoted_inr": 68764,
+    "breakup_given": false,
+    "notes": "GST-inclusive total quoted at 01:12"
+  },
+  "not_available": [],
+  "competitor": null,
+  "start": "20:13",
+  "duration_min": 14,
+  "value_inr": 68764,
+  "competitor_mentioned": false
+}

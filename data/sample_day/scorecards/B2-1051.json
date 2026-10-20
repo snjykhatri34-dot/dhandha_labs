@@ -1,0 +1,118 @@
+{
+  "visit_id": "B2-1051",
+  "store": "B2",
+  "salesperson": "Akshay",
+  "date": "2026-10-17",
+  "outcome": "deferred_with_follow_up",
+  "asked_for": {
+    "category": "earrings",
+    "weight_band": "8-15",
+    "occasion": "daily office wear",
+    "budget_inr": null
+  },
+  "shown": [
+    "earrings (jhumkis)",
+    "earrings 12 g"
+  ],
+  "reason_not_bought": "price_making_charge",
+  "objections": [
+    {
+      "type": "price_making_charge",
+      "at": "00:33",
+      "quote": "That seems high for twelve grams. What's the making charge on this?"
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "curious",
+      "cue": "words"
+    },
+    {
+      "at": "00:25",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:33",
+      "who": "customer",
+      "emotion": "concerned",
+      "cue": "words"
+    },
+    {
+      "at": "01:17",
+      "who": "customer",
+      "emotion": "skeptical",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "curious -> skeptical",
+  "handling_score": 2,
+  "coaching_tip": "When the customer asked for the breakup at 00:43, split the price into gold, making and GST and explain the 22% making, then show a similar drop design with lower making instead of saying the rate is the rate.",
+  "lost_demand": false,
+  "flags": [
+    "only the 12 g pair had a weight stated; the other designs were shown without weights",
+    "making quoted as 'around' twenty-two percent"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer",
+    "intent": "high",
+    "intent_evidence": "00:08 asked for earrings of eight to fifteen grams for daily office wear"
+  },
+  "key_moments": [
+    {
+      "at": "00:16",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed a 12 g pair inside the asked weight range"
+    },
+    {
+      "at": "00:47",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "quoted 22% making, said it doesn't come down, no breakup"
+    },
+    {
+      "at": "01:00",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "said 'the rate is the rate' instead of explaining the charge"
+    },
+    {
+      "at": "01:13",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "held the pair till Saturday and took her number"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "00:43",
+      "what": "no price breakup given when the customer asked for one"
+    },
+    {
+      "at": "00:54",
+      "what": "no similar design with lower making charge offered"
+    }
+  ],
+  "next_step": {
+    "what": "return visit to decide; 12 g pair held",
+    "when": "Saturday morning",
+    "who": "Akshay"
+  },
+  "price_talk": {
+    "making_pct": 22,
+    "total_quoted_inr": 125000,
+    "breakup_given": false,
+    "notes": "breakup asked at 00:43, not given; rate called fixed at 01:00"
+  },
+  "not_available": [],
+  "competitor": null,
+  "start": "19:32",
+  "duration_min": 19,
+  "value_inr": 0,
+  "competitor_mentioned": false
+}

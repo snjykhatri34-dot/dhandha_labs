@@ -1,0 +1,122 @@
+{
+  "visit_id": "B2-1071",
+  "store": "B2",
+  "salesperson": "Rohit",
+  "date": "2026-10-17",
+  "outcome": "walked_out",
+  "asked_for": {
+    "category": "necklace",
+    "weight_band": "20-35",
+    "occasion": "niece's engagement",
+    "budget_inr": null
+  },
+  "shown": [
+    "necklace 46 g",
+    "necklace 42 g",
+    "chain 14 g"
+  ],
+  "reason_not_bought": "weight_mismatch",
+  "objections": [
+    {
+      "type": "weight",
+      "at": "00:40",
+      "quote": "It's nice, but it's much heavier than I asked for."
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:40",
+      "who": "customer",
+      "emotion": "disappointed",
+      "cue": "words"
+    },
+    {
+      "at": "01:30",
+      "who": "customer",
+      "emotion": "frustrated",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> frustrated",
+  "handling_score": 1,
+  "coaching_tip": "When we can't show a necklace in the 20 to 35 gram range she asked for, offer to bring one from another branch or order it in time for the engagement, and take her number instead of pushing the heavier pieces again.",
+  "lost_demand": true,
+  "flags": [
+    "two making charges quoted: 14% on the 46 g necklace at 00:29, 12% on the 14 g chain at 01:01; making_pct uses the first",
+    "breakup_given set true for the 14 g chain at 01:01 (gold, making, GST; no stones on that piece); no breakup given for any necklace",
+    "01:14 'that's a chain, not a necklace' treated as a restatement of the weight objection, not a separate design objection"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer",
+    "intent": "high",
+    "intent_evidence": "00:08 asked for a 20-35 g necklace for her niece's engagement next month"
+  },
+  "key_moments": [
+    {
+      "at": "00:29",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "showed a 46 g necklace after a 20-35 g ask"
+    },
+    {
+      "at": "01:01",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "switched to a 14 g chain instead of a lighter necklace"
+    },
+    {
+      "at": "01:21",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "said necklaces run heavier and pushed the 42 g piece"
+    },
+    {
+      "at": "01:41",
+      "by": "customer",
+      "effect": "hurt",
+      "what": "declined and left to look around elsewhere"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "00:40",
+      "what": "no necklace in the asked 20-35 g range offered after 'much heavier'"
+    },
+    {
+      "at": "01:21",
+      "what": "no offer to source it from another branch or order, and no number taken"
+    },
+    {
+      "at": "01:41",
+      "what": "no number taken to follow up before the engagement next month"
+    }
+  ],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": 14,
+    "total_quoted_inr": null,
+    "breakup_given": true,
+    "notes": "breakup given only for the 14 g chain at 01:01"
+  },
+  "not_available": [
+    {
+      "item": "necklace 20-35 g",
+      "at": "01:21",
+      "quote": "Most of our necklaces in this design run a little heavier.",
+      "said_by": "salesperson",
+      "resolution": "none"
+    }
+  ],
+  "competitor": null,
+  "start": "14:09",
+  "duration_min": 5,
+  "value_inr": 0,
+  "competitor_mentioned": false
+}

@@ -1,0 +1,127 @@
+{
+  "visit_id": "B2-1045",
+  "store": "B2",
+  "salesperson": "Rohit",
+  "date": "2026-10-17",
+  "outcome": "walked_out",
+  "asked_for": {
+    "category": "necklace",
+    "weight_band": "20-35",
+    "occasion": "niece's engagement",
+    "budget_inr": null
+  },
+  "shown": [
+    "necklace 48 g",
+    "necklace 52 g",
+    "necklace 44 g",
+    "necklace 12 g"
+  ],
+  "reason_not_bought": "weight_mismatch",
+  "objections": [
+    {
+      "type": "weight",
+      "at": "00:24",
+      "quote": "These are much heavier than what I said."
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:24",
+      "who": "customer",
+      "emotion": "disappointed",
+      "cue": "words"
+    },
+    {
+      "at": "01:01",
+      "who": "customer",
+      "emotion": "frustrated",
+      "cue": "words"
+    },
+    {
+      "at": "01:19",
+      "who": "customer",
+      "emotion": "frustrated",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> frustrated",
+  "handling_score": 1,
+  "coaching_tip": "When she asked twice for a 20-35 g necklace and the display had nothing in that range, offer to bring one from another branch or have one made, and take her number so we can call her before the engagement.",
+  "lost_demand": true,
+  "flags": [
+    "customer said 'I'll look somewhere else' at 01:19 but named no shop; competitor left null"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer",
+    "intent": "high",
+    "intent_evidence": "00:08 named her niece's engagement and a 20-35 g range"
+  },
+  "key_moments": [
+    {
+      "at": "00:15",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "showed 48 g and 52 g pieces after a 20-35 g ask"
+    },
+    {
+      "at": "00:30",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "showed a 44 g piece after the ask was repeated"
+    },
+    {
+      "at": "00:53",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "quoted making charge while customer still wanted the right weight"
+    },
+    {
+      "at": "01:16",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "said nothing in range on display, offered no way to get it"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "00:24",
+      "what": "no piece in the asked 20-35 g range looked for after the first mismatch"
+    },
+    {
+      "at": "01:16",
+      "what": "no offer to source it from another branch or order, and no number taken"
+    },
+    {
+      "at": "01:19",
+      "what": "no attempt to keep the customer or arrange a follow-up as she left"
+    }
+  ],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": 14,
+    "total_quoted_inr": null,
+    "breakup_given": false,
+    "notes": "making and GST quoted unprompted at 00:53"
+  },
+  "not_available": [
+    {
+      "item": "necklace 20-35 g",
+      "at": "01:16",
+      "quote": "Not in the display right now, ma'am.",
+      "said_by": "salesperson",
+      "resolution": "none"
+    }
+  ],
+  "competitor": null,
+  "start": "20:14",
+  "duration_min": 5,
+  "value_inr": 0,
+  "competitor_mentioned": false
+}

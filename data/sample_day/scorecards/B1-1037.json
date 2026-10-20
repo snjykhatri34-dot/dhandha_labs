@@ -1,0 +1,132 @@
+{
+  "visit_id": "B1-1037",
+  "store": "B1",
+  "salesperson": "Kavya",
+  "date": "2026-10-17",
+  "outcome": "deferred_with_follow_up",
+  "asked_for": {
+    "category": "bridal set",
+    "weight_band": null,
+    "occasion": "daughter's wedding in February",
+    "budget_inr": null
+  },
+  "shown": [
+    "bridal set 96 g"
+  ],
+  "reason_not_bought": "design_not_available",
+  "objections": [
+    {
+      "type": "design_not_available",
+      "at": "00:32",
+      "quote": "Nothing at all in that style?"
+    },
+    {
+      "type": "family_decision",
+      "at": "00:57",
+      "quote": "we would have to bring her along to see it"
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:32",
+      "who": "customer",
+      "emotion": "concerned",
+      "cue": "words"
+    },
+    {
+      "at": "00:44",
+      "who": "customer",
+      "emotion": "disappointed",
+      "cue": "words"
+    },
+    {
+      "at": "01:20",
+      "who": "customer",
+      "emotion": "hesitant",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> hesitant",
+  "handling_score": 4,
+  "coaching_tip": "Since the daughter saw the coin-motif set in a magazine, ask the family to share that picture so the Jaipur sample matches it, and give them an indicative weight and price for the design before Saturday.",
+  "lost_demand": true,
+  "flags": [
+    "no band for bridal set; asked for 80-120 g",
+    "temple style with Lakshmi coin motif added by Speaker C at 00:16; treated as a refinement of the bridal set request",
+    "price never discussed; scored 4 rather than 5 because no price was given",
+    "not_available resolution recorded as order (karigar sample); a callback was also taken at 01:02"
+  ],
+  "customer": {
+    "party": "family",
+    "decision_maker": "parents; daughter must see and approve the design",
+    "intent": "high",
+    "intent_evidence": "00:08 bridal set for daughter's February wedding, 80-120 grams"
+  },
+  "key_moments": [
+    {
+      "at": "00:44",
+      "by": "customer",
+      "effect": "hurt",
+      "what": "rejected the peacock temple set as not what she asked for"
+    },
+    {
+      "at": "00:48",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "offered a coin-motif sample from the Jaipur karigar by Saturday"
+    },
+    {
+      "at": "01:02",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "took the number and set a Saturday family visit"
+    },
+    {
+      "at": "01:20",
+      "by": "customer",
+      "effect": "hurt",
+      "what": "doubted the sample would match what the daughter has in mind"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "00:16",
+      "what": "did not ask for the magazine picture of the design the daughter wants"
+    },
+    {
+      "at": "01:20",
+      "what": "no indicative weight or price given for the coin-motif set"
+    }
+  ],
+  "next_step": {
+    "what": "coin-motif sample set from Jaipur karigar; family visit with daughter; confirmation call Friday evening",
+    "when": "Saturday afternoon",
+    "who": "Kavya"
+  },
+  "price_talk": {
+    "making_pct": null,
+    "total_quoted_inr": null,
+    "breakup_given": false,
+    "notes": null
+  },
+  "not_available": [
+    {
+      "item": "bridal set, temple style with Lakshmi coin motif",
+      "at": "00:23",
+      "quote": "Temple work with the coin motif, though, we don't have in stock",
+      "said_by": "salesperson",
+      "resolution": "order"
+    }
+  ],
+  "competitor": null,
+  "start": "11:07",
+  "duration_min": 21,
+  "value_inr": 0,
+  "competitor_mentioned": false
+}

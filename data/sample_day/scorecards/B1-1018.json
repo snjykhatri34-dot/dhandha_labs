@@ -1,0 +1,138 @@
+{
+  "visit_id": "B1-1018",
+  "store": "B1",
+  "salesperson": "Harish",
+  "date": "2026-10-17",
+  "outcome": "walked_out",
+  "asked_for": {
+    "category": "necklace",
+    "weight_band": "20-35",
+    "occasion": "sister's engagement",
+    "budget_inr": null
+  },
+  "shown": [
+    "necklace 48 g",
+    "necklace 52 g",
+    "necklace 44 g",
+    "necklace 40 g"
+  ],
+  "reason_not_bought": "weight_mismatch",
+  "objections": [
+    {
+      "type": "weight",
+      "at": "00:34",
+      "quote": "Forty-eight? That's way over what I said."
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:24",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    },
+    {
+      "at": "00:34",
+      "who": "customer",
+      "emotion": "disappointed",
+      "cue": "words"
+    },
+    {
+      "at": "01:23",
+      "who": "customer",
+      "emotion": "frustrated",
+      "cue": "words"
+    },
+    {
+      "at": "01:36",
+      "who": "customer",
+      "emotion": "frustrated",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> frustrated",
+  "handling_score": 1,
+  "coaching_tip": "If no necklace under 35 g is on display, say so right away, offer to bring one from another branch or order it in time for the engagement, and take her number.",
+  "lost_demand": true,
+  "flags": [
+    "customer said 'I'll look somewhere else' at 01:36 but named no shop; competitor left null",
+    "making charge mentioned by salesperson unprompted at 00:58; customer did not object to it"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer",
+    "intent": "high",
+    "intent_evidence": "00:08 necklace for sister's engagement next month, twenty to thirty-five grams"
+  },
+  "key_moments": [
+    {
+      "at": "00:27",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "showed a 48 g piece after a 20-35 g ask"
+    },
+    {
+      "at": "00:41",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "answered a repeated 20-35 g ask with 52 g and 44 g"
+    },
+    {
+      "at": "00:58",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "steered to heavier range and quoted making charge instead"
+    },
+    {
+      "at": "01:23",
+      "by": "customer",
+      "effect": "hurt",
+      "what": "said four necklaces shown, none in the asked weight"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "00:34",
+      "what": "no necklace under 35 g shown after the repeated weight ask"
+    },
+    {
+      "at": "00:58",
+      "what": "no lighter design offered; argued for heavier pieces instead"
+    },
+    {
+      "at": "01:31",
+      "what": "no offer to source it from another branch or order, and no number taken"
+    },
+    {
+      "at": "01:36",
+      "what": "no number taken to follow up before the engagement"
+    }
+  ],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": 14,
+    "total_quoted_inr": null,
+    "breakup_given": false,
+    "notes": "14% making plus 3% GST quoted unasked at 00:58"
+  },
+  "not_available": [
+    {
+      "item": "necklace 20-35 g",
+      "at": "01:31",
+      "quote": "These are the pieces we have on display today.",
+      "said_by": "salesperson",
+      "resolution": "none"
+    }
+  ],
+  "competitor": null,
+  "start": "17:49",
+  "duration_min": 8,
+  "value_inr": 0,
+  "competitor_mentioned": false
+}

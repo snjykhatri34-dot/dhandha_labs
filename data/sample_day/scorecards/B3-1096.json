@@ -1,0 +1,125 @@
+{
+  "visit_id": "B3-1096",
+  "store": "B3",
+  "salesperson": "Suresh",
+  "date": "2026-10-17",
+  "outcome": "walked_out",
+  "asked_for": {
+    "category": "necklace",
+    "weight_band": "50+",
+    "occasion": "daughter's wedding",
+    "budget_inr": null
+  },
+  "shown": [
+    "necklace 54 g",
+    "necklace 58 g",
+    "necklace 61 g"
+  ],
+  "reason_not_bought": "design_not_available",
+  "objections": [
+    {
+      "type": "design_not_available",
+      "at": "00:32",
+      "quote": "These are nice, but none of them is temple work."
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "01:05",
+      "who": "customer",
+      "emotion": "disappointed",
+      "cue": "words"
+    },
+    {
+      "at": "01:19",
+      "who": "customer",
+      "emotion": "dismissive",
+      "cue": "words"
+    },
+    {
+      "at": "01:23",
+      "who": "customer",
+      "emotion": "skeptical",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> skeptical",
+  "handling_score": 3,
+  "coaching_tip": "When we don't have the design the family asks for, as with the temple coin necklace at 00:37, offer to order or make it in their weight and take their number before they leave.",
+  "lost_demand": true,
+  "flags": [
+    "Speaker C calls Speaker B 'Mummy'; unclear whether C is the bride or another daughter",
+    "'look elsewhere' at 01:23 names no shop; competitor set to null",
+    "not_available resolution 'alternative' matched the asked weight only, not the coin design",
+    "handling score borderline 3/4: honest and transparent with alternatives, but no order offer or follow-up"
+  ],
+  "customer": {
+    "party": "family",
+    "decision_maker": "mother; daughter's coin-design preference must be met",
+    "intent": "high",
+    "intent_evidence": "00:08 daughter's wedding, fifty grams or more; 00:15 temple style with Lakshmi coin pendants"
+  },
+  "key_moments": [
+    {
+      "at": "00:21",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed three pieces in the asked 50+ g range"
+    },
+    {
+      "at": "00:37",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "said the temple coin necklace is not in stock"
+    },
+    {
+      "at": "01:19",
+      "by": "customer",
+      "effect": "hurt",
+      "what": "daughter dismissed the alternative as a regular necklace"
+    },
+    {
+      "at": "01:30",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "let the family leave without an order offer or number"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "00:37",
+      "what": "no offer to order or make the coin design for the wedding"
+    },
+    {
+      "at": "01:23",
+      "what": "no number taken or wedding date asked before they left"
+    }
+  ],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": 14,
+    "total_quoted_inr": null,
+    "breakup_given": false,
+    "notes": "14% making and HUID hallmark cited at 00:51"
+  },
+  "not_available": [
+    {
+      "item": "necklace 50+ g temple coin design",
+      "at": "00:37",
+      "quote": "the temple coin necklace isn't available with us right now.",
+      "said_by": "salesperson",
+      "resolution": "alternative"
+    }
+  ],
+  "competitor": null,
+  "start": "17:15",
+  "duration_min": 21,
+  "value_inr": 0,
+  "competitor_mentioned": false
+}

@@ -1,0 +1,106 @@
+{
+  "visit_id": "B1-1012",
+  "store": "B1",
+  "salesperson": "Meena",
+  "date": "2026-10-17",
+  "outcome": "bought",
+  "asked_for": {
+    "category": "pendant",
+    "weight_band": null,
+    "occasion": "daughter's graduation",
+    "budget_inr": null
+  },
+  "shown": [
+    "pendant 8.4 g",
+    "pendant 6.9 g"
+  ],
+  "reason_not_bought": null,
+  "objections": [],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "01:06",
+      "who": "customer",
+      "emotion": "reassured",
+      "cue": "words"
+    },
+    {
+      "at": "01:20",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    },
+    {
+      "at": "01:36",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> delighted",
+  "handling_score": 4,
+  "coaching_tip": "When the family settles on the solitaire pendant, suggest a matching chain to wear it on before you move to billing.",
+  "lost_demand": false,
+  "flags": [
+    "no band for pendant; asked for 5-10 g",
+    "category 'pendant' not in the weight-band list; used the customer's word",
+    "diamond certification question at 00:32 read as due diligence, not a purity_trust objection",
+    "no budget figure stated; 01:06 says total is within plan"
+  ],
+  "customer": {
+    "party": "couple",
+    "decision_maker": "parents; father said 'Let's take it'",
+    "intent": "high",
+    "intent_evidence": "00:08 named the occasion, a 5-10 g range and a diamond"
+  },
+  "key_moments": [
+    {
+      "at": "00:21",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed two pendants inside the asked 5-10 g range"
+    },
+    {
+      "at": "00:36",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "pointed to the lab certificate and the engraved HUID"
+    },
+    {
+      "at": "00:49",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "gave a full breakup: gold, diamond, 12% making, GST"
+    },
+    {
+      "at": "01:15",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "displayed the solitaire on black velvet as asked"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "01:29",
+      "what": "no chain or matching add-on suggested for the pendant"
+    }
+  ],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": 12,
+    "total_quoted_inr": 314144,
+    "breakup_given": true,
+    "notes": "full breakup with GST given at 00:49"
+  },
+  "not_available": [],
+  "competitor": null,
+  "start": "18:29",
+  "duration_min": 14,
+  "value_inr": 314144,
+  "competitor_mentioned": false
+}

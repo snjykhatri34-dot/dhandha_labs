@@ -1,0 +1,107 @@
+{
+  "visit_id": "B1-1023",
+  "store": "B1",
+  "salesperson": "Kavya",
+  "date": "2026-10-17",
+  "outcome": "bought",
+  "asked_for": {
+    "category": "bangle",
+    "weight_band": "20-40",
+    "occasion": "daily wear",
+    "budget_inr": null
+  },
+  "shown": [
+    "bangle 22 g",
+    "bangle 26 g",
+    "bangle 34 g"
+  ],
+  "reason_not_bought": null,
+  "objections": [],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:39",
+      "who": "customer",
+      "emotion": "concerned",
+      "cue": "words"
+    },
+    {
+      "at": "01:04",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    },
+    {
+      "at": "01:32",
+      "who": "customer",
+      "emotion": "satisfied",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> satisfied",
+  "handling_score": 4,
+  "coaching_tip": "Once she said yes at 01:32, suggest something to go with the bangles, such as light daily-wear earrings, before you write the bill.",
+  "lost_demand": false,
+  "flags": [
+    "shown weights are per pair of bangles",
+    "purity question at 00:27 and durability question at 00:39 treated as clarifications, not objections, because both were answered and she did not push back",
+    "no budget figure stated; 01:22 says only 'within what I had in mind'",
+    "handling score 4 vs 5 is borderline: the visit was clean, but no add-on was offered"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer",
+    "intent": "high",
+    "intent_evidence": "00:08 asked for bangles for daily wear, twenty to forty grams for the pair"
+  },
+  "key_moments": [
+    {
+      "at": "00:15",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed three pairs within the asked 20-40 g range"
+    },
+    {
+      "at": "00:31",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "pointed out the hallmark and HUID stamped inside each bangle"
+    },
+    {
+      "at": "01:04",
+      "by": "customer",
+      "effect": "helped",
+      "what": "liked the pair on her wrist; lighter than expected"
+    },
+    {
+      "at": "01:09",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "gave a full breakup of gold, making and GST"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "01:32",
+      "what": "no add-on suggested after the purchase was agreed"
+    }
+  ],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": 12,
+    "total_quoted_inr": 103000,
+    "breakup_given": true,
+    "notes": "gold, making and GST breakup given at 01:09"
+  },
+  "not_available": [],
+  "competitor": null,
+  "start": "20:29",
+  "duration_min": 6,
+  "value_inr": 103038,
+  "competitor_mentioned": false
+}

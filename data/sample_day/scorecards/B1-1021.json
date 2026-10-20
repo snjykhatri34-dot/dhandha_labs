@@ -1,0 +1,106 @@
+{
+  "visit_id": "B1-1021",
+  "store": "B1",
+  "salesperson": "Harish",
+  "date": "2026-10-17",
+  "outcome": "bought",
+  "asked_for": {
+    "category": "bridal set",
+    "weight_band": null,
+    "occasion": "daughter's wedding in February",
+    "budget_inr": null
+  },
+  "shown": [
+    "bridal set 86 g",
+    "bridal set 98 g",
+    "bridal set 114 g"
+  ],
+  "reason_not_bought": null,
+  "objections": [
+    {
+      "type": "price_budget",
+      "at": "01:12",
+      "quote": "That's a bit more than I was planning."
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:38",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    },
+    {
+      "at": "01:12",
+      "who": "customer",
+      "emotion": "concerned",
+      "cue": "words"
+    },
+    {
+      "at": "01:50",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> delighted",
+  "handling_score": 5,
+  "coaching_tip": "Keep doing what you did at 01:15: when the total runs over plan, give two concrete ways to bring it down, an old-gold exchange tested in front of the customer or dropping one piece, while keeping the design she loves.",
+  "lost_demand": false,
+  "flags": [
+    "no band for bridal set; asked for 80-120 g",
+    "customer will bring old bangles next week 'for the other pieces'; unclear which pieces"
+  ],
+  "customer": {
+    "party": "family",
+    "decision_maker": "mother",
+    "intent": "high",
+    "intent_evidence": "00:08 daughter's wedding in February and a stated 80-120 g range"
+  },
+  "key_moments": [
+    {
+      "at": "00:24",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed three bridal sets, all within the asked weight range"
+    },
+    {
+      "at": "00:56",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "gave a full price breakup with gold, making, kundan and GST"
+    },
+    {
+      "at": "01:15",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "offered old-gold exchange or dropping the tikka to lower the total"
+    },
+    {
+      "at": "01:29",
+      "by": "customer",
+      "effect": "helped",
+      "what": "daughter insisted on keeping the tikka to complete the look"
+    }
+  ],
+  "missed_opportunities": [],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": 12,
+    "total_quoted_inr": 977085,
+    "breakup_given": true,
+    "notes": "full breakup with kundan work and GST at 00:56"
+  },
+  "not_available": [],
+  "competitor": null,
+  "start": "16:49",
+  "duration_min": 51,
+  "value_inr": 977085,
+  "competitor_mentioned": false
+}

@@ -1,0 +1,112 @@
+{
+  "visit_id": "B2-1063",
+  "store": "B2",
+  "salesperson": "Priya",
+  "date": "2026-10-17",
+  "outcome": "deferred_with_follow_up",
+  "asked_for": {
+    "category": "chain",
+    "weight_band": "15-30",
+    "occasion": "son's graduation",
+    "budget_inr": null
+  },
+  "shown": [
+    "chain 18 g",
+    "chain 22 g",
+    "chain 28 g"
+  ],
+  "reason_not_bought": "old_gold_exchange_rate",
+  "objections": [
+    {
+      "type": "old_gold_exchange_rate",
+      "at": "00:50",
+      "quote": "What would you give me for those?"
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "curious",
+      "cue": "words"
+    },
+    {
+      "at": "00:33",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "01:15",
+      "who": "customer",
+      "emotion": "skeptical",
+      "cue": "words"
+    },
+    {
+      "at": "01:58",
+      "who": "customer",
+      "emotion": "hesitant",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "curious -> hesitant",
+  "handling_score": 5,
+  "coaching_tip": "Keep doing what you did at 00:57 and 01:22: test old gold in front of the customer and offer an independent assay you'll honour when they doubt the reading.",
+  "lost_demand": false,
+  "flags": [
+    "purity doubt at 01:15 is about the old gold's test reading, so it is scored under old_gold_exchange_rate, not purity_trust",
+    "asked range 15-30 g starts on the 0-15/15-30 boundary; mapped to 15-30",
+    "breakup_given true: gold, making and GST split; no stones in a plain chain",
+    "salesperson offered to note a number at 01:42; transcript doesn't show it was given"
+  ],
+  "customer": {
+    "party": "family",
+    "decision_maker": "father (Speaker B); son gives input",
+    "intent": "high",
+    "intent_evidence": "00:08 named son's graduation and a fifteen to thirty gram range"
+  },
+  "key_moments": [
+    {
+      "at": "00:20",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed three chains all within the asked weight range"
+    },
+    {
+      "at": "00:57",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "old gold tested at about twenty carat, lowering exchange value"
+    },
+    {
+      "at": "01:22",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "offered government assay and promised to honour its result"
+    },
+    {
+      "at": "01:42",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "offered lighter chain and held box chain until Saturday"
+    }
+  ],
+  "missed_opportunities": [],
+  "next_step": {
+    "what": "return with assay certificate; box chain held",
+    "when": "Saturday morning",
+    "who": "Priya"
+  },
+  "price_talk": {
+    "making_pct": 12,
+    "total_quoted_inr": 168000,
+    "breakup_given": true,
+    "notes": "old gold valued about 61,000 after 2% melting deduction at 00:57"
+  },
+  "not_available": [],
+  "competitor": null,
+  "start": "13:56",
+  "duration_min": 16,
+  "value_inr": 0,
+  "competitor_mentioned": false
+}

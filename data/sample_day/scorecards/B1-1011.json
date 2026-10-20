@@ -1,0 +1,127 @@
+{
+  "visit_id": "B1-1011",
+  "store": "B1",
+  "salesperson": "Meena",
+  "date": "2026-10-17",
+  "outcome": "walked_out",
+  "asked_for": {
+    "category": "bridal set",
+    "weight_band": null,
+    "occasion": "daughter's wedding in February",
+    "budget_inr": null
+  },
+  "shown": [
+    "bridal set 94 g",
+    "bridal set 106 g",
+    "bridal set 118 g"
+  ],
+  "reason_not_bought": "price_making_charge",
+  "objections": [
+    {
+      "type": "price_making_charge",
+      "at": "00:55",
+      "quote": "that's a lot of money just for making"
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "curious",
+      "cue": "words"
+    },
+    {
+      "at": "00:34",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:55",
+      "who": "customer",
+      "emotion": "concerned",
+      "cue": "words"
+    },
+    {
+      "at": "01:10",
+      "who": "customer",
+      "emotion": "disappointed",
+      "cue": "words"
+    },
+    {
+      "at": "01:27",
+      "who": "customer",
+      "emotion": "hesitant",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "curious -> hesitant",
+  "handling_score": 4,
+  "coaching_tip": "When a family says the February wedding is still a long way off, offer to book or hold the temple set and take their number so the visit ends with a reason to come back.",
+  "lost_demand": false,
+  "flags": [
+    "no band for bridal set; asked for 80-120 g",
+    "timing may also have contributed: 'It's still a long way off' at 01:27",
+    "Speaker C's relation to the bride not stated; treated as co-decider with Speaker B",
+    "'Please do come again' at 01:34 is not a concrete next step"
+  ],
+  "customer": {
+    "party": "family",
+    "decision_maker": "mother (Speaker B) and Speaker C together; Speaker C ended the visit",
+    "intent": "high",
+    "intent_evidence": "00:08 daughter's wedding in February, 80-120 grams"
+  },
+  "key_moments": [
+    {
+      "at": "00:22",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed three bridal sets inside the asked 80-120 g range"
+    },
+    {
+      "at": "00:38",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "gave full breakup with hallmark, HUID, making and GST"
+    },
+    {
+      "at": "00:55",
+      "by": "customer",
+      "effect": "hurt",
+      "what": "objected to 18% making on 118 g"
+    },
+    {
+      "at": "01:19",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "held making at 18% with no other way to close"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "01:10",
+      "what": "kundan 106 g set not priced as a middle option"
+    },
+    {
+      "at": "01:27",
+      "what": "no booking or hold offered for the February wedding"
+    },
+    {
+      "at": "01:31",
+      "what": "no number taken or return visit set"
+    }
+  ],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": 18,
+    "total_quoted_inr": null,
+    "breakup_given": true,
+    "notes": "breakup at 00:38; 12% machine-finished option at 01:01"
+  },
+  "not_available": [],
+  "competitor": null,
+  "start": "19:02",
+  "duration_min": 37,
+  "value_inr": 0,
+  "competitor_mentioned": false
+}

@@ -1,0 +1,109 @@
+{
+  "visit_id": "B1-1009",
+  "store": "B1",
+  "salesperson": "Harish",
+  "date": "2026-10-17",
+  "outcome": "bought",
+  "asked_for": {
+    "category": "necklace",
+    "weight_band": "20-35",
+    "occasion": "daughter's engagement",
+    "budget_inr": null
+  },
+  "shown": [
+    "necklace 24 g",
+    "necklace 29 g",
+    "necklace 32 g",
+    "necklace 34 g",
+    "necklace 24 g",
+    "earrings 4 g"
+  ],
+  "reason_not_bought": null,
+  "objections": [
+    {
+      "type": "price_budget",
+      "at": "01:12",
+      "quote": "Hmm, that's close to what we thought."
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "curious",
+      "cue": "words"
+    },
+    {
+      "at": "00:34",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:47",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    },
+    {
+      "at": "01:35",
+      "who": "customer",
+      "emotion": "satisfied",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "curious -> satisfied",
+  "handling_score": 5,
+  "coaching_tip": "Keep doing what you did at 00:51: give the full gold, making and GST breakup with the HUID before the customer has to ask.",
+  "lost_demand": false,
+  "flags": [
+    "price_budget objection inferred from 01:12 'close to what we thought' plus request for lighter piece; no budget stated",
+    "second 'necklace 24 g' is the 24 g temple-pattern alternative named at 01:18"
+  ],
+  "customer": {
+    "party": "family",
+    "decision_maker": "mother",
+    "intent": "high",
+    "intent_evidence": "00:08 named daughter's engagement and a 20-35 g range"
+  },
+  "key_moments": [
+    {
+      "at": "00:20",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed four hallmarked necklaces all within the asked 20-35 g range"
+    },
+    {
+      "at": "00:51",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "gave full price breakup with making, GST and HUID"
+    },
+    {
+      "at": "01:18",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "offered lighter 24 g version, explained fuller drop for photos"
+    },
+    {
+      "at": "01:31",
+      "by": "customer",
+      "effect": "helped",
+      "what": "daughter preferred the fuller 29 g necklace"
+    }
+  ],
+  "missed_opportunities": [],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": 12,
+    "total_quoted_inr": 374943,
+    "breakup_given": true,
+    "notes": "full breakup with HUID given at 00:51"
+  },
+  "not_available": [],
+  "competitor": null,
+  "start": "12:57",
+  "duration_min": 6,
+  "value_inr": 374943,
+  "competitor_mentioned": false
+}

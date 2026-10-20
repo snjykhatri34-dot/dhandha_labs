@@ -1,0 +1,111 @@
+{
+  "visit_id": "B1-1040",
+  "store": "B1",
+  "salesperson": "Meena",
+  "date": "2026-10-17",
+  "outcome": "walked_out",
+  "asked_for": {
+    "category": "bridal set",
+    "weight_band": null,
+    "occasion": "cousin's wedding",
+    "budget_inr": null
+  },
+  "shown": [
+    "bridal set 86 g",
+    "bridal set 98 g",
+    "bridal set 116 g",
+    "bridal set 82 g"
+  ],
+  "reason_not_bought": "just_browsing",
+  "objections": [
+    {
+      "type": "price_budget",
+      "at": "00:52",
+      "quote": "I thought it would be quite a bit less than that."
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "curious",
+      "cue": "words"
+    },
+    {
+      "at": "00:30",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    },
+    {
+      "at": "00:52",
+      "who": "customer",
+      "emotion": "concerned",
+      "cue": "words"
+    },
+    {
+      "at": "01:41",
+      "who": "customer",
+      "emotion": "disappointed",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "curious -> disappointed",
+  "handling_score": 5,
+  "coaching_tip": "Keep doing what you did at 00:57: when the total surprised the customer, you offered a stone-free set and a lighter version of the design she liked.",
+  "lost_demand": false,
+  "flags": [
+    "no band for bridal set; asked for 80-120 g",
+    "reason_not_bought close call: customer said 'just looking' at 01:12 but price surprise at 00:52 and 01:41 also contributed; chose just_browsing",
+    "price_budget objection used without a stated budget; customer expected a lower total",
+    "intent rated high for specific weight ask and occasion, but customer said she is only looking today",
+    "82 g bridal set was offered as a made-to-order lighter version, not shown in stock",
+    "reference-code card at 01:35 not counted as a next step; customer refused follow-up at 01:30"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer",
+    "intent": "high",
+    "intent_evidence": "00:08 cousin's wedding coming up, asked for bridal sets of 80 to 120 grams"
+  },
+  "key_moments": [
+    {
+      "at": "00:30",
+      "by": "customer",
+      "effect": "helped",
+      "what": "said the kundan set is lovely and asked its price"
+    },
+    {
+      "at": "00:35",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "gave full price breakup and offered to show HUID"
+    },
+    {
+      "at": "00:52",
+      "by": "customer",
+      "effect": "hurt",
+      "what": "surprised the total was seven lakh eighty"
+    },
+    {
+      "at": "01:12",
+      "by": "customer",
+      "effect": "hurt",
+      "what": "said she is just looking and not buying today"
+    }
+  ],
+  "missed_opportunities": [],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": 12,
+    "total_quoted_inr": 780000,
+    "breakup_given": true,
+    "notes": "full breakup with HUID offer at 00:35"
+  },
+  "not_available": [],
+  "competitor": null,
+  "start": "19:34",
+  "duration_min": 46,
+  "value_inr": 0,
+  "competitor_mentioned": false
+}

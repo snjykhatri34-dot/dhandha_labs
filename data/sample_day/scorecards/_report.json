@@ -1,0 +1,1338 @@
+{
+  "B1-1001": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      4,
+      4
+    ],
+    "band": [
+      "20-35",
+      "20-35"
+    ]
+  },
+  "B1-1002": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      3,
+      1
+    ],
+    "band": [
+      "20-35",
+      "20-35"
+    ]
+  },
+  "B1-1003": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      3,
+      2
+    ],
+    "band": [
+      "20-35",
+      "20-35"
+    ]
+  },
+  "B1-1004": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      5,
+      5
+    ],
+    "band": [
+      "20-40",
+      "20-40"
+    ]
+  },
+  "B1-1005": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      5,
+      5
+    ],
+    "band": [
+      "8-15",
+      "8-15"
+    ]
+  },
+  "B1-1006": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      4,
+      5
+    ],
+    "band": [
+      "80-120",
+      null
+    ]
+  },
+  "B1-1007": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      5,
+      5
+    ],
+    "band": [
+      "80-120",
+      null
+    ]
+  },
+  "B1-1008": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      3,
+      4
+    ],
+    "band": [
+      "80-120",
+      null
+    ]
+  },
+  "B1-1009": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      5,
+      5
+    ],
+    "band": [
+      "20-35",
+      "20-35"
+    ]
+  },
+  "B1-1010": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      4,
+      5
+    ],
+    "band": [
+      "5-10",
+      "5-10"
+    ]
+  },
+  "B1-1011": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      4,
+      4
+    ],
+    "band": [
+      "80-120",
+      null
+    ]
+  },
+  "B1-1012": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      4,
+      4
+    ],
+    "band": [
+      "5-10",
+      null
+    ]
+  },
+  "B1-1013": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      4,
+      4
+    ],
+    "band": [
+      "15-30",
+      "15-30"
+    ]
+  },
+  "B1-1014": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      5,
+      5
+    ],
+    "band": [
+      "8-15",
+      "8-15"
+    ]
+  },
+  "B1-1015": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      3,
+      4
+    ],
+    "band": [
+      "5-10",
+      "5-10"
+    ]
+  },
+  "B1-1016": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      4,
+      5
+    ],
+    "band": [
+      "8-15",
+      "8-15"
+    ]
+  },
+  "B1-1017": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      3,
+      2
+    ],
+    "band": [
+      "8-15",
+      "8-15"
+    ]
+  },
+  "B1-1018": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      4,
+      1
+    ],
+    "band": [
+      "20-35",
+      "20-35"
+    ]
+  },
+  "B1-1019": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      4,
+      4
+    ],
+    "band": [
+      "20-35",
+      "20-35"
+    ]
+  },
+  "B1-1020": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      5,
+      5
+    ],
+    "band": [
+      "50+",
+      "50+"
+    ]
+  },
+  "B1-1021": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      5,
+      5
+    ],
+    "band": [
+      "80-120",
+      null
+    ]
+  },
+  "B1-1022": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      3,
+      2
+    ],
+    "band": [
+      "50+",
+      "50+"
+    ]
+  },
+  "B1-1023": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      4,
+      4
+    ],
+    "band": [
+      "20-40",
+      "20-40"
+    ]
+  },
+  "B1-1024": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      2,
+      2
+    ],
+    "band": [
+      "8-15",
+      "8-15"
+    ]
+  },
+  "B1-1025": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      5,
+      5
+    ],
+    "band": [
+      "20-35",
+      "20-35"
+    ]
+  },
+  "B1-1026": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      3,
+      4
+    ],
+    "band": [
+      "5-10",
+      "5-10"
+    ]
+  },
+  "B1-1027": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      3,
+      4
+    ],
+    "band": [
+      "8-15",
+      "8-15"
+    ]
+  },
+  "B1-1028": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      3,
+      4
+    ],
+    "band": [
+      "15-30",
+      "15-30"
+    ]
+  },
+  "B1-1029": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      5,
+      5
+    ],
+    "band": [
+      "20-40",
+      "20-40"
+    ]
+  },
+  "B1-1030": {
+    "tries": 2,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      4,
+      3
+    ],
+    "band": [
+      "20-35",
+      "20-35"
+    ]
+  },
+  "B1-1031": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      5,
+      4
+    ],
+    "band": [
+      "20-35",
+      "20-35"
+    ]
+  },
+  "B1-1032": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      4,
+      4
+    ],
+    "band": [
+      "5-10",
+      "5-10"
+    ]
+  },
+  "B1-1033": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      3,
+      3
+    ],
+    "band": [
+      "80-120",
+      null
+    ]
+  },
+  "B1-1034": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      4,
+      3
+    ],
+    "band": [
+      "20-35",
+      "20-35"
+    ]
+  },
+  "B1-1035": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      5,
+      4
+    ],
+    "band": [
+      "5-10",
+      null
+    ]
+  },
+  "B1-1036": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      5,
+      5
+    ],
+    "band": [
+      "20-35",
+      "20-35"
+    ]
+  },
+  "B1-1037": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      4,
+      4
+    ],
+    "band": [
+      "80-120",
+      null
+    ]
+  },
+  "B1-1038": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      4,
+      5
+    ],
+    "band": [
+      "20-40",
+      "20-40"
+    ]
+  },
+  "B1-1039": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      5,
+      5
+    ],
+    "band": [
+      "8-15",
+      "8-15"
+    ]
+  },
+  "B1-1040": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      5,
+      5
+    ],
+    "band": [
+      "80-120",
+      null
+    ]
+  },
+  "B2-1041": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      4,
+      3
+    ],
+    "band": [
+      "20-35",
+      "20-35"
+    ]
+  },
+  "B2-1042": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      3,
+      4
+    ],
+    "band": [
+      "80-120",
+      null
+    ]
+  },
+  "B2-1043": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      3,
+      4
+    ],
+    "band": [
+      "8-15",
+      "8-15"
+    ]
+  },
+  "B2-1044": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      3,
+      4
+    ],
+    "band": [
+      "15-30",
+      "15-30"
+    ]
+  },
+  "B2-1045": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      3,
+      1
+    ],
+    "band": [
+      "20-35",
+      "20-35"
+    ]
+  },
+  "B2-1046": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      5,
+      5
+    ],
+    "band": [
+      "8-15",
+      "8-15"
+    ]
+  },
+  "B2-1047": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      2,
+      1
+    ],
+    "band": [
+      "8-15",
+      "8-15"
+    ]
+  },
+  "B2-1048": {
+    "tries": 3,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      2,
+      2
+    ],
+    "band": [
+      "5-10",
+      null
+    ]
+  },
+  "B2-1049": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      5,
+      4
+    ],
+    "band": [
+      "20-35",
+      "20-35"
+    ]
+  },
+  "B2-1050": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      5,
+      5
+    ],
+    "band": [
+      "5-10",
+      "5-10"
+    ]
+  },
+  "B2-1051": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      2,
+      2
+    ],
+    "band": [
+      "8-15",
+      "8-15"
+    ]
+  },
+  "B2-1052": {
+    "tries": 3,
+    "problems": [],
+    "fact_diffs": {
+      "category": {
+        "want": "pendant",
+        "got": null
+      }
+    },
+    "score": [
+      5,
+      5
+    ],
+    "band": [
+      "5-10",
+      null
+    ]
+  },
+  "B2-1053": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      3,
+      2
+    ],
+    "band": [
+      "20-35",
+      "20-35"
+    ]
+  },
+  "B2-1054": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      5,
+      5
+    ],
+    "band": [
+      "15-30",
+      "15-30"
+    ]
+  },
+  "B2-1055": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      2,
+      2
+    ],
+    "band": [
+      "20-40",
+      "20-40"
+    ]
+  },
+  "B2-1056": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      5,
+      5
+    ],
+    "band": [
+      "50+",
+      "50+"
+    ]
+  },
+  "B2-1057": {
+    "tries": 2,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      3,
+      2
+    ],
+    "band": [
+      "20-35",
+      "20-35"
+    ]
+  },
+  "B2-1058": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      4,
+      4
+    ],
+    "band": [
+      "8-15",
+      "8-15"
+    ]
+  },
+  "B2-1059": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      5,
+      5
+    ],
+    "band": [
+      "80-120",
+      null
+    ]
+  },
+  "B2-1060": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      5,
+      5
+    ],
+    "band": [
+      "80-120",
+      null
+    ]
+  },
+  "B2-1061": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      2,
+      1
+    ],
+    "band": [
+      "20-35",
+      "20-35"
+    ]
+  },
+  "B2-1062": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      3,
+      1
+    ],
+    "band": [
+      "20-35",
+      "20-35"
+    ]
+  },
+  "B2-1063": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      5,
+      5
+    ],
+    "band": [
+      "15-30",
+      "15-30"
+    ]
+  },
+  "B2-1064": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      4,
+      4
+    ],
+    "band": [
+      "20-35",
+      "20-35"
+    ]
+  },
+  "B2-1065": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      3,
+      2
+    ],
+    "band": [
+      "20-35",
+      "20-35"
+    ]
+  },
+  "B2-1066": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      2,
+      2
+    ],
+    "band": [
+      "8-15",
+      "8-15"
+    ]
+  },
+  "B2-1067": {
+    "tries": 3,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      2,
+      2
+    ],
+    "band": [
+      "5-10",
+      null
+    ]
+  },
+  "B2-1068": {
+    "tries": 2,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      2,
+      1
+    ],
+    "band": [
+      "20-35",
+      "20-35"
+    ]
+  },
+  "B2-1069": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      3,
+      2
+    ],
+    "band": [
+      "20-40",
+      "20-40"
+    ]
+  },
+  "B2-1070": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      4,
+      1
+    ],
+    "band": [
+      "20-35",
+      "20-35"
+    ]
+  },
+  "B2-1071": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      4,
+      1
+    ],
+    "band": [
+      "20-35",
+      "20-35"
+    ]
+  },
+  "B2-1072": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      2,
+      2
+    ],
+    "band": [
+      "20-40",
+      "20-40"
+    ]
+  },
+  "B2-1073": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      5,
+      5
+    ],
+    "band": [
+      "15-30",
+      "15-30"
+    ]
+  },
+  "B2-1074": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      3,
+      4
+    ],
+    "band": [
+      "8-15",
+      "8-15"
+    ]
+  },
+  "B3-1075": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      5,
+      5
+    ],
+    "band": [
+      "8-15",
+      "8-15"
+    ]
+  },
+  "B3-1076": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      4,
+      5
+    ],
+    "band": [
+      "15-30",
+      "15-30"
+    ]
+  },
+  "B3-1077": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      3,
+      4
+    ],
+    "band": [
+      "15-30",
+      "15-30"
+    ]
+  },
+  "B3-1078": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      4,
+      4
+    ],
+    "band": [
+      "80-120",
+      null
+    ]
+  },
+  "B3-1079": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      2,
+      2
+    ],
+    "band": [
+      "15-30",
+      "15-30"
+    ]
+  },
+  "B3-1080": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      3,
+      4
+    ],
+    "band": [
+      "20-35",
+      "20-35"
+    ]
+  },
+  "B3-1081": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      4,
+      3
+    ],
+    "band": [
+      "15-30",
+      "15-30"
+    ]
+  },
+  "B3-1082": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      3,
+      2
+    ],
+    "band": [
+      "5-10",
+      "5-10"
+    ]
+  },
+  "B3-1083": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      3,
+      3
+    ],
+    "band": [
+      "20-40",
+      "20-40"
+    ]
+  },
+  "B3-1084": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      3,
+      4
+    ],
+    "band": [
+      "8-15",
+      "8-15"
+    ]
+  },
+  "B3-1085": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      2,
+      2
+    ],
+    "band": [
+      "8-15",
+      "8-15"
+    ]
+  },
+  "B3-1086": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      3,
+      4
+    ],
+    "band": [
+      "5-10",
+      "5-10"
+    ]
+  },
+  "B3-1087": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      3,
+      4
+    ],
+    "band": [
+      "20-35",
+      "20-35"
+    ]
+  },
+  "B3-1088": {
+    "tries": 2,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      5,
+      5
+    ],
+    "band": [
+      "5-10",
+      "5-10"
+    ]
+  },
+  "B3-1089": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      4,
+      5
+    ],
+    "band": [
+      "20-40",
+      "20-40"
+    ]
+  },
+  "B3-1090": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      4,
+      4
+    ],
+    "band": [
+      "20-35",
+      "20-35"
+    ]
+  },
+  "B3-1091": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      3,
+      2
+    ],
+    "band": [
+      "20-35",
+      "20-35"
+    ]
+  },
+  "B3-1092": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      2,
+      2
+    ],
+    "band": [
+      "80-120",
+      null
+    ]
+  },
+  "B3-1093": {
+    "tries": 3,
+    "problems": [],
+    "fact_diffs": {
+      "category": {
+        "want": "pendant",
+        "got": null
+      }
+    },
+    "score": [
+      3,
+      3
+    ],
+    "band": [
+      "5-10",
+      null
+    ]
+  },
+  "B3-1094": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      3,
+      4
+    ],
+    "band": [
+      "5-10",
+      "5-10"
+    ]
+  },
+  "B3-1095": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      3,
+      5
+    ],
+    "band": [
+      "20-40",
+      "20-40"
+    ]
+  },
+  "B3-1096": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      4,
+      3
+    ],
+    "band": [
+      "50+",
+      "50+"
+    ]
+  },
+  "B3-1097": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      3,
+      2
+    ],
+    "band": [
+      "20-35",
+      "20-35"
+    ]
+  },
+  "B3-1098": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      4,
+      4
+    ],
+    "band": [
+      "20-35",
+      "20-35"
+    ]
+  },
+  "B3-1099": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      4,
+      3
+    ],
+    "band": [
+      "50+",
+      "50+"
+    ]
+  },
+  "B3-1100": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      3,
+      4
+    ],
+    "band": [
+      "5-10",
+      "5-10"
+    ]
+  },
+  "B3-1101": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      3,
+      4
+    ],
+    "band": [
+      "8-15",
+      "8-15"
+    ]
+  },
+  "B3-1102": {
+    "tries": 1,
+    "problems": [],
+    "fact_diffs": {},
+    "score": [
+      2,
+      2
+    ],
+    "band": [
+      "80-120",
+      null
+    ]
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "visit_id": "B1-1001",
+  "store": "B1",
+  "salesperson": "Harish",
+  "date": "2026-10-17",
+  "outcome": "bought",
+  "asked_for": {
+    "category": "necklace",
+    "weight_band": "20-35",
+    "occasion": "cousin's engagement",
+    "budget_inr": null
+  },
+  "shown": [
+    "necklace 22 g",
+    "necklace 28 g",
+    "necklace 24 g"
+  ],
+  "reason_not_bought": null,
+  "objections": [
+    {
+      "type": "purity_trust",
+      "at": "00:39",
+      "quote": "Is it twenty-two carat? Does it have a hallmark?"
+    },
+    {
+      "type": "price_making_charge",
+      "at": "01:12",
+      "quote": "Hmm, a bit over one lakh. Is the making charge fixed?"
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "curious",
+      "cue": "words"
+    },
+    {
+      "at": "00:39",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    },
+    {
+      "at": "01:12",
+      "who": "customer",
+      "emotion": "hesitant",
+      "cue": "words"
+    },
+    {
+      "at": "01:40",
+      "who": "customer",
+      "emotion": "satisfied",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "curious -> satisfied",
+  "handling_score": 4,
+  "coaching_tip": "When she said 'I'll take this one' at 01:40, suggest a pair of light earrings to match the 24 g necklace for the engagement before you prepare the bill.",
+  "lost_demand": false,
+  "flags": [
+    "purity_trust recorded from a purity and hallmark question at 00:39, not from a stated doubt",
+    "chosen piece called twenty-four grams at 00:28 and 24.1 g at 00:57"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer",
+    "intent": "high",
+    "intent_evidence": "00:08 asked for 20-35 g necklace; 00:20 cousin's engagement next month"
+  },
+  "key_moments": [
+    {
+      "at": "00:28",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed three necklaces within the asked 20-35 g range"
+    },
+    {
+      "at": "00:45",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed BIS hallmark and HUID, offered loupe to check"
+    },
+    {
+      "at": "00:57",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "gave gold, making and GST breakup with total"
+    },
+    {
+      "at": "01:17",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "explained 12% is lowest slab, compared with temple design's 15%"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "01:46",
+      "what": "no matching earrings or add-on suggested for the engagement"
+    }
+  ],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": 12,
+    "total_quoted_inr": 101932,
+    "breakup_given": true,
+    "notes": "gold, 12% making and 3% GST broken out at 00:57"
+  },
+  "not_available": [],
+  "competitor": null,
+  "start": "19:10",
+  "duration_min": 8,
+  "value_inr": 101932,
+  "competitor_mentioned": false
+}

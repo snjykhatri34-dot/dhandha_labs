@@ -1,0 +1,120 @@
+{
+  "visit_id": "B1-1030",
+  "store": "B1",
+  "salesperson": "Kavya",
+  "date": "2026-10-17",
+  "outcome": "walked_out",
+  "asked_for": {
+    "category": "necklace",
+    "weight_band": "20-35",
+    "occasion": "daughter's engagement",
+    "budget_inr": null
+  },
+  "shown": [
+    "necklace 28 g",
+    "necklace 32 g"
+  ],
+  "reason_not_bought": "design_not_available",
+  "objections": [
+    {
+      "type": "design_not_available",
+      "at": "00:47",
+      "quote": "These are nice, but they're not what she wants."
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:47",
+      "who": "customer",
+      "emotion": "hesitant",
+      "cue": "words"
+    },
+    {
+      "at": "01:17",
+      "who": "customer",
+      "emotion": "disappointed",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> disappointed",
+  "handling_score": 3,
+  "coaching_tip": "When a customer arrives with a specific design from a picture we don't stock, ask to see the picture, offer to have it made or sourced in her weight range, and take her number before she leaves.",
+  "lost_demand": true,
+  "flags": [
+    "handling score between 3 and 4: in-range alternatives and a breakup were offered, but no order, sourcing or callback was offered for the asked design",
+    "design is chosen by the absent daughter; scored as design_not_available, not family_decision"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer; the absent daughter's preferred design decides",
+    "intent": "high",
+    "intent_evidence": "00:08 named the occasion, a 20-35 g range and said she was excited; 00:20 described a specific design"
+  },
+  "key_moments": [
+    {
+      "at": "00:37",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed two temple-style pieces within the asked weight range"
+    },
+    {
+      "at": "00:47",
+      "by": "customer",
+      "effect": "hurt",
+      "what": "rejected alternatives; daughter wants coins all around"
+    },
+    {
+      "at": "01:11",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "said everything in range was shown; no order or sourcing offered"
+    },
+    {
+      "at": "01:28",
+      "by": "customer",
+      "effect": "hurt",
+      "what": "declined the peacock piece and left"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "00:47",
+      "what": "no offer to see the daughter's picture or make the coin design to order"
+    },
+    {
+      "at": "01:11",
+      "what": "no offer to order or source the Lakshmi coin design"
+    },
+    {
+      "at": "01:28",
+      "what": "no number taken to follow up"
+    }
+  ],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": null,
+    "total_quoted_inr": null,
+    "breakup_given": false,
+    "notes": "breakup offered but not given at 00:54"
+  },
+  "not_available": [
+    {
+      "item": "necklace 20-35 g, Lakshmi coin temple design",
+      "at": "00:28",
+      "quote": "we don't have the Lakshmi coin temple design in stock right now",
+      "said_by": "salesperson",
+      "resolution": "alternative"
+    }
+  ],
+  "competitor": null,
+  "start": "17:58",
+  "duration_min": 9,
+  "value_inr": 0,
+  "competitor_mentioned": false
+}

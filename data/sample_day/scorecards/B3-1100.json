@@ -1,0 +1,110 @@
+{
+  "visit_id": "B3-1100",
+  "store": "B3",
+  "salesperson": "Suresh",
+  "date": "2026-10-17",
+  "outcome": "bought",
+  "asked_for": {
+    "category": "ring",
+    "weight_band": "5-10",
+    "occasion": null,
+    "budget_inr": null
+  },
+  "shown": [
+    "ring 6.4 g",
+    "ring 8.1 g"
+  ],
+  "reason_not_bought": null,
+  "objections": [
+    {
+      "type": "purity_trust",
+      "at": "00:34",
+      "quote": "Is the diamond certified?"
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:06",
+      "who": "customer",
+      "emotion": "curious",
+      "cue": "words"
+    },
+    {
+      "at": "01:12",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    },
+    {
+      "at": "01:24",
+      "who": "customer",
+      "emotion": "satisfied",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "curious -> satisfied",
+  "handling_score": 4,
+  "coaching_tip": "When the customer agrees at 01:24, suggest a matching piece such as earrings with the ring, and give the 00:49 price as separate gold, making, diamond and GST amounts instead of one total.",
+  "lost_demand": false,
+  "flags": [
+    "plain gold rings pointed out at 00:14 without weights; not listed in shown",
+    "diamond certification question at 00:34 scored as purity_trust",
+    "price components named at 00:49 but no amounts given; breakup_given set false",
+    "'for myself' not treated as an occasion"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer",
+    "intent": "high",
+    "intent_evidence": "00:06 asked for a ring for herself, five to ten grams"
+  },
+  "key_moments": [
+    {
+      "at": "00:27",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "gave weights of two diamond rings within the asked range"
+    },
+    {
+      "at": "00:39",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "confirmed diamond certificate and hallmarked 22 carat gold"
+    },
+    {
+      "at": "01:05",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "let her try the ring on"
+    },
+    {
+      "at": "01:24",
+      "by": "customer",
+      "effect": "helped",
+      "what": "confirmed fit and agreed to buy"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "00:49",
+      "what": "no amount-wise breakup of gold, making, diamond and GST"
+    },
+    {
+      "at": "01:30",
+      "what": "no add-on suggested after the purchase was agreed"
+    }
+  ],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": null,
+    "total_quoted_inr": 222500,
+    "breakup_given": false,
+    "notes": "components named without amounts at 00:49"
+  },
+  "not_available": [],
+  "competitor": null,
+  "start": "18:01",
+  "duration_min": 12,
+  "value_inr": 222500,
+  "competitor_mentioned": false
+}

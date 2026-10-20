@@ -1,0 +1,131 @@
+{
+  "visit_id": "B2-1062",
+  "store": "B2",
+  "salesperson": "Rohit",
+  "date": "2026-10-17",
+  "outcome": "walked_out",
+  "asked_for": {
+    "category": "necklace",
+    "weight_band": "20-35",
+    "occasion": "cousin's engagement",
+    "budget_inr": null
+  },
+  "shown": [
+    "necklace 52 g",
+    "necklace 48 g",
+    "necklace 55 g",
+    "necklace 42 g"
+  ],
+  "reason_not_bought": "weight_mismatch",
+  "objections": [
+    {
+      "type": "weight",
+      "at": "00:24",
+      "quote": "Oh, these look quite heavy."
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "curious",
+      "cue": "words"
+    },
+    {
+      "at": "00:24",
+      "who": "customer",
+      "emotion": "concerned",
+      "cue": "words"
+    },
+    {
+      "at": "00:35",
+      "who": "customer",
+      "emotion": "frustrated",
+      "cue": "words"
+    },
+    {
+      "at": "01:10",
+      "who": "customer",
+      "emotion": "disappointed",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "curious -> disappointed",
+  "handling_score": 1,
+  "coaching_tip": "When a customer gives a weight range we can't meet on display, say so straight away, offer to bring a 20-35 g necklace from another branch or order one before the engagement, and take her number so we can call her.",
+  "lost_demand": true,
+  "flags": [
+    "making charge asked at 00:47 with no pushback after the 00:52 quote; not recorded as an objection"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer",
+    "intent": "high",
+    "intent_evidence": "00:08 named a 20-35 g range for a cousin's engagement next month"
+  },
+  "key_moments": [
+    {
+      "at": "00:17",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "showed 48-55 g necklaces after a 20-35 g ask"
+    },
+    {
+      "at": "00:41",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "offered a 42 g piece after customer repeated the range"
+    },
+    {
+      "at": "01:03",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "said most necklaces are heavy, no other option offered"
+    },
+    {
+      "at": "01:10",
+      "by": "customer",
+      "effect": "hurt",
+      "what": "decided the pieces weren't what she wanted and left"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "00:41",
+      "what": "no necklace in the asked 20-35 g range shown"
+    },
+    {
+      "at": "00:52",
+      "what": "no price breakup or total given after making charge question"
+    },
+    {
+      "at": "01:03",
+      "what": "no offer to source it from another branch or order, and no number taken"
+    },
+    {
+      "at": "01:14",
+      "what": "let customer leave without taking a number to follow up"
+    }
+  ],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": 14,
+    "total_quoted_inr": null,
+    "breakup_given": false,
+    "notes": "14% making plus 3% GST quoted at 00:52"
+  },
+  "not_available": [
+    {
+      "item": "necklace 20-35 g",
+      "at": "01:03",
+      "quote": "Most of our necklaces are in this range, ma'am.",
+      "said_by": "salesperson",
+      "resolution": "none"
+    }
+  ],
+  "competitor": null,
+  "start": "13:13",
+  "duration_min": 10,
+  "value_inr": 0,
+  "competitor_mentioned": false
+}

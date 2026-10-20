@@ -1,0 +1,107 @@
+{
+  "visit_id": "B3-1076",
+  "store": "B3",
+  "salesperson": "Suresh",
+  "date": "2026-10-17",
+  "outcome": "bought",
+  "asked_for": {
+    "category": "chain",
+    "weight_band": "15-30",
+    "occasion": "daily wear",
+    "budget_inr": null
+  },
+  "shown": [
+    "chain 18 g",
+    "chain 22 g",
+    "chain 16 g"
+  ],
+  "reason_not_bought": null,
+  "objections": [
+    {
+      "type": "price_budget",
+      "at": "01:05",
+      "quote": "Hmm, a bit more than I'd thought."
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "01:05",
+      "who": "customer",
+      "emotion": "hesitant",
+      "cue": "words"
+    },
+    {
+      "at": "01:30",
+      "who": "customer",
+      "emotion": "satisfied",
+      "cue": "words"
+    },
+    {
+      "at": "01:52",
+      "who": "customer",
+      "emotion": "relaxed",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> relaxed",
+  "handling_score": 5,
+  "coaching_tip": "Keep doing what you did at 00:51 and 01:10: give the full gold, making and GST breakup up front, then price the other chains openly so the customer can choose for himself.",
+  "lost_demand": false,
+  "flags": [
+    "asked range of fifteen to thirty grams mapped to band 15-30, although 15 g alone would fall in the lower band",
+    "price_budget objection raised without a stated budget: customer said only that the price was more than expected",
+    "durability question at 00:28 not scored as an objection: salesperson answered it and the customer did not push back"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer",
+    "intent": "high",
+    "intent_evidence": "00:08 asked for a daily-wear chain between fifteen and thirty grams"
+  },
+  "key_moments": [
+    {
+      "at": "00:16",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed three chains, all within the asked weight range"
+    },
+    {
+      "at": "00:35",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "answered the durability concern and pointed out the hallmark and HUID"
+    },
+    {
+      "at": "01:10",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "priced the alternatives honestly, including the trade-offs"
+    },
+    {
+      "at": "01:21",
+      "by": "customer",
+      "effect": "helped",
+      "what": "chose the sturdier rope chain over the cheaper one"
+    }
+  ],
+  "missed_opportunities": [],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": 12,
+    "total_quoted_inr": 81950,
+    "breakup_given": true,
+    "notes": "breakup of gold, making and GST given at 00:51"
+  },
+  "not_available": [],
+  "competitor": null,
+  "start": "17:09",
+  "duration_min": 15,
+  "value_inr": 81951,
+  "competitor_mentioned": false
+}

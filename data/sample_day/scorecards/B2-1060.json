@@ -1,0 +1,107 @@
+{
+  "visit_id": "B2-1060",
+  "store": "B2",
+  "salesperson": "Priya",
+  "date": "2026-10-17",
+  "outcome": "bought",
+  "asked_for": {
+    "category": "bridal set",
+    "weight_band": null,
+    "occasion": "daughter's wedding in February",
+    "budget_inr": null
+  },
+  "shown": [
+    "bridal set 86 g",
+    "bridal set 98 g",
+    "bridal set 114 g",
+    "bridal set 90 g"
+  ],
+  "reason_not_bought": null,
+  "objections": [
+    {
+      "type": "price_budget",
+      "at": "00:58",
+      "quote": "That's a bit more than we planned for."
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:38",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    },
+    {
+      "at": "00:58",
+      "who": "customer",
+      "emotion": "concerned",
+      "cue": "words"
+    },
+    {
+      "at": "01:39",
+      "who": "customer",
+      "emotion": "reassured",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> reassured",
+  "handling_score": 5,
+  "coaching_tip": "Keep doing what you did at 01:02: when the total went past the family's plan, you offered both an old-gold exchange and the same temple design at a lighter weight.",
+  "lost_demand": false,
+  "flags": [
+    "no band for bridal set; asked for 80-120 g",
+    "budget over plan stated at 00:58 but no amount given"
+  ],
+  "customer": {
+    "party": "family",
+    "decision_maker": "Speaker B (bride's parent, addressed as ma'am); Speaker C agrees 'if she's happy'",
+    "intent": "high",
+    "intent_evidence": "00:08 daughter's wedding in February, bridal sets of 80-120 grams"
+  },
+  "key_moments": [
+    {
+      "at": "00:22",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed three hallmarked sets within the asked 80-120 g range"
+    },
+    {
+      "at": "00:42",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "gave full breakup: gold, 14% making, stones, GST"
+    },
+    {
+      "at": "01:02",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "offered old-gold exchange and lighter 90 g temple version"
+    },
+    {
+      "at": "01:21",
+      "by": "customer",
+      "effect": "helped",
+      "what": "agreed to buy the 98 g temple set at quoted total"
+    }
+  ],
+  "missed_opportunities": [],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": 14,
+    "total_quoted_inr": 1283500,
+    "breakup_given": true,
+    "notes": "full breakup of gold, making, stones and GST given at 00:42"
+  },
+  "not_available": [],
+  "competitor": null,
+  "start": "20:08",
+  "duration_min": 39,
+  "value_inr": 1283525,
+  "competitor_mentioned": false
+}

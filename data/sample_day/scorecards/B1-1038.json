@@ -1,0 +1,104 @@
+{
+  "visit_id": "B1-1038",
+  "store": "B1",
+  "salesperson": "Harish",
+  "date": "2026-10-17",
+  "outcome": "deferred_with_follow_up",
+  "asked_for": {
+    "category": "bangle",
+    "weight_band": "20-40",
+    "occasion": "sister-in-law's wedding in December",
+    "budget_inr": null
+  },
+  "shown": [
+    "bangle pair 24 g",
+    "bangle pair 31.4 g",
+    "bangle pair 38 g"
+  ],
+  "reason_not_bought": "family_decision",
+  "objections": [
+    {
+      "type": "family_decision",
+      "at": "01:14",
+      "quote": "my mother-in-law is paying for half"
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:07",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "01:14",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    },
+    {
+      "at": "01:42",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> interested",
+  "handling_score": 5,
+  "coaching_tip": "Keep doing what you did at 01:23: when a family member has to approve, offer to hold the piece until a set day and take the customer's number.",
+  "lost_demand": false,
+  "flags": [
+    "weight range 20-40 g was stated for the pair; band applied to pair weight",
+    "price explained as making 12% plus 3% GST but no separate gold value given, so breakup_given is false"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer; mother-in-law must see them before deciding",
+    "intent": "high",
+    "intent_evidence": "00:07 asked for 20-40 g bangle pair; 00:18 wedding in December"
+  },
+  "key_moments": [
+    {
+      "at": "00:25",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed three pairs all within the asked weight range"
+    },
+    {
+      "at": "00:43",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "gave weight, HUID, making percent, GST and total"
+    },
+    {
+      "at": "01:14",
+      "by": "customer",
+      "effect": "hurt",
+      "what": "mother-in-law paying half must see them first"
+    },
+    {
+      "at": "01:23",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "held the pair until Saturday and took her number"
+    }
+  ],
+  "missed_opportunities": [],
+  "next_step": {
+    "what": "return visit with mother-in-law; kundan pair held",
+    "when": "Saturday around five",
+    "who": "Harish"
+  },
+  "price_talk": {
+    "making_pct": 12,
+    "total_quoted_inr": 304000,
+    "breakup_given": false,
+    "notes": "making 12% plus 3% GST explained at 00:43"
+  },
+  "not_available": [],
+  "competitor": null,
+  "start": "14:47",
+  "duration_min": 10,
+  "value_inr": 0,
+  "competitor_mentioned": false
+}

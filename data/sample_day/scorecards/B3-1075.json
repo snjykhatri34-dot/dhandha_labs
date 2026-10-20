@@ -1,0 +1,113 @@
+{
+  "visit_id": "B3-1075",
+  "store": "B3",
+  "salesperson": "Neha",
+  "date": "2026-10-17",
+  "outcome": "bought",
+  "asked_for": {
+    "category": "earrings",
+    "weight_band": "8-15",
+    "occasion": "daughter's engagement",
+    "budget_inr": null
+  },
+  "shown": [
+    "earrings 9 g",
+    "earrings 12 g",
+    "earrings 14 g",
+    "pendant"
+  ],
+  "reason_not_bought": null,
+  "objections": [
+    {
+      "type": "price_budget",
+      "at": "00:29",
+      "quote": "But with all those diamonds, I'm sure it's expensive."
+    },
+    {
+      "type": "purity_trust",
+      "at": "00:54",
+      "quote": "Is the gold hallmarked? I want to be sure for something like this."
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:29",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    },
+    {
+      "at": "00:54",
+      "who": "customer",
+      "emotion": "concerned",
+      "cue": "words"
+    },
+    {
+      "at": "01:55",
+      "who": "customer",
+      "emotion": "satisfied",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> satisfied",
+  "handling_score": 5,
+  "coaching_tip": "Keep doing what you did at 00:35 and 00:59: give the full gold, diamond, making and GST breakup straight away, then show the HUID and offer a lighter pair before the customer has to ask.",
+  "lost_demand": false,
+  "flags": [
+    "price objection at 00:29 typed price_budget: customer expected a high price but stated no budget",
+    "cluster pair said as 14 g at 00:16 and 14.2 g at 00:35; listed as 14 g",
+    "matching pendant named at 01:43 with no weight stated"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer",
+    "intent": "high",
+    "intent_evidence": "00:08 named daughter's engagement, an 8-15 g range and diamonds"
+  },
+  "key_moments": [
+    {
+      "at": "00:16",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed three pairs inside the asked 8-15 g range"
+    },
+    {
+      "at": "00:35",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "gave full breakup with diamond certificate after price worry"
+    },
+    {
+      "at": "00:59",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed hallmark and HUID, offered lighter 12 g drop"
+    },
+    {
+      "at": "01:28",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "added lifetime free cleaning and diamond buyback"
+    }
+  ],
+  "missed_opportunities": [],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": 12,
+    "total_quoted_inr": 421400,
+    "breakup_given": true,
+    "notes": "full breakup with diamond certificate at 00:35"
+  },
+  "not_available": [],
+  "competitor": null,
+  "start": "19:49",
+  "duration_min": 21,
+  "value_inr": 421390,
+  "competitor_mentioned": false
+}

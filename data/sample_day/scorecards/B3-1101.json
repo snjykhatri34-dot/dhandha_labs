@@ -1,0 +1,123 @@
+{
+  "visit_id": "B3-1101",
+  "store": "B3",
+  "salesperson": "Vikram",
+  "date": "2026-10-17",
+  "outcome": "bought",
+  "asked_for": {
+    "category": "earrings",
+    "weight_band": "8-15",
+    "occasion": "first salary, self-purchase",
+    "budget_inr": null
+  },
+  "shown": [
+    "earrings tray, 8-15 g range",
+    "earrings 11.4 g"
+  ],
+  "reason_not_bought": null,
+  "objections": [
+    {
+      "type": "purity_trust",
+      "at": "00:31",
+      "quote": "And is it hallmarked? My mother told me to check that."
+    },
+    {
+      "type": "price_making_charge",
+      "at": "00:55",
+      "quote": "Is the making charge fixed, or can it come down a little?"
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:07",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:42",
+      "who": "customer",
+      "emotion": "reassured",
+      "cue": "words"
+    },
+    {
+      "at": "00:55",
+      "who": "customer",
+      "emotion": "hesitant",
+      "cue": "words"
+    },
+    {
+      "at": "01:19",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> delighted",
+  "handling_score": 4,
+  "coaching_tip": "When she asked at 00:55 whether the making charge could come down, show the actual making amount next to the gold and pearl values, and after she says yes, suggest a matching pendant or ring to mark her first salary.",
+  "lost_demand": false,
+  "flags": [
+    "price at 00:46 named gold, making and GST without amounts or pearl value; breakup_given set false",
+    "individual weights of tray pieces not stated; only the 11.4 g pair was weighed aloud"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer",
+    "intent": "high",
+    "intent_evidence": "00:07 first salary purchase, earrings between eight and fifteen grams"
+  },
+  "key_moments": [
+    {
+      "at": "00:15",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed a tray of earrings in the asked weight range"
+    },
+    {
+      "at": "00:35",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "pointed out hallmark and HUID near the hook"
+    },
+    {
+      "at": "00:59",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "called making charge standard without explaining it"
+    },
+    {
+      "at": "01:19",
+      "by": "customer",
+      "effect": "helped",
+      "what": "tried them on and decided to buy"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "00:46",
+      "what": "no amounts given for gold, making and pearls in the total"
+    },
+    {
+      "at": "00:59",
+      "what": "no explanation of the making charge when asked if it could come down"
+    },
+    {
+      "at": "01:26",
+      "what": "no add-on such as a matching pendant suggested after the yes"
+    }
+  ],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": null,
+    "total_quoted_inr": 74077,
+    "breakup_given": false,
+    "notes": "components named without amounts at 00:46"
+  },
+  "not_available": [],
+  "competitor": null,
+  "start": "12:47",
+  "duration_min": 7,
+  "value_inr": 74077,
+  "competitor_mentioned": false
+}

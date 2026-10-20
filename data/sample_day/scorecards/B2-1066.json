@@ -1,0 +1,123 @@
+{
+  "visit_id": "B2-1066",
+  "store": "B2",
+  "salesperson": "Akshay",
+  "date": "2026-10-17",
+  "outcome": "walked_out",
+  "asked_for": {
+    "category": "earrings",
+    "weight_band": "8-15",
+    "occasion": "office wear",
+    "budget_inr": null
+  },
+  "shown": [
+    "earrings 12 g",
+    "earrings 9 g"
+  ],
+  "reason_not_bought": "purity_trust",
+  "objections": [
+    {
+      "type": "purity_trust",
+      "at": "00:24",
+      "quote": "Can you tell me if these are hallmarked?"
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:07",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:53",
+      "who": "customer",
+      "emotion": "skeptical",
+      "cue": "words"
+    },
+    {
+      "at": "01:17",
+      "who": "customer",
+      "emotion": "frustrated",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> frustrated",
+  "handling_score": 2,
+  "coaching_tip": "When a customer asks for the HUID, show the hallmark stamp and number right away or offer a purity test, and if no pair in her weight has a HUID, offer to bring one from another branch or order it and take her number.",
+  "lost_demand": false,
+  "flags": [
+    "unclear whether the shown studs lack a HUID; at 00:45 the salesperson said only some older stock lacks it"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer",
+    "intent": "high",
+    "intent_evidence": "00:07 asked for earrings of eight to fifteen grams for office wear"
+  },
+  "key_moments": [
+    {
+      "at": "00:15",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed two pairs within the asked weight range"
+    },
+    {
+      "at": "00:31",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "answered the HUID request with store reputation, not the stamp"
+    },
+    {
+      "at": "00:45",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "admitted older stock lacks HUID without offering proof of purity"
+    },
+    {
+      "at": "01:24",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "said 'As you wish' with no attempt to recover"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "00:31",
+      "what": "hallmark stamp and HUID not shown when first asked"
+    },
+    {
+      "at": "01:00",
+      "what": "no purity test offered to confirm twenty-two carat"
+    },
+    {
+      "at": "01:11",
+      "what": "no offer to source it from another branch or order, and no number taken"
+    },
+    {
+      "at": "01:24",
+      "what": "no number taken to follow up"
+    }
+  ],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": null,
+    "total_quoted_inr": null,
+    "breakup_given": false,
+    "notes": null
+  },
+  "not_available": [
+    {
+      "item": "earrings 8-15 g with HUID",
+      "at": "01:11",
+      "quote": "These are the ones we have right now in this weight.",
+      "said_by": "salesperson",
+      "resolution": "none"
+    }
+  ],
+  "competitor": null,
+  "start": "11:05",
+  "duration_min": 13,
+  "value_inr": 0,
+  "competitor_mentioned": false
+}

@@ -1,0 +1,110 @@
+{
+  "visit_id": "B3-1077",
+  "store": "B3",
+  "salesperson": "Vikram",
+  "date": "2026-10-17",
+  "outcome": "bought",
+  "asked_for": {
+    "category": "chain",
+    "weight_band": "15-30",
+    "occasion": null,
+    "budget_inr": null
+  },
+  "shown": [
+    "chain 18 g",
+    "chain 22 g",
+    "chain 27 g"
+  ],
+  "reason_not_bought": null,
+  "objections": [],
+  "emotions": [
+    {
+      "at": "00:07",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:51",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    },
+    {
+      "at": "01:09",
+      "who": "customer",
+      "emotion": "satisfied",
+      "cue": "words"
+    },
+    {
+      "at": "01:16",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> delighted",
+  "handling_score": 4,
+  "coaching_tip": "Once she says 'I'll take it' on the box chain, suggest a matching pendant or earrings before you prepare the bill, and give the gold and making amounts alongside the total.",
+  "lost_demand": false,
+  "flags": [
+    "00:24 carat question treated as an information request, not a purity_trust objection",
+    "box chain shown as 22 g at 00:13, billed as 22.4 g at 00:57",
+    "price components named at 00:57 but no separate amounts or making percent, so breakup_given set false"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer",
+    "intent": "high",
+    "intent_evidence": "00:07 asked for a gold chain for herself between fifteen and thirty grams"
+  },
+  "key_moments": [
+    {
+      "at": "00:13",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed three chains all within the asked 15-30 g range"
+    },
+    {
+      "at": "00:27",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "confirmed 22 carat, hallmark and HUID on the clasp"
+    },
+    {
+      "at": "00:51",
+      "by": "customer",
+      "effect": "helped",
+      "what": "tried it on and said it was exactly what she wanted"
+    },
+    {
+      "at": "00:57",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "quoted a clear total with weight, making and GST named"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "00:57",
+      "what": "no separate gold, making and GST amounts given with the total"
+    },
+    {
+      "at": "01:13",
+      "what": "no add-on such as a pendant or earrings suggested"
+    }
+  ],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": null,
+    "total_quoted_inr": 265124,
+    "breakup_given": false,
+    "notes": "total for 22.4 g with making and 3% GST quoted at 00:57"
+  },
+  "not_available": [],
+  "competitor": null,
+  "start": "20:25",
+  "duration_min": 7,
+  "value_inr": 265124,
+  "competitor_mentioned": false
+}

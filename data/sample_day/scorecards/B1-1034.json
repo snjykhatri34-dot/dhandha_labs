@@ -1,0 +1,132 @@
+{
+  "visit_id": "B1-1034",
+  "store": "B1",
+  "salesperson": "Harish",
+  "date": "2026-10-17",
+  "outcome": "deferred_with_follow_up",
+  "asked_for": {
+    "category": "necklace",
+    "weight_band": "20-35",
+    "occasion": "daughter's engagement",
+    "budget_inr": null
+  },
+  "shown": [
+    "necklace 48 g",
+    "necklace 52 g",
+    "necklace 41 g"
+  ],
+  "reason_not_bought": "weight_mismatch",
+  "objections": [
+    {
+      "type": "weight",
+      "at": "00:33",
+      "quote": "That's much more than I said."
+    },
+    {
+      "type": "price_budget",
+      "at": "00:57",
+      "quote": "At today's rate that will go well beyond what we planned."
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "curious",
+      "cue": "words"
+    },
+    {
+      "at": "00:23",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    },
+    {
+      "at": "00:33",
+      "who": "customer",
+      "emotion": "disappointed",
+      "cue": "words"
+    },
+    {
+      "at": "01:25",
+      "who": "customer",
+      "emotion": "skeptical",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "curious -> skeptical",
+  "handling_score": 3,
+  "coaching_tip": "When someone names a weight range, pull only pieces inside it before opening the tray, and if the range is short like at 00:39, go straight to the hold-and-callback offer you made at 01:03 instead of pitching the latest heavier designs.",
+  "lost_demand": true,
+  "flags": [
+    "handling score between rubric rows: 41-52 g shown after a 20-35 g ask, but recovered with a Saturday hold and callback",
+    "budget not stated; customer only said the price would go beyond what was planned"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer",
+    "intent": "high",
+    "intent_evidence": "00:08 daughter's engagement and a 20-35 g necklace"
+  },
+  "key_moments": [
+    {
+      "at": "00:26",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "showed 48 g and 52 g necklaces after a 20-35 g ask"
+    },
+    {
+      "at": "00:39",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "pushed latest designs; said lighter ones are mostly sold out"
+    },
+    {
+      "at": "01:03",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "offered Saturday's 25-32 g stock, with pieces held for her"
+    },
+    {
+      "at": "01:18",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "took her number to call once stock is unpacked"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "00:16",
+      "what": "no piece in the asked 20-35 g range shown first"
+    },
+    {
+      "at": "00:57",
+      "what": "budget not asked after 'beyond what we planned'; no price breakup given"
+    }
+  ],
+  "next_step": {
+    "what": "view new 25-32 g necklaces; two or three kept aside; callback once unpacked",
+    "when": "Saturday after eleven",
+    "who": "Harish"
+  },
+  "price_talk": {
+    "making_pct": null,
+    "total_quoted_inr": null,
+    "breakup_given": false,
+    "notes": "no price quoted; customer raised today's rate at 00:57"
+  },
+  "not_available": [
+    {
+      "item": "necklace 20-35 g",
+      "at": "00:39",
+      "quote": "The lighter ones in this pattern are mostly sold out right now.",
+      "said_by": "salesperson",
+      "resolution": "callback"
+    }
+  ],
+  "competitor": null,
+  "start": "18:17",
+  "duration_min": 11,
+  "value_inr": 0,
+  "competitor_mentioned": false
+}

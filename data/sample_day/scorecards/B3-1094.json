@@ -1,0 +1,124 @@
+{
+  "visit_id": "B3-1094",
+  "store": "B3",
+  "salesperson": "Neha",
+  "date": "2026-10-17",
+  "outcome": "bought",
+  "asked_for": {
+    "category": "ring",
+    "weight_band": "5-10",
+    "occasion": "daughter's engagement",
+    "budget_inr": null
+  },
+  "shown": [
+    "ring 7 g",
+    "ring 9.5 g"
+  ],
+  "reason_not_bought": null,
+  "objections": [
+    {
+      "type": "purity_trust",
+      "at": "00:31",
+      "quote": "Is the diamond certified?"
+    },
+    {
+      "type": "price_budget",
+      "at": "01:02",
+      "quote": "That's more than I expected."
+    },
+    {
+      "type": "price_making_charge",
+      "at": "01:02",
+      "quote": "Is the making charge fixed?"
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:07",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "01:02",
+      "who": "customer",
+      "emotion": "concerned",
+      "cue": "words"
+    },
+    {
+      "at": "01:16",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    },
+    {
+      "at": "01:27",
+      "who": "customer",
+      "emotion": "satisfied",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> satisfied",
+  "handling_score": 4,
+  "coaching_tip": "When the customer said the total was more than she expected at 01:02, explain what the fourteen percent making covers rather than only calling it fixed, and once she decides to buy, suggest a matching piece for the engagement.",
+  "lost_demand": false,
+  "flags": [
+    "price_budget objection inferred from 'more than I expected'; no budget figure stated",
+    "purity_trust raised as a question about diamond certification, not a stated doubt"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer",
+    "intent": "high",
+    "intent_evidence": "00:07 asked for a ring of 5-10 g; 00:15 said it is for her daughter's engagement"
+  },
+  "key_moments": [
+    {
+      "at": "00:22",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed men's rings within the asked 5-10 g range"
+    },
+    {
+      "at": "00:35",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "confirmed diamond certificate and showed HUID inside band"
+    },
+    {
+      "at": "01:06",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "called making charge fixed without explaining it"
+    },
+    {
+      "at": "01:16",
+      "by": "customer",
+      "effect": "helped",
+      "what": "liked the stone under the light for daily wear"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "01:06",
+      "what": "no explanation of what the making charge covers after price concern"
+    },
+    {
+      "at": "01:27",
+      "what": "no add-on suggested for the engagement after the close"
+    }
+  ],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": 14,
+    "total_quoted_inr": 190748,
+    "breakup_given": true,
+    "notes": "gold, making, diamond and GST split at 00:47"
+  },
+  "not_available": [],
+  "competitor": null,
+  "start": "19:53",
+  "duration_min": 9,
+  "value_inr": 190748,
+  "competitor_mentioned": false
+}

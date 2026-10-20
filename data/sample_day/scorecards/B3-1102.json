@@ -1,0 +1,124 @@
+{
+  "visit_id": "B3-1102",
+  "store": "B3",
+  "salesperson": "Vikram",
+  "date": "2026-10-17",
+  "outcome": "walked_out",
+  "asked_for": {
+    "category": "bridal set",
+    "weight_band": null,
+    "occasion": "daughter's wedding in February",
+    "budget_inr": null
+  },
+  "shown": [
+    "bridal set 94 g",
+    "bridal set 108 g"
+  ],
+  "reason_not_bought": "old_gold_exchange_rate",
+  "objections": [
+    {
+      "type": "old_gold_exchange_rate",
+      "at": "00:30",
+      "quote": "What will you give for it?"
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:30",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    },
+    {
+      "at": "00:55",
+      "who": "customer",
+      "emotion": "skeptical",
+      "cue": "words"
+    },
+    {
+      "at": "01:21",
+      "who": "customer",
+      "emotion": "concerned",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> concerned",
+  "handling_score": 2,
+  "coaching_tip": "When a family brings old gold, test it in front of them before melting and give the exact rate and deduction, as they asked at 01:08, instead of saying it's the same everywhere.",
+  "lost_demand": false,
+  "flags": [
+    "no band for bridal set; asked for 80-120 g",
+    "category 'bridal set' not checked against CLAUDE.md category names",
+    "request to test old gold in front of them (01:08) could also read as purity_trust; scored as part of the exchange-rate objection",
+    "decision_maker roles taken from salesperson's 'ma'am, sir' and 'our daughter'"
+  ],
+  "customer": {
+    "party": "family",
+    "decision_maker": "mother and father of the bride; mother ends the visit",
+    "intent": "high",
+    "intent_evidence": "00:08 daughter's wedding in February, bridal set of 80-120 g"
+  },
+  "key_moments": [
+    {
+      "at": "00:21",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed two bridal sets within the asked 80-120 g range"
+    },
+    {
+      "at": "00:30",
+      "by": "customer",
+      "effect": "helped",
+      "what": "liked the temple-work set and raised 40 g old gold exchange"
+    },
+    {
+      "at": "01:14",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "declined to test old gold in front of the customers"
+    },
+    {
+      "at": "01:28",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "said 'you'll have to trust us' instead of giving a figure"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "00:39",
+      "what": "no exchange rate or deduction figure given for the old gold"
+    },
+    {
+      "at": "01:08",
+      "what": "no purity test offered in front of the customers before melting"
+    },
+    {
+      "at": "00:30",
+      "what": "no price or breakup given for the temple-work set they liked"
+    },
+    {
+      "at": "01:33",
+      "what": "no number taken and no offer to hold the temple set"
+    }
+  ],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": null,
+    "total_quoted_inr": null,
+    "breakup_given": false,
+    "notes": "old gold deduction quoted vaguely as 10-15% at 00:48"
+  },
+  "not_available": [],
+  "competitor": null,
+  "start": "17:30",
+  "duration_min": 49,
+  "value_inr": 0,
+  "competitor_mentioned": false
+}

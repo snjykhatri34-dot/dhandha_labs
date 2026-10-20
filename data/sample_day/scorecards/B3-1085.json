@@ -1,0 +1,124 @@
+{
+  "visit_id": "B3-1085",
+  "store": "B3",
+  "salesperson": "Suresh",
+  "date": "2026-10-17",
+  "outcome": "deferred_with_follow_up",
+  "asked_for": {
+    "category": "earrings",
+    "weight_band": "8-15",
+    "occasion": "daughter's engagement",
+    "budget_inr": null
+  },
+  "shown": [
+    "earrings 12 g",
+    "earrings 9.5 g"
+  ],
+  "reason_not_bought": "old_gold_exchange_rate",
+  "objections": [
+    {
+      "type": "old_gold_exchange_rate",
+      "at": "00:34",
+      "quote": "What rate will you give on those?"
+    },
+    {
+      "type": "family_decision",
+      "at": "01:17",
+      "quote": "Mummy, maybe ask Papa before melting the chain?"
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:29",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    },
+    {
+      "at": "01:03",
+      "who": "customer",
+      "emotion": "concerned",
+      "cue": "words"
+    },
+    {
+      "at": "01:34",
+      "who": "customer",
+      "emotion": "hesitant",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> hesitant",
+  "handling_score": 2,
+  "coaching_tip": "When a customer asks how much will be deducted on old gold, give a typical percentage range and offer a quick purity test at the counter, so they know the value before agreeing to melt anything.",
+  "lost_demand": false,
+  "flags": [
+    "jhumka style requested at 00:15; unclear whether the pairs shown at 00:20 were jhumkas",
+    "main reason chosen as old_gold_exchange_rate over family_decision: consulting the father at 01:17 arose from the unclear melting deduction",
+    "two customer speakers: Speaker B (mother) and Speaker C (daughter)"
+  ],
+  "customer": {
+    "party": "family",
+    "decision_maker": "mother; father to be consulted before melting the chain",
+    "intent": "high",
+    "intent_evidence": "00:08 named daughter's engagement and an 8 to 15 gram range"
+  },
+  "key_moments": [
+    {
+      "at": "00:20",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed two pairs within the asked 8-15 g range"
+    },
+    {
+      "at": "00:29",
+      "by": "customer",
+      "effect": "helped",
+      "what": "daughter loved the twelve-gram pair"
+    },
+    {
+      "at": "01:10",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "would not give even a rough deduction percentage"
+    },
+    {
+      "at": "01:28",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "held the pair till Saturday and took the number"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "00:42",
+      "what": "no typical deduction range or on-the-spot purity test offered"
+    },
+    {
+      "at": "00:34",
+      "what": "no making charge or total quoted for the chosen twelve-gram pair"
+    }
+  ],
+  "next_step": {
+    "what": "twelve-gram pair held; family to consult father on old gold",
+    "when": "Saturday morning",
+    "who": "Suresh"
+  },
+  "price_talk": {
+    "making_pct": null,
+    "total_quoted_inr": null,
+    "breakup_given": false,
+    "notes": "old gold deduction left unquantified at 01:10"
+  },
+  "not_available": [],
+  "competitor": null,
+  "start": "19:15",
+  "duration_min": 9,
+  "value_inr": 0,
+  "competitor_mentioned": false
+}

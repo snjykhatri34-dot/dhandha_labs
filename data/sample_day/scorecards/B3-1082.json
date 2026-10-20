@@ -1,0 +1,121 @@
+{
+  "visit_id": "B3-1082",
+  "store": "B3",
+  "salesperson": "Suresh",
+  "date": "2026-10-17",
+  "outcome": "walked_out",
+  "asked_for": {
+    "category": "ring",
+    "weight_band": "5-10",
+    "occasion": null,
+    "budget_inr": null
+  },
+  "shown": [
+    "ring 6-9 g (tray of polished bands)",
+    "ring 7 g"
+  ],
+  "reason_not_bought": "design_not_available",
+  "objections": [
+    {
+      "type": "design_not_available",
+      "at": "00:32",
+      "quote": "Nothing with a matte finish at all?"
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:17",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:42",
+      "who": "customer",
+      "emotion": "hesitant",
+      "cue": "words"
+    },
+    {
+      "at": "00:54",
+      "who": "customer",
+      "emotion": "disappointed",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> disappointed",
+  "handling_score": 2,
+  "coaching_tip": "When a customer asks for a design we don't stock, like this matte band with rope edges, offer to order it or check another branch, give her a likely timeline, and take her number so we can call her back.",
+  "lost_demand": true,
+  "flags": [
+    "not_available resolution set to 'alternative' for the 7 g groove band at 00:47; customer said at 00:54 it was not the same",
+    "customer asked at 01:02 whether the design could be made or ordered; salesperson gave no answer either way",
+    "no price discussed"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer",
+    "intent": "high",
+    "intent_evidence": "00:07 and 00:17 asked for a 5-10 g ring in a specific matte rope-edge design"
+  },
+  "key_moments": [
+    {
+      "at": "00:25",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "said the matte rope-edge design isn't available; only polished bands"
+    },
+    {
+      "at": "00:47",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed a 7 g grooved band as the closest match"
+    },
+    {
+      "at": "01:06",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "gave a vague 'can't say' when asked to order it"
+    },
+    {
+      "at": "01:11",
+      "by": "customer",
+      "effect": "hurt",
+      "what": "gave up on the visit: 'leave it then'"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "00:25",
+      "what": "no offer to order the design or check another branch when unavailable"
+    },
+    {
+      "at": "01:06",
+      "what": "no offer to check with the karigar and confirm the order"
+    },
+    {
+      "at": "01:11",
+      "what": "no number taken to follow up"
+    }
+  ],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": null,
+    "total_quoted_inr": null,
+    "breakup_given": false,
+    "notes": null
+  },
+  "not_available": [
+    {
+      "item": "ring 5-10 g matte band with rope border",
+      "at": "00:25",
+      "quote": "We don't have that design right now, ma'am.",
+      "said_by": "salesperson",
+      "resolution": "alternative"
+    }
+  ],
+  "competitor": null,
+  "start": "12:22",
+  "duration_min": 15,
+  "value_inr": 0,
+  "competitor_mentioned": false
+}

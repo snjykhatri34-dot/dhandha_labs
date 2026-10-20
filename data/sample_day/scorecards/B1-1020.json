@@ -1,0 +1,112 @@
+{
+  "visit_id": "B1-1020",
+  "store": "B1",
+  "salesperson": "Meena",
+  "date": "2026-10-17",
+  "outcome": "walked_out",
+  "asked_for": {
+    "category": "necklace",
+    "weight_band": "50+",
+    "occasion": "son's wedding next spring",
+    "budget_inr": null
+  },
+  "shown": [
+    "necklace 54 g",
+    "necklace 58 g",
+    "necklace 52 g"
+  ],
+  "reason_not_bought": "price_making_charge",
+  "objections": [
+    {
+      "type": "price_making_charge",
+      "at": "00:52",
+      "quote": "Fourteen percent making?",
+      "competitor_mentioned": true
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "curious",
+      "cue": "words"
+    },
+    {
+      "at": "00:29",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:52",
+      "who": "customer",
+      "emotion": "skeptical",
+      "cue": "words"
+    },
+    {
+      "at": "01:49",
+      "who": "customer",
+      "emotion": "hesitant",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "curious -> hesitant",
+  "handling_score": 5,
+  "coaching_tip": "Keep doing what you did at 01:18: when the making charge was the sticking point, you offered a lower-making design in the same weight range and mentioned old-gold exchange to bring the bill down.",
+  "lost_demand": false,
+  "flags": [
+    "salesperson said 'here are three' at 00:16 but stated weights for two; the 52 g piece shown at 01:18 may be the third",
+    "hold until Saturday and callback were offered at 01:39 but declined at 01:49, so no next step was agreed",
+    "01:34 'not quite the same look' is about the alternative piece, not a separate objection; not listed"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer",
+    "intent": "high",
+    "intent_evidence": "00:08 asked for a necklace above fifty grams for her son's wedding next spring"
+  },
+  "key_moments": [
+    {
+      "at": "00:16",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed hallmarked necklaces above 50 g as asked"
+    },
+    {
+      "at": "00:52",
+      "by": "customer",
+      "effect": "hurt",
+      "what": "cited another jeweller's nine percent making charge"
+    },
+    {
+      "at": "01:18",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "offered 52 g design at 11% making plus old-gold exchange"
+    },
+    {
+      "at": "01:49",
+      "by": "customer",
+      "effect": "hurt",
+      "what": "declined hold and callback, still unsure about making"
+    }
+  ],
+  "missed_opportunities": [],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": 14,
+    "total_quoted_inr": 846000,
+    "breakup_given": true,
+    "notes": "full breakup of gold, making and GST at 00:34"
+  },
+  "not_available": [],
+  "competitor": {
+    "named": "the other jeweller on the Mall Road side",
+    "claim": "nine percent making for a similar weight",
+    "at": "00:52"
+  },
+  "start": "19:45",
+  "duration_min": 14,
+  "value_inr": 0,
+  "competitor_mentioned": true
+}

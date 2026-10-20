@@ -1,0 +1,125 @@
+{
+  "visit_id": "B1-1024",
+  "store": "B1",
+  "salesperson": "Harish",
+  "date": "2026-10-17",
+  "outcome": "deferred_with_follow_up",
+  "asked_for": {
+    "category": "earrings",
+    "weight_band": "8-15",
+    "occasion": "daughter's engagement",
+    "budget_inr": null
+  },
+  "shown": [
+    "earrings 12 g",
+    "earrings 14 g",
+    "earrings 9 g"
+  ],
+  "reason_not_bought": "family_decision",
+  "objections": [
+    {
+      "type": "family_decision",
+      "at": "00:26",
+      "quote": "my husband and my daughter have to see it before we decide"
+    },
+    {
+      "type": "price_making_charge",
+      "at": "00:53",
+      "quote": "What's the making charge on it?"
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:26",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    },
+    {
+      "at": "01:05",
+      "who": "customer",
+      "emotion": "frustrated",
+      "cue": "words"
+    },
+    {
+      "at": "01:17",
+      "who": "customer",
+      "emotion": "skeptical",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> skeptical",
+  "handling_score": 2,
+  "coaching_tip": "When a customer needs her family to approve, give her an exact written breakup of gold weight, rate, making and GST to take home instead of urging her to decide on her own.",
+  "lost_demand": false,
+  "flags": [
+    "price objection is about a vague total and an unquoted making charge; mapped to price_making_charge",
+    "total quoted only as a range (1.4 to 1.5 lakh) at 00:47; total_quoted_inr left null",
+    "party scored solo: only one customer present; husband and daughter are absent"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "mother; husband and daughter must approve",
+    "intent": "high",
+    "intent_evidence": "00:08 earrings for daughter's engagement, eight to fifteen grams"
+  },
+  "key_moments": [
+    {
+      "at": "00:16",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed three earrings within the asked 8-15 g range"
+    },
+    {
+      "at": "00:34",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "pressed her to decide alone despite family needing to see it"
+    },
+    {
+      "at": "00:58",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "called making 'standard' instead of quoting the charge"
+    },
+    {
+      "at": "01:09",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "held the chandbali until Saturday and took her number"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "00:47",
+      "what": "no exact total or written breakup for her to take home"
+    },
+    {
+      "at": "00:58",
+      "what": "making charge not quoted when directly asked"
+    }
+  ],
+  "next_step": {
+    "what": "family visit; chandbali held",
+    "when": "Saturday evening",
+    "who": "Harish"
+  },
+  "price_talk": {
+    "making_pct": null,
+    "total_quoted_inr": null,
+    "breakup_given": false,
+    "notes": "only a 1.4-1.5 lakh range given at 00:47"
+  },
+  "not_available": [],
+  "competitor": null,
+  "start": "17:52",
+  "duration_min": 14,
+  "value_inr": 0,
+  "competitor_mentioned": false
+}

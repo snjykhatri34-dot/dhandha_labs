@@ -1,0 +1,113 @@
+{
+  "visit_id": "B1-1015",
+  "store": "B1",
+  "salesperson": "Harish",
+  "date": "2026-10-17",
+  "outcome": "bought",
+  "asked_for": {
+    "category": "ring",
+    "weight_band": "5-10",
+    "occasion": null,
+    "budget_inr": null
+  },
+  "shown": [
+    "ring 6.4 g"
+  ],
+  "reason_not_bought": null,
+  "objections": [
+    {
+      "type": "purity_trust",
+      "at": "00:33",
+      "quote": "And is it hallmarked?"
+    },
+    {
+      "type": "price_making_charge",
+      "at": "01:09",
+      "quote": "Is the making charge fixed?"
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:07",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:23",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "01:19",
+      "who": "customer",
+      "emotion": "satisfied",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> satisfied",
+  "handling_score": 4,
+  "coaching_tip": "When she asked at 01:09 whether the making charge was fixed, tell her the making percentage and rupee amount, and before billing suggest a matching item such as earrings.",
+  "lost_demand": false,
+  "flags": [
+    "objections at 00:33 and 01:09 were questions, both answered, and did not threaten the sale",
+    "breakup_given false: gold, making and GST were named at 01:00 but no separate amounts were given",
+    "shown also included a tray of 5-9 g rings at 00:15; only the 6.4 g piece's weight was stated"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer",
+    "intent": "high",
+    "intent_evidence": "00:07 asked for a 5-10 g gold ring for herself"
+  },
+  "key_moments": [
+    {
+      "at": "00:15",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed a tray of rings within the asked weight range"
+    },
+    {
+      "at": "00:36",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "confirmed hallmark and HUID stamped inside the band"
+    },
+    {
+      "at": "01:00",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "quoted the full total including 3% GST"
+    },
+    {
+      "at": "01:19",
+      "by": "customer",
+      "effect": "helped",
+      "what": "decided to buy the leaf-pattern ring"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "01:14",
+      "what": "making charge called standard; no percentage or amount given"
+    },
+    {
+      "at": "01:23",
+      "what": "no add-on suggested before billing"
+    }
+  ],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": null,
+    "total_quoted_inr": 65834,
+    "breakup_given": false,
+    "notes": "total 65,834 incl. 3% GST quoted at 01:00"
+  },
+  "not_available": [],
+  "competitor": null,
+  "start": "18:30",
+  "duration_min": 10,
+  "value_inr": 65834,
+  "competitor_mentioned": false
+}

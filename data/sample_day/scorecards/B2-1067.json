@@ -1,0 +1,133 @@
+{
+  "visit_id": "B2-1067",
+  "store": "B2",
+  "salesperson": "Akshay",
+  "date": "2026-10-17",
+  "outcome": "deferred_with_follow_up",
+  "asked_for": {
+    "category": "pendant",
+    "weight_band": null,
+    "occasion": "daughter's birthday",
+    "budget_inr": null
+  },
+  "shown": [
+    "pendant 7 g",
+    "pendant 9 g"
+  ],
+  "reason_not_bought": "family_decision",
+  "objections": [
+    {
+      "type": "price_making_charge",
+      "at": "00:35",
+      "quote": "Can you tell me what the making charge is on this pendant?"
+    },
+    {
+      "type": "family_decision",
+      "at": "00:47",
+      "quote": "Honestly, my husband handles these purchases."
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:24",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    },
+    {
+      "at": "00:35",
+      "who": "customer",
+      "emotion": "skeptical",
+      "cue": "words"
+    },
+    {
+      "at": "01:15",
+      "who": "customer",
+      "emotion": "concerned",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> concerned",
+  "handling_score": 2,
+  "coaching_tip": "When she asked about the making charge at 00:35, state the exact making percentage and split the price into gold, making and GST on the spot, and have that written breakup ready for Saturday's visit.",
+  "lost_demand": false,
+  "flags": [
+    "no band for pendant; asked for 5-10 g",
+    "pendant is not among the banded categories; confirm the category name against CLAUDE.md",
+    "total_quoted_inr is approximate: 'roughly around ninety thousand' at 00:29",
+    "customer still unsure about price at 01:15; price may come up again on Saturday"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "husband; must see the pendant before deciding",
+    "intent": "high",
+    "intent_evidence": "00:08 asked for a 5-10 g gold pendant for her daughter's birthday"
+  },
+  "key_moments": [
+    {
+      "at": "00:15",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed pendants within the asked 5-10 g range"
+    },
+    {
+      "at": "00:40",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "deflected the making-charge question with 'everyone charges about the same'"
+    },
+    {
+      "at": "00:47",
+      "by": "customer",
+      "effect": "hurt",
+      "what": "said her husband must see the pendant before deciding"
+    },
+    {
+      "at": "01:07",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "held the 9 g pendant until Saturday and took her number"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "00:29",
+      "what": "gave a rough total with no price breakup"
+    },
+    {
+      "at": "00:40",
+      "what": "did not state the making charge percentage when asked"
+    },
+    {
+      "at": "00:55",
+      "what": "pressed for a decision instead of welcoming the husband's visit"
+    },
+    {
+      "at": "01:15",
+      "what": "no written breakup offered before she left despite her request"
+    }
+  ],
+  "next_step": {
+    "what": "husband visit; 9 g floral pendant held; written breakup requested",
+    "when": "Saturday morning",
+    "who": "Akshay"
+  },
+  "price_talk": {
+    "making_pct": null,
+    "total_quoted_inr": 90000,
+    "breakup_given": false,
+    "notes": "making charge not disclosed at 00:40"
+  },
+  "not_available": [],
+  "competitor": null,
+  "start": "12:23",
+  "duration_min": 9,
+  "value_inr": 0,
+  "competitor_mentioned": false
+}

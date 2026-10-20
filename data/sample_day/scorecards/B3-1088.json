@@ -1,0 +1,111 @@
+{
+  "visit_id": "B3-1088",
+  "store": "B3",
+  "salesperson": "Neha",
+  "date": "2026-10-17",
+  "outcome": "walked_out",
+  "asked_for": {
+    "category": "ring",
+    "weight_band": "5-10",
+    "occasion": null,
+    "budget_inr": null
+  },
+  "shown": [
+    "ring 5.8 g",
+    "ring 7.4 g",
+    "ring 9.1 g"
+  ],
+  "reason_not_bought": "old_gold_exchange_rate",
+  "objections": [
+    {
+      "type": "old_gold_exchange_rate",
+      "at": "00:28",
+      "quote": "what would you give me for the old chain?"
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "curious",
+      "cue": "words"
+    },
+    {
+      "at": "00:28",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:52",
+      "who": "customer",
+      "emotion": "skeptical",
+      "cue": "words"
+    },
+    {
+      "at": "01:44",
+      "who": "customer",
+      "emotion": "skeptical",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "curious -> skeptical",
+  "handling_score": 5,
+  "coaching_tip": "Keep doing what you did at 00:58 and 01:18: write every exchange deduction on a slip for the customer, and when the exchange stalls, offer an outright purchase or a hold on the piece.",
+  "lost_demand": false,
+  "flags": [
+    "handling score 5 is borderline: the ring total of 58,000 at 01:18 was given without a gold/making/GST breakup",
+    "customer declined both the hold (01:31) and the callback (01:44), so no next step was set"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer",
+    "intent": "high",
+    "intent_evidence": "00:08 asked for a ring between five and ten grams and brought an old chain to exchange"
+  },
+  "key_moments": [
+    {
+      "at": "00:16",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed three rings inside the asked 5-10 g range"
+    },
+    {
+      "at": "00:35",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "explained 8% rate gap plus 2% melting deduction on old chain"
+    },
+    {
+      "at": "00:52",
+      "by": "customer",
+      "effect": "hurt",
+      "what": "objected to two deductions on the same chain"
+    },
+    {
+      "at": "01:18",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "offered outright purchase at 58,000 or a hold until Saturday"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "01:18",
+      "what": "no breakup of the 58,000 into gold, making and GST"
+    }
+  ],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": null,
+    "total_quoted_inr": 58000,
+    "breakup_given": false,
+    "notes": "exchange deductions written on slip at 00:58"
+  },
+  "not_available": [],
+  "competitor": null,
+  "start": "19:01",
+  "duration_min": 11,
+  "value_inr": 0,
+  "competitor_mentioned": false
+}

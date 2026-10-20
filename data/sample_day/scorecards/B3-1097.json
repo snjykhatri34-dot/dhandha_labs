@@ -1,0 +1,138 @@
+{
+  "visit_id": "B3-1097",
+  "store": "B3",
+  "salesperson": "Suresh",
+  "date": "2026-10-17",
+  "outcome": "walked_out",
+  "asked_for": {
+    "category": "necklace",
+    "weight_band": "20-35",
+    "occasion": "sister's wedding next month",
+    "budget_inr": null
+  },
+  "shown": [
+    "necklace 28 g",
+    "necklace 32 g"
+  ],
+  "reason_not_bought": "design_not_available",
+  "objections": [
+    {
+      "type": "design_not_available",
+      "at": "00:31",
+      "quote": "Can you show me something close to it, at least?"
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:07",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:31",
+      "who": "customer",
+      "emotion": "disappointed",
+      "cue": "words"
+    },
+    {
+      "at": "00:46",
+      "who": "customer",
+      "emotion": "disappointed",
+      "cue": "words"
+    },
+    {
+      "at": "01:24",
+      "who": "customer",
+      "emotion": "frustrated",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> frustrated",
+  "handling_score": 2,
+  "coaching_tip": "When a customer with a dated wedding asks for a temple design we don't have, check the karigar's order timeline or another branch on the spot, give her a firm date, and take her number instead of saying 'maybe'.",
+  "lost_demand": true,
+  "flags": [
+    "temple design detail stated by Speaker C at 00:15; Speaker C's relation to Speaker B not stated",
+    "price components named at 01:15 without figures and no stones line; breakup_given set false",
+    "coin-pattern resolution scored as alternative because 28 g and 32 g pieces in the asked band were shown, though the customer said they were nothing like the ask"
+  ],
+  "customer": {
+    "party": "group",
+    "decision_maker": "the customer (Speaker B)",
+    "intent": "high",
+    "intent_evidence": "00:07 necklace for sister's wedding next month, twenty to thirty-five grams"
+  },
+  "key_moments": [
+    {
+      "at": "00:22",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "said temple style not in stock, offered no way to source it"
+    },
+    {
+      "at": "00:46",
+      "by": "customer",
+      "effect": "hurt",
+      "what": "said shown pieces were nothing like the ask"
+    },
+    {
+      "at": "00:56",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "vague on made-to-order despite a four-week window"
+    },
+    {
+      "at": "01:24",
+      "by": "customer",
+      "effect": "hurt",
+      "what": "said vague answers don't help with the wedding so close"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "00:22",
+      "what": "no offer to source it from another branch or order, and no number taken"
+    },
+    {
+      "at": "00:56",
+      "what": "no firm order timeline checked with the karigar for the four-week window"
+    },
+    {
+      "at": "01:07",
+      "what": "no number taken to call when temple designs arrive"
+    },
+    {
+      "at": "01:32",
+      "what": "let the customer go without any follow-up offer"
+    }
+  ],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": 14,
+    "total_quoted_inr": 250000,
+    "breakup_given": false,
+    "notes": "components named without figures at 01:15"
+  },
+  "not_available": [
+    {
+      "item": "necklace 20-35 g temple design",
+      "at": "00:22",
+      "quote": "We don't have that style in stock right now.",
+      "said_by": "salesperson",
+      "resolution": "none"
+    },
+    {
+      "item": "necklace 20-35 g coin pattern",
+      "at": "00:37",
+      "quote": "Coin pattern also isn't there at the moment.",
+      "said_by": "salesperson",
+      "resolution": "alternative"
+    }
+  ],
+  "competitor": null,
+  "start": "17:12",
+  "duration_min": 10,
+  "value_inr": 0,
+  "competitor_mentioned": false
+}

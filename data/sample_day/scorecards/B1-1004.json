@@ -1,0 +1,107 @@
+{
+  "visit_id": "B1-1004",
+  "store": "B1",
+  "salesperson": "Kavya",
+  "date": "2026-10-17",
+  "outcome": "bought",
+  "asked_for": {
+    "category": "bangle",
+    "weight_band": "20-40",
+    "occasion": "Dhanteras",
+    "budget_inr": null
+  },
+  "shown": [
+    "bangle 24 g",
+    "bangle 31 g",
+    "bangle 38 g",
+    "bangle 26 g"
+  ],
+  "reason_not_bought": null,
+  "objections": [
+    {
+      "type": "price_budget",
+      "at": "01:08",
+      "quote": "That's a bit more than we planned for, but it's so pretty."
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "01:08",
+      "who": "customer",
+      "emotion": "concerned",
+      "cue": "words"
+    },
+    {
+      "at": "01:39",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    },
+    {
+      "at": "01:59",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> delighted",
+  "handling_score": 5,
+  "coaching_tip": "Keep doing what you did at 01:13: when the total ran over plan, you offered the same carving in a lighter 26 g pair with its price, so the customer could compare and choose.",
+  "lost_demand": false,
+  "flags": [
+    "weights asked and shown are for a pair of bangles; band applied to pair weight",
+    "no budget figure stated; customer only said price was more than planned"
+  ],
+  "customer": {
+    "party": "couple",
+    "decision_maker": "husband, on his wife's preference",
+    "intent": "high",
+    "intent_evidence": "00:08 named Dhanteras and a 20-40 g range for the pair"
+  },
+  "key_moments": [
+    {
+      "at": "00:22",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed three pairs, all within the asked 20-40 g range"
+    },
+    {
+      "at": "00:51",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "gave full breakup: gold weight, 10% making, GST, total"
+    },
+    {
+      "at": "01:13",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "offered same carving in lighter 26 g pair at lower price"
+    },
+    {
+      "at": "01:39",
+      "by": "customer",
+      "effect": "helped",
+      "what": "compared side by side and chose the 31 g pair"
+    }
+  ],
+  "missed_opportunities": [],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": 10,
+    "total_quoted_inr": 202875,
+    "breakup_given": true,
+    "notes": "Dhanteras making rate quoted at 00:51; lighter pair about 170000 at 01:13"
+  },
+  "not_available": [],
+  "competitor": null,
+  "start": "16:25",
+  "duration_min": 12,
+  "value_inr": 202875,
+  "competitor_mentioned": false
+}

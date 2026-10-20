@@ -1,0 +1,118 @@
+{
+  "visit_id": "B1-1003",
+  "store": "B1",
+  "salesperson": "Harish",
+  "date": "2026-10-17",
+  "outcome": "walked_out",
+  "asked_for": {
+    "category": "necklace",
+    "weight_band": "20-35",
+    "occasion": "festivals",
+    "budget_inr": null
+  },
+  "shown": [
+    "necklace 24 g",
+    "necklace 29 g",
+    "necklace 33 g"
+  ],
+  "reason_not_bought": "price_making_charge",
+  "objections": [
+    {
+      "type": "price_making_charge",
+      "at": "00:45",
+      "quote": "Twenty-two percent? That seems very high for a fairly plain necklace."
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "curious",
+      "cue": "words"
+    },
+    {
+      "at": "00:27",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:45",
+      "who": "customer",
+      "emotion": "skeptical",
+      "cue": "words"
+    },
+    {
+      "at": "01:20",
+      "who": "customer",
+      "emotion": "skeptical",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "curious -> skeptical",
+  "handling_score": 2,
+  "coaching_tip": "When the customer questions the 22% making at 00:45, put the rupee figures for gold, making and GST in front of her and explain what the handmade work involves, rather than saying the making is fixed.",
+  "lost_demand": false,
+  "flags": [
+    "breakup_given set true: gold weight, making % and GST % named at 00:33, but no rupee amounts or total given"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer",
+    "intent": "high",
+    "intent_evidence": "00:08 named a 20-35 g range and festival use"
+  },
+  "key_moments": [
+    {
+      "at": "00:16",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed three necklaces within the asked 20-35 g range"
+    },
+    {
+      "at": "00:45",
+      "by": "customer",
+      "effect": "hurt",
+      "what": "objected to 22% making on a plain-looking necklace"
+    },
+    {
+      "at": "01:04",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "called the making fixed; other pieces also around 20%"
+    },
+    {
+      "at": "01:16",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "replied 'that's how it is' instead of justifying the making"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "00:33",
+      "what": "no total or rupee breakup quoted for the 29 g necklace"
+    },
+    {
+      "at": "00:50",
+      "what": "no explanation of what the handmade work involves to justify the making"
+    },
+    {
+      "at": "01:20",
+      "what": "no number taken to follow up"
+    }
+  ],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": 22,
+    "total_quoted_inr": null,
+    "breakup_given": true,
+    "notes": "making called fixed for the piece at 01:04"
+  },
+  "not_available": [],
+  "competitor": null,
+  "start": "13:16",
+  "duration_min": 4,
+  "value_inr": 0,
+  "competitor_mentioned": false
+}

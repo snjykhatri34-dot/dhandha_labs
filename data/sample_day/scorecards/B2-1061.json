@@ -1,0 +1,135 @@
+{
+  "visit_id": "B2-1061",
+  "store": "B2",
+  "salesperson": "Akshay",
+  "date": "2026-10-17",
+  "outcome": "walked_out",
+  "asked_for": {
+    "category": "necklace",
+    "weight_band": "20-35",
+    "occasion": "sister's engagement",
+    "budget_inr": null
+  },
+  "shown": [
+    "necklace 48 g",
+    "necklace 52 g"
+  ],
+  "reason_not_bought": "weight_mismatch",
+  "objections": [
+    {
+      "type": "weight",
+      "at": "00:32",
+      "quote": "That's quite a bit over what I said."
+    },
+    {
+      "type": "price_budget",
+      "at": "01:14",
+      "quote": "the total will be far beyond what I planned."
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:24",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    },
+    {
+      "at": "00:45",
+      "who": "customer",
+      "emotion": "frustrated",
+      "cue": "words"
+    },
+    {
+      "at": "01:25",
+      "who": "customer",
+      "emotion": "hesitant",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> hesitant",
+  "handling_score": 1,
+  "coaching_tip": "When a customer asks twice for a 20-35 g necklace, bring out the lighter pieces from the back right away. If we have none, offer to bring one from another branch or order it, and take her number.",
+  "lost_demand": true,
+  "flags": [
+    "not_available entry is from the customer's repeat ask at 00:58; salesperson said a few may be at the back but showed none",
+    "'I'll see later' at 01:25 gives no concrete next step, so scored walked_out"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer",
+    "intent": "high",
+    "intent_evidence": "00:08 dated occasion next month and a 20-35 g range"
+  },
+  "key_moments": [
+    {
+      "at": "00:28",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "quoted a 48 g piece after a 20-35 g ask"
+    },
+    {
+      "at": "00:51",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "called lighter pieces plain instead of showing them"
+    },
+    {
+      "at": "01:05",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "did not fetch the lighter pieces from the back"
+    },
+    {
+      "at": "01:14",
+      "by": "customer",
+      "effect": "hurt",
+      "what": "said the total would be far beyond her plan"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "00:24",
+      "what": "no lighter version of the temple design she liked offered"
+    },
+    {
+      "at": "00:58",
+      "what": "no offer to source it from another branch or order, and no number taken"
+    },
+    {
+      "at": "01:14",
+      "what": "no price breakup or total given for a lighter option"
+    },
+    {
+      "at": "01:25",
+      "what": "no number taken to follow up"
+    }
+  ],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": null,
+    "total_quoted_inr": null,
+    "breakup_given": false,
+    "notes": "rate per gram called the same at 01:05"
+  },
+  "not_available": [
+    {
+      "item": "necklace 20-35 g",
+      "at": "00:58",
+      "quote": "Could you at least show me something around thirty grams?",
+      "said_by": "customer",
+      "resolution": "none"
+    }
+  ],
+  "competitor": null,
+  "start": "14:51",
+  "duration_min": 22,
+  "value_inr": 0,
+  "competitor_mentioned": false
+}

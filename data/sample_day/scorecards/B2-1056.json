@@ -1,0 +1,102 @@
+{
+  "visit_id": "B2-1056",
+  "store": "B2",
+  "salesperson": "Priya",
+  "date": "2026-10-17",
+  "outcome": "bought",
+  "asked_for": {
+    "category": "necklace",
+    "weight_band": "50+",
+    "occasion": "son's wedding",
+    "budget_inr": null
+  },
+  "shown": [
+    "necklace 52 g",
+    "necklace 54 g",
+    "necklace 51 g",
+    "earrings 11 g"
+  ],
+  "reason_not_bought": null,
+  "objections": [],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:34",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    },
+    {
+      "at": "01:24",
+      "who": "customer",
+      "emotion": "reassured",
+      "cue": "words"
+    },
+    {
+      "at": "02:21",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> delighted",
+  "handling_score": 5,
+  "coaching_tip": "Keep doing what you did at 00:39: show the HUID and test the old gold on the machine in front of the customer before you quote the balance.",
+  "lost_demand": false,
+  "flags": [
+    "total_quoted_inr is the balance after the old gold credit, not the gross price",
+    "breakup_given set true: gold, making and GST were split; no stones were mentioned for this piece",
+    "earrings 11 g were named at 01:48 but not shown; they arrive later for viewing"
+  ],
+  "customer": {
+    "party": "couple",
+    "decision_maker": "the customer (Speaker B, mother of the groom)",
+    "intent": "high",
+    "intent_evidence": "00:08 son's wedding, necklace of at least fifty grams, temple designs"
+  },
+  "key_moments": [
+    {
+      "at": "00:22",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed three temple necklaces, all above the 50 g ask"
+    },
+    {
+      "at": "00:39",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed HUID and tested old gold in front of customer"
+    },
+    {
+      "at": "01:29",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "gave full breakup with old gold credit deducted"
+    },
+    {
+      "at": "01:48",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "offered cheaper 51 g option and matching earrings"
+    }
+  ],
+  "missed_opportunities": [],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": 12,
+    "total_quoted_inr": 83774,
+    "breakup_given": true,
+    "notes": "balance after old gold credit quoted at 01:29"
+  },
+  "not_available": [],
+  "competitor": null,
+  "start": "18:41",
+  "duration_min": 6,
+  "value_inr": 83774,
+  "competitor_mentioned": false
+}

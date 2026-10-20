@@ -1,0 +1,118 @@
+{
+  "visit_id": "B1-1017",
+  "store": "B1",
+  "salesperson": "Harish",
+  "date": "2026-10-17",
+  "outcome": "walked_out",
+  "asked_for": {
+    "category": "earrings",
+    "weight_band": "8-15",
+    "occasion": "daughter's college farewell",
+    "budget_inr": null
+  },
+  "shown": [
+    "earrings 11.4 g",
+    "earrings 9 g",
+    "earrings 14.2 g"
+  ],
+  "reason_not_bought": "purity_trust",
+  "objections": [
+    {
+      "type": "purity_trust",
+      "at": "00:41",
+      "quote": "But tell me, is this proper twenty-two carat?"
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:30",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    },
+    {
+      "at": "00:41",
+      "who": "customer",
+      "emotion": "skeptical",
+      "cue": "words"
+    },
+    {
+      "at": "01:38",
+      "who": "customer",
+      "emotion": "hesitant",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> hesitant",
+  "handling_score": 2,
+  "coaching_tip": "When a customer doubts the hallmark and asks if pearls are weighed as gold, read the HUID out with a magnifier, offer to verify it or test purity on the spot, and split the bill into gold weight and stone weight before they decide.",
+  "lost_demand": false,
+  "flags": [
+    "stone weight billed as gold (01:14, 01:27) treated as a restatement of the purity_trust filler concern raised at 00:41, not a separate objection"
+  ],
+  "customer": {
+    "party": "family",
+    "decision_maker": "mother",
+    "intent": "high",
+    "intent_evidence": "00:08 named the farewell occasion, an 8-15 g range and a specific window jhumka"
+  },
+  "key_moments": [
+    {
+      "at": "00:21",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed the asked jhumka at 11.4 g plus 9 g and 14.2 g options"
+    },
+    {
+      "at": "00:41",
+      "by": "customer",
+      "effect": "hurt",
+      "what": "doubted 22 carat purity and filler in hollow jhumkas"
+    },
+    {
+      "at": "01:07",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "said HUID is too small to see instead of showing it"
+    },
+    {
+      "at": "01:31",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "deferred the pearls-at-gold-rate question to the bill"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "00:56",
+      "what": "no offer to read out or verify the HUID, or test purity"
+    },
+    {
+      "at": "01:20",
+      "what": "no breakup separating pearl and stone weight from gold weight"
+    },
+    {
+      "at": "01:38",
+      "what": "no number taken or return visit set for the farewell purchase"
+    }
+  ],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": null,
+    "total_quoted_inr": null,
+    "breakup_given": false,
+    "notes": "tag weight called gross including stones at 01:20"
+  },
+  "not_available": [],
+  "competitor": null,
+  "start": "19:43",
+  "duration_min": 5,
+  "value_inr": 0,
+  "competitor_mentioned": false
+}

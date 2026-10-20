@@ -1,0 +1,116 @@
+{
+  "visit_id": "B2-1046",
+  "store": "B2",
+  "salesperson": "Priya",
+  "date": "2026-10-17",
+  "outcome": "bought",
+  "asked_for": {
+    "category": "earrings",
+    "weight_band": "8-15",
+    "occasion": "sister's engagement",
+    "budget_inr": null
+  },
+  "shown": [
+    "earrings 9.4 g",
+    "earrings 13.8 g",
+    "earrings 11.2 g"
+  ],
+  "reason_not_bought": null,
+  "objections": [
+    {
+      "type": "purity_trust",
+      "at": "00:28",
+      "quote": "Is it twenty-two carat? Does it have the hallmark?"
+    },
+    {
+      "type": "price_budget",
+      "at": "01:02",
+      "quote": "Hmm, that's a bit more than I'd thought."
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "curious",
+      "cue": "words"
+    },
+    {
+      "at": "00:28",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    },
+    {
+      "at": "01:02",
+      "who": "customer",
+      "emotion": "hesitant",
+      "cue": "words"
+    },
+    {
+      "at": "01:33",
+      "who": "customer",
+      "emotion": "satisfied",
+      "cue": "words"
+    },
+    {
+      "at": "01:49",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "curious -> delighted",
+  "handling_score": 5,
+  "coaching_tip": "Keep doing what you did at 00:46: give the full gold, making, stones and GST breakup before the customer has to ask for it.",
+  "lost_demand": false,
+  "flags": [
+    "no budget figure stated; price objection at 01:02 scored as price_budget"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer",
+    "intent": "high",
+    "intent_evidence": "00:08 gave an 8-15 g range for sister's engagement next month"
+  },
+  "key_moments": [
+    {
+      "at": "00:33",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed HUID and offered app check at the counter"
+    },
+    {
+      "at": "00:46",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "gave full price breakup with 12% making"
+    },
+    {
+      "at": "01:07",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "offered the same chandbali pattern at 11.2 g"
+    },
+    {
+      "at": "01:33",
+      "by": "customer",
+      "effect": "helped",
+      "what": "chose the 13.8 g pair despite the higher price"
+    }
+  ],
+  "missed_opportunities": [],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": 12,
+    "total_quoted_inr": 177377,
+    "breakup_given": true,
+    "notes": "full breakup given at 00:46"
+  },
+  "not_available": [],
+  "competitor": null,
+  "start": "13:35",
+  "duration_min": 7,
+  "value_inr": 177377,
+  "competitor_mentioned": false
+}

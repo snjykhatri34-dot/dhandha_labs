@@ -1,0 +1,110 @@
+{
+  "visit_id": "B1-1028",
+  "store": "B1",
+  "salesperson": "Kavya",
+  "date": "2026-10-17",
+  "outcome": "bought",
+  "asked_for": {
+    "category": "chain",
+    "weight_band": "15-30",
+    "occasion": "daily wear",
+    "budget_inr": null
+  },
+  "shown": [
+    "chain 18 g",
+    "chain 22 g",
+    "chain 16 g"
+  ],
+  "reason_not_bought": null,
+  "objections": [
+    {
+      "type": "purity_trust",
+      "at": "00:39",
+      "quote": "Is it twenty-two carat? Does it have the hallmark?"
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:07",
+      "who": "customer",
+      "emotion": "curious",
+      "cue": "words"
+    },
+    {
+      "at": "01:04",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "01:27",
+      "who": "customer",
+      "emotion": "satisfied",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "curious -> satisfied",
+  "handling_score": 4,
+  "coaching_tip": "When she asked at 01:17 whether the making charge was included, show her the split of gold, making and GST. Once she said she'd take the sixteen-gram chain, suggest a light pendant or studs to wear with it every day.",
+  "lost_demand": false,
+  "flags": [
+    "purity question at 00:39 recorded as purity_trust objection; answered with hallmark and HUID at 00:43",
+    "making-charge question at 01:17 treated as a clarification, not an objection",
+    "making percentage never quoted; only the total was given"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer",
+    "intent": "high",
+    "intent_evidence": "00:07 asked for daily-wear chains between fifteen and thirty grams"
+  },
+  "key_moments": [
+    {
+      "at": "00:15",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed three chains all within the asked 15-30 g range"
+    },
+    {
+      "at": "00:43",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "confirmed 22 carat, hallmark and HUID on the clasp"
+    },
+    {
+      "at": "01:10",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "quoted a full total including making and GST"
+    },
+    {
+      "at": "01:27",
+      "by": "customer",
+      "effect": "helped",
+      "what": "liked the fit and chose the 16 g chain"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "01:21",
+      "what": "no breakup of gold, making and GST when asked about making"
+    },
+    {
+      "at": "01:33",
+      "what": "no add-on such as a pendant suggested after the purchase"
+    }
+  ],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": null,
+    "total_quoted_inr": 84243,
+    "breakup_given": false,
+    "notes": "total including making and GST quoted at 01:10"
+  },
+  "not_available": [],
+  "competitor": null,
+  "start": "15:23",
+  "duration_min": 9,
+  "value_inr": 84243,
+  "competitor_mentioned": false
+}

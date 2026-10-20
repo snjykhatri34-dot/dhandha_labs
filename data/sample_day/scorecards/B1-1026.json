@@ -1,0 +1,116 @@
+{
+  "visit_id": "B1-1026",
+  "store": "B1",
+  "salesperson": "Kavya",
+  "date": "2026-10-17",
+  "outcome": "bought",
+  "asked_for": {
+    "category": "ring",
+    "weight_band": "5-10",
+    "occasion": "daughter's engagement",
+    "budget_inr": null
+  },
+  "shown": [
+    "ring 6 g",
+    "ring 8.4 g",
+    "ring 9.5 g"
+  ],
+  "reason_not_bought": null,
+  "objections": [
+    {
+      "type": "purity_trust",
+      "at": "00:36",
+      "quote": "Is it hallmarked? Twenty-two carat?"
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:47",
+      "who": "customer",
+      "emotion": "reassured",
+      "cue": "words"
+    },
+    {
+      "at": "01:12",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    },
+    {
+      "at": "01:30",
+      "who": "customer",
+      "emotion": "satisfied",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> satisfied",
+  "handling_score": 4,
+  "coaching_tip": "When a customer mentions a family occasion like the engagement at 00:08, suggest a matching piece such as floral earrings once the ring is chosen, and give the gold, making, stones and GST amounts separately when you quote the total.",
+  "lost_demand": false,
+  "flags": [
+    "purity_trust recorded from a verification question at 00:36; it was resolved at 00:40",
+    "budget not stated as a number; at 01:30 the customer said the total was within what she had in mind",
+    "breakup_given false: price components named at 01:18 but no separate amounts given"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer",
+    "intent": "high",
+    "intent_evidence": "00:08 asked for a 5-10 g ring for her daughter's engagement next month"
+  },
+  "key_moments": [
+    {
+      "at": "00:18",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed three rings within the asked 5-10 g range"
+    },
+    {
+      "at": "00:40",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "confirmed 22 carat, hallmark and HUID, and showed the mark"
+    },
+    {
+      "at": "01:12",
+      "by": "customer",
+      "effect": "helped",
+      "what": "tried the floral ring and liked how it fit"
+    },
+    {
+      "at": "01:18",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "quoted the total clearly, naming the price components"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "01:18",
+      "what": "no itemised amounts for gold, making, stones and GST"
+    },
+    {
+      "at": "01:35",
+      "what": "no matching add-on suggested for the engagement occasion"
+    }
+  ],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": null,
+    "total_quoted_inr": 171930,
+    "breakup_given": false,
+    "notes": "components named but not itemised at 01:18"
+  },
+  "not_available": [],
+  "competitor": null,
+  "start": "18:18",
+  "duration_min": 17,
+  "value_inr": 171930,
+  "competitor_mentioned": false
+}

@@ -1,0 +1,128 @@
+{
+  "visit_id": "B3-1099",
+  "store": "B3",
+  "salesperson": "Neha",
+  "date": "2026-10-17",
+  "outcome": "walked_out",
+  "asked_for": {
+    "category": "necklace",
+    "weight_band": "50+",
+    "occasion": "daughter's wedding",
+    "budget_inr": null
+  },
+  "shown": [
+    "necklace 54 g",
+    "necklace 58 g",
+    "earrings"
+  ],
+  "reason_not_bought": "design_not_available",
+  "objections": [
+    {
+      "type": "design_not_available",
+      "at": "00:42",
+      "quote": "They're nice, but they're not what I had in mind."
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "curious",
+      "cue": "words"
+    },
+    {
+      "at": "00:42",
+      "who": "customer",
+      "emotion": "hesitant",
+      "cue": "words"
+    },
+    {
+      "at": "01:11",
+      "who": "customer",
+      "emotion": "disappointed",
+      "cue": "words"
+    },
+    {
+      "at": "01:22",
+      "who": "customer",
+      "emotion": "dismissive",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "curious -> dismissive",
+  "handling_score": 3,
+  "coaching_tip": "When we don't have the exact design she describes, offer to order it or bring it from another branch in time for the spring wedding, and take her number before she leaves.",
+  "lost_demand": true,
+  "flags": [
+    "not_available resolution set to 'alternative': 54 g and 58 g pieces matched the asked weight but not the peacock and bells design",
+    "earrings named at 01:04 for ghungroo work but not shown and no weight stated",
+    "'Maybe some other time' at 01:30 has no concrete next step; scored walked_out"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer",
+    "intent": "high",
+    "intent_evidence": "00:08 asked for 50 g or above for daughter's wedding next spring"
+  },
+  "key_moments": [
+    {
+      "at": "00:29",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "said peacock temple design unavailable; offered 54 g and 58 g pieces"
+    },
+    {
+      "at": "00:47",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "explained hallmark, HUID, 14% making and 3% GST"
+    },
+    {
+      "at": "01:22",
+      "by": "customer",
+      "effect": "hurt",
+      "what": "declined try-on, had seen enough similar designs"
+    },
+    {
+      "at": "01:27",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "accepted the refusal without proposing any next step"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "00:29",
+      "what": "no offer to source the design from another branch or order it"
+    },
+    {
+      "at": "01:04",
+      "what": "no offer to order a necklace with ghungroo bell work"
+    },
+    {
+      "at": "01:30",
+      "what": "no number taken to follow up before the spring wedding"
+    }
+  ],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": 14,
+    "total_quoted_inr": null,
+    "breakup_given": false,
+    "notes": "making 14% and GST 3% quoted at 00:47; breakup deferred to bill"
+  },
+  "not_available": [
+    {
+      "item": "necklace 50+ g temple peacock design with bells",
+      "at": "00:29",
+      "quote": "that peacock temple design isn't available with us right now",
+      "said_by": "salesperson",
+      "resolution": "alternative"
+    }
+  ],
+  "competitor": null,
+  "start": "18:40",
+  "duration_min": 5,
+  "value_inr": 0,
+  "competitor_mentioned": false
+}

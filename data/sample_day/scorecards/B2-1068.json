@@ -1,0 +1,127 @@
+{
+  "visit_id": "B2-1068",
+  "store": "B2",
+  "salesperson": "Akshay",
+  "date": "2026-10-17",
+  "outcome": "walked_out",
+  "asked_for": {
+    "category": "necklace",
+    "weight_band": "20-35",
+    "occasion": "weddings this season",
+    "budget_inr": null
+  },
+  "shown": [
+    "necklace 52 g",
+    "necklace 48 g",
+    "necklace 45 g",
+    "necklace 42 g"
+  ],
+  "reason_not_bought": "weight_mismatch",
+  "objections": [
+    {
+      "type": "weight",
+      "at": "00:24",
+      "quote": "that's much heavier than I said"
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:24",
+      "who": "customer",
+      "emotion": "disappointed",
+      "cue": "words"
+    },
+    {
+      "at": "00:55",
+      "who": "customer",
+      "emotion": "frustrated",
+      "cue": "words"
+    },
+    {
+      "at": "01:23",
+      "who": "customer",
+      "emotion": "disappointed",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> disappointed",
+  "handling_score": 1,
+  "coaching_tip": "When she asked three times for 20 to 35 grams, you should have brought out the lighter tray from the back at once, and if nothing there fit, offered to bring one from another branch or order it and taken her number.",
+  "lost_demand": true,
+  "flags": [
+    "salesperson said lighter pieces were 'in the back' at 01:17 but never showed them; not_available entry logged from the customer's 01:23 line, since nothing in range was shown"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer",
+    "intent": "high",
+    "intent_evidence": "00:08 named a 20-35 g range and wedding-season use"
+  },
+  "key_moments": [
+    {
+      "at": "00:17",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "showed a 52 g piece after a 20-35 g ask"
+    },
+    {
+      "at": "00:31",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "said light pieces don't show properly, dismissing her ask"
+    },
+    {
+      "at": "01:17",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "declined to fetch lighter tray from the back"
+    },
+    {
+      "at": "01:23",
+      "by": "customer",
+      "effect": "hurt",
+      "what": "gave up on finding her range today"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "00:24",
+      "what": "no piece in the 20-35 g range shown after 'much heavier than I said'"
+    },
+    {
+      "at": "01:17",
+      "what": "did not bring the lighter tray from the back when asked"
+    },
+    {
+      "at": "01:23",
+      "what": "no offer to source it from another branch or order, and no number taken"
+    }
+  ],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": null,
+    "total_quoted_inr": null,
+    "breakup_given": false,
+    "notes": null
+  },
+  "not_available": [
+    {
+      "item": "necklace 20-35 g",
+      "at": "01:23",
+      "quote": "I don't think I'll find what I want today.",
+      "said_by": "customer",
+      "resolution": "none"
+    }
+  ],
+  "competitor": null,
+  "start": "12:00",
+  "duration_min": 19,
+  "value_inr": 0,
+  "competitor_mentioned": false
+}

@@ -1,0 +1,115 @@
+{
+  "visit_id": "B2-1072",
+  "store": "B2",
+  "salesperson": "Rohit",
+  "date": "2026-10-17",
+  "outcome": "bought",
+  "asked_for": {
+    "category": "bangle",
+    "weight_band": "20-40",
+    "occasion": "sister's wedding",
+    "budget_inr": null
+  },
+  "shown": [
+    "bangle 22 g",
+    "bangle 21 g"
+  ],
+  "reason_not_bought": null,
+  "objections": [
+    {
+      "type": "price_making_charge",
+      "at": "00:35",
+      "quote": "How much of that is making charge?"
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:06",
+      "who": "customer",
+      "emotion": "curious",
+      "cue": "words"
+    },
+    {
+      "at": "00:35",
+      "who": "customer",
+      "emotion": "concerned",
+      "cue": "words"
+    },
+    {
+      "at": "01:15",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    },
+    {
+      "at": "01:26",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "curious -> delighted",
+  "handling_score": 2,
+  "coaching_tip": "When the customer asked for the making-charge percent at 00:49, write out the gold, making and GST split with the percent instead of saying it's all included in the total.",
+  "lost_demand": false,
+  "flags": [
+    "shown weights are per pair as quoted (22 g and about 21 g)",
+    "total quoted as about 244800 at 00:29, billed 244812 at 01:32; used billed figure",
+    "handling scored 2 despite the sale: making-charge breakup refused twice (00:41, 00:53) on the key objection"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer",
+    "intent": "high",
+    "intent_evidence": "00:06 sister's wedding next month, bangle pair of 20-40 g"
+  },
+  "key_moments": [
+    {
+      "at": "00:15",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed bangle pairs within the asked 20-40 g range"
+    },
+    {
+      "at": "00:53",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "refused the written breakup, said it's all in the total"
+    },
+    {
+      "at": "01:07",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "let her try the temple pair on"
+    },
+    {
+      "at": "01:15",
+      "by": "customer",
+      "effect": "helped",
+      "what": "loved the fit and the match with her lehenga"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "00:53",
+      "what": "no making percent or written breakup given when asked twice"
+    },
+    {
+      "at": "01:26",
+      "what": "no add-on suggested for the wedding after the bangles were chosen"
+    }
+  ],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": null,
+    "total_quoted_inr": 244812,
+    "breakup_given": false,
+    "notes": "breakup refused at 00:53; billed 244812 at 01:32"
+  },
+  "not_available": [],
+  "competitor": null,
+  "start": "19:47",
+  "duration_min": 17,
+  "value_inr": 244812,
+  "competitor_mentioned": false
+}

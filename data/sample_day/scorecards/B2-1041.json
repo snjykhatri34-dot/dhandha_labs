@@ -1,0 +1,133 @@
+{
+  "visit_id": "B2-1041",
+  "store": "B2",
+  "salesperson": "Rohit",
+  "date": "2026-10-17",
+  "outcome": "deferred_with_follow_up",
+  "asked_for": {
+    "category": "necklace",
+    "weight_band": "20-35",
+    "occasion": "sister's engagement",
+    "budget_inr": null
+  },
+  "shown": [
+    "necklace 48 g",
+    "necklace 52 g",
+    "necklace 41 g"
+  ],
+  "reason_not_bought": "weight_mismatch",
+  "objections": [
+    {
+      "type": "weight",
+      "at": "00:37",
+      "quote": "That's way above what I said."
+    },
+    {
+      "type": "price_budget",
+      "at": "01:07",
+      "quote": "That's much more than I planned."
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "curious",
+      "cue": "words"
+    },
+    {
+      "at": "00:26",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "01:07",
+      "who": "customer",
+      "emotion": "frustrated",
+      "cue": "words"
+    },
+    {
+      "at": "01:33",
+      "who": "customer",
+      "emotion": "skeptical",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "curious -> skeptical",
+  "handling_score": 3,
+  "coaching_tip": "When the tray has nothing in the customer's weight range, say so straight away and offer Saturday's 30-32 g leaf-pattern pieces with a callback, before you show or price heavier necklaces.",
+  "lost_demand": true,
+  "flags": [
+    "handling score mixed: showed and priced over-range pieces 00:30-00:53 but apologised, gave a breakup and set a callback; scored 3",
+    "price_budget objection raised without a stated budget amount",
+    "breakup_given set true: gold, making 14% and GST named at 00:53 but only the total was stated and no stones were mentioned"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer",
+    "intent": "high",
+    "intent_evidence": "00:08 asked for 20-35 g necklace for sister's engagement"
+  },
+  "key_moments": [
+    {
+      "at": "00:30",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "showed 48 g and 52 g pieces after a 20-35 g ask"
+    },
+    {
+      "at": "01:07",
+      "by": "customer",
+      "effect": "hurt",
+      "what": "said price was over plan and repeated the weight range"
+    },
+    {
+      "at": "01:12",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "apologised and offered 30-32 g leaf pattern arriving Saturday"
+    },
+    {
+      "at": "01:26",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "took her number for a Saturday morning callback"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "00:42",
+      "what": "showed another over-range piece instead of saying the range wasn't in stock"
+    },
+    {
+      "at": "01:33",
+      "what": "no matching add-on suggested for the engagement, such as earrings"
+    }
+  ],
+  "next_step": {
+    "what": "callback when 30-32 g leaf-pattern necklaces arrive; customer to come and see them",
+    "when": "Saturday morning",
+    "who": "Rohit"
+  },
+  "price_talk": {
+    "making_pct": 14,
+    "total_quoted_inr": 560000,
+    "breakup_given": true,
+    "notes": "41 g piece priced at about 5.6 lakh at 00:53"
+  },
+  "not_available": [
+    {
+      "item": "necklace 20-35 g",
+      "at": "01:12",
+      "quote": "Our lighter necklace stock comes in from the workshop this Saturday.",
+      "said_by": "salesperson",
+      "resolution": "callback"
+    }
+  ],
+  "competitor": null,
+  "start": "19:13",
+  "duration_min": 13,
+  "value_inr": 0,
+  "competitor_mentioned": false
+}

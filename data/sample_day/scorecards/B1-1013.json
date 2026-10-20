@@ -1,0 +1,120 @@
+{
+  "visit_id": "B1-1013",
+  "store": "B1",
+  "salesperson": "Meena",
+  "date": "2026-10-17",
+  "outcome": "walked_out",
+  "asked_for": {
+    "category": "chain",
+    "weight_band": "15-30",
+    "occasion": "daily wear",
+    "budget_inr": null
+  },
+  "shown": [
+    "chain 18 g",
+    "chain 22 g",
+    "chain 26 g",
+    "chain 29 g"
+  ],
+  "reason_not_bought": "price_making_charge",
+  "objections": [
+    {
+      "type": "price_making_charge",
+      "at": "00:49",
+      "quote": "Fourteen percent making on a plain chain?",
+      "competitor_mentioned": true
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "curious",
+      "cue": "words"
+    },
+    {
+      "at": "00:30",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:49",
+      "who": "customer",
+      "emotion": "skeptical",
+      "cue": "words"
+    },
+    {
+      "at": "01:21",
+      "who": "customer",
+      "emotion": "dismissive",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "curious -> dismissive",
+  "handling_score": 4,
+  "coaching_tip": "When the customer still finds eleven percent too high, show him the making difference in rupees against the bus-stand quote, and take his number before he leaves so you can follow up.",
+  "lost_demand": false,
+  "flags": [
+    "01:21 'It all looks kind of the same' may be a design concern; not scored as a separate objection"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer",
+    "intent": "high",
+    "intent_evidence": "00:08 asked for daily-wear chains of fifteen to thirty grams"
+  },
+  "key_moments": [
+    {
+      "at": "00:17",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed four chains inside the asked weight range"
+    },
+    {
+      "at": "00:36",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "gave a full price breakup for the 22 g box chain"
+    },
+    {
+      "at": "00:49",
+      "by": "customer",
+      "effect": "hurt",
+      "what": "cited another jeweller's eight percent making charge"
+    },
+    {
+      "at": "01:14",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "called eleven percent the lowest and ended the negotiation"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "01:14",
+      "what": "no rupee comparison of the making difference against the competitor quote"
+    },
+    {
+      "at": "01:29",
+      "what": "no number taken to follow up"
+    }
+  ],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": 14,
+    "total_quoted_inr": 168000,
+    "breakup_given": true,
+    "notes": "rope chain offered at eleven percent making at 00:58"
+  },
+  "not_available": [],
+  "competitor": {
+    "named": "the other jeweller near the bus stand",
+    "claim": "eight percent making",
+    "at": "00:49"
+  },
+  "start": "19:49",
+  "duration_min": 5,
+  "value_inr": 0,
+  "competitor_mentioned": true
+}

@@ -1,0 +1,125 @@
+{
+  "visit_id": "B1-1008",
+  "store": "B1",
+  "salesperson": "Harish",
+  "date": "2026-10-17",
+  "outcome": "deferred_with_follow_up",
+  "asked_for": {
+    "category": "bridal set",
+    "weight_band": null,
+    "occasion": "daughter's wedding in February",
+    "budget_inr": null
+  },
+  "shown": [
+    "bridal set 94 g",
+    "bridal set 112 g",
+    "bridal set 106 g"
+  ],
+  "reason_not_bought": "family_decision",
+  "objections": [
+    {
+      "type": "other",
+      "at": "01:04",
+      "quote": "It looks quite similar to the others."
+    },
+    {
+      "type": "family_decision",
+      "at": "01:15",
+      "quote": "my mother-in-law will have to see it"
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:09",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "01:04",
+      "who": "customer",
+      "emotion": "disappointed",
+      "cue": "words"
+    },
+    {
+      "at": "01:15",
+      "who": "customer",
+      "emotion": "hesitant",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> hesitant",
+  "handling_score": 4,
+  "coaching_tip": "When the family said at 01:04 that the sets look alike, bring out one clearly different design, and before they leave offer to hold the three sets for Saturday and take their number to confirm the visit.",
+  "lost_demand": false,
+  "flags": [
+    "no band for bridal set; asked for 80-120 g",
+    "objection at 01:04 typed other: concern that the designs lack variety, not a missing design",
+    "two making rates quoted (14% on 94 g, 16% on 112 g); making_pct records the lower one",
+    "106 g rani haar piece at 00:51 assumed to be a bridal set",
+    "making-charge question at 00:28 was asked with no pushback; not scored as an objection"
+  ],
+  "customer": {
+    "party": "family",
+    "decision_maker": "mother-in-law; the bride must also see it",
+    "intent": "high",
+    "intent_evidence": "00:09 wedding in February and an 80-120 g range"
+  },
+  "key_moments": [
+    {
+      "at": "00:17",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed two sets inside the asked 80-120 g range"
+    },
+    {
+      "at": "01:04",
+      "by": "customer",
+      "effect": "hurt",
+      "what": "said the rani haar piece looks like the others"
+    },
+    {
+      "at": "01:08",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "agreed the work is similar without offering a different style"
+    },
+    {
+      "at": "01:15",
+      "by": "customer",
+      "effect": "hurt",
+      "what": "mother-in-law has final say on bridal jewellery"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "00:31",
+      "what": "no total or price breakup given, only making percentages"
+    },
+    {
+      "at": "01:08",
+      "what": "no contrasting design shown after 'quite similar'"
+    },
+    {
+      "at": "01:31",
+      "what": "no offer to hold the three sets and no number taken"
+    }
+  ],
+  "next_step": {
+    "what": "return visit with mother-in-law and the bride to see the three sets",
+    "when": "Saturday morning",
+    "who": "Harish"
+  },
+  "price_talk": {
+    "making_pct": 14,
+    "total_quoted_inr": null,
+    "breakup_given": false,
+    "notes": "14% on 94 g, 16% on 112 g, GST extra at 00:31"
+  },
+  "not_available": [],
+  "competitor": null,
+  "start": "17:49",
+  "duration_min": 20,
+  "value_inr": 0,
+  "competitor_mentioned": false
+}

@@ -1,0 +1,122 @@
+{
+  "visit_id": "B3-1081",
+  "store": "B3",
+  "salesperson": "Vikram",
+  "date": "2026-10-17",
+  "outcome": "walked_out",
+  "asked_for": {
+    "category": "chain",
+    "weight_band": "15-30",
+    "occasion": null,
+    "budget_inr": null
+  },
+  "shown": [
+    "chain 22 g",
+    "chain 26 g"
+  ],
+  "reason_not_bought": "design_not_available",
+  "objections": [
+    {
+      "type": "design_not_available",
+      "at": "00:29",
+      "quote": "None at all? Not even one in the back?"
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:14",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:29",
+      "who": "customer",
+      "emotion": "disappointed",
+      "cue": "words"
+    },
+    {
+      "at": "01:05",
+      "who": "customer",
+      "emotion": "frustrated",
+      "cue": "words"
+    },
+    {
+      "at": "01:16",
+      "who": "customer",
+      "emotion": "hesitant",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> hesitant",
+  "handling_score": 3,
+  "coaching_tip": "When the exact matte Cuban link isn't in stock, offer to order one in his 15-30 g range and take his number before he leaves, rather than stopping at the closest piece on the counter.",
+  "lost_demand": true,
+  "flags": [
+    "not_available resolution set to alternative: curb chain was in the asked weight but customer rejected it at 00:46 as too thin and polished",
+    "total quoted as approximate (about 3.3 lakh) at 00:52"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer",
+    "intent": "high",
+    "intent_evidence": "00:08-00:14 asked for a 15-30 g chain, specifically a matte Cuban link"
+  },
+  "key_moments": [
+    {
+      "at": "00:21",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "said no matte Cuban link in that weight; sold out"
+    },
+    {
+      "at": "00:33",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed rope and curb chains in asked weight, hallmarked with HUID"
+    },
+    {
+      "at": "01:05",
+      "by": "customer",
+      "effect": "hurt",
+      "what": "said the chains shown were not what he asked for"
+    },
+    {
+      "at": "01:11",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "called curb the closest in stock; no order offered"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "01:11",
+      "what": "no offer to order or make a matte Cuban link in 15-30 g"
+    },
+    {
+      "at": "01:16",
+      "what": "no number taken to call back when the design is available"
+    }
+  ],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": 12,
+    "total_quoted_inr": 330000,
+    "breakup_given": false,
+    "notes": "12% making plus 3% GST, curb about 3.3 lakh at 00:52"
+  },
+  "not_available": [
+    {
+      "item": "chain 15-30 g matte Cuban link",
+      "at": "00:21",
+      "quote": "we don't have a matte Cuban link in that weight right now",
+      "said_by": "salesperson",
+      "resolution": "alternative"
+    }
+  ],
+  "competitor": null,
+  "start": "12:42",
+  "duration_min": 19,
+  "value_inr": 0,
+  "competitor_mentioned": false
+}

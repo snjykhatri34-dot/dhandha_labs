@@ -1,0 +1,102 @@
+{
+  "visit_id": "B2-1059",
+  "store": "B2",
+  "salesperson": "Priya",
+  "date": "2026-10-17",
+  "outcome": "bought",
+  "asked_for": {
+    "category": "bridal set",
+    "weight_band": null,
+    "occasion": "daughter's wedding in February",
+    "budget_inr": null
+  },
+  "shown": [
+    "bridal set 88 g",
+    "bridal set 96 g",
+    "bridal set 114 g",
+    "maang tikka 6 g"
+  ],
+  "reason_not_bought": null,
+  "objections": [],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:36",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    },
+    {
+      "at": "01:33",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    },
+    {
+      "at": "01:39",
+      "who": "customer",
+      "emotion": "satisfied",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> satisfied",
+  "handling_score": 5,
+  "coaching_tip": "Keep doing what you did at 00:45: give the full gold, making, stones and GST breakup and offer to write it on the estimate before the customer has to ask.",
+  "lost_demand": false,
+  "flags": [
+    "no band for bridal set; asked for 80-120 g",
+    "budget not stated as a number; father said total was 'within what we planned' at 01:03",
+    "matching maang tikka not bought; held until Saturday for mother to see next week"
+  ],
+  "customer": {
+    "party": "family",
+    "decision_maker": "father (Papa); mother to see the tikka next week",
+    "intent": "high",
+    "intent_evidence": "00:08 daughter's wedding in February and a stated 80-120 g range"
+  },
+  "key_moments": [
+    {
+      "at": "00:22",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed three hallmarked temple sets inside the asked weight range"
+    },
+    {
+      "at": "00:45",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "gave full itemised breakup and total without being pressed"
+    },
+    {
+      "at": "01:24",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "offered try-on with mirror and free length adjustment"
+    },
+    {
+      "at": "01:33",
+      "by": "customer",
+      "effect": "helped",
+      "what": "daughter said the set feels light and is the one"
+    }
+  ],
+  "missed_opportunities": [],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": 12,
+    "total_quoted_inr": 943000,
+    "breakup_given": true,
+    "notes": "full gold, making, rubies and GST breakup at 00:45"
+  },
+  "not_available": [],
+  "competitor": null,
+  "start": "18:20",
+  "duration_min": 31,
+  "value_inr": 942931,
+  "competitor_mentioned": false
+}

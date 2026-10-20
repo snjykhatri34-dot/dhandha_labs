@@ -1,0 +1,103 @@
+{
+  "visit_id": "B1-1032",
+  "store": "B1",
+  "salesperson": "Kavya",
+  "date": "2026-10-17",
+  "outcome": "walked_out",
+  "asked_for": {
+    "category": "ring",
+    "weight_band": "5-10",
+    "occasion": null,
+    "budget_inr": null
+  },
+  "shown": [
+    "ring 6.4 g",
+    "ring 8 g",
+    "ring 9.2 g",
+    "ring 5 g"
+  ],
+  "reason_not_bought": "just_browsing",
+  "objections": [],
+  "emotions": [
+    {
+      "at": "00:07",
+      "who": "customer",
+      "emotion": "curious",
+      "cue": "words"
+    },
+    {
+      "at": "00:26",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "01:22",
+      "who": "customer",
+      "emotion": "dismissive",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "curious -> dismissive",
+  "handling_score": 4,
+  "coaching_tip": "When a customer says she is only looking, as at 01:09, ask whether you can note the leaf ring and her number so you can let her know if the rate changes or new designs come in.",
+  "lost_demand": false,
+  "flags": [
+    "two making rates quoted (12% on the 9.2 g ring, 10% on the 6.4 g ring); making_pct uses the first",
+    "breakup_given set true: gold, making and GST given at 00:42; plain gold ring has no stones",
+    "ring 5 g was only named at 01:26 as fashion rings at the next counter, not shown; purity not stated",
+    "intent set low: specific weight ask at 00:07, but customer said she is only looking at 01:09",
+    "no objection raised; customer gave no reason beyond browsing"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer",
+    "intent": "low",
+    "intent_evidence": "01:09 'I'm only looking today. No occasion as such, I was just passing by.'"
+  },
+  "key_moments": [
+    {
+      "at": "00:14",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed three rings within the asked 5-10 g range"
+    },
+    {
+      "at": "00:30",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed BIS hallmark and HUID stamp inside the band"
+    },
+    {
+      "at": "00:42",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "gave a full price breakup unprompted"
+    },
+    {
+      "at": "01:09",
+      "by": "customer",
+      "effect": "hurt",
+      "what": "said she was only looking, no occasion"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "01:33",
+      "what": "no number taken and no invitation to return for the leaf ring"
+    }
+  ],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": 12,
+    "total_quoted_inr": 101000,
+    "breakup_given": true,
+    "notes": "breakup given at 00:42; 10% making quoted for plainer ring at 01:00"
+  },
+  "not_available": [],
+  "competitor": null,
+  "start": "20:56",
+  "duration_min": 18,
+  "value_inr": 0,
+  "competitor_mentioned": false
+}

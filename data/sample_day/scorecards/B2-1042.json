@@ -1,0 +1,127 @@
+{
+  "visit_id": "B2-1042",
+  "store": "B2",
+  "salesperson": "Rohit",
+  "date": "2026-10-17",
+  "outcome": "deferred_with_follow_up",
+  "asked_for": {
+    "category": "bridal set",
+    "weight_band": null,
+    "occasion": "daughter's wedding in February",
+    "budget_inr": null
+  },
+  "shown": [
+    "bridal set 92 g",
+    "bridal set 108 g"
+  ],
+  "reason_not_bought": "family_decision",
+  "objections": [
+    {
+      "type": "family_decision",
+      "at": "00:55",
+      "quote": "my husband's mother is the one who decides on the bridal jewellery"
+    },
+    {
+      "type": "weight",
+      "at": "01:26",
+      "quote": "She thinks anything this light doesn't look like proper bridal gold."
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:32",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    },
+    {
+      "at": "00:55",
+      "who": "customer",
+      "emotion": "hesitant",
+      "cue": "words"
+    },
+    {
+      "at": "01:26",
+      "who": "customer",
+      "emotion": "concerned",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> concerned",
+  "handling_score": 4,
+  "coaching_tip": "When the family says the mother-in-law may find the 92 g set too light, offer to keep the 108 g rani haar set aside for Sunday as well so she can compare both in person.",
+  "lost_demand": false,
+  "flags": [
+    "no band for bridal set; asked for 80-120 g",
+    "weight objection at 01:26 is relayed from the absent mother-in-law; the 92 g set is within the asked 80-120 g",
+    "00:32 'Is it twenty-two carat?' treated as an inquiry, not a purity_trust objection; answered with hallmark and HUID",
+    "Speaker C's relationship to Speaker B not stated",
+    "breakup_given set true: gold, 14% making and 3% GST named at 00:44; no stones mentioned and no per-component amounts",
+    "clip ends at 01:26 with no salesperson reply to the weight concern"
+  ],
+  "customer": {
+    "party": "family",
+    "decision_maker": "husband's mother; must see the set in person",
+    "intent": "high",
+    "intent_evidence": "00:08 daughter's wedding in February, bridal set of 80 to 120 grams"
+  },
+  "key_moments": [
+    {
+      "at": "00:21",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed two bridal sets within the asked 80-120 g range"
+    },
+    {
+      "at": "00:44",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "gave price structure and a total of about 9.4 lakh"
+    },
+    {
+      "at": "00:55",
+      "by": "customer",
+      "effect": "hurt",
+      "what": "said the husband's mother must see and decide"
+    },
+    {
+      "at": "01:21",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "held the 92 g set till Sunday and took the number"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "01:21",
+      "what": "did not offer to hold the 108 g set too for the Sunday visit"
+    },
+    {
+      "at": "01:26",
+      "what": "no response to the concern that 92 g looks too light"
+    }
+  ],
+  "next_step": {
+    "what": "return visit with husband's mother; 92 g set held",
+    "when": "Sunday 11 am",
+    "who": "Rohit"
+  },
+  "price_talk": {
+    "making_pct": 14,
+    "total_quoted_inr": 940000,
+    "breakup_given": true,
+    "notes": "total depends on billing-day gold rate at 00:44"
+  },
+  "not_available": [],
+  "competitor": null,
+  "start": "20:51",
+  "duration_min": 22,
+  "value_inr": 0,
+  "competitor_mentioned": false
+}

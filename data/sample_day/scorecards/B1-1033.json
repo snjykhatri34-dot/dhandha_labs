@@ -1,0 +1,130 @@
+{
+  "visit_id": "B1-1033",
+  "store": "B1",
+  "salesperson": "Meena",
+  "date": "2026-10-17",
+  "outcome": "deferred_with_follow_up",
+  "asked_for": {
+    "category": "bridal set",
+    "weight_band": null,
+    "occasion": "daughter's wedding in February",
+    "budget_inr": null
+  },
+  "shown": [
+    "bridal set 96 g",
+    "bridal set 114 g"
+  ],
+  "reason_not_bought": "price_making_charge",
+  "objections": [
+    {
+      "type": "price_making_charge",
+      "at": "00:30",
+      "quote": "What is the making charge on it?"
+    },
+    {
+      "type": "price_budget",
+      "at": "01:09",
+      "quote": "We were hoping to stay a bit lower overall."
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:30",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:41",
+      "who": "customer",
+      "emotion": "concerned",
+      "cue": "words"
+    },
+    {
+      "at": "01:26",
+      "who": "customer",
+      "emotion": "hesitant",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> hesitant",
+  "handling_score": 3,
+  "coaching_tip": "When the family pushed back on 22% making at 00:41, bring out one of the plainer sets in the same 80-120 g range and give both totals side by side with the gold, making and GST amounts, so they can compare before they leave.",
+  "lost_demand": false,
+  "flags": [
+    "no band for bridal set; asked for 80-120 g",
+    "price_budget raised without a stated budget amount",
+    "breakup at 00:47 named gold, making and GST but no stones or amounts; breakup_given set false",
+    "handling score borderline 2/3: 'fixed rate' answer was defensive, but a hold and number were secured",
+    "Saturday return: unclear whether outcome will be a purchase; making charge still unresolved at 01:26"
+  ],
+  "customer": {
+    "party": "family",
+    "decision_maker": "mother and father of the bride, deciding together",
+    "intent": "high",
+    "intent_evidence": "00:08 daughter's wedding in February, 80-120 grams"
+  },
+  "key_moments": [
+    {
+      "at": "00:21",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed two sets inside the asked 80-120 g range"
+    },
+    {
+      "at": "00:41",
+      "by": "customer",
+      "effect": "hurt",
+      "what": "objected to 22% making on a 96 g set"
+    },
+    {
+      "at": "01:01",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "called making fixed; mentioned plainer sets without showing one"
+    },
+    {
+      "at": "01:21",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "held the 96 g set till Saturday and took the number"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "00:47",
+      "what": "no total or rupee amounts given for gold, making and GST"
+    },
+    {
+      "at": "01:01",
+      "what": "plainer lower-making sets mentioned but none shown in the asked weight"
+    },
+    {
+      "at": "01:09",
+      "what": "no option priced to bring the total lower"
+    }
+  ],
+  "next_step": {
+    "what": "return visit to decide; 96 g set held",
+    "when": "Saturday morning",
+    "who": "Meena"
+  },
+  "price_talk": {
+    "making_pct": 22,
+    "total_quoted_inr": null,
+    "breakup_given": false,
+    "notes": "making called fixed rate for this set at 01:01"
+  },
+  "not_available": [],
+  "competitor": null,
+  "start": "13:36",
+  "duration_min": 27,
+  "value_inr": 0,
+  "competitor_mentioned": false
+}

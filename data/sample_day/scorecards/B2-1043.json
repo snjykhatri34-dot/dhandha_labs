@@ -1,0 +1,120 @@
+{
+  "visit_id": "B2-1043",
+  "store": "B2",
+  "salesperson": "Rohit",
+  "date": "2026-10-17",
+  "outcome": "deferred_with_follow_up",
+  "asked_for": {
+    "category": "earrings",
+    "weight_band": "8-15",
+    "occasion": "daughter's engagement",
+    "budget_inr": null
+  },
+  "shown": [
+    "earrings 12 g",
+    "earrings 9.5 g"
+  ],
+  "reason_not_bought": "family_decision",
+  "objections": [
+    {
+      "type": "purity_trust",
+      "at": "00:24",
+      "quote": "Is it twenty-two carat? Does it have the hallmark?"
+    },
+    {
+      "type": "family_decision",
+      "at": "00:47",
+      "quote": "my husband and mother-in-law will want to see them first"
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:07",
+      "who": "customer",
+      "emotion": "curious",
+      "cue": "words"
+    },
+    {
+      "at": "00:24",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "01:10",
+      "who": "customer",
+      "emotion": "hesitant",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "curious -> hesitant",
+  "handling_score": 4,
+  "coaching_tip": "When the family has to decide on an engagement piece, keep the 9.5 g drop studs aside too and suggest a matching pendant, so they have a real choice on Saturday.",
+  "lost_demand": false,
+  "flags": [
+    "occasion stated at 00:47, not in the first request at 00:07",
+    "purity question at 00:24 recorded as purity_trust objection under the question rule; answered with HUID at 00:29",
+    "partial breakup at 00:38: gold, 14% making and 3% GST named, but no amount per component and no stones, so breakup_given is false",
+    "'Hmm' at 00:47 after the price is ambiguous and is not labelled as an emotion",
+    "party is solo, but the decision-makers (husband, mother-in-law) were not present"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "husband and mother-in-law; customer will bring them Saturday",
+    "intent": "high",
+    "intent_evidence": "00:07 asked for gold earrings, 8-15 g; 00:47 for daughter's engagement"
+  },
+  "key_moments": [
+    {
+      "at": "00:15",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed two earrings within the asked 8-15 g range"
+    },
+    {
+      "at": "00:29",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "confirmed 22 carat and showed the HUID hallmark on the hook"
+    },
+    {
+      "at": "00:47",
+      "by": "customer",
+      "effect": "hurt",
+      "what": "husband and mother-in-law must see and decide first"
+    },
+    {
+      "at": "01:05",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "held the jhumka until Saturday and took her number"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "00:56",
+      "what": "no matching pendant or set suggested for the engagement"
+    },
+    {
+      "at": "01:10",
+      "what": "second option not held when she doubted family would like it"
+    }
+  ],
+  "next_step": {
+    "what": "family visit with husband and mother-in-law; jhumka held",
+    "when": "Saturday evening",
+    "who": "Rohit"
+  },
+  "price_talk": {
+    "making_pct": 14,
+    "total_quoted_inr": 154000,
+    "breakup_given": false,
+    "notes": "components named without amounts at 00:38"
+  },
+  "not_available": [],
+  "competitor": null,
+  "start": "12:22",
+  "duration_min": 14,
+  "value_inr": 0,
+  "competitor_mentioned": false
+}

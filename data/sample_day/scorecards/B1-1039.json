@@ -1,0 +1,119 @@
+{
+  "visit_id": "B1-1039",
+  "store": "B1",
+  "salesperson": "Kavya",
+  "date": "2026-10-17",
+  "outcome": "walked_out",
+  "asked_for": {
+    "category": "earrings",
+    "weight_band": "8-15",
+    "occasion": null,
+    "budget_inr": null
+  },
+  "shown": [
+    "earrings 9.4 g",
+    "earrings 11 g",
+    "earrings 14.2 g",
+    "earrings 10.5 g"
+  ],
+  "reason_not_bought": "just_browsing",
+  "objections": [
+    {
+      "type": "price_budget",
+      "at": "00:49",
+      "quote": "Hmm, that's more than I expected for earrings."
+    },
+    {
+      "type": "other",
+      "at": "01:08",
+      "quote": "Is the lighter one as sturdy, though?"
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:29",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    },
+    {
+      "at": "00:49",
+      "who": "customer",
+      "emotion": "concerned",
+      "cue": "words"
+    },
+    {
+      "at": "01:08",
+      "who": "customer",
+      "emotion": "skeptical",
+      "cue": "words"
+    },
+    {
+      "at": "01:44",
+      "who": "customer",
+      "emotion": "skeptical",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> skeptical",
+  "handling_score": 5,
+  "coaching_tip": "Keep doing what you did at 00:53: when the total felt high, you offered the same chandbali at a lighter weight with its price and reassured on hallmark and HUID.",
+  "lost_demand": false,
+  "flags": [
+    "main reason ambiguous: customer said 'only looking today' at 01:29 but also doubted prices at 01:44; chose just_browsing",
+    "objection 'other' at 01:08 is durability of the lighter hollow-back piece",
+    "intent ambiguous: specific 8-15 g earring ask at 00:08 but 'only looking today' at 01:29; set medium"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer",
+    "intent": "medium",
+    "intent_evidence": "00:08 asked for gold earrings in an 8-15 g range; 01:29 said she was only looking today"
+  },
+  "key_moments": [
+    {
+      "at": "00:16",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed three earrings all within the asked 8-15 g range"
+    },
+    {
+      "at": "00:49",
+      "by": "customer",
+      "effect": "hurt",
+      "what": "found the 1.61 lakh chandbali total more than expected"
+    },
+    {
+      "at": "00:53",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "offered same design at 10.5 g, about 1.19 lakh"
+    },
+    {
+      "at": "01:29",
+      "by": "customer",
+      "effect": "hurt",
+      "what": "said she was only looking and not buying today"
+    }
+  ],
+  "missed_opportunities": [],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": 12,
+    "total_quoted_inr": 161000,
+    "breakup_given": true,
+    "notes": "breakup of gold, 12% making and 3% GST given at 00:34"
+  },
+  "not_available": [],
+  "competitor": null,
+  "start": "19:40",
+  "duration_min": 21,
+  "value_inr": 0,
+  "competitor_mentioned": false
+}

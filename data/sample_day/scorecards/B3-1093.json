@@ -1,0 +1,130 @@
+{
+  "visit_id": "B3-1093",
+  "store": "B3",
+  "salesperson": "Suresh",
+  "date": "2026-10-17",
+  "outcome": "deferred_with_follow_up",
+  "asked_for": {
+    "category": null,
+    "weight_band": null,
+    "occasion": null,
+    "budget_inr": null
+  },
+  "shown": [
+    "pendant 6 g",
+    "pendant 8.4 g",
+    "pendant 9 g"
+  ],
+  "reason_not_bought": "price_making_charge",
+  "objections": [
+    {
+      "type": "price_making_charge",
+      "at": "00:27",
+      "quote": "And what's the making charge on this pendant?",
+      "competitor_mentioned": true
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "curious",
+      "cue": "words"
+    },
+    {
+      "at": "00:27",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    },
+    {
+      "at": "00:40",
+      "who": "customer",
+      "emotion": "skeptical",
+      "cue": "words"
+    },
+    {
+      "at": "01:19",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "curious -> interested",
+  "handling_score": 3,
+  "coaching_tip": "When the customer quoted twelve percent at 00:40, walk her through the leaf pendant's gold value, making and GST, and explain what the eighteen percent covers, instead of saying that's the rate.",
+  "lost_demand": false,
+  "flags": [
+    "category set to null: customer asked for a pendant, which is not in the CLAUDE.md category list",
+    "no weight band for pendant; asked for 5-10 g",
+    "handling score between 2 and 3: defensive at 00:47, but hold and number taken at 01:13",
+    "making charge decision deferred to owner, who was not present"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer; owner must decide on making charge",
+    "intent": "high",
+    "intent_evidence": "00:08 asked for a gold pendant for herself between five and ten grams"
+  },
+  "key_moments": [
+    {
+      "at": "00:16",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed three pendants within the asked 5-10 g range"
+    },
+    {
+      "at": "00:40",
+      "by": "customer",
+      "effect": "hurt",
+      "what": "cited another showroom's twelve percent making"
+    },
+    {
+      "at": "00:47",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "called eighteen percent the rate with no explanation"
+    },
+    {
+      "at": "01:13",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "held the 8.4 g leaf pendant until Saturday and took number"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "00:33",
+      "what": "no total price or breakup given for the leaf pendant"
+    },
+    {
+      "at": "00:47",
+      "what": "no price breakup given against the competitor quote"
+    },
+    {
+      "at": "00:27",
+      "what": "no chain suggested as an add-on for the pendant"
+    }
+  ],
+  "next_step": {
+    "what": "return visit to discuss making with owner; 8.4 g leaf pendant held",
+    "when": "Saturday morning",
+    "who": "Suresh"
+  },
+  "price_talk": {
+    "making_pct": 18,
+    "total_quoted_inr": null,
+    "breakup_given": false,
+    "notes": "making called fixed at 00:47; owner to decide Saturday per 00:58"
+  },
+  "not_available": [],
+  "competitor": {
+    "named": "another showroom",
+    "claim": "twelve percent making on a pendant of almost the same weight",
+    "at": "00:40"
+  },
+  "start": "16:01",
+  "duration_min": 11,
+  "value_inr": 0,
+  "competitor_mentioned": true
+}

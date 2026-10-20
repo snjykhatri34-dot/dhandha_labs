@@ -1,0 +1,107 @@
+{
+  "visit_id": "B3-1090",
+  "store": "B3",
+  "salesperson": "Neha",
+  "date": "2026-10-17",
+  "outcome": "bought",
+  "asked_for": {
+    "category": "necklace",
+    "weight_band": "20-35",
+    "occasion": "sister's engagement",
+    "budget_inr": null
+  },
+  "shown": [
+    "necklace 24 g",
+    "necklace 28 g",
+    "necklace 32 g",
+    "necklace 32 g"
+  ],
+  "reason_not_bought": null,
+  "objections": [],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:33",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    },
+    {
+      "at": "01:24",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    },
+    {
+      "at": "01:29",
+      "who": "customer",
+      "emotion": "satisfied",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> satisfied",
+  "handling_score": 4,
+  "coaching_tip": "Once the leaf-pattern necklace was settled at 01:29, suggest matching earrings from the same design for the engagement before getting the bill ready.",
+  "lost_demand": false,
+  "flags": [
+    "budget mentioned at 01:08 ('within what we planned') but no amount stated",
+    "relationship between Speaker B and Speaker C not stated; party set to group",
+    "two of the four pieces were described as 'around' 32 g"
+  ],
+  "customer": {
+    "party": "group",
+    "decision_maker": "the customer (Speaker B)",
+    "intent": "high",
+    "intent_evidence": "00:08 named the sister's engagement and a 20-35 g range"
+  },
+  "key_moments": [
+    {
+      "at": "00:21",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed four necklaces within the asked 20-35 g range"
+    },
+    {
+      "at": "00:38",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "confirmed 22 carat and showed the HUID with how to verify it"
+    },
+    {
+      "at": "00:51",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "gave a full price breakup with 12% making"
+    },
+    {
+      "at": "01:29",
+      "by": "customer",
+      "effect": "helped",
+      "what": "decided to buy the 28 g leaf-pattern necklace"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "01:33",
+      "what": "no matching earrings or add-on suggested for the engagement"
+    }
+  ],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": 12,
+    "total_quoted_inr": 265800,
+    "breakup_given": true,
+    "notes": "full breakup of gold, making, stones and GST at 00:51"
+  },
+  "not_available": [],
+  "competitor": null,
+  "start": "17:08",
+  "duration_min": 9,
+  "value_inr": 265786,
+  "competitor_mentioned": false
+}

@@ -1,0 +1,118 @@
+{
+  "visit_id": "B1-1014",
+  "store": "B1",
+  "salesperson": "Kavya",
+  "date": "2026-10-17",
+  "outcome": "walked_out",
+  "asked_for": {
+    "category": "earrings",
+    "weight_band": "8-15",
+    "occasion": "regular wear",
+    "budget_inr": null
+  },
+  "shown": [
+    "earrings 12.4 g",
+    "earrings 9.1 g",
+    "earrings 10 g",
+    "earrings 14 g",
+    "earrings 8.6 g"
+  ],
+  "reason_not_bought": "price_making_charge",
+  "objections": [
+    {
+      "type": "price_making_charge",
+      "at": "00:49",
+      "quote": "Fourteen percent making? That's too much for such a plain design.",
+      "competitor_mentioned": true
+    },
+    {
+      "type": "other",
+      "at": "01:22",
+      "quote": "I don't like the machine-finished ones, they look flat."
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:49",
+      "who": "customer",
+      "emotion": "skeptical",
+      "cue": "words"
+    },
+    {
+      "at": "01:37",
+      "who": "customer",
+      "emotion": "frustrated",
+      "cue": "words"
+    },
+    {
+      "at": "01:47",
+      "who": "customer",
+      "emotion": "frustrated",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> frustrated",
+  "handling_score": 5,
+  "coaching_tip": "Keep doing what you did at 01:08: when the making charge is challenged, offer a lower rate on the chosen piece and a lower-making pair in the same weight range.",
+  "lost_demand": false,
+  "flags": [
+    "hold until Saturday and callback offered at 01:28 but customer declined at 01:37; scored walked_out",
+    "objection type 'other' at 01:22: customer disliked the look of the machine-finished alternative"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer",
+    "intent": "high",
+    "intent_evidence": "00:08 asked for earrings between eight and fifteen grams for regular wear"
+  },
+  "key_moments": [
+    {
+      "at": "00:16",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed four pairs within the asked 8-15 g range"
+    },
+    {
+      "at": "01:02",
+      "by": "customer",
+      "effect": "hurt",
+      "what": "cited a nearby jeweller quoting nine percent making"
+    },
+    {
+      "at": "01:08",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "cut making to 12% and offered a 10% making pair"
+    },
+    {
+      "at": "01:37",
+      "by": "customer",
+      "effect": "hurt",
+      "what": "declined hold and callback, tired of conflicting making quotes"
+    }
+  ],
+  "missed_opportunities": [],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": 14,
+    "total_quoted_inr": 104000,
+    "breakup_given": true,
+    "notes": "making cut to 12% at 01:08"
+  },
+  "not_available": [],
+  "competitor": {
+    "named": "the other jeweller near the bus stand",
+    "claim": "nine percent making on almost the same studs",
+    "at": "01:02"
+  },
+  "start": "18:08",
+  "duration_min": 6,
+  "value_inr": 0,
+  "competitor_mentioned": true
+}

@@ -1,0 +1,130 @@
+{
+  "visit_id": "B1-1002",
+  "store": "B1",
+  "salesperson": "Harish",
+  "date": "2026-10-17",
+  "outcome": "walked_out",
+  "asked_for": {
+    "category": "necklace",
+    "weight_band": "20-35",
+    "occasion": "sister's wedding",
+    "budget_inr": null
+  },
+  "shown": [
+    "necklace 52 g",
+    "necklace 48 g",
+    "necklace 12 g"
+  ],
+  "reason_not_bought": "weight_mismatch",
+  "objections": [
+    {
+      "type": "weight",
+      "at": "00:35",
+      "quote": "That's well over what I said."
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:26",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    },
+    {
+      "at": "00:48",
+      "who": "customer",
+      "emotion": "disappointed",
+      "cue": "words"
+    },
+    {
+      "at": "01:15",
+      "who": "customer",
+      "emotion": "frustrated",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> frustrated",
+  "handling_score": 1,
+  "coaching_tip": "When the tray has nothing in her 20-35 g range, say you will bring one from another branch or order the mango design to that weight, and take her number so you can call her well before the wedding.",
+  "lost_demand": true,
+  "flags": [
+    "order offered at 01:08 but salesperson said weight would come out similar, so not_available resolution scored none"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer",
+    "intent": "high",
+    "intent_evidence": "00:08 sister's wedding next month and a stated 20-35 g range"
+  },
+  "key_moments": [
+    {
+      "at": "00:30",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "first pieces were 48 g and 52 g after a 20-35 g ask"
+    },
+    {
+      "at": "00:41",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "jumped to a 12 g chain necklace, skipping the asked range"
+    },
+    {
+      "at": "01:08",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "said a custom order would come out similarly heavy"
+    },
+    {
+      "at": "01:20",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "let her leave with no follow-up offered"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "00:17",
+      "what": "no piece in the stated 20-35 g range shown first"
+    },
+    {
+      "at": "00:55",
+      "what": "no offer to source it from another branch or order, and no number taken"
+    },
+    {
+      "at": "01:08",
+      "what": "no offer to check if the mango design could be made to 30-35 g"
+    },
+    {
+      "at": "01:20",
+      "what": "no number taken to follow up before the wedding"
+    }
+  ],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": null,
+    "total_quoted_inr": null,
+    "breakup_given": false,
+    "notes": null
+  },
+  "not_available": [
+    {
+      "item": "necklace 20-35 g",
+      "at": "00:55",
+      "quote": "These are what we have in the tray right now, ma'am.",
+      "said_by": "salesperson",
+      "resolution": "none"
+    }
+  ],
+  "competitor": null,
+  "start": "18:27",
+  "duration_min": 6,
+  "value_inr": 0,
+  "competitor_mentioned": false
+}

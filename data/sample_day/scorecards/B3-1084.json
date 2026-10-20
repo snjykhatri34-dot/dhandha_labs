@@ -1,0 +1,112 @@
+{
+  "visit_id": "B3-1084",
+  "store": "B3",
+  "salesperson": "Vikram",
+  "date": "2026-10-17",
+  "outcome": "bought",
+  "asked_for": {
+    "category": "earrings",
+    "weight_band": "8-15",
+    "occasion": "daily wear",
+    "budget_inr": null
+  },
+  "shown": [
+    "earrings 9 g",
+    "earrings 12 g",
+    "earrings 14 g"
+  ],
+  "reason_not_bought": null,
+  "objections": [],
+  "emotions": [
+    {
+      "at": "00:07",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:22",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "01:17",
+      "who": "customer",
+      "emotion": "reassured",
+      "cue": "words"
+    },
+    {
+      "at": "01:21",
+      "who": "customer",
+      "emotion": "satisfied",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> satisfied",
+  "handling_score": 4,
+  "coaching_tip": "When she says she'll take the 12 g pair, as at 01:21, suggest a matching piece and split the total into gold, making and GST before you make the bill.",
+  "lost_demand": false,
+  "flags": [
+    "purity (00:22), screw-back (00:32) and making-charge (01:08) questions treated as inquiries, not objections; each was answered and accepted"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer",
+    "intent": "high",
+    "intent_evidence": "00:07 asked for daily-wear earrings between eight and fifteen grams"
+  },
+  "key_moments": [
+    {
+      "at": "00:14",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed three pairs inside the asked 8-15 g range"
+    },
+    {
+      "at": "00:26",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "confirmed 22 carat, hallmark and HUID on the hook"
+    },
+    {
+      "at": "00:57",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "quoted a clear all-in total including making and GST"
+    },
+    {
+      "at": "01:21",
+      "by": "customer",
+      "effect": "helped",
+      "what": "chose the 12 g pair to wear out"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "00:38",
+      "what": "screw-back strength answered briefly; no demonstration offered for office wear"
+    },
+    {
+      "at": "00:57",
+      "what": "no price breakup into gold, making and GST amounts"
+    },
+    {
+      "at": "01:26",
+      "what": "no add-on such as a matching pendant suggested"
+    }
+  ],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": 14,
+    "total_quoted_inr": 64294,
+    "breakup_given": false,
+    "notes": "making confirmed as 14% of gold value at 01:12"
+  },
+  "not_available": [],
+  "competitor": null,
+  "start": "17:14",
+  "duration_min": 12,
+  "value_inr": 64294,
+  "competitor_mentioned": false
+}

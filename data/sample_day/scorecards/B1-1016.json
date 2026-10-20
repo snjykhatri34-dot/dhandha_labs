@@ -1,0 +1,104 @@
+{
+  "visit_id": "B1-1016",
+  "store": "B1",
+  "salesperson": "Harish",
+  "date": "2026-10-17",
+  "outcome": "bought",
+  "asked_for": {
+    "category": "earrings",
+    "weight_band": "8-15",
+    "occasion": "daughter's engagement",
+    "budget_inr": null
+  },
+  "shown": [
+    "earrings 12 g",
+    "earrings 14 g"
+  ],
+  "reason_not_bought": null,
+  "objections": [
+    {
+      "type": "purity_trust",
+      "at": "00:33",
+      "quote": "Is it hallmarked?"
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:33",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "01:35",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    },
+    {
+      "at": "01:55",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> delighted",
+  "handling_score": 5,
+  "coaching_tip": "Keep doing what you did at 00:50: give the full breakup of gold, making, diamonds and GST as soon as the customer asks for the all-in price.",
+  "lost_demand": false,
+  "flags": [
+    "hallmark question at 00:33 recorded as purity_trust; it read as a check rather than a doubt and was resolved at 00:37"
+  ],
+  "customer": {
+    "party": "family",
+    "decision_maker": "parents; father confirmed the purchase",
+    "intent": "high",
+    "intent_evidence": "00:08 named earrings, an 8-15 g range and their daughter's engagement"
+  },
+  "key_moments": [
+    {
+      "at": "00:20",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed two diamond pairs, both within the asked weight range"
+    },
+    {
+      "at": "00:50",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "gave full breakup: gold, making, diamonds, GST, total"
+    },
+    {
+      "at": "01:12",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "priced the lighter alternative and explained the difference"
+    },
+    {
+      "at": "01:35",
+      "by": "customer",
+      "effect": "helped",
+      "what": "tried the jhumki and loved how it looked"
+    }
+  ],
+  "missed_opportunities": [],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": 14,
+    "total_quoted_inr": 389199,
+    "breakup_given": true,
+    "notes": "full breakup with diamond certificate given at 00:50"
+  },
+  "not_available": [],
+  "competitor": null,
+  "start": "16:25",
+  "duration_min": 7,
+  "value_inr": 389199,
+  "competitor_mentioned": false
+}

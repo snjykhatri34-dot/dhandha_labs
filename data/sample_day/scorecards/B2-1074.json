@@ -1,0 +1,113 @@
+{
+  "visit_id": "B2-1074",
+  "store": "B2",
+  "salesperson": "Rohit",
+  "date": "2026-10-17",
+  "outcome": "deferred_with_follow_up",
+  "asked_for": {
+    "category": "earrings",
+    "weight_band": "8-15",
+    "occasion": "cousin's wedding next month",
+    "budget_inr": null
+  },
+  "shown": [
+    "earrings 9.4 g",
+    "earrings 12 g",
+    "earrings 14.6 g"
+  ],
+  "reason_not_bought": "family_decision",
+  "objections": [
+    {
+      "type": "family_decision",
+      "at": "00:54",
+      "quote": "My mother-in-law is paying for it, so she has to see it first."
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:07",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:33",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:54",
+      "who": "customer",
+      "emotion": "hesitant",
+      "cue": "words"
+    },
+    {
+      "at": "01:19",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> delighted",
+  "handling_score": 4,
+  "coaching_tip": "When you quote the price, split it into gold, making and GST and write it on a slip she can show her mother-in-law before Saturday.",
+  "lost_demand": false,
+  "flags": [
+    "00:33 question about the red stone treated as curiosity, answered at 00:38; not scored as a purity objection",
+    "total of 135000 INR is approximate ('around one lakh thirty-five thousand')"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "mother-in-law; she must see the piece first",
+    "intent": "high",
+    "intent_evidence": "00:07 stated an 8-15 g range; 00:16 cousin's wedding next month"
+  },
+  "key_moments": [
+    {
+      "at": "00:22",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed three jhumkas inside the asked 8-15 g range"
+    },
+    {
+      "at": "00:54",
+      "by": "customer",
+      "effect": "hurt",
+      "what": "mother-in-law is paying and must see it first"
+    },
+    {
+      "at": "01:14",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "held the 12 g pair till Saturday and took her number"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "00:48",
+      "what": "no price breakup into gold, making and GST"
+    },
+    {
+      "at": "01:19",
+      "what": "no matching piece suggested for the wedding"
+    }
+  ],
+  "next_step": {
+    "what": "return visit with mother-in-law; 12 g jhumkas held",
+    "when": "Saturday around 11 am",
+    "who": "Rohit"
+  },
+  "price_talk": {
+    "making_pct": null,
+    "total_quoted_inr": 135000,
+    "breakup_given": false,
+    "notes": "approximate total incl. making and GST at 00:48"
+  },
+  "not_available": [],
+  "competitor": null,
+  "start": "17:22",
+  "duration_min": 22,
+  "value_inr": 0,
+  "competitor_mentioned": false
+}

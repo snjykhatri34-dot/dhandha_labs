@@ -1,0 +1,114 @@
+{
+  "visit_id": "B1-1035",
+  "store": "B1",
+  "salesperson": "Harish",
+  "date": "2026-10-17",
+  "outcome": "walked_out",
+  "asked_for": {
+    "category": "pendant",
+    "weight_band": null,
+    "occasion": "daughter's birthday",
+    "budget_inr": null
+  },
+  "shown": [
+    "pendant 7.4 g",
+    "pendant 6-9 g",
+    "pendant 6.1 g"
+  ],
+  "reason_not_bought": "purity_trust",
+  "objections": [
+    {
+      "type": "purity_trust",
+      "at": "00:48",
+      "quote": "Before the price, how do I know it's really twenty-two carat?"
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:28",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    },
+    {
+      "at": "00:48",
+      "who": "customer",
+      "emotion": "skeptical",
+      "cue": "words"
+    },
+    {
+      "at": "01:53",
+      "who": "customer",
+      "emotion": "hesitant",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> hesitant",
+  "handling_score": 4,
+  "coaching_tip": "When she turned down the hold at 01:53, ask for her number so you can call to arrange the independent test before her daughter's birthday.",
+  "lost_demand": false,
+  "flags": [
+    "no weight band defined for pendant; asked for 5-10 g",
+    "category 'pendant' not confirmed against CLAUDE.md category list",
+    "heart pendant weight given only as a 6-9 g range",
+    "open offer to test at 02:02 has no date or contact and was declined; scored walked_out",
+    "handling score borderline 4/5: strong purity handling, but no contact taken"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer",
+    "intent": "high",
+    "intent_evidence": "00:08 daughter's birthday, 5-10 g, named the leaf design from the window"
+  },
+  "key_moments": [
+    {
+      "at": "00:17",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed the window leaf design plus two pieces in the asked range"
+    },
+    {
+      "at": "00:48",
+      "by": "customer",
+      "effect": "hurt",
+      "what": "doubted the piece was really 22 carat"
+    },
+    {
+      "at": "01:38",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "offered independent test, written full refund, and a hold"
+    },
+    {
+      "at": "01:53",
+      "by": "customer",
+      "effect": "hurt",
+      "what": "declined the hold, citing a past bad chain"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "02:02",
+      "what": "no phone number taken to arrange the test or follow up"
+    }
+  ],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": 12,
+    "total_quoted_inr": 84000,
+    "breakup_given": true,
+    "notes": "gold, 12% making, 3% GST breakup with 69k alternative at 00:32"
+  },
+  "not_available": [],
+  "competitor": null,
+  "start": "13:28",
+  "duration_min": 20,
+  "value_inr": 0,
+  "competitor_mentioned": false
+}

@@ -1,0 +1,118 @@
+{
+  "visit_id": "B3-1091",
+  "store": "B3",
+  "salesperson": "Vikram",
+  "date": "2026-10-17",
+  "outcome": "walked_out",
+  "asked_for": {
+    "category": "necklace",
+    "weight_band": "20-35",
+    "occasion": null,
+    "budget_inr": null
+  },
+  "shown": [
+    "necklace 24 g",
+    "necklace 31 g"
+  ],
+  "reason_not_bought": "old_gold_exchange_rate",
+  "objections": [
+    {
+      "type": "old_gold_exchange_rate",
+      "at": "00:41",
+      "quote": "So what will I get for them?"
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "curious",
+      "cue": "words"
+    },
+    {
+      "at": "00:24",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:54",
+      "who": "customer",
+      "emotion": "skeptical",
+      "cue": "words"
+    },
+    {
+      "at": "01:28",
+      "who": "customer",
+      "emotion": "frustrated",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "curious -> frustrated",
+  "handling_score": 2,
+  "coaching_tip": "When a customer questions the old-gold test, retest it in front of her and explain separately how purity and the melting deduction are each worked out, then offer to price the 31 g necklace on its own so the sale doesn't hinge on the exchange.",
+  "lost_demand": false,
+  "flags": [
+    "purity dispute at 00:54 is about the test result on the customer's old gold; treated as old_gold_exchange_rate, not purity_trust",
+    "outcome walked_out: clip ends at 01:34 after old gold returned; no next step stated and no explicit statement about the necklace"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer",
+    "intent": "high",
+    "intent_evidence": "00:08 asked for necklaces between twenty and thirty-five grams; 00:24 brought old gold to exchange"
+  },
+  "key_moments": [
+    {
+      "at": "00:16",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed two necklaces within the asked 20-35 g range"
+    },
+    {
+      "at": "00:44",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "quoted 86% purity plus a 2% deduction on old gold"
+    },
+    {
+      "at": "01:22",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "answered the double-loss concern with 'That's our policy'"
+    },
+    {
+      "at": "01:28",
+      "by": "customer",
+      "effect": "hurt",
+      "what": "asked for her old gold back and refused the exchange"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "01:02",
+      "what": "no retest of the old gold offered in front of the customer"
+    },
+    {
+      "at": "01:16",
+      "what": "no clear explanation of why purity and melting deduction are separate"
+    },
+    {
+      "at": "01:34",
+      "what": "no offer to price the 31 g necklace without exchange, and no number taken"
+    }
+  ],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": null,
+    "total_quoted_inr": null,
+    "breakup_given": false,
+    "notes": "86% purity and 2% melting deduction on old gold at 00:44"
+  },
+  "not_available": [],
+  "competitor": null,
+  "start": "13:50",
+  "duration_min": 15,
+  "value_inr": 0,
+  "competitor_mentioned": false
+}

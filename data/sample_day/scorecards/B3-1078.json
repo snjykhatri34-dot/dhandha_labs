@@ -1,0 +1,135 @@
+{
+  "visit_id": "B3-1078",
+  "store": "B3",
+  "salesperson": "Suresh",
+  "date": "2026-10-17",
+  "outcome": "walked_out",
+  "asked_for": {
+    "category": "bridal set",
+    "weight_band": null,
+    "occasion": "daughter's wedding",
+    "budget_inr": null
+  },
+  "shown": [
+    "bridal set 94 g",
+    "bridal set 112 g",
+    "bridal set 86 g"
+  ],
+  "reason_not_bought": "price_making_charge",
+  "objections": [
+    {
+      "type": "price_making_charge",
+      "at": "00:54",
+      "quote": "The other jeweller quoted us twelve percent",
+      "competitor_mentioned": true
+    },
+    {
+      "type": "design_not_available",
+      "at": "01:31",
+      "quote": "The lighter one doesn't have the haar I wanted.",
+      "competitor_mentioned": false
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:33",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:54",
+      "who": "customer",
+      "emotion": "skeptical",
+      "cue": "words"
+    },
+    {
+      "at": "01:31",
+      "who": "customer",
+      "emotion": "disappointed",
+      "cue": "words"
+    },
+    {
+      "at": "01:49",
+      "who": "customer",
+      "emotion": "frustrated",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> frustrated",
+  "handling_score": 4,
+  "coaching_tip": "When the parents said at 01:37 that four percent was still a big gap, show them the actual rupee difference on the 94 g set and take their number for a callback before they leave, instead of ending on 'that's our lowest'.",
+  "lost_demand": false,
+  "flags": [
+    "no band for bridal set; asked for 80-120 g",
+    "partial breakup at 00:38: gold, making and GST named but no stone value or rupee amounts",
+    "design objection at 01:31 applies only to the lighter alternative; the requested choker with rani haar was shown at 00:21",
+    "00:33 making question treated as a neutral inquiry; objection dated from 00:54 pushback",
+    "parents' individual roles not stated; Speaker C chose the design"
+  ],
+  "customer": {
+    "party": "family",
+    "decision_maker": "the parents (Speaker B and Speaker C)",
+    "intent": "high",
+    "intent_evidence": "00:08 bridal set for our daughter's wedding, 80 to 120 g"
+  },
+  "key_moments": [
+    {
+      "at": "00:21",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed two sets in range, including choker with rani haar"
+    },
+    {
+      "at": "00:54",
+      "by": "customer",
+      "effect": "hurt",
+      "what": "cited other jeweller's twelve percent making on same weight"
+    },
+    {
+      "at": "01:17",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "offered sixteen percent or lighter 86 g set at fourteen"
+    },
+    {
+      "at": "01:44",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "called sixteen percent the lowest with no further option"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "01:37",
+      "what": "no rupee value of the making difference shown to frame the gap"
+    },
+    {
+      "at": "01:49",
+      "what": "no number taken or follow-up visit proposed as family left"
+    }
+  ],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": 18,
+    "total_quoted_inr": 1140000,
+    "breakup_given": false,
+    "notes": "making cut to 16% at 01:17; 86 g set at 14%, about 9,90,000"
+  },
+  "not_available": [],
+  "competitor": {
+    "named": "the other jeweller",
+    "claim": "twelve percent making on a set of the same weight",
+    "at": "00:54"
+  },
+  "start": "11:46",
+  "duration_min": 36,
+  "value_inr": 0,
+  "competitor_mentioned": true
+}

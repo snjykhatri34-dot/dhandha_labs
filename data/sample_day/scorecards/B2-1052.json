@@ -1,0 +1,120 @@
+{
+  "visit_id": "B2-1052",
+  "store": "B2",
+  "salesperson": "Priya",
+  "date": "2026-10-17",
+  "outcome": "bought",
+  "asked_for": {
+    "category": null,
+    "weight_band": null,
+    "occasion": null,
+    "budget_inr": null
+  },
+  "shown": [
+    "pendant 6.4 g",
+    "pendant 7.8 g",
+    "pendant 8.2 g",
+    "pendant 7.5 g"
+  ],
+  "reason_not_bought": null,
+  "objections": [
+    {
+      "type": "purity_trust",
+      "at": "00:31",
+      "quote": "Is it hallmarked?"
+    },
+    {
+      "type": "price_budget",
+      "at": "00:54",
+      "quote": "Hmm, that's a little more than I'd planned."
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "curious",
+      "cue": "words"
+    },
+    {
+      "at": "00:31",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:54",
+      "who": "customer",
+      "emotion": "concerned",
+      "cue": "words"
+    },
+    {
+      "at": "01:26",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    },
+    {
+      "at": "01:40",
+      "who": "customer",
+      "emotion": "satisfied",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "curious -> satisfied",
+  "handling_score": 5,
+  "coaching_tip": "Keep doing what you did at 00:59: when the price ran over plan, you offered the same teardrop design lighter and mentioned the old-gold exchange instead of only defending the price.",
+  "lost_demand": false,
+  "flags": [
+    "pendant is not in the category list; category and weight_band set to null; customer asked for a 5-10 g pendant",
+    "salesperson said 'Here are four' at 00:17 but named only three pieces; the 7.5 g piece was named at 00:59",
+    "hallmark question at 00:31 recorded as purity_trust; customer asked but did not dispute the answer",
+    "after buying, customer said she will return Saturday for a chain; salesperson took her number and is holding chains"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer",
+    "intent": "high",
+    "intent_evidence": "00:08 asked for a pendant for herself between five and ten grams"
+  },
+  "key_moments": [
+    {
+      "at": "00:37",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed the hallmark and HUID and gave a full price breakup"
+    },
+    {
+      "at": "00:59",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "offered a lighter version and the old-gold exchange after the budget concern"
+    },
+    {
+      "at": "01:18",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "offered the mirror and suggested an eighteen-inch chain length"
+    },
+    {
+      "at": "01:26",
+      "by": "customer",
+      "effect": "helped",
+      "what": "tried the ruby pendant and agreed to buy it"
+    }
+  ],
+  "missed_opportunities": [],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": 12,
+    "total_quoted_inr": 113068,
+    "breakup_given": true,
+    "notes": "full breakup with hallmark and HUID shown at 00:37"
+  },
+  "not_available": [],
+  "competitor": null,
+  "start": "19:55",
+  "duration_min": 15,
+  "value_inr": 113068,
+  "competitor_mentioned": false
+}

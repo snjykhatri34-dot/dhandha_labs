@@ -1,0 +1,132 @@
+{
+  "visit_id": "B1-1031",
+  "store": "B1",
+  "salesperson": "Kavya",
+  "date": "2026-10-17",
+  "outcome": "walked_out",
+  "asked_for": {
+    "category": "necklace",
+    "weight_band": "20-35",
+    "occasion": "cousin's engagement",
+    "budget_inr": null
+  },
+  "shown": [
+    "necklace 44 g",
+    "necklace 16.5 g",
+    "necklace 39 g"
+  ],
+  "reason_not_bought": "weight_mismatch",
+  "objections": [
+    {
+      "type": "weight",
+      "at": "00:26",
+      "quote": "that's far too heavy for me",
+      "competitor_mentioned": false
+    },
+    {
+      "type": "other",
+      "at": "01:22",
+      "quote": "I don't really want to wait on photos.",
+      "competitor_mentioned": false
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:26",
+      "who": "customer",
+      "emotion": "disappointed",
+      "cue": "words"
+    },
+    {
+      "at": "01:02",
+      "who": "customer",
+      "emotion": "frustrated",
+      "cue": "words"
+    },
+    {
+      "at": "01:33",
+      "who": "customer",
+      "emotion": "frustrated",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> frustrated",
+  "handling_score": 4,
+  "coaching_tip": "When a customer gives a clear 20-35 g range and nothing in stock fits, open with the made-to-order option at her weight before showing out-of-range pieces, so she hears the solution before she gets tired of looking.",
+  "lost_demand": true,
+  "flags": [
+    "objection 'other': customer declined to wait about ten days for a made-to-order piece",
+    "breakup at 00:32 covered gold, making and GST; no stones were mentioned, so it was treated as a full breakup",
+    "'look around elsewhere' at 01:33 names no shop, so competitor is null",
+    "handling score was between 3 and 4: the first piece shown (44 g) was outside the stated range, but there was a breakup, alternatives, an order offer, a number offered and an add-on"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer",
+    "intent": "high",
+    "intent_evidence": "00:08 cousin's engagement next month and a 20-35 g range"
+  },
+  "key_moments": [
+    {
+      "at": "00:16",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "opened with a 44 g piece after a 20-35 g ask"
+    },
+    {
+      "at": "00:46",
+      "by": "customer",
+      "effect": "hurt",
+      "what": "rejected the 16.5 g piece as too thin for an engagement"
+    },
+    {
+      "at": "01:07",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "offered a 30 g made-to-order mango design and a photo follow-up"
+    },
+    {
+      "at": "01:33",
+      "by": "customer",
+      "effect": "hurt",
+      "what": "said she'd been there a while and would look elsewhere"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "00:16",
+      "what": "did not open with the closest piece inside the stated 20-35 g range"
+    },
+    {
+      "at": "01:22",
+      "what": "no firm delivery date before the engagement or advance booking offered when she declined to wait"
+    }
+  ],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": 12,
+    "total_quoted_inr": null,
+    "breakup_given": true,
+    "notes": "breakup of gold, 12% making and 3% GST given at 00:32"
+  },
+  "not_available": [
+    {
+      "item": "necklace 20-35 g",
+      "at": "01:07",
+      "quote": "In ready stock right now, honestly, no, ma'am.",
+      "said_by": "salesperson",
+      "resolution": "order"
+    }
+  ],
+  "competitor": null,
+  "start": "18:17",
+  "duration_min": 6,
+  "value_inr": 0,
+  "competitor_mentioned": false
+}

@@ -1,0 +1,101 @@
+{
+  "visit_id": "B3-1095",
+  "store": "B3",
+  "salesperson": "Vikram",
+  "date": "2026-10-17",
+  "outcome": "bought",
+  "asked_for": {
+    "category": "bangle",
+    "weight_band": "20-40",
+    "occasion": null,
+    "budget_inr": null
+  },
+  "shown": [
+    "bangle 32 g (pair)",
+    "bangle 26 g (pair)"
+  ],
+  "reason_not_bought": null,
+  "objections": [
+    {
+      "type": "purity_trust",
+      "at": "00:35",
+      "quote": "Are they twenty-two carat? Is there a hallmark on them?"
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:07",
+      "who": "customer",
+      "emotion": "curious",
+      "cue": "words"
+    },
+    {
+      "at": "01:14",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    },
+    {
+      "at": "01:24",
+      "who": "customer",
+      "emotion": "satisfied",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "curious -> satisfied",
+  "handling_score": 5,
+  "coaching_tip": "Keep doing what you did at 00:39 and 00:50: show the hallmark and HUID when purity is asked, then quote the total with gold, making and GST named.",
+  "lost_demand": false,
+  "flags": [
+    "weight stated for the pair; band applied to the pair weight",
+    "breakup named gold, making and GST but did not give the gold amount separately",
+    "purity question at 00:35 counted as an objection though it was asked neutrally",
+    "no add-on suggested; not treated as a miss because the customer bought the asked item"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer",
+    "intent": "high",
+    "intent_evidence": "00:07 asked for bangles between twenty and forty grams for the pair"
+  },
+  "key_moments": [
+    {
+      "at": "00:14",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed two pairs inside the asked 20-40 g range"
+    },
+    {
+      "at": "00:39",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed hallmark and HUID stamped inside the bangle"
+    },
+    {
+      "at": "00:50",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "quoted total with gold, 12% making and GST"
+    },
+    {
+      "at": "01:14",
+      "by": "customer",
+      "effect": "helped",
+      "what": "tried one on and liked the look and fit"
+    }
+  ],
+  "missed_opportunities": [],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": 12,
+    "total_quoted_inr": 300449,
+    "breakup_given": true,
+    "notes": "total with making and GST named at 00:50"
+  },
+  "not_available": [],
+  "competitor": null,
+  "start": "13:47",
+  "duration_min": 7,
+  "value_inr": 300449,
+  "competitor_mentioned": false
+}

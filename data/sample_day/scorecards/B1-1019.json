@@ -1,0 +1,131 @@
+{
+  "visit_id": "B1-1019",
+  "store": "B1",
+  "salesperson": "Harish",
+  "date": "2026-10-17",
+  "outcome": "deferred_with_follow_up",
+  "asked_for": {
+    "category": "necklace",
+    "weight_band": "20-35",
+    "occasion": "daughter's engagement",
+    "budget_inr": null
+  },
+  "shown": [
+    "necklace 42 g",
+    "necklace 48 g"
+  ],
+  "reason_not_bought": "weight_mismatch",
+  "objections": [
+    {
+      "type": "weight",
+      "at": "00:24",
+      "quote": "These are beautiful, but they're much heavier than I said."
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:24",
+      "who": "customer",
+      "emotion": "concerned",
+      "cue": "words"
+    },
+    {
+      "at": "01:14",
+      "who": "customer",
+      "emotion": "reassured",
+      "cue": "words"
+    },
+    {
+      "at": "01:24",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> delighted",
+  "handling_score": 4,
+  "coaching_tip": "Open with pieces inside the 20-35 g range she asked for, and when she books a return visit, take her number so you can confirm once the Friday lot is in.",
+  "lost_demand": true,
+  "flags": [
+    "handling score 4 rather than 3: first pieces shown were 42 g and 48 g against a 35 g ceiling, but recovered with transparent pricing and a Saturday return",
+    "not_available resolution set to 'order' for the incoming Friday lot; no list value fits exactly",
+    "next step proposed by customer at 01:14 and confirmed by salesperson at 01:20"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer (mother); daughter to join the Saturday visit",
+    "intent": "high",
+    "intent_evidence": "00:08 daughter's engagement, necklace of 20 to 35 grams"
+  },
+  "key_moments": [
+    {
+      "at": "00:15",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "showed 42 g and 48 g pieces after a 20-35 g ask"
+    },
+    {
+      "at": "00:31",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "quoted totals for 42 g and 30 g with making and GST"
+    },
+    {
+      "at": "00:50",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "named Friday lot with 24-34 g pieces in the liked design"
+    },
+    {
+      "at": "01:14",
+      "by": "customer",
+      "effect": "helped",
+      "what": "committed to return Saturday morning with her daughter"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "00:15",
+      "what": "no piece within the stated 20-35 g range shown first"
+    },
+    {
+      "at": "00:31",
+      "what": "no full breakup separating gold value, making and GST"
+    },
+    {
+      "at": "01:20",
+      "what": "no number taken to confirm Saturday or the Friday arrival"
+    }
+  ],
+  "next_step": {
+    "what": "return visit with daughter to see the new 24-34 g pieces",
+    "when": "Saturday morning",
+    "who": "Harish"
+  },
+  "price_talk": {
+    "making_pct": 14,
+    "total_quoted_inr": 290000,
+    "breakup_given": false,
+    "notes": "42 g piece about 2.9 lakh with 14% making and 3% GST at 00:31"
+  },
+  "not_available": [
+    {
+      "item": "necklace 20-35 g",
+      "at": "00:50",
+      "quote": "In this design, the lighter versions are out of stock right now.",
+      "said_by": "salesperson",
+      "resolution": "order"
+    }
+  ],
+  "competitor": null,
+  "start": "17:55",
+  "duration_min": 11,
+  "value_inr": 0,
+  "competitor_mentioned": false
+}

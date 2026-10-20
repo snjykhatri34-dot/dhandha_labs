@@ -1,0 +1,107 @@
+{
+  "visit_id": "B2-1054",
+  "store": "B2",
+  "salesperson": "Priya",
+  "date": "2026-10-17",
+  "outcome": "bought",
+  "asked_for": {
+    "category": "chain",
+    "weight_band": "15-30",
+    "occasion": "father's retirement",
+    "budget_inr": null
+  },
+  "shown": [
+    "chain 18 g",
+    "chain 22 g",
+    "chain 26 g",
+    "chain 19 g"
+  ],
+  "reason_not_bought": null,
+  "objections": [
+    {
+      "type": "price_budget",
+      "at": "00:55",
+      "quote": "That's close to the top of what I planned."
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "curious",
+      "cue": "words"
+    },
+    {
+      "at": "00:31",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:55",
+      "who": "customer",
+      "emotion": "concerned",
+      "cue": "words"
+    },
+    {
+      "at": "01:45",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "curious -> delighted",
+  "handling_score": 5,
+  "coaching_tip": "Keep doing what you did at 00:36: give the full price breakup and point to the HUID before the customer has to ask.",
+  "lost_demand": false,
+  "flags": [
+    "budget mentioned at 00:55 but no amount stated",
+    "curb link called 22 g at 00:17 but priced at 22.4 g at 00:36"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer",
+    "intent": "high",
+    "intent_evidence": "00:08 father retires next month; asked for 15-30 g men's chain"
+  },
+  "key_moments": [
+    {
+      "at": "00:17",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed three chains inside the asked 15-30 g range"
+    },
+    {
+      "at": "00:36",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "gave full breakup with making, GST and HUID check"
+    },
+    {
+      "at": "01:01",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "offered same design at 19 g after budget concern"
+    },
+    {
+      "at": "01:18",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "offered free engraving with Thursday collection and callback"
+    }
+  ],
+  "missed_opportunities": [],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": 12,
+    "total_quoted_inr": 229678,
+    "breakup_given": true,
+    "notes": "full breakup with HUID check at 00:36"
+  },
+  "not_available": [],
+  "competitor": null,
+  "start": "18:39",
+  "duration_min": 19,
+  "value_inr": 229678,
+  "competitor_mentioned": false
+}

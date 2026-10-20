@@ -1,0 +1,138 @@
+{
+  "visit_id": "B2-1047",
+  "store": "B2",
+  "salesperson": "Rohit",
+  "date": "2026-10-17",
+  "outcome": "walked_out",
+  "asked_for": {
+    "category": "earrings",
+    "weight_band": "8-15",
+    "occasion": "cousin's wedding next month",
+    "budget_inr": null
+  },
+  "shown": [
+    "earrings (plain gold jhumkas)",
+    "earrings (studs)"
+  ],
+  "reason_not_bought": "design_not_available",
+  "objections": [
+    {
+      "type": "design_not_available",
+      "at": "00:37",
+      "quote": "These are all quite plain."
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:37",
+      "who": "customer",
+      "emotion": "disappointed",
+      "cue": "words"
+    },
+    {
+      "at": "01:04",
+      "who": "customer",
+      "emotion": "frustrated",
+      "cue": "words"
+    },
+    {
+      "at": "01:15",
+      "who": "customer",
+      "emotion": "disappointed",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> disappointed",
+  "handling_score": 1,
+  "coaching_tip": "When a wedding customer asks for a meenakari or chandbali jhumka we don't have, offer to bring it from another branch or place an order, show a catalogue, and take her number, rather than steering her to studs.",
+  "lost_demand": true,
+  "flags": [
+    "no weight stated for any piece shown",
+    "customer asked for meenakari jhumka, then any coloured or chandbali style; both treated as design_not_available",
+    "handling score 1 not 2: studs are the same category, but the stated jhumka ask and the order request were set aside"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer",
+    "intent": "high",
+    "intent_evidence": "00:08 cousin's wedding next month, 8-15 g meenakari jhumka"
+  },
+  "key_moments": [
+    {
+      "at": "00:17",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "said meenakari isn't kept before offering any alternative"
+    },
+    {
+      "at": "00:51",
+      "by": "customer",
+      "effect": "helped",
+      "what": "asked to order one or see a catalogue"
+    },
+    {
+      "at": "00:56",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "would not commit to ordering; pushed studs instead"
+    },
+    {
+      "at": "01:10",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "repeated studs after customer said she wanted jhumkas"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "00:17",
+      "what": "no offer to source it from another branch or order, and no number taken"
+    },
+    {
+      "at": "00:44",
+      "what": "no offer to source it from another branch or order, and no number taken"
+    },
+    {
+      "at": "00:56",
+      "what": "no catalogue shown after the customer asked for one"
+    },
+    {
+      "at": "01:15",
+      "what": "no number taken to follow up before the wedding"
+    }
+  ],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": null,
+    "total_quoted_inr": null,
+    "breakup_given": false,
+    "notes": null
+  },
+  "not_available": [
+    {
+      "item": "earrings 8-15 g meenakari jhumka",
+      "at": "00:17",
+      "quote": "Meenakari, we don't really keep much of that.",
+      "said_by": "salesperson",
+      "resolution": "none"
+    },
+    {
+      "item": "earrings 8-15 g coloured or chandbali jhumka",
+      "at": "00:44",
+      "quote": "Not right now. Stock keeps changing, ma'am.",
+      "said_by": "salesperson",
+      "resolution": "none"
+    }
+  ],
+  "competitor": null,
+  "start": "19:49",
+  "duration_min": 18,
+  "value_inr": 0,
+  "competitor_mentioned": false
+}

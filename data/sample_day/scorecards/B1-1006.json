@@ -1,0 +1,123 @@
+{
+  "visit_id": "B1-1006",
+  "store": "B1",
+  "salesperson": "Harish",
+  "date": "2026-10-17",
+  "outcome": "deferred_with_follow_up",
+  "asked_for": {
+    "category": "bridal set",
+    "weight_band": null,
+    "occasion": "daughter's wedding in February",
+    "budget_inr": null
+  },
+  "shown": [
+    "bridal set 92 g",
+    "bridal set 105 g",
+    "bridal set 118 g",
+    "bridal set 96 g"
+  ],
+  "reason_not_bought": "price_making_charge",
+  "objections": [
+    {
+      "type": "price_making_charge",
+      "at": "00:52",
+      "quote": "Fourteen percent is high.",
+      "competitor_mentioned": true
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:15",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:34",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    },
+    {
+      "at": "00:52",
+      "who": "customer",
+      "emotion": "skeptical",
+      "cue": "words"
+    },
+    {
+      "at": "01:44",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> interested",
+  "handling_score": 5,
+  "coaching_tip": "Keep doing what you did at 00:59: explain why the handmade making charge is higher, offer a lower-making set in the same weight, then hold the chosen piece and take the number.",
+  "lost_demand": false,
+  "flags": [
+    "no band for bridal set; asked for 80-120 g",
+    "00:34 'What's the making charge on it?' treated as a price inquiry; objection dated from first pushback at 00:52",
+    "breakup at 00:39 covered gold, making and GST but no stone value for kundan-polki set, so breakup_given set false",
+    "making charge not yet settled; return depends on owner's decision on Saturday"
+  ],
+  "customer": {
+    "party": "family",
+    "decision_maker": "parents (ma'am and sir); bride not present",
+    "intent": "high",
+    "intent_evidence": "00:08 daughter's wedding in February; 00:15 asked for 80-120 g necklace, earrings and maang tikka"
+  },
+  "key_moments": [
+    {
+      "at": "00:22",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed three bridal sets within the asked 80-120 g range"
+    },
+    {
+      "at": "00:52",
+      "by": "customer",
+      "effect": "hurt",
+      "what": "called 14% high, citing Shimla showroom's 11% quote"
+    },
+    {
+      "at": "00:59",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "explained handmade labour and offered an 11% machine-finished set"
+    },
+    {
+      "at": "01:35",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "held the 92 g set until Saturday and took the number"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "00:39",
+      "what": "no rupee total or stone value given with the breakup"
+    }
+  ],
+  "next_step": {
+    "what": "return visit; 92 g set held; callback after speaking to owner about making charge",
+    "when": "Saturday",
+    "who": "Harish"
+  },
+  "price_talk": {
+    "making_pct": 14,
+    "total_quoted_inr": null,
+    "breakup_given": false,
+    "notes": "gold, 14% making and 3% GST stated at 00:39; 11% machine-finished option at 00:59"
+  },
+  "not_available": [],
+  "competitor": {
+    "named": "Another showroom in Shimla",
+    "claim": "eleven percent making on a similar set",
+    "at": "00:52"
+  },
+  "start": "19:58",
+  "duration_min": 45,
+  "value_inr": 0,
+  "competitor_mentioned": true
+}

@@ -1,0 +1,109 @@
+{
+  "visit_id": "B1-1007",
+  "store": "B1",
+  "salesperson": "Meena",
+  "date": "2026-10-17",
+  "outcome": "deferred_with_follow_up",
+  "asked_for": {
+    "category": "bridal set",
+    "weight_band": null,
+    "occasion": "daughter's wedding in February",
+    "budget_inr": null
+  },
+  "shown": [
+    "bridal set 96 g",
+    "bridal set 112 g"
+  ],
+  "reason_not_bought": "purity_trust",
+  "objections": [
+    {
+      "type": "purity_trust",
+      "at": "00:53",
+      "quote": "how do we know it's really twenty-two carat?"
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "curious",
+      "cue": "words"
+    },
+    {
+      "at": "00:32",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    },
+    {
+      "at": "00:53",
+      "who": "customer",
+      "emotion": "skeptical",
+      "cue": "words"
+    },
+    {
+      "at": "01:55",
+      "who": "customer",
+      "emotion": "hesitant",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "curious -> hesitant",
+  "handling_score": 5,
+  "coaching_tip": "Keep doing what you did at 01:27: when a family doubts purity, offer an XRF test on the spot or an independent check, and hold the set so they have time to do it.",
+  "lost_demand": false,
+  "flags": [
+    "no band for bridal set; asked for 80-120 g",
+    "total quoted as approximate: 'about eleven lakh forty thousand'"
+  ],
+  "customer": {
+    "party": "family",
+    "decision_maker": "parents (ma'am and sir); will decide only after an independent purity check",
+    "intent": "high",
+    "intent_evidence": "00:08 daughter's wedding in February, 80-120 g bridal set"
+  },
+  "key_moments": [
+    {
+      "at": "00:37",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "gave full price breakup and pointed to the rate board"
+    },
+    {
+      "at": "00:53",
+      "by": "customer",
+      "effect": "hurt",
+      "what": "doubted the set is really twenty-two carat"
+    },
+    {
+      "at": "01:27",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "offered XRF test, independent check and a hold until Saturday"
+    },
+    {
+      "at": "01:55",
+      "by": "customer",
+      "effect": "hurt",
+      "what": "still unsure; will decide only after checking"
+    }
+  ],
+  "missed_opportunities": [],
+  "next_step": {
+    "what": "return visit with daughter to try on; 96 g set held; callback Friday evening to confirm",
+    "when": "Saturday morning",
+    "who": "Meena"
+  },
+  "price_talk": {
+    "making_pct": 12,
+    "total_quoted_inr": 1140000,
+    "breakup_given": true,
+    "notes": "full breakup with board rate at 00:37"
+  },
+  "not_available": [],
+  "competitor": null,
+  "start": "13:10",
+  "duration_min": 37,
+  "value_inr": 0,
+  "competitor_mentioned": false
+}

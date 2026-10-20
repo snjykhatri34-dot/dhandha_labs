@@ -1,0 +1,118 @@
+{
+  "visit_id": "B2-1069",
+  "store": "B2",
+  "salesperson": "Rohit",
+  "date": "2026-10-17",
+  "outcome": "walked_out",
+  "asked_for": {
+    "category": "bangle",
+    "weight_band": "20-40",
+    "occasion": "daily wear",
+    "budget_inr": null
+  },
+  "shown": [
+    "bangle 28 g",
+    "bangle 34 g"
+  ],
+  "reason_not_bought": "price_making_charge",
+  "objections": [
+    {
+      "type": "price_making_charge",
+      "at": "00:41",
+      "quote": "Twenty-two percent? That's a lot for plain bangles."
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "curious",
+      "cue": "words"
+    },
+    {
+      "at": "00:25",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:41",
+      "who": "customer",
+      "emotion": "concerned",
+      "cue": "words"
+    },
+    {
+      "at": "01:18",
+      "who": "customer",
+      "emotion": "disappointed",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "curious -> disappointed",
+  "handling_score": 2,
+  "coaching_tip": "When a customer questions the making charge, give the full rupee breakup of gold, making and GST, and ask whether she would like to see a simpler pair in the same weight before she decides.",
+  "lost_demand": false,
+  "flags": [
+    "two making rates quoted (22% for the 34 g pair, 18% for the 28 g pair); making_pct records the first quote",
+    "price components named at 00:32 but no rupee amounts given; breakup_given set to false"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer",
+    "intent": "high",
+    "intent_evidence": "00:08 asked for a bangle pair of 20-40 g for daily wear"
+  },
+  "key_moments": [
+    {
+      "at": "00:16",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed two pairs within the asked 20-40 g range"
+    },
+    {
+      "at": "00:41",
+      "by": "customer",
+      "effect": "hurt",
+      "what": "objected to the 22% making charge"
+    },
+    {
+      "at": "01:06",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "called the making rates fixed instead of explaining them"
+    },
+    {
+      "at": "01:15",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "refused any making flexibility, and the customer left"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "00:32",
+      "what": "no rupee total or breakup given when the price was asked"
+    },
+    {
+      "at": "01:06",
+      "what": "no rupee breakup given to justify the making against her 10-12% expectation"
+    },
+    {
+      "at": "01:26",
+      "what": "no number taken to follow up"
+    }
+  ],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": 22,
+    "total_quoted_inr": null,
+    "breakup_given": false,
+    "notes": "making called fixed by design at 01:06"
+  },
+  "not_available": [],
+  "competitor": null,
+  "start": "17:06",
+  "duration_min": 6,
+  "value_inr": 0,
+  "competitor_mentioned": false
+}

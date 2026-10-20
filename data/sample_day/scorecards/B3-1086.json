@@ -1,0 +1,102 @@
+{
+  "visit_id": "B3-1086",
+  "store": "B3",
+  "salesperson": "Neha",
+  "date": "2026-10-17",
+  "outcome": "bought",
+  "asked_for": {
+    "category": "ring",
+    "weight_band": "5-10",
+    "occasion": "engagement",
+    "budget_inr": null
+  },
+  "shown": [
+    "ring 8.4 g"
+  ],
+  "reason_not_bought": null,
+  "objections": [],
+  "emotions": [
+    {
+      "at": "00:07",
+      "who": "customer",
+      "emotion": "curious",
+      "cue": "words"
+    },
+    {
+      "at": "00:33",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "01:05",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "curious -> delighted",
+  "handling_score": 4,
+  "coaching_tip": "When a customer asks how the centre stones differ, put two or three solitaires side by side, and once the ring is sold, suggest a matching band before you prepare the bill.",
+  "lost_demand": false,
+  "flags": [
+    "total named gold, diamond, making and GST at 00:46 but gave one combined figure, so breakup_given set false",
+    "'Hmm' at 00:56 after the price is ambiguous, so it was not scored as an emotion or objection",
+    "'lab-certified solitaires' at 00:24 is unclear: lab-grown diamond or a certified natural stone"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer",
+    "intent": "high",
+    "intent_evidence": "00:07 asked for engagement rings between five and ten grams"
+  },
+  "key_moments": [
+    {
+      "at": "00:24",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed an 8.4 g half-carat solitaire within the asked range"
+    },
+    {
+      "at": "00:37",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "confirmed diamond certificate and HUID hallmark"
+    },
+    {
+      "at": "01:00",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "offered one free resize, answering the fit concern"
+    },
+    {
+      "at": "01:05",
+      "by": "customer",
+      "effect": "helped",
+      "what": "liked how it catches the light and decided to buy"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "00:24",
+      "what": "showed one stone when customer asked about differences between centre stones"
+    },
+    {
+      "at": "01:10",
+      "what": "no add-on such as a matching band suggested"
+    }
+  ],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": null,
+    "total_quoted_inr": 397881,
+    "breakup_given": false,
+    "notes": "all-inclusive total with 3% GST quoted at 00:46"
+  },
+  "not_available": [],
+  "competitor": null,
+  "start": "15:16",
+  "duration_min": 4,
+  "value_inr": 397881,
+  "competitor_mentioned": false
+}

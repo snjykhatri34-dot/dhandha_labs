@@ -1,0 +1,100 @@
+{
+  "visit_id": "B3-1087",
+  "store": "B3",
+  "salesperson": "Suresh",
+  "date": "2026-10-17",
+  "outcome": "bought",
+  "asked_for": {
+    "category": "necklace",
+    "weight_band": "20-35",
+    "occasion": "niece's wedding next month",
+    "budget_inr": null
+  },
+  "shown": [
+    "necklace 24 g",
+    "necklace 29 g",
+    "necklace 32 g"
+  ],
+  "reason_not_bought": null,
+  "objections": [],
+  "emotions": [
+    {
+      "at": "00:07",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "01:31",
+      "who": "customer",
+      "emotion": "satisfied",
+      "cue": "words"
+    },
+    {
+      "at": "01:42",
+      "who": "customer",
+      "emotion": "relaxed",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> relaxed",
+  "handling_score": 4,
+  "coaching_tip": "Once she said she'd take the necklace for the wedding at 01:31, show her matching earrings in a similar weight before you make the bill.",
+  "lost_demand": false,
+  "flags": [
+    "purity (00:24) and making charge (00:34) were neutral questions answered at once; not scored as objections",
+    "breakup covered gold, making and GST; no stone component was mentioned for this piece",
+    "billed weight quoted as 29.1 g against 29 g shown"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer",
+    "intent": "high",
+    "intent_evidence": "00:07 named a 20-35 g range for her niece's wedding next month"
+  },
+  "key_moments": [
+    {
+      "at": "00:15",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed three necklaces inside the asked 20-35 g range"
+    },
+    {
+      "at": "00:45",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "gave a total with gold, making and GST breakup"
+    },
+    {
+      "at": "01:16",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "offered a try-on straight away"
+    },
+    {
+      "at": "01:31",
+      "by": "customer",
+      "effect": "helped",
+      "what": "said it sits nicely and agreed to buy"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "01:37",
+      "what": "no matching earrings or other wedding add-on suggested"
+    }
+  ],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": 12,
+    "total_quoted_inr": 278577,
+    "breakup_given": true,
+    "notes": "total with gold, making and GST quoted at 00:45"
+  },
+  "not_available": [],
+  "competitor": null,
+  "start": "16:56",
+  "duration_min": 16,
+  "value_inr": 278577,
+  "competitor_mentioned": false
+}

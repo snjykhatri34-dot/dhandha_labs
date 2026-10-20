@@ -1,0 +1,135 @@
+{
+  "visit_id": "B2-1049",
+  "store": "B2",
+  "salesperson": "Priya",
+  "date": "2026-10-17",
+  "outcome": "walked_out",
+  "asked_for": {
+    "category": "necklace",
+    "weight_band": "20-35",
+    "occasion": "daughter's engagement",
+    "budget_inr": null
+  },
+  "shown": [
+    "necklace 42 g",
+    "necklace 48 g",
+    "chain 30 g"
+  ],
+  "reason_not_bought": "weight_mismatch",
+  "objections": [
+    {
+      "type": "weight",
+      "at": "00:26",
+      "quote": "These are much heavier than I said."
+    },
+    {
+      "type": "price_budget",
+      "at": "00:50",
+      "quote": "That's well beyond what I planned."
+    },
+    {
+      "type": "other",
+      "at": "01:08",
+      "quote": "Ten days is cutting it close."
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:26",
+      "who": "customer",
+      "emotion": "disappointed",
+      "cue": "words"
+    },
+    {
+      "at": "00:50",
+      "who": "customer",
+      "emotion": "concerned",
+      "cue": "words"
+    },
+    {
+      "at": "01:38",
+      "who": "customer",
+      "emotion": "hesitant",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> hesitant",
+  "handling_score": 4,
+  "coaching_tip": "When she said 5.6 lakh was beyond her plan, give her the estimated total for the 30 g made-to-order piece right away so she has a number in her range to take home.",
+  "lost_demand": true,
+  "flags": [
+    "objection 'other' at 01:08: delivery-time worry about the 10-day made-to-order lead",
+    "customer rejected the 30 g chain at 01:25 as the wrong category (wants a necklace, not a chain); treated as part of the weight/availability issue, not a separate objection",
+    "breakup_given set true: gold weight at today's rate, 12% making and 3% GST were named at 00:32, but no per-line amounts and no stones in the piece",
+    "no budget figure stated; price_budget rests on 'beyond what I planned' at 00:50"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer (mother); daughter's preference cited",
+    "intent": "high",
+    "intent_evidence": "00:08 daughter's engagement with a 20-35 g range; 01:08 function in three weeks"
+  },
+  "key_moments": [
+    {
+      "at": "00:16",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "showed 42 g and 48 g necklaces after a 20-35 g ask"
+    },
+    {
+      "at": "00:57",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "offered same design made to order at about 30 g"
+    },
+    {
+      "at": "01:25",
+      "by": "customer",
+      "effect": "hurt",
+      "what": "rejected the 30 g chain; daughter wants a proper necklace"
+    },
+    {
+      "at": "01:38",
+      "by": "customer",
+      "effect": "hurt",
+      "what": "declined to leave a number for callback or order"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "00:57",
+      "what": "no estimated total given for the 30 g made-to-order necklace"
+    },
+    {
+      "at": "01:14",
+      "what": "no firm delivery date offered to settle the timing worry"
+    }
+  ],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": 12,
+    "total_quoted_inr": 560000,
+    "breakup_given": true,
+    "notes": "breakup given for the 42 g piece at 00:32; made-to-order making held at 12% at 00:57"
+  },
+  "not_available": [
+    {
+      "item": "necklace 20-35 g",
+      "at": "00:32",
+      "quote": "our lighter necklaces sold out over the festive season.",
+      "said_by": "salesperson",
+      "resolution": "order"
+    }
+  ],
+  "competitor": null,
+  "start": "17:36",
+  "duration_min": 19,
+  "value_inr": 0,
+  "competitor_mentioned": false
+}

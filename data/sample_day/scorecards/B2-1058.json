@@ -1,0 +1,105 @@
+{
+  "visit_id": "B2-1058",
+  "store": "B2",
+  "salesperson": "Rohit",
+  "date": "2026-10-17",
+  "outcome": "bought",
+  "asked_for": {
+    "category": "earrings",
+    "weight_band": "8-15",
+    "occasion": "sister's engagement next month",
+    "budget_inr": null
+  },
+  "shown": [
+    "earrings 12 g",
+    "earrings 14 g",
+    "earrings 9 g"
+  ],
+  "reason_not_bought": null,
+  "objections": [],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:27",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    },
+    {
+      "at": "01:15",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    },
+    {
+      "at": "01:28",
+      "who": "customer",
+      "emotion": "satisfied",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> satisfied",
+  "handling_score": 4,
+  "coaching_tip": "Once she chose the chandbalis for her sister's engagement, suggest a matching pendant or ring and note the date so we can follow up before the function.",
+  "lost_demand": false,
+  "flags": [
+    "purity question at 00:27 read as a routine check answered at 00:32, not recorded as a purity_trust objection",
+    "chandbalis named as 14 g at 00:16; breakup at 00:44 gives 13.8 g"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer",
+    "intent": "high",
+    "intent_evidence": "00:08 named sister's engagement next month and an 8-15 g range"
+  },
+  "key_moments": [
+    {
+      "at": "00:16",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed three earrings inside the asked 8-15 g range"
+    },
+    {
+      "at": "00:32",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "confirmed 22 carat, BIS hallmark and showed the HUID"
+    },
+    {
+      "at": "00:44",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "gave full breakup: weight, 14% making, no stones, GST"
+    },
+    {
+      "at": "01:15",
+      "by": "customer",
+      "effect": "helped",
+      "what": "tried them on and found them lovely and light"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "01:34",
+      "what": "no matching add-on suggested for the engagement gift"
+    }
+  ],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": 14,
+    "total_quoted_inr": 183000,
+    "breakup_given": true,
+    "notes": "full breakup with 14% making and 3% GST at 00:44"
+  },
+  "not_available": [],
+  "competitor": null,
+  "start": "14:25",
+  "duration_min": 18,
+  "value_inr": 182993,
+  "competitor_mentioned": false
+}

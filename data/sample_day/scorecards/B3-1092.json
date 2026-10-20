@@ -1,0 +1,119 @@
+{
+  "visit_id": "B3-1092",
+  "store": "B3",
+  "salesperson": "Neha",
+  "date": "2026-10-17",
+  "outcome": "walked_out",
+  "asked_for": {
+    "category": "bridal set",
+    "weight_band": null,
+    "occasion": "daughter's wedding in February",
+    "budget_inr": null
+  },
+  "shown": [
+    "bridal set 92 g",
+    "bridal set 108 g"
+  ],
+  "reason_not_bought": "old_gold_exchange_rate",
+  "objections": [
+    {
+      "type": "old_gold_exchange_rate",
+      "at": "00:40",
+      "quote": "how much will you give us for the old gold?"
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:36",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    },
+    {
+      "at": "01:06",
+      "who": "customer",
+      "emotion": "concerned",
+      "cue": "words"
+    },
+    {
+      "at": "01:24",
+      "who": "customer",
+      "emotion": "hesitant",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> hesitant",
+  "handling_score": 2,
+  "coaching_tip": "When a family says the old-gold value decides their budget, test the pieces on the spot and give them an indicative deduction range and today's rate before they leave.",
+  "lost_demand": false,
+  "flags": [
+    "no band for bridal set; asked for 80-120 g",
+    "Speaker C taken as the daughter from 'Mummy'; budget not stated, depends on old gold value",
+    "'We'll see' at 01:24 has no concrete next step; scored walked_out"
+  ],
+  "customer": {
+    "party": "family",
+    "decision_maker": "mother",
+    "intent": "high",
+    "intent_evidence": "00:08 wedding in February and a stated 80-120 g range"
+  },
+  "key_moments": [
+    {
+      "at": "00:27",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed two bridal sets within the asked weight range"
+    },
+    {
+      "at": "00:36",
+      "by": "customer",
+      "effect": "helped",
+      "what": "daughter liked the 92 g set"
+    },
+    {
+      "at": "00:58",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "deflected deduction question with 'everyone does a deduction'"
+    },
+    {
+      "at": "01:13",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "refused to give any exchange number"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "00:58",
+      "what": "no purity test of the old gold offered on the spot"
+    },
+    {
+      "at": "01:13",
+      "what": "no indicative deduction range or today's rate given"
+    },
+    {
+      "at": "01:30",
+      "what": "no number taken and 92 g set not offered on hold"
+    }
+  ],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": null,
+    "total_quoted_inr": null,
+    "breakup_given": false,
+    "notes": "old gold deduction left unquantified at 01:13"
+  },
+  "not_available": [],
+  "competitor": null,
+  "start": "16:55",
+  "duration_min": 32,
+  "value_inr": 0,
+  "competitor_mentioned": false
+}

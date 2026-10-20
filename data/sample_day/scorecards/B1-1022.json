@@ -1,0 +1,131 @@
+{
+  "visit_id": "B1-1022",
+  "store": "B1",
+  "salesperson": "Meena",
+  "date": "2026-10-17",
+  "outcome": "deferred_with_follow_up",
+  "asked_for": {
+    "category": "necklace",
+    "weight_band": "50+",
+    "occasion": "daughter's wedding",
+    "budget_inr": null
+  },
+  "shown": [
+    "necklace 54 g",
+    "necklace 61 g"
+  ],
+  "reason_not_bought": "design_not_available",
+  "objections": [
+    {
+      "type": "design_not_available",
+      "at": "00:36",
+      "quote": "These are all the same plain Rajkot style."
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:20",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    },
+    {
+      "at": "00:36",
+      "who": "customer",
+      "emotion": "disappointed",
+      "cue": "words"
+    },
+    {
+      "at": "00:49",
+      "who": "customer",
+      "emotion": "disappointed",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> disappointed",
+  "handling_score": 2,
+  "coaching_tip": "When a customer asks for a design we don't have and asks if it can be made, offer to order the temple-style piece, take her number, and promise to call her the moment Saturday's stock arrives.",
+  "lost_demand": true,
+  "flags": [
+    "not_available resolution set to 'alternative': plain Rajkot necklaces at the asked weight were shown, but not the asked design, and the customer rejected them",
+    "customer's request at 00:49 to have the design made got no answer; reply at 00:55 was only 'might be some' in new stock",
+    "next step was set by the customer, not by the salesperson; no number taken"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer (mother of the bride)",
+    "intent": "high",
+    "intent_evidence": "00:08 daughter's wedding, above fifty grams; 00:20 named a specific temple design with Lakshmi coin motifs"
+  },
+  "key_moments": [
+    {
+      "at": "00:20",
+      "by": "customer",
+      "effect": "helped",
+      "what": "asked for a specific temple-style choker with Lakshmi coins"
+    },
+    {
+      "at": "00:29",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "said temple design not in stock; showed plain heavy pieces"
+    },
+    {
+      "at": "00:55",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "answered order request with uncertain new stock, no order offered"
+    },
+    {
+      "at": "01:03",
+      "by": "customer",
+      "effect": "helped",
+      "what": "committed to return Saturday afternoon to see new stock"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "00:49",
+      "what": "no offer to order or make the temple design when asked"
+    },
+    {
+      "at": "00:55",
+      "what": "no number taken to call when Saturday stock arrives"
+    },
+    {
+      "at": "01:07",
+      "what": "no attempt to confirm a time or reserve pieces from new stock"
+    }
+  ],
+  "next_step": {
+    "what": "customer returns to see new stock for temple designs",
+    "when": "Saturday afternoon",
+    "who": "customer"
+  },
+  "price_talk": {
+    "making_pct": null,
+    "total_quoted_inr": null,
+    "breakup_given": false,
+    "notes": null
+  },
+  "not_available": [
+    {
+      "item": "necklace temple design 50+ g",
+      "at": "00:29",
+      "quote": "Temple design, ma'am, we don't have that in stock right now.",
+      "said_by": "salesperson",
+      "resolution": "alternative"
+    }
+  ],
+  "competitor": null,
+  "start": "18:52",
+  "duration_min": 6,
+  "value_inr": 0,
+  "competitor_mentioned": false
+}

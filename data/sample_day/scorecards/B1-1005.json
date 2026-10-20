@@ -1,0 +1,119 @@
+{
+  "visit_id": "B1-1005",
+  "store": "B1",
+  "salesperson": "Meena",
+  "date": "2026-10-17",
+  "outcome": "bought",
+  "asked_for": {
+    "category": "earrings",
+    "weight_band": "8-15",
+    "occasion": "sister's engagement",
+    "budget_inr": null
+  },
+  "shown": [
+    "earrings 9.4 g",
+    "earrings 12.8 g",
+    "earrings 14.5 g",
+    "earrings 10.6 g"
+  ],
+  "reason_not_bought": null,
+  "objections": [
+    {
+      "type": "purity_trust",
+      "at": "00:29",
+      "quote": "Is that twenty-two carat? Does it have a hallmark?"
+    },
+    {
+      "type": "price_budget",
+      "at": "01:04",
+      "quote": "Hmm, that's a little more than I'd thought."
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "curious",
+      "cue": "words"
+    },
+    {
+      "at": "00:29",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "01:04",
+      "who": "customer",
+      "emotion": "hesitant",
+      "cue": "words"
+    },
+    {
+      "at": "01:38",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    },
+    {
+      "at": "01:55",
+      "who": "customer",
+      "emotion": "satisfied",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "curious -> satisfied",
+  "handling_score": 5,
+  "coaching_tip": "Keep doing what you did at 01:09: when the total felt high, offer the same chandbali in a lighter weight and let the customer compare both side by side.",
+  "lost_demand": false,
+  "flags": [
+    "price objection typed price_budget: no budget stated, customer said total was more than expected at 01:04",
+    "purity_trust recorded from a question at 00:29; no doubt expressed, salesperson confirmed hallmark and HUID",
+    "customer interest in matching pendant at 02:12 not scored as a separate request"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer",
+    "intent": "high",
+    "intent_evidence": "00:08 gold earrings, eight to fifteen grams, for sister's engagement"
+  },
+  "key_moments": [
+    {
+      "at": "00:17",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed three earrings inside the asked 8-15 g band"
+    },
+    {
+      "at": "00:48",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "gave full breakup: gold, 12% making, kundan charge, GST"
+    },
+    {
+      "at": "01:09",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "offered lighter 10.6 g version and side-by-side try-on"
+    },
+    {
+      "at": "01:38",
+      "by": "customer",
+      "effect": "helped",
+      "what": "preferred the bigger chandbali after comparing both"
+    }
+  ],
+  "missed_opportunities": [],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": 12,
+    "total_quoted_inr": 184500,
+    "breakup_given": true,
+    "notes": "full breakup at 00:48; lighter version about 152000 at 01:09"
+  },
+  "not_available": [],
+  "competitor": null,
+  "start": "17:30",
+  "duration_min": 21,
+  "value_inr": 184515,
+  "competitor_mentioned": false
+}

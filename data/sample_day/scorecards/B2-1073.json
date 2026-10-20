@@ -1,0 +1,107 @@
+{
+  "visit_id": "B2-1073",
+  "store": "B2",
+  "salesperson": "Priya",
+  "date": "2026-10-17",
+  "outcome": "bought",
+  "asked_for": {
+    "category": "chain",
+    "weight_band": "15-30",
+    "occasion": "son's first job, daily wear",
+    "budget_inr": null
+  },
+  "shown": [
+    "chain 18 g",
+    "chain 22 g",
+    "chain 26 g",
+    "chain 19 g"
+  ],
+  "reason_not_bought": null,
+  "objections": [
+    {
+      "type": "price_budget",
+      "at": "01:00",
+      "quote": "Hmm, that's near the top of what we planned."
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:36",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    },
+    {
+      "at": "01:00",
+      "who": "customer",
+      "emotion": "concerned",
+      "cue": "words"
+    },
+    {
+      "at": "01:42",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> delighted",
+  "handling_score": 5,
+  "coaching_tip": "Keep doing what you did at 01:04: when the price nears their limit, offer the same pattern lighter and mention old-gold exchange, then let them choose.",
+  "lost_demand": false,
+  "flags": [
+    "budget not stated in INR; only 'near the top of what we planned' at 01:00",
+    "chosen rope chain introduced as 22 g at 00:20, priced at 22.4 g at 00:44"
+  ],
+  "customer": {
+    "party": "family",
+    "decision_maker": "parents jointly (buying for their son)",
+    "intent": "high",
+    "intent_evidence": "00:08 chain for son's first job next month, 15-30 grams"
+  },
+  "key_moments": [
+    {
+      "at": "00:20",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed three hallmarked chains inside the asked 15-30 g range"
+    },
+    {
+      "at": "00:44",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "gave full breakup: gold weight, 10% making, 3% GST, total"
+    },
+    {
+      "at": "01:04",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "offered 19 g alternative and old-gold exchange after budget concern"
+    },
+    {
+      "at": "01:20",
+      "by": "customer",
+      "effect": "helped",
+      "what": "chose the fuller 22 g chain for long-term wear"
+    }
+  ],
+  "missed_opportunities": [],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": 10,
+    "total_quoted_inr": 276774,
+    "breakup_given": true,
+    "notes": "breakup with 10% making and 3% GST at 00:44"
+  },
+  "not_available": [],
+  "competitor": null,
+  "start": "19:36",
+  "duration_min": 21,
+  "value_inr": 276774,
+  "competitor_mentioned": false
+}

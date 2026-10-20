@@ -1,0 +1,101 @@
+{
+  "visit_id": "B3-1083",
+  "store": "B3",
+  "salesperson": "Vikram",
+  "date": "2026-10-17",
+  "outcome": "walked_out",
+  "asked_for": {
+    "category": "bangle",
+    "weight_band": "20-40",
+    "occasion": null,
+    "budget_inr": null
+  },
+  "shown": [
+    "bangle 24 g",
+    "bangle 38 g",
+    "bangle 31 g"
+  ],
+  "reason_not_bought": "just_browsing",
+  "objections": [],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:53",
+      "who": "customer",
+      "emotion": "hesitant",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> hesitant",
+  "handling_score": 3,
+  "coaching_tip": "When she said she was only looking at 00:53 after liking the carved pair, offer to note that 24 g pair for her and take her number so you can call her when she is ready.",
+  "lost_demand": false,
+  "flags": [
+    "no objections recorded: purity (00:26) and making (00:34) were questions answered without pushback",
+    "intent mixed: specific 20-40 g ask at 00:08 but 'only looking today' at 00:53"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer",
+    "intent": "medium",
+    "intent_evidence": "00:08 asked for bangles 20-40 g for the pair; 00:53 'only looking today, nothing fixed yet'"
+  },
+  "key_moments": [
+    {
+      "at": "00:16",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed two pairs inside the asked 20-40 g range"
+    },
+    {
+      "at": "00:47",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed a 31 g meenakari piece on request"
+    },
+    {
+      "at": "00:53",
+      "by": "customer",
+      "effect": "hurt",
+      "what": "said she was only looking, nothing fixed"
+    },
+    {
+      "at": "00:59",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "accepted browsing without building on the carved pair she liked"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "00:37",
+      "what": "no total or price breakup given for the carved pair"
+    },
+    {
+      "at": "00:53",
+      "what": "no follow-up on the carved pair she called nice at 00:26"
+    },
+    {
+      "at": "01:04",
+      "what": "no number taken or return visit suggested"
+    }
+  ],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": 14,
+    "total_quoted_inr": null,
+    "breakup_given": false,
+    "notes": "making around 14% plus GST at 00:37"
+  },
+  "not_available": [],
+  "competitor": null,
+  "start": "18:40",
+  "duration_min": 7,
+  "value_inr": 0,
+  "competitor_mentioned": false
+}

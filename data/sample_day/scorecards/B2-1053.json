@@ -1,0 +1,136 @@
+{
+  "visit_id": "B2-1053",
+  "store": "B2",
+  "salesperson": "Rohit",
+  "date": "2026-10-17",
+  "outcome": "deferred_with_follow_up",
+  "asked_for": {
+    "category": "necklace",
+    "weight_band": "20-35",
+    "occasion": "sister's wedding next month",
+    "budget_inr": null
+  },
+  "shown": [
+    "necklace 48 g",
+    "necklace 52 g",
+    "necklace 44 g"
+  ],
+  "reason_not_bought": "weight_mismatch",
+  "objections": [
+    {
+      "type": "weight",
+      "at": "00:25",
+      "quote": "they're much heavier than I wanted"
+    },
+    {
+      "type": "price_budget",
+      "at": "00:51",
+      "quote": "That's far more than I can spend."
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:25",
+      "who": "customer",
+      "emotion": "disappointed",
+      "cue": "words"
+    },
+    {
+      "at": "00:51",
+      "who": "customer",
+      "emotion": "concerned",
+      "cue": "words"
+    },
+    {
+      "at": "01:10",
+      "who": "customer",
+      "emotion": "hesitant",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> hesitant",
+  "handling_score": 2,
+  "coaching_tip": "When the 20-35 g range is sold out, offer to bring a piece from another branch or place an order before the wedding, and take her number so you can call her the day the new lot arrives.",
+  "lost_demand": true,
+  "flags": [
+    "return visit stated for Saturday afternoon, but customer said 'I'm not sure' at 01:10",
+    "breakup at 00:40 covered gold, making and GST; no stones mentioned"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer",
+    "intent": "high",
+    "intent_evidence": "00:08 sister's wedding next month, 20-35 g range stated"
+  },
+  "key_moments": [
+    {
+      "at": "00:17",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "showed 48 g and 52 g pieces after a 20-35 g ask"
+    },
+    {
+      "at": "00:31",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "offered 44 g after customer asked for around 30 g"
+    },
+    {
+      "at": "00:56",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "said lighter pieces sold out, with no alternative offered"
+    },
+    {
+      "at": "01:05",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "mentioned new lot by Saturday, giving a reason to return"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "00:25",
+      "what": "no piece in the asked 20-35 g range offered after 'much heavier'"
+    },
+    {
+      "at": "00:56",
+      "what": "no offer to source it from another branch or order, and no number taken"
+    },
+    {
+      "at": "01:19",
+      "what": "no number taken to call when the new lot arrives"
+    }
+  ],
+  "next_step": {
+    "what": "return visit to see the new lot",
+    "when": "Saturday afternoon",
+    "who": "the customer"
+  },
+  "price_talk": {
+    "making_pct": 14,
+    "total_quoted_inr": 620000,
+    "breakup_given": true,
+    "notes": "breakup for 44 g piece given at 00:40"
+  },
+  "not_available": [
+    {
+      "item": "necklace 20-35 g",
+      "at": "00:56",
+      "quote": "Not in this design right now, ma'am.",
+      "said_by": "salesperson",
+      "resolution": "none"
+    }
+  ],
+  "competitor": null,
+  "start": "14:10",
+  "duration_min": 6,
+  "value_inr": 0,
+  "competitor_mentioned": false
+}

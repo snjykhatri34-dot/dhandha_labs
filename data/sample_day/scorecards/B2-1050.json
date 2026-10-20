@@ -1,0 +1,112 @@
+{
+  "visit_id": "B2-1050",
+  "store": "B2",
+  "salesperson": "Priya",
+  "date": "2026-10-17",
+  "outcome": "bought",
+  "asked_for": {
+    "category": "ring",
+    "weight_band": "5-10",
+    "occasion": "engagement proposal",
+    "budget_inr": null
+  },
+  "shown": [
+    "ring 6.4 g",
+    "ring 7.8 g",
+    "ring 9.1 g"
+  ],
+  "reason_not_bought": null,
+  "objections": [
+    {
+      "type": "price_budget",
+      "at": "01:14",
+      "quote": "That's a bit more than I'd planned."
+    },
+    {
+      "type": "other",
+      "at": "01:34",
+      "quote": "Will it fit her, though? I don't know her exact size."
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "curious",
+      "cue": "words"
+    },
+    {
+      "at": "01:14",
+      "who": "customer",
+      "emotion": "concerned",
+      "cue": "words"
+    },
+    {
+      "at": "01:34",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    },
+    {
+      "at": "01:54",
+      "who": "customer",
+      "emotion": "satisfied",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "curious -> satisfied",
+  "handling_score": 5,
+  "coaching_tip": "Keep doing what you did at 00:56: give the full gold, making, stone and GST breakup before the customer asks, so the price talk stays open and easy.",
+  "lost_demand": false,
+  "flags": [
+    "objection at 01:34 typed other: customer unsure of partner's ring size",
+    "budget not stated as a number; price_budget objection based on 'more than I'd planned'",
+    "0.4 ct alternative at 01:19 named without a weight; not listed in shown"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer",
+    "intent": "high",
+    "intent_evidence": "00:08 proposing next month; asked for a 5-10 g ring with a centre diamond"
+  },
+  "key_moments": [
+    {
+      "at": "00:17",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed three rings inside the asked 5-10 g range"
+    },
+    {
+      "at": "00:56",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "gave full breakup: gold, making, stone, GST and total"
+    },
+    {
+      "at": "01:19",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "offered a cheaper 0.4 ct option after the budget concern"
+    },
+    {
+      "at": "01:42",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "free resize within 30 days settled the size worry"
+    }
+  ],
+  "missed_opportunities": [],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": 12,
+    "total_quoted_inr": 387400,
+    "breakup_given": true,
+    "notes": "full breakup at 00:56; 0.4 ct option about 3.2 lakh at 01:19"
+  },
+  "not_available": [],
+  "competitor": null,
+  "start": "14:19",
+  "duration_min": 5,
+  "value_inr": 387400,
+  "competitor_mentioned": false
+}

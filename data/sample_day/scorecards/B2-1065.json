@@ -1,0 +1,125 @@
+{
+  "visit_id": "B2-1065",
+  "store": "B2",
+  "salesperson": "Rohit",
+  "date": "2026-10-17",
+  "outcome": "walked_out",
+  "asked_for": {
+    "category": "necklace",
+    "weight_band": "20-35",
+    "occasion": "cousin's wedding",
+    "budget_inr": null
+  },
+  "shown": [
+    "necklace 44 g",
+    "necklace 48 g",
+    "necklace 41 g"
+  ],
+  "reason_not_bought": "weight_mismatch",
+  "objections": [
+    {
+      "type": "weight",
+      "at": "00:32",
+      "quote": "they're much heavier than I wanted"
+    },
+    {
+      "type": "price_budget",
+      "at": "00:59",
+      "quote": "That's well beyond what I had in mind."
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:32",
+      "who": "customer",
+      "emotion": "concerned",
+      "cue": "words"
+    },
+    {
+      "at": "01:11",
+      "who": "customer",
+      "emotion": "disappointed",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> disappointed",
+  "handling_score": 2,
+  "coaching_tip": "When the necklace she asked for in 20-35 g isn't on the tray, offer to bring one from another branch or have it made, and take her number before she leaves, since her wedding is a month away.",
+  "lost_demand": true,
+  "flags": [
+    "budget not stated as a number; price_budget objection based on 'beyond what I had in mind' at 00:59"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer",
+    "intent": "high",
+    "intent_evidence": "00:08 cousin's wedding next month, asked for twenty to thirty-five grams"
+  },
+  "key_moments": [
+    {
+      "at": "00:24",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "showed 44 g and 48 g pieces after a 20-35 g ask"
+    },
+    {
+      "at": "00:39",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "said heavier range is all they keep; offered no sourcing"
+    },
+    {
+      "at": "00:52",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "quoted about 3.4 lakh for 41 g without a breakup"
+    },
+    {
+      "at": "01:11",
+      "by": "customer",
+      "effect": "hurt",
+      "what": "said the weight isn't what she asked for; 'I'll see'"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "00:39",
+      "what": "no offer to source it from another branch or order, and no number taken"
+    },
+    {
+      "at": "00:52",
+      "what": "no price breakup into gold, making and GST"
+    },
+    {
+      "at": "01:18",
+      "what": "no number taken to follow up before a dated occasion"
+    }
+  ],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": null,
+    "total_quoted_inr": 340000,
+    "breakup_given": false,
+    "notes": "rough total incl. making and GST for 41 g at 00:52"
+  },
+  "not_available": [
+    {
+      "item": "necklace 20-35 g",
+      "at": "00:39",
+      "quote": "In necklaces, ma'am, this is mostly the range we keep right now.",
+      "said_by": "salesperson",
+      "resolution": "none"
+    }
+  ],
+  "competitor": null,
+  "start": "11:53",
+  "duration_min": 15,
+  "value_inr": 0,
+  "competitor_mentioned": false
+}

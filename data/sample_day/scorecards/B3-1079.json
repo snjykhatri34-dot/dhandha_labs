@@ -1,0 +1,118 @@
+{
+  "visit_id": "B3-1079",
+  "store": "B3",
+  "salesperson": "Suresh",
+  "date": "2026-10-17",
+  "outcome": "bought",
+  "asked_for": {
+    "category": "chain",
+    "weight_band": "15-30",
+    "occasion": "brother's wedding",
+    "budget_inr": null
+  },
+  "shown": [
+    "chain 24 g",
+    "chain 21 g"
+  ],
+  "reason_not_bought": null,
+  "objections": [
+    {
+      "type": "price_making_charge",
+      "at": "00:34",
+      "quote": "What's the making charge on this?"
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:07",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:24",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    },
+    {
+      "at": "01:06",
+      "who": "customer",
+      "emotion": "disappointed",
+      "cue": "words"
+    },
+    {
+      "at": "01:16",
+      "who": "customer",
+      "emotion": "satisfied",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> satisfied",
+  "handling_score": 2,
+  "coaching_tip": "When the customer asks how the making charge is worked out, give the percentage and split the total into gold, making and GST, because he asked for it at 00:43 and again at 01:06.",
+  "lost_demand": false,
+  "flags": [
+    "hallmark question at 01:06 read as a confirmation check, not a purity_trust objection",
+    "handling scored 2 for vague making-charge answers at 00:38 and 00:48, although the sale closed"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer",
+    "intent": "high",
+    "intent_evidence": "00:07 asked for a 15-30 g chain for his brother's wedding next month"
+  },
+  "key_moments": [
+    {
+      "at": "00:16",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed two chains within the asked 15-30 g range"
+    },
+    {
+      "at": "00:24",
+      "by": "customer",
+      "effect": "helped",
+      "what": "liked the rope design and asked to try it"
+    },
+    {
+      "at": "00:48",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "deflected the making-charge question with 'everyone pays the same'"
+    },
+    {
+      "at": "01:16",
+      "by": "customer",
+      "effect": "helped",
+      "what": "agreed to buy the rope chain"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "00:38",
+      "what": "no making percentage or per-gram rate stated when asked"
+    },
+    {
+      "at": "00:59",
+      "what": "no breakup of gold, making and GST with the total"
+    },
+    {
+      "at": "01:16",
+      "what": "no add-on suggested for the wedding after 'one thing off my list'"
+    }
+  ],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": null,
+    "total_quoted_inr": 193787,
+    "breakup_given": false,
+    "notes": "only the GST-inclusive total was given at 00:59"
+  },
+  "not_available": [],
+  "competitor": null,
+  "start": "20:36",
+  "duration_min": 20,
+  "value_inr": 193787,
+  "competitor_mentioned": false
+}
