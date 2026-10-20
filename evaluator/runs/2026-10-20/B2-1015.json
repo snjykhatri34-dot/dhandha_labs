@@ -1,0 +1,54 @@
+{
+  "visit_id": "B2-1015",
+  "store": "B2",
+  "salesperson": "Priya",
+  "date": "2026-10-15",
+  "outcome": "bought",
+  "asked_for": {
+    "category": "earrings",
+    "weight_band": null,
+    "occasion": "anniversary",
+    "budget_inr": 150000
+  },
+  "shown": [
+    "earrings 11 g",
+    "earrings 10 g"
+  ],
+  "reason_not_bought": null,
+  "objections": [
+    {
+      "type": "price_budget",
+      "at": "00:46",
+      "quote": "That's a little over our budget."
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:27",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    },
+    {
+      "at": "00:46",
+      "who": "customer",
+      "emotion": "concerned",
+      "cue": "words"
+    },
+    {
+      "at": "01:05",
+      "who": "customer",
+      "emotion": "satisfied",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "delighted -> satisfied",
+  "handling_score": 5,
+  "coaching_tip": "Keep giving the full breakup and offering the same design at a lighter weight when the price runs over budget, and once the sale is agreed, ask whether they would like a matching add-on for the anniversary.",
+  "lost_demand": false,
+  "flags": [
+    "no weight stated by customer; weight_band null",
+    "three pieces shown at 00:19 but weight stated for only one; the 10 g piece was named at 00:49",
+    "first piece called eleven grams at 00:19 but eleven point two grams in the breakup at 00:31"
+  ]
+}
