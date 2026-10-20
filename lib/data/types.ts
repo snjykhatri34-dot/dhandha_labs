@@ -110,6 +110,8 @@ export type ReportSection =
 
 export interface DailyReport {
   id: string;
+  /** "stream2" = a saved daily_reports row; "computed" = built by the UX from visits. */
+  source: "stream2" | "computed";
   date: string; // YYYY-MM-DD
   /** null = all stores */
   store: Store | null;

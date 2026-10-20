@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import reference from "@/expected_outputs/daily_report_reference.json";
 import { toReportView } from "@/components/ux/report/view";
-import { buildDailyReport } from "@/lib/data/mock/report";
+import { buildDailyReport } from "@/lib/data/report";
 import { SAMPLE_DAY_DATE, SAMPLE_DAY_VISITS } from "@/lib/data/mock/sources";
 import { reasonLabel } from "@/lib/ux/format";
 

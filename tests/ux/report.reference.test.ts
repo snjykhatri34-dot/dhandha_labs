@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import reference from "@/expected_outputs/daily_report_reference.json";
-import { buildDailyReport } from "@/lib/data/mock/report";
+import { buildDailyReport } from "@/lib/data/report";
 import { parseCue, SAMPLE_DAY_DATE, SAMPLE_DAY_VISITS } from "@/lib/data/mock/sources";
 
 describe("mock daily report vs expected_outputs/daily_report_reference.json", () => {

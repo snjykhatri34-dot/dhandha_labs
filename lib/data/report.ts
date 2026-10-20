@@ -1,5 +1,6 @@
-// Mock report builder: computes a DailyReport from visits. Stream 2 owns the real
-// builder. This one exists so the UX runs on mock data, and it's checked against
+// Report builder: computes a DailyReport from visits. Stream 2 owns the real report
+// (daily_reports table, pipeline/report.py). This one runs the mock, and fills in on real
+// data for dates Stream 2 hasn't saved a report for yet. Checked against
 // expected_outputs/daily_report_reference.json by tests/ux/report.reference.test.ts.
 
 import type { DailyReport, Visit } from "@/lib/data/types";
@@ -19,7 +20,10 @@ function countBy<T>(items: T[], key: (t: T) => string | null): [string, number][
   return [...counts.entries()].sort((a, b) => b[1] - a[1]);
 }
 
-export function buildReportNumbers(visits: Visit[]): DailyReportReference {
+export function buildReportNumbers(unordered: Visit[]): DailyReportReference {
+  // Count in visit-id order so ties (e.g. two reasons with 4 visits) come out the same
+  // whatever order the database returns rows in.
+  const visits = [...unordered].sort((a, b) => a.id.localeCompare(b.id));
   const bought = visits.filter((v) => v.outcome === "bought");
   const notBought = visits.filter((v) => v.outcome !== "bought");
 
@@ -129,12 +133,18 @@ export function buildActions(
   };
 }
 
-export function buildDailyReport(date: string, visits: Visit[], generatedAt: string): DailyReport {
+export function buildDailyReport(
+  date: string,
+  visits: Visit[],
+  generatedAt: string,
+  source: DailyReport["source"] = "computed",
+): DailyReport {
   const numbers = buildReportNumbers(visits);
   const hotspot = lostDemandHotspot(visits);
   const pattern = storePattern(visits);
   return {
-    id: `mock-${date}-all`,
+    id: `computed-${date}-all`,
+    source,
     date,
     store: null,
     numbers,
