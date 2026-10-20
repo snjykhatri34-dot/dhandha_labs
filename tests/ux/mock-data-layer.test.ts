@@ -25,6 +25,8 @@ describe("mock data layer", () => {
     vi.useFakeTimers();
     const v = await visits.create({ store: "B2", salesperson: "Priya", recordedAt: "2026-10-20T18:05:00", mediaPath: "B2/2026-10-20/x.mp4" });
     expect(v).toMatchObject({ id: "B2-1103", status: "uploaded", review: { status: "pending" } });
+    const ist = await visits.create({ store: "B1", salesperson: "Neha", recordedAt: "2026-10-20T18:05:00+05:30", mediaPath: "x" });
+    expect(ist).toMatchObject({ date: "2026-10-20", startTime: "18:05" });
     await analyser.analyse(v.id);
     expect((await visits.get(v.id))?.status).toBe("uploaded");
     vi.runAllTimers();
@@ -32,6 +34,7 @@ describe("mock data layer", () => {
     expect(done?.status).toBe("analysed");
     expect(done?.outcome).not.toBeNull();
     expect(done?.flags[0]).toMatch(/^mock: canned scorecard/);
+    expect(done?.keyMoments.length).toBeGreaterThan(0); // from Stream 2's pipeline run
   });
 
   it("fails analysis when the salesperson name contains 'fail'", async () => {

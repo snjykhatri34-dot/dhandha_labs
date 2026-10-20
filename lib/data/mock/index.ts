@@ -4,9 +4,13 @@
 
 import type { DataLayer, Visit, VisitFilter } from "@/lib/data/types";
 import { buildDailyReport } from "./report";
-import { LABELLED_VISITS, SAMPLE_DAY_DATE, SAMPLE_DAY_VISITS } from "./sources";
+import { LABELLED_VISITS, NO_NUANCE, PIPELINE_RUN_VISITS, SAMPLE_DAY_DATE, SAMPLE_DAY_VISITS } from "./sources";
+
+// Bump when the Visit shape changes, so dev servers drop records created by older code.
+const MOCK_STATE_VERSION = 2;
 
 interface MockState {
+  version: number;
   visits: Map<string, Visit>;
   cannedIndex: number;
 }
@@ -14,8 +18,9 @@ interface MockState {
 const g = globalThis as typeof globalThis & { __uxMockState?: MockState };
 
 function state(): MockState {
-  if (!g.__uxMockState) {
+  if (g.__uxMockState?.version !== MOCK_STATE_VERSION) {
     g.__uxMockState = {
+      version: MOCK_STATE_VERSION,
       visits: new Map([...SAMPLE_DAY_VISITS, ...LABELLED_VISITS].map((v) => [v.id, structuredClone(v)])),
       cannedIndex: 0,
     };
@@ -65,15 +70,15 @@ export const mockDataLayer: DataLayer = {
       return v ? structuredClone(v) : null;
     },
     async create(input) {
-      const recorded = new Date(input.recordedAt);
+      // Keep the store's wall-clock time from the ISO string ("2026-10-20T18:05:00+05:30" → "18:05"),
+      // not the server's time zone.
+      const localTime = input.recordedAt.match(/T(\d{2}:\d{2})/)?.[1] ?? null;
       const visit: Visit = {
         id: nextId(input.store),
         store: input.store,
         salesperson: input.salesperson,
         date: input.recordedAt.slice(0, 10),
-        startTime: Number.isNaN(recorded.getTime())
-          ? null
-          : `${String(recorded.getHours()).padStart(2, "0")}:${String(recorded.getMinutes()).padStart(2, "0")}`,
+        startTime: localTime,
         durationMin: null,
         status: "uploaded",
         mediaPath: input.mediaPath,
@@ -91,6 +96,7 @@ export const mockDataLayer: DataLayer = {
         competitorMentioned: null,
         valueInr: null,
         flags: [],
+        ...NO_NUANCE,
         error: null,
         review: { status: "pending", by: null, at: null },
       };
@@ -123,8 +129,8 @@ export const mockDataLayer: DataLayer = {
     async analyse(visitId) {
       const v = state().visits.get(visitId);
       if (!v) throw new Error(`Visit ${visitId} not found`);
-      // Mock Stream 1: after a delay, attach a canned scorecard from one of the six scripted conversations.
-      const canned = LABELLED_VISITS[state().cannedIndex++ % LABELLED_VISITS.length];
+      // Mock Stream 1: after a delay, attach a canned scorecard from Stream 2's latest SOP run.
+      const canned = PIPELINE_RUN_VISITS[state().cannedIndex++ % PIPELINE_RUN_VISITS.length];
       setTimeout(() => {
         const target = state().visits.get(visitId);
         if (!target) return;
@@ -147,7 +153,14 @@ export const mockDataLayer: DataLayer = {
           coachingTip: canned.coachingTip,
           lostDemand: canned.lostDemand,
           competitorMentioned: canned.competitorMentioned,
-          flags: [`mock: canned scorecard copied from ${canned.id}`],
+          customer: canned.customer,
+          keyMoments: canned.keyMoments,
+          missedOpportunities: canned.missedOpportunities,
+          nextStep: canned.nextStep,
+          priceTalk: canned.priceTalk,
+          notAvailable: canned.notAvailable,
+          competitor: canned.competitor,
+          flags: [`mock: canned scorecard copied from ${canned.id}`, ...canned.flags],
           error: null,
         } satisfies Partial<Visit>);
       }, ANALYSE_DELAY_MS);
