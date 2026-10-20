@@ -2,9 +2,11 @@
 // State lives on globalThis so it survives dev-mode module reloads and is shared by every
 // route in the same server process. It resets when the server restarts.
 
-import type { DataLayer, Visit, VisitFilter } from "@/lib/data/types";
-import { buildDailyReport } from "./report";
-import { LABELLED_VISITS, NO_NUANCE, PIPELINE_RUN_VISITS, SAMPLE_DAY_DATE, SAMPLE_DAY_VISITS } from "./sources";
+import type { DataLayer, Visit } from "@/lib/data/types";
+import { buildDailyReport } from "@/lib/data/report";
+import { NO_ANALYSIS } from "@/lib/data/normalise";
+import { byNewest, matchesFilter, nextVisitId } from "@/lib/data/visit-list";
+import { LABELLED_VISITS, PIPELINE_RUN_VISITS, SAMPLE_DAY_DATE, SAMPLE_DAY_VISITS } from "./sources";
 
 // Bump when the Visit shape changes, so dev servers drop records created by older code.
 const MOCK_STATE_VERSION = 2;
@@ -35,35 +37,10 @@ export function resetMockState() {
 
 const ANALYSE_DELAY_MS = Number(process.env.MOCK_ANALYSE_DELAY_MS ?? 3000);
 
-function matches(v: Visit, f: VisitFilter) {
-  return (
-    (!f.date || v.date === f.date) &&
-    (!f.store || v.store === f.store) &&
-    (!f.salesperson || v.salesperson === f.salesperson) &&
-    (!f.outcome || v.outcome === f.outcome) &&
-    (!f.status || v.status === f.status) &&
-    (!f.review || v.review.status === f.review)
-  );
-}
-
-/** Newest first: date, then start time, then id. */
-function byNewest(a: Visit, b: Visit) {
-  return (
-    b.date.localeCompare(a.date) ||
-    (b.startTime ?? "").localeCompare(a.startTime ?? "") ||
-    b.id.localeCompare(a.id)
-  );
-}
-
-function nextId(store: string) {
-  const numbers = [...state().visits.keys()].map((id) => Number(id.split("-")[1])).filter(Number.isFinite);
-  return `${store}-${Math.max(1000, ...numbers) + 1}`;
-}
-
 export const mockDataLayer: DataLayer = {
   visits: {
     async list(filter = {}) {
-      return [...state().visits.values()].filter((v) => matches(v, filter)).sort(byNewest).map((v) => structuredClone(v));
+      return [...state().visits.values()].filter((v) => matchesFilter(v, filter)).sort(byNewest).map((v) => structuredClone(v));
     },
     async get(id) {
       const v = state().visits.get(id);
@@ -74,7 +51,7 @@ export const mockDataLayer: DataLayer = {
       // not the server's time zone.
       const localTime = input.recordedAt.match(/T(\d{2}:\d{2})/)?.[1] ?? null;
       const visit: Visit = {
-        id: nextId(input.store),
+        id: nextVisitId(input.store, state().visits.keys()),
         store: input.store,
         salesperson: input.salesperson,
         date: input.recordedAt.slice(0, 10),
@@ -82,21 +59,7 @@ export const mockDataLayer: DataLayer = {
         durationMin: null,
         status: "uploaded",
         mediaPath: input.mediaPath,
-        outcome: null,
-        askedFor: null,
-        shown: [],
-        reasonNotBought: null,
-        objections: [],
-        emotions: [],
-        emotionArc: null,
-        handlingScore: null,
-        handlingEvidence: null,
-        coachingTip: null,
-        lostDemand: null,
-        competitorMentioned: null,
-        valueInr: null,
-        flags: [],
-        ...NO_NUANCE,
+        ...NO_ANALYSIS,
         error: null,
         review: { status: "pending", by: null, at: null },
       };

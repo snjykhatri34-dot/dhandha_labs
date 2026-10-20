@@ -11,6 +11,8 @@ export default defineConfig({
   },
   test: {
     include: ["tests/**/*.test.ts"],
+    // tests/live talks to the real Supabase project: run it on purpose with `npm run test:live`.
+    exclude: ["tests/live/**", "node_modules/**"],
     env: { MOCK_ANALYSE_DELAY_MS: "0" },
   },
 });
