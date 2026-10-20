@@ -1,7 +1,7 @@
 """One clip, start to finish: (upload →) transcribe → evaluate → Supabase → owner message.
 
 A local file (e.g. a clip shared in chat) is uploaded first:
-    python3 pipeline/run_clip.py clip.mp4 --store B2 --salesperson Akshay --visit-no 1020 --at "2026-10-20 10:44"
+    python3 pipeline/run_clip.py clip.mp4 --store B2 --salesperson Akshay --at "2026-10-20 10:44"
 A clip already in Supabase (uploaded by the upload page) starts at step 2:
     python3 pipeline/run_clip.py --visit B2-1020
 
@@ -33,9 +33,9 @@ def main():
     ap.add_argument("--out", default=str(llm.ROOT / "evaluator" / "runs" / datetime.date.today().isoformat()))
     ap.add_argument("--provider", choices=[p[0] for p in llm.PROVIDERS], help="provider for the SOP step")
     args = ap.parse_args()
-    upload_args = (args.clip, args.store, args.salesperson, args.visit_no, args.at)
-    if bool(args.visit) == any(upload_args) or (not args.visit and not all(upload_args)):
-        ap.error("give either --visit ID, or a clip with --store, --salesperson, --visit-no and --at")
+    upload_args = (args.clip, args.store, args.salesperson, args.at)
+    if bool(args.visit) == any(upload_args + (args.visit_no,)) or (not args.visit and not all(upload_args)):
+        ap.error("give either --visit ID, or a clip with --store, --salesperson and --at (--visit-no optional)")
     llm.load_env()
     out = Path(args.out)
     out.mkdir(parents=True, exist_ok=True)

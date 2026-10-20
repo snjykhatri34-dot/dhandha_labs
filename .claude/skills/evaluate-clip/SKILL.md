@@ -9,7 +9,7 @@ One command does the whole flow: `pipeline/run_clip.py`. The clip comes from one
 
 | Source | When | Command |
 |---|---|---|
-| **A file here** | The user shared a video or audio in chat, or gave a local path | `run_clip.py <clip> --store … --salesperson … --visit-no … --at …`: uploads it first |
+| **A file here** | The user shared a video or audio in chat, or gave a local path | `run_clip.py <clip> --store … --salesperson … --at …`: uploads it first |
 | **Supabase** | The clip is already in the `recordings` bucket (the upload page put it there) and the user gives a visit id | `run_clip.py --visit B2-1020`: no upload |
 
 ```
@@ -32,17 +32,20 @@ With `--visit`, the store, salesperson and time come from the visit row; don't a
 | Clip path | positional | The file the user shared (MP4, MOV, M4A, MP3, WEBM; up to 5 minutes) |
 | Store | `--store` | `B1`, `B2` or `B3` |
 | Salesperson | `--salesperson` | First name, as in `visits` (Akshay, Priya, Rohit, Harish, …) |
-| Visit number | `--visit-no` | The visit id becomes `<store>-<visit-no>` |
-| Visit time | `--at` | Shop time (Asia/Kolkata), `"YYYY-MM-DD HH:MM"` |
+| Visit time | `--at` | Shop time (Asia/Kolkata), `"YYYY-MM-DD HH:MM"` or with `:SS` |
+| Visit number | `--visit-no` (optional) | Only if the user names one; otherwise the web app's next id |
 
 Never invent the store, salesperson or time (CLAUDE.md: never invent facts). Ask for whatever the user didn't
 give, in one question. A WhatsApp file name like `WhatsApp Video 2026-10-20 at 10.44.33` gives a likely date and
 time: offer it, don't assume it.
 
-For the visit number, use the one the user gives. Otherwise propose the next free one for that store
-(Supabase MCP: `select max(split_part(id, '-', 2)::int) + 1 from visits where store = 'B2'`). The script refuses
-an id that already exists. Pass `--replace` only when the user says to redo that visit, because it overwrites its
-analysis.
+The upload follows the web app's rules (`pipeline/upload.py` explains them): the bucket path carries an upload
+stamp, and the visit id is one above the highest number in any store (`B2-1103`). With `--visit-no` the script
+refuses an id that already exists. Pass `--replace` only when the user says to redo that visit, because it
+overwrites its analysis.
+
+To upload without evaluating (for example, test clips for the web app), run `python3 pipeline/upload.py` with the
+same flags, one clip at a time, in time order.
 
 ## 2. Check before running
 
@@ -53,8 +56,8 @@ analysis.
 ## 3. Run
 
 ```bash
-python3 pipeline/run_clip.py "<clip>" --store B2 --salesperson Akshay --visit-no 1020 --at "2026-10-20 10:44"   # file here
-python3 pipeline/run_clip.py --visit B2-1020                                                                   # already in Supabase
+python3 pipeline/run_clip.py "<clip>" --store B2 --salesperson Akshay --at "2026-10-20 10:44"   # file here
+python3 pipeline/run_clip.py --visit B2-1103                                                    # already in Supabase
 ```
 
 `--visit` re-scores a visit even if it's already `analysed`, and overwrites its transcript, scorecard and
