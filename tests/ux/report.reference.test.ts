@@ -19,8 +19,8 @@ describe("mock daily report vs expected_outputs/daily_report_reference.json", ()
     for (const section of ["headline", "lostSales", "lostDemand", "storePattern", "salespeople", "busiestHours", "followUps"] as const) {
       expect(report.actions[section], section).toBeTruthy();
     }
-    expect(report.actions.salespeople).toBe("Akshay: pair with Priya tomorrow.");
-    expect(report.actions.storePattern).toBe("Publish one written exchange formula.");
+    expect(report.actions.salespeople).toBe("Have Akshay shadow Priya tomorrow.");
+    expect(report.actions.storePattern).toBe("Put up one written old-gold exchange formula at every counter.");
   });
 
   it("lists 23 follow-ups and 102 sources", () => {

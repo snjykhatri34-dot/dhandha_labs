@@ -23,12 +23,12 @@ export function Badge({ tone = "neutral", children }: { tone?: Tone; children: R
 
 const OUTCOME_LABEL: Record<Outcome, [string, Tone]> = {
   bought: ["Bought", "good"],
-  deferred_with_follow_up: ["Follow up", "warn"],
+  deferred_with_follow_up: ["Needs follow-up", "warn"],
   walked_out: ["Walked out", "bad"],
 };
 
 export function OutcomeBadge({ outcome }: { outcome: Outcome | null }) {
-  if (!outcome) return <Badge>No outcome yet</Badge>;
+  if (!outcome) return <Badge>No result yet</Badge>;
   const [label, tone] = OUTCOME_LABEL[outcome];
   return <Badge tone={tone}>{label}</Badge>;
 }
@@ -36,7 +36,7 @@ export function OutcomeBadge({ outcome }: { outcome: Outcome | null }) {
 /** Processing status. `uploaded` reads as "Analysing" while Stream 1 runs. */
 export function StatusPill({ status }: { status: VisitStatus }) {
   if (status === "analysed") return <Badge tone="good">Analysed</Badge>;
-  if (status === "failed") return <Badge tone="bad">Analysis failed</Badge>;
+  if (status === "failed") return <Badge tone="bad">Couldn&apos;t analyse</Badge>;
   return (
     <Badge tone="info">
       <Spinner className="mr-1 size-3" /> Analysing
