@@ -80,6 +80,17 @@ def upload(media_path, data, mime_type):
              content_type=mime_type, extra_headers={"x-upsert": "true"})
 
 
+def get_visit(visit_id):
+    """The visit row (without its analysis), or None."""
+    rows = json.loads(_request("GET", f"/rest/v1/visits?id=eq.{urllib.parse.quote(visit_id)}"
+                                      "&select=id,store,salesperson,recorded_at,media_path,status"))
+    return rows[0] if rows else None
+
+
+def visit_exists(visit_id):
+    return get_visit(visit_id) is not None
+
+
 def add_visit(visit_id, store_id, salesperson, recorded_at, media_path):
     """Create (or reset) a visit as `uploaded`, so the next --pending run picks it up."""
     row = {"id": visit_id, "store": store_id, "salesperson": salesperson, "recorded_at": recorded_at,

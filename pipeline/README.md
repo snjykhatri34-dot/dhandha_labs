@@ -18,7 +18,8 @@ The SOP still gets `[mm:ss] Speaker X: text` plus `observations`, so the tone la
 | `evaluate.py` | Runs `evaluator/SOP.md` on every transcript in `data/transcripts/`, validates each scorecard, compares the key fields with `expected_outputs/visits/`, and writes `evaluator/runs/<date>/` (scorecard, transcripts, cues and `<id>.message.txt`). `--pending` does it all from and to Supabase. |
 | `message.py` | Step 3: one scorecard → the owner's WhatsApp text for that visit, by code (no model call): outcome, ask, why, objections and stock gaps with timestamps, arc, score, coaching tip. Adds a link to `/owner/visits/<id>` when `APP_BASE_URL` is set. Writes text only; sending is the UX layer's. |
 | `store.py` | Supabase over REST with the service role key: upserts scorecards into `visits`, transcripts into `visit_transcripts`, messages into `visit_messages`; downloads and uploads clips in `recordings`. |
-| `upload.py` | Puts a local clip into `recordings` (path from `schemas.md`) and creates its `uploaded` visit, as the upload page will. |
+| `upload.py` | Puts a local clip into `recordings` (path from `schemas.md`) and creates its `uploaded` visit, as the upload page will. Refuses an existing visit id unless `--replace`. |
+| `run_clip.py` | One clip, start to finish: upload (for a local file) or `--visit <id>` (already in Supabase), then everything `--pending` does for that visit, and prints the transcript, scorecard and message. The `evaluate-clip` skill (`.claude/skills/`) runs it. |
 | `validate.py` | The SOP's hard rules as code: fixed lists, exact quotes, real timestamps, arc = first→last emotion, lost_demand ⇔ reason, and every stock gap left unresolved has a matching missed opportunity. |
 | `report.py` | Computes the day's numbers (checked against `daily_report_reference.json`), checks stock in `data/mock_erp/`, drafts a transfer, then has the model write the one-page report and the owner WhatsApp. Writes `reports/<date>/`. |
 
@@ -35,9 +36,9 @@ python3 pipeline/evaluate.py --pending           # every `uploaded` visit in Sup
 python3 pipeline/transcribe.py data/recordings/B2_Akshay_2026-10-15_1014.mp4   # readable transcript + cues only
 python3 pipeline/message.py evaluator/runs/2026-10-20-clip/B2-1014.json         # owner message for one scorecard
 
-# A new clip, all through Supabase:
-python3 pipeline/upload.py clip.mp4 --store B2 --salesperson Akshay --visit-no 1020 --at "2026-10-20 10:44"
-python3 pipeline/evaluate.py --pending
+# One clip, all through Supabase:
+python3 pipeline/run_clip.py clip.mp4 --store B2 --salesperson Akshay --visit-no 1020 --at "2026-10-20 10:44"
+python3 pipeline/run_clip.py --visit B2-1020     # clip already in the bucket
 ```
 
 `--pending` for each `uploaded` visit: download the clip from `recordings` → transcribe → save to `visit_transcripts`

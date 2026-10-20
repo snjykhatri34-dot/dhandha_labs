@@ -141,40 +141,46 @@ def run_pending(args, out):
     """Every `uploaded` visit in Supabase: download the clip, transcribe, score, write back, build the message."""
     rows = store.pending_visits()
     print(f"{len(rows)} uploaded visit(s) waiting")
-    summary = {}
-    for row in rows:
-        visit_id = row["id"]
-        recorded = row.get("recorded_at")
-        date = (datetime.datetime.fromisoformat(recorded).astimezone(ZoneInfo("Asia/Kolkata")).date().isoformat()
-                if recorded else None)
-        meta = {"visit_id": visit_id, "store": row["store"], "salesperson": row["salesperson"], "date": date}
-        try:
-            if not row.get("media_path"):
-                raise store.StoreError("visit has no media_path")
-            with tempfile.TemporaryDirectory() as tmp:
-                clip = Path(tmp) / Path(row["media_path"]).name
-                clip.write_bytes(store.download(row["media_path"]))
-                card, used, problems = evaluate_one(
-                    clip, meta, args.provider, out,
-                    on_transcript=lambda heard: store.save_transcript(visit_id, heard, llm.gemini_model()))
-        except Exception as e:  # one bad clip must not stop the rest, and must not stay "uploaded"
-            store.mark_failed(visit_id)
-            summary[visit_id] = {"error": str(e)}
-            print(f"{visit_id}  FAILED: {e}")
-            continue
-        if problems:
-            card["flags"] = list(card["flags"]) + [f"rule check: {p}" for p in problems]
-        status = "failed" if problems else "analysed"
-        store.upsert_visits([card], status=status)
-        (out / f"{visit_id}.json").write_text(json.dumps(card, indent=2, ensure_ascii=False) + "\n")
-        summary[visit_id] = {"provider": used, "problems": problems, "status": status}
-        if status == "analysed":
-            text = message.visit_message(card, base_url())
-            store.save_message(visit_id, text)
-            (out / f"{visit_id}.message.txt").write_text(text + "\n")
-            summary[visit_id]["message"] = "saved"
-        print(f"{visit_id}  [{used}]  {status}" + (f" ({len(problems)} rule problem(s))" if problems else ""))
+    summary = {row["id"]: process_visit(row, args.provider, out) for row in rows}
     (out / "summary.json").write_text(json.dumps(summary, indent=2) + "\n")
+
+
+def process_visit(row, provider, out):
+    """One `uploaded` visit row, end to end; everything goes back to Supabase. Returns its summary entry.
+
+    Never raises for a bad clip: the visit is set to `failed` instead, so it doesn't stay `uploaded`.
+    """
+    visit_id = row["id"]
+    recorded = row.get("recorded_at")
+    date = (datetime.datetime.fromisoformat(recorded).astimezone(ZoneInfo("Asia/Kolkata")).date().isoformat()
+            if recorded else None)
+    meta = {"visit_id": visit_id, "store": row["store"], "salesperson": row["salesperson"], "date": date}
+    try:
+        if not row.get("media_path"):
+            raise store.StoreError("visit has no media_path")
+        with tempfile.TemporaryDirectory() as tmp:
+            clip = Path(tmp) / Path(row["media_path"]).name
+            clip.write_bytes(store.download(row["media_path"]))
+            card, used, problems = evaluate_one(
+                clip, meta, provider, out,
+                on_transcript=lambda heard: store.save_transcript(visit_id, heard, llm.gemini_model()))
+    except Exception as e:  # one bad clip must not stop the rest, and must not stay "uploaded"
+        store.mark_failed(visit_id)
+        print(f"{visit_id}  FAILED: {e}")
+        return {"error": str(e), "status": "failed"}
+    if problems:
+        card["flags"] = list(card["flags"]) + [f"rule check: {p}" for p in problems]
+    status = "failed" if problems else "analysed"
+    store.upsert_visits([card], status=status)
+    (out / f"{visit_id}.json").write_text(json.dumps(card, indent=2, ensure_ascii=False) + "\n")
+    entry = {"provider": used, "problems": problems, "status": status}
+    if status == "analysed":
+        text = message.visit_message(card, base_url())
+        store.save_message(visit_id, text)
+        (out / f"{visit_id}.message.txt").write_text(text + "\n")
+        entry["message"] = "saved"
+    print(f"{visit_id}  [{used}]  {status}" + (f" ({len(problems)} rule problem(s))" if problems else ""))
+    return entry
 
 
 def base_url():
