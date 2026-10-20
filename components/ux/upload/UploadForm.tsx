@@ -223,7 +223,7 @@ export function UploadForm({ stores, salespeopleByStore }: UploadFormProps) {
       <Field
         id="clip"
         label="Counter clip"
-        hint={`MP4 or MOV video, or M4A or MP3 audio. 1 to 5 minutes, up to ${MAX_FILE_MB} MB.`}
+        hint={`MP4 or MOV video, or M4A or MP3 audio. Up to 5 minutes and ${MAX_FILE_MB} MB.`}
         error={errors.file}
       >
         <input

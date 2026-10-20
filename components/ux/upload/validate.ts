@@ -1,7 +1,6 @@
 // Pure checks for the upload form. No DOM, no data access, so they can be unit-tested.
 import { STORES, type Store } from "@/lib/types/scorecard";
 
-export const MIN_DURATION_SEC = 60;
 export const MAX_DURATION_SEC = 5 * 60;
 /** Matches Stream 2's `recordings` bucket (file_size_limit 100 MB, supabase/migrations). */
 export const MAX_FILE_MB = 100;
@@ -60,7 +59,8 @@ export function validateClip(clip: ClipInfo | null): string | null {
   if (clip.durationSec === null || !Number.isFinite(clip.durationSec)) {
     return "Couldn't read the clip's length. Try another file or format.";
   }
-  if (clip.durationSec < MIN_DURATION_SEC) return `The clip is ${formatDuration(clip.durationSec)}. It must be at least 1 minute.`;
+  // No minimum length; a zero-length clip is empty or broken.
+  if (clip.durationSec <= 0) return "The clip is empty. Try another file.";
   if (clip.durationSec > MAX_DURATION_SEC) return `The clip is ${formatDuration(clip.durationSec)}. It must be 5 minutes or less.`;
   return null;
 }
