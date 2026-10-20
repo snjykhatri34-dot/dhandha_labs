@@ -1,0 +1,15 @@
+{
+  "observations": [
+    {
+      "at": "00:33",
+      "who": "Speaker B",
+      "cue_type": "voice",
+      "description": "sharp rising intonation, surprised questioning tone",
+      "candidate_emotion": "skeptical",
+      "confidence": "high"
+    }
+  ],
+  "flags": [
+    "camera blocked or pointing away"
+  ]
+}

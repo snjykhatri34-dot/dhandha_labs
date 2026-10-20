@@ -1,0 +1,49 @@
+{
+  "visit_id": "B2-1014",
+  "store": "B2",
+  "salesperson": "Akshay",
+  "date": "2026-10-15",
+  "outcome": "walked_out",
+  "asked_for": {
+    "category": "necklace",
+    "weight_band": "20-35",
+    "occasion": "office wear",
+    "budget_inr": null
+  },
+  "shown": [
+    "necklace 52 g"
+  ],
+  "reason_not_bought": "weight_mismatch",
+  "objections": [
+    {
+      "type": "weight",
+      "at": "00:24",
+      "quote": "That's far too heavy"
+    },
+    {
+      "type": "price_making_charge",
+      "at": "00:44",
+      "quote": "Another showroom quoted me twelve percent last week",
+      "competitor_mentioned": true
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:09",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:24",
+      "who": "customer",
+      "emotion": "disappointed",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> disappointed",
+  "handling_score": 2,
+  "coaching_tip": "When the customer asks for up to 35 g, show pieces in that range first and give a making-charge breakup, and if nothing lighter is in stock, take her number so you can call her when it arrives.",
+  "lost_demand": true,
+  "flags": []
+}

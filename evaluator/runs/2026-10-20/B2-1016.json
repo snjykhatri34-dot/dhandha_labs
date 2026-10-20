@@ -1,0 +1,60 @@
+{
+  "visit_id": "B2-1016",
+  "store": "B2",
+  "salesperson": "Akshay",
+  "date": "2026-10-16",
+  "outcome": "walked_out",
+  "asked_for": {
+    "category": "necklace",
+    "weight_band": "20-35",
+    "occasion": "gift for daughter's new job",
+    "budget_inr": null
+  },
+  "shown": [
+    "necklace set 58 g",
+    "chain with pendant",
+    "bangles"
+  ],
+  "reason_not_bought": "weight_mismatch",
+  "objections": [
+    {
+      "type": "weight",
+      "at": "00:23",
+      "quote": "she won't wear something that big"
+    },
+    {
+      "type": "design_not_available",
+      "at": "00:36",
+      "quote": "She already has a chain. We wanted a necklace."
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:09",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:23",
+      "who": "customer",
+      "emotion": "disappointed",
+      "cue": "words"
+    },
+    {
+      "at": "00:46",
+      "who": "customer",
+      "emotion": "frustrated",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> frustrated",
+  "handling_score": 1,
+  "coaching_tip": "When a family asks for a 25-30 g necklace, show the lightest necklaces you have first, or offer to source one and take their number, rather than switching to chains or bangles.",
+  "lost_demand": true,
+  "flags": [
+    "customer cited another shop at 00:46 ('the showroom in Shimla') as they left; not attached to a specific objection type",
+    "two customers (Speaker B and Speaker C); emotions attributed to the customer group",
+    "salesperson said at 00:29 there is little variety in smaller pieces; actual stock not verifiable from clip"
+  ]
+}

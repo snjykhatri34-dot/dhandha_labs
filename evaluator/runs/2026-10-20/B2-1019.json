@@ -1,0 +1,67 @@
+{
+  "visit_id": "B2-1019",
+  "store": "B2",
+  "salesperson": "Rohit",
+  "date": "2026-10-17",
+  "outcome": "walked_out",
+  "asked_for": {
+    "category": "bangle",
+    "weight_band": null,
+    "occasion": null,
+    "budget_inr": null
+  },
+  "shown": [
+    "bangle"
+  ],
+  "reason_not_bought": "old_gold_exchange_rate",
+  "objections": [
+    {
+      "type": "old_gold_exchange_rate",
+      "at": "00:23",
+      "quote": "How much of a deduction?"
+    },
+    {
+      "type": "old_gold_exchange_rate",
+      "at": "00:28",
+      "quote": "The other shop was offering the full rate.",
+      "competitor_mentioned": true
+    },
+    {
+      "type": "purity_trust",
+      "at": "00:36",
+      "quote": "do these new bangles have a HUID? Show me the hallmark.",
+      "competitor_mentioned": false
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:23",
+      "who": "customer",
+      "emotion": "concerned",
+      "cue": "words"
+    },
+    {
+      "at": "00:28",
+      "who": "customer",
+      "emotion": "skeptical",
+      "cue": "words"
+    },
+    {
+      "at": "00:44",
+      "who": "customer",
+      "emotion": "hesitant",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> skeptical",
+  "handling_score": 2,
+  "coaching_tip": "When the family asks about the deduction, walk them through the purity test and the exchange formula with an indicative range, and offer to test the gold on the spot before they leave.",
+  "lost_demand": false,
+  "flags": [
+    "no weight stated for bangles; weight_band null",
+    "shown item weight not stated",
+    "outcome borderline: 'we'll think about it and come back' names no date or concrete step; scored walked_out",
+    "objections at 00:23 and 00:28 are both the exchange-deduction concern; 00:28 listed separately because it cites a competitor",
+    "two customer speakers (B and C); both treated as customer"
+  ]
+}

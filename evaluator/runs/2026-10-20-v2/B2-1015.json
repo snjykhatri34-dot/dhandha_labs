@@ -1,0 +1,60 @@
+{
+  "visit_id": "B2-1015",
+  "store": "B2",
+  "salesperson": "Priya",
+  "date": "2026-10-15",
+  "outcome": "bought",
+  "asked_for": {
+    "category": "earrings",
+    "weight_band": "8-15",
+    "occasion": "anniversary",
+    "budget_inr": 150000
+  },
+  "shown": [
+    "earrings 11 g",
+    "earrings 10 g"
+  ],
+  "reason_not_bought": null,
+  "objections": [
+    {
+      "type": "price_budget",
+      "at": "00:46",
+      "quote": "That's a little over our budget."
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:27",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    },
+    {
+      "at": "00:46",
+      "who": "customer",
+      "emotion": "concerned",
+      "cue": "words"
+    },
+    {
+      "at": "01:05",
+      "who": "customer",
+      "emotion": "satisfied",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> satisfied",
+  "handling_score": 5,
+  "coaching_tip": "Keep doing what you did at 00:49: when the total is over budget, offer old-gold exchange or the same design at a lighter weight.",
+  "lost_demand": false,
+  "flags": [
+    "no weight asked; band from chosen 10 g piece",
+    "three pieces shown at 00:19; weight stated for only one",
+    "first piece stated as eleven grams at 00:19 and eleven point two grams at 00:31"
+  ]
+}
