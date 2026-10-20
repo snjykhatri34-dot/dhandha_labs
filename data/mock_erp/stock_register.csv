@@ -1,0 +1,313 @@
+tag_no,branch,category,design_code,metal,purity,huid,gross_wt_g,net_wt_g,stone_wt_ct,making_pct,stone_charge_inr,est_value_inr,vendor,po_category,received_date,status
+VJ100001,B1,necklace,NEC-174,gold,22K,H961168,15.31,15.15,0.0,16,0,210900,Zaveri Bros (Mumbai),necklace,2026-09-26,in_stock
+VJ100002,B1,necklace,NEC-544,gold,22K,H538485,13.74,13.72,0.0,14,0,187700,Rajkot Castings,necklace,2026-08-12,in_stock
+VJ100003,B1,necklace,NEC-745,gold,22K,H757911,22.03,21.86,0.0,14,0,299000,Rajkot Castings,necklace,2026-08-04,in_stock
+VJ100004,B1,necklace,NEC-670,gold,22K,H239643,34.72,34.63,0.0,15,0,477900,Zaveri Bros (Mumbai),necklace,2026-10-09,in_stock
+VJ100005,B1,necklace,NEC-285,gold,22K,H208061,28.77,28.4,1.0,19,55000,460600,Shree Ornaments (Mumbai),necklace,2026-09-06,in_stock
+VJ100006,B1,necklace,NEC-164,gold,22K,H691783,21.68,21.46,1.0,15,55000,351100,Rajkot Castings,necklace,2026-08-29,in_stock
+VJ100007,B1,necklace,NEC-576,gold,22K,H714006,26.69,26.41,0.0,16,0,367600,Kalbadevi Gold Works (Mumbai),necklace,2026-08-08,in_stock
+VJ100008,B1,necklace,NEC-898,gold,22K,H355953,32.13,31.91,1.0,16,55000,499200,Rajkot Castings,necklace,2026-09-14,in_stock
+VJ100009,B1,necklace,NEC-723,gold,22K,H176756,30.97,30.93,0.0,17,0,434300,Shree Ornaments (Mumbai),necklace,2026-09-02,in_stock
+VJ100010,B1,necklace,NEC-140,gold,22K,H800675,49.05,48.99,0.2,18,11000,704700,Kalbadevi Gold Works (Mumbai),necklace,2026-09-26,in_stock
+VJ100011,B1,necklace,NEC-608,gold,22K,H708064,45.76,45.42,0.5,14,27500,648800,Zaveri Bros (Mumbai),necklace,2026-09-02,in_stock
+VJ100012,B1,necklace,NEC-166,gold,22K,H163616,42.53,42.11,1.0,16,55000,641200,Rajkot Castings,necklace,2026-09-11,in_stock
+VJ100013,B1,necklace,NEC-455,gold,22K,H123658,46.22,45.74,1.0,16,55000,691700,Shree Ornaments (Mumbai),necklace,2026-09-09,in_stock
+VJ100014,B1,necklace,NEC-886,gold,22K,H401394,42.44,42.4,0.0,15,0,585100,Rajkot Castings,necklace,2026-10-01,in_stock
+VJ100015,B1,necklace,NEC-511,gold,22K,H676129,52.13,52.01,0.2,15,11000,728700,Rajkot Castings,necklace,2026-08-13,in_stock
+VJ100016,B1,necklace,NEC-467,gold,22K,H815887,57.27,56.96,0.2,15,11000,797000,Shree Ornaments (Mumbai),necklace,2026-08-06,in_stock
+VJ100017,B1,necklace,NEC-774,gold,22K,H344670,54.4,54.4,0.0,20,0,783400,Shree Ornaments (Mumbai),necklace,2026-10-05,in_stock
+VJ100018,B1,bangle,BAN-529,gold,22K,H660559,10.15,10.04,0.0,14,0,137300,Kalbadevi Gold Works (Mumbai),bangle,2026-09-09,in_stock
+VJ100019,B1,bangle,BAN-627,gold,22K,H747592,17.1,16.9,0.0,10,0,223100,Rajkot Castings,bangle,2026-09-29,in_stock
+VJ100020,B1,bangle,BAN-508,gold,22K,H513264,13.95,13.92,0.0,13,0,188800,Zaveri Bros (Mumbai),bangle,2026-08-05,in_stock
+VJ100021,B1,bangle,BAN-313,gold,22K,H562030,10.72,10.67,0.0,12,0,143400,Zaveri Bros (Mumbai),bangle,2026-09-21,in_stock
+VJ100022,B1,bangle,BAN-254,gold,22K,H662685,10.03,10.0,0.0,12,0,134400,Zaveri Bros (Mumbai),bangle,2026-10-02,in_stock
+VJ100023,B1,bangle,BAN-728,gold,22K,H494505,18.77,18.73,0.0,12,0,251700,Kalbadevi Gold Works (Mumbai),bangle,2026-10-06,in_stock
+VJ100024,B1,bangle,BAN-218,gold,22K,H990174,14.89,14.74,0.0,13,0,199900,Rajkot Castings,bangle,2026-08-30,in_stock
+VJ100025,B1,bangle,BAN-247,gold,22K,H207151,13.34,13.12,0.0,12,0,176300,Rajkot Castings,bangle,2026-08-15,in_stock
+VJ100026,B1,bangle,BAN-640,gold,22K,H479324,20.5,20.46,0.0,14,0,279900,Zaveri Bros (Mumbai),bangle,2026-08-10,in_stock
+VJ100027,B1,bangle,BAN-758,gold,22K,H195431,26.17,25.96,0.0,12,0,348900,Kalbadevi Gold Works (Mumbai),bangle,2026-08-09,in_stock
+VJ100028,B1,bangle,BAN-328,gold,22K,H658463,27.27,27.11,0.0,14,0,370900,Kalbadevi Gold Works (Mumbai),bangle,2026-09-24,in_stock
+VJ100029,B1,bangle,BAN-907,gold,22K,H895158,32.52,32.26,0.0,11,0,429700,Rajkot Castings,bangle,2026-09-17,in_stock
+VJ100030,B1,bangle,BAN-604,gold,22K,H472834,24.22,24.0,0.0,10,0,316800,Kalbadevi Gold Works (Mumbai),bangle,2026-09-16,in_stock
+VJ100031,B1,bangle,BAN-809,gold,22K,H734534,25.47,25.18,0.0,13,0,341400,Kalbadevi Gold Works (Mumbai),bangle,2026-08-16,in_stock
+VJ100032,B1,bangle,BAN-204,gold,22K,H337865,21.75,21.61,0.0,12,0,290400,Shree Ornaments (Mumbai),bangle,2026-08-30,in_stock
+VJ100033,B1,bangle,BAN-724,gold,22K,H981260,32.48,32.48,0.0,12,0,436500,Zaveri Bros (Mumbai),bangle,2026-08-15,in_stock
+VJ100034,B1,bangle,BAN-868,gold,22K,H309001,55.78,55.64,0.0,11,0,741100,Rajkot Castings,bangle,2026-08-27,in_stock
+VJ100035,B1,earrings,EAR-505,gold,22K,H585659,7.32,7.0,1.0,14,55000,150800,Shree Ornaments (Mumbai),earrings,2026-10-04,in_stock
+VJ100036,B1,earrings,EAR-254,gold,22K,H719511,8.23,7.96,0.0,20,0,114600,Shree Ornaments (Mumbai),earrings,2026-09-24,in_stock
+VJ100037,B1,earrings,EAR-259,gold,22K,H675311,6.44,6.28,0.0,14,0,85900,Zaveri Bros (Mumbai),earrings,2026-08-16,in_stock
+VJ100038,B1,earrings,EAR-544,gold,22K,H304268,5.88,5.63,0.0,15,0,77700,Zaveri Bros (Mumbai),earrings,2026-10-02,in_stock
+VJ100039,B1,earrings,EAR-346,gold,22K,H900776,4.34,4.06,0.5,16,27500,84000,Rajkot Castings,earrings,2026-09-13,in_stock
+VJ100040,B1,earrings,EAR-462,gold,22K,H580416,3.7,3.3,1.0,20,55000,102500,Rajkot Castings,earrings,2026-09-29,in_stock
+VJ100041,B1,earrings,EAR-636,gold,22K,H635347,3.66,3.65,0.0,17,0,51200,Shree Ornaments (Mumbai),earrings,2026-08-12,in_stock
+VJ100042,B1,earrings,EAR-276,gold,22K,H248435,7.01,6.87,0.0,19,0,98100,Zaveri Bros (Mumbai),earrings,2026-10-15,in_stock
+VJ100043,B1,earrings,EAR-630,gold,22K,H656506,3.68,3.31,1.0,20,55000,102700,Zaveri Bros (Mumbai),earrings,2026-08-05,in_stock
+VJ100044,B1,earrings,EAR-383,gold,22K,H144248,3.51,3.28,0.0,18,0,46400,Rajkot Castings,earrings,2026-08-05,in_stock
+VJ100045,B1,earrings,EAR-553,gold,22K,H441430,3.32,3.14,0.0,18,0,44500,Shree Ornaments (Mumbai),earrings,2026-08-05,in_stock
+VJ100046,B1,earrings,EAR-926,gold,22K,H601257,5.51,5.26,0.5,15,27500,100100,Kalbadevi Gold Works (Mumbai),earrings,2026-09-10,in_stock
+VJ100047,B1,earrings,EAR-501,gold,22K,H563594,9.05,8.96,0.0,19,0,127900,Shree Ornaments (Mumbai),earrings,2026-08-19,in_stock
+VJ100048,B1,earrings,EAR-410,gold,22K,H922016,8.75,8.51,1.0,20,55000,177500,Shree Ornaments (Mumbai),earrings,2026-08-22,in_stock
+VJ100049,B1,earrings,EAR-578,gold,22K,H330254,9.22,9.0,0.0,14,0,123100,Rajkot Castings,earrings,2026-08-30,in_stock
+VJ100050,B1,earrings,EAR-952,gold,22K,H334579,9.39,9.14,1.0,17,55000,183300,Rajkot Castings,earrings,2026-08-14,in_stock
+VJ100051,B1,earrings,EAR-426,gold,22K,H196672,11.16,10.94,0.0,14,0,149700,Kalbadevi Gold Works (Mumbai),earrings,2026-09-02,in_stock
+VJ100052,B1,earrings,EAR-118,gold,22K,H503014,11.51,11.21,1.0,18,55000,213700,Kalbadevi Gold Works (Mumbai),earrings,2026-08-06,in_stock
+VJ100053,B1,earrings,EAR-907,gold,22K,H339656,15.01,14.72,0.0,14,0,201400,Zaveri Bros (Mumbai),earrings,2026-08-11,in_stock
+VJ100054,B1,earrings,EAR-376,gold,22K,H892489,9.94,9.9,0.0,17,0,139000,Kalbadevi Gold Works (Mumbai),earrings,2026-09-12,in_stock
+VJ100055,B1,earrings,EAR-684,gold,22K,H618638,9.35,9.04,0.5,14,27500,151200,Kalbadevi Gold Works (Mumbai),earrings,2026-08-25,in_stock
+VJ100056,B1,earrings,EAR-535,gold,22K,H175931,13.67,13.59,0.0,14,0,185900,Zaveri Bros (Mumbai),earrings,2026-10-08,in_stock
+VJ100057,B1,earrings,EAR-168,gold,22K,H377296,21.34,21.08,0.0,17,0,296000,Zaveri Bros (Mumbai),earrings,2026-10-05,in_stock
+VJ100058,B1,earrings,EAR-374,gold,22K,H751903,25.01,24.93,0.2,18,11000,364000,Shree Ornaments (Mumbai),earrings,2026-09-02,in_stock
+VJ100059,B1,earrings,EAR-151,gold,22K,H289945,24.74,24.68,0.0,16,0,343500,Kalbadevi Gold Works (Mumbai),earrings,2026-10-01,in_stock
+VJ100060,B1,earrings,EAR-556,gold,22K,H624380,22.79,22.59,0.0,16,0,314500,Kalbadevi Gold Works (Mumbai),earrings,2026-08-09,in_stock
+VJ100061,B1,ring,RIN-850,gold,22K,H630216,2.28,2.11,0.0,13,0,28600,Rajkot Castings,ring,2026-09-13,in_stock
+VJ100062,B1,ring,RIN-774,gold,22K,H958700,4.99,4.79,0.0,17,0,67300,Rajkot Castings,ring,2026-09-14,in_stock
+VJ100063,B1,ring,RIN-618,gold,22K,H422733,4.75,4.5,0.2,13,11000,72000,Kalbadevi Gold Works (Mumbai),ring,2026-08-07,in_stock
+VJ100064,B1,ring,RIN-846,gold,22K,H766870,4.73,4.49,1.0,14,55000,116400,Zaveri Bros (Mumbai),ring,2026-09-20,in_stock
+VJ100065,B1,ring,RIN-858,gold,22K,H368009,2.37,2.04,1.0,12,55000,82400,Zaveri Bros (Mumbai),ring,2026-09-29,in_stock
+VJ100066,B1,ring,RIN-388,gold,22K,H727864,4.87,4.6,1.0,14,55000,117900,Zaveri Bros (Mumbai),ring,2026-08-28,in_stock
+VJ100067,B1,ring,RIN-556,gold,22K,H103798,2.63,2.55,0.0,14,0,34900,Kalbadevi Gold Works (Mumbai),ring,2026-08-18,in_stock
+VJ100068,B1,ring,RIN-323,gold,22K,H473905,2.15,2.1,0.0,14,0,28700,Rajkot Castings,ring,2026-09-14,in_stock
+VJ100069,B1,ring,RIN-771,gold,22K,H310742,3.59,3.42,0.5,18,27500,75900,Zaveri Bros (Mumbai),ring,2026-10-05,in_stock
+VJ100070,B1,ring,RIN-247,gold,22K,H518917,2.97,2.79,0.0,15,0,38500,Zaveri Bros (Mumbai),ring,2026-10-04,in_stock
+VJ100071,B1,ring,RIN-186,gold,22K,H714028,3.2,2.91,0.0,18,0,41200,Shree Ornaments (Mumbai),ring,2026-09-07,in_stock
+VJ100072,B1,ring,RIN-606,gold,22K,H256723,4.58,4.29,1.0,16,55000,114700,Shree Ornaments (Mumbai),ring,2026-08-27,in_stock
+VJ100073,B1,ring,RIN-625,gold,22K,H757805,4.8,4.47,1.0,17,55000,117800,Shree Ornaments (Mumbai),ring,2026-10-10,in_stock
+VJ100074,B1,ring,RIN-954,gold,22K,H952393,4.59,4.25,0.5,18,27500,87700,Shree Ornaments (Mumbai),ring,2026-08-09,in_stock
+VJ100075,B1,ring,RIN-469,gold,22K,H210012,5.52,5.21,1.0,15,55000,126900,Zaveri Bros (Mumbai),ring,2026-10-12,in_stock
+VJ100076,B1,ring,RIN-350,gold,22K,H613062,8.4,8.12,1.0,15,55000,167100,Zaveri Bros (Mumbai),ring,2026-10-13,in_stock
+VJ100077,B1,ring,RIN-775,gold,22K,H651540,9.5,9.48,0.0,17,0,133100,Rajkot Castings,ring,2026-08-12,in_stock
+VJ100078,B1,ring,RIN-340,gold,22K,H864763,9.27,9.04,0.0,13,0,122600,Rajkot Castings,ring,2026-09-13,in_stock
+VJ100079,B1,ring,RIN-590,gold,22K,H816907,9.31,9.22,0.0,12,0,123900,Shree Ornaments (Mumbai),ring,2026-08-13,in_stock
+VJ100080,B1,ring,RIN-360,gold,22K,H783183,8.21,7.99,0.0,14,0,109300,Shree Ornaments (Mumbai),ring,2026-10-06,in_stock
+VJ100081,B1,ring,RIN-375,gold,22K,H804644,7.48,7.41,0.2,13,11000,111500,Rajkot Castings,ring,2026-10-14,in_stock
+VJ100082,B1,ring,RIN-575,gold,22K,H588529,8.68,8.54,0.0,12,0,114800,Shree Ornaments (Mumbai),ring,2026-09-08,in_stock
+VJ100083,B1,ring,RIN-117,gold,22K,H403655,10.06,9.88,0.2,18,11000,150900,Rajkot Castings,ring,2026-09-06,in_stock
+VJ100084,B1,ring,RIN-176,gold,22K,H709717,11.29,11.26,0.0,17,0,158100,Kalbadevi Gold Works (Mumbai),ring,2026-08-27,in_stock
+VJ100085,B1,ring,RIN-620,gold,22K,H393148,11.26,10.79,1.0,17,55000,206500,Kalbadevi Gold Works (Mumbai),ring,2026-08-30,in_stock
+VJ100086,B1,ring,RIN-503,gold,22K,H126040,13.07,12.98,0.2,15,11000,190100,Rajkot Castings,ring,2026-09-16,in_stock
+VJ100087,B1,ring,RIN-526,gold,22K,H460668,11.92,11.81,0.0,12,0,158700,Kalbadevi Gold Works (Mumbai),ring,2026-08-25,in_stock
+VJ100088,B1,chain,CHA-959,gold,22K,H517605,12.79,12.75,0.0,9,0,166800,Zaveri Bros (Mumbai),chain,2026-09-04,in_stock
+VJ100089,B1,chain,CHA-166,gold,22K,H511984,8.4,8.28,0.0,12,0,111300,Zaveri Bros (Mumbai),chain,2026-09-08,in_stock
+VJ100090,B1,chain,CHA-873,gold,22K,H388521,14.58,14.32,0.0,10,0,189000,Zaveri Bros (Mumbai),chain,2026-08-30,in_stock
+VJ100091,B1,chain,CHA-392,gold,22K,H765807,13.78,13.5,0.0,9,0,176600,Kalbadevi Gold Works (Mumbai),chain,2026-10-09,in_stock
+VJ100092,B1,chain,CHA-294,gold,22K,H910741,10.7,10.59,0.0,11,0,141100,Zaveri Bros (Mumbai),chain,2026-08-21,in_stock
+VJ100093,B1,chain,CHA-667,gold,22K,H675907,14.27,14.21,0.0,8,0,184200,Zaveri Bros (Mumbai),chain,2026-08-25,in_stock
+VJ100094,B1,chain,CHA-870,gold,22K,H245303,10.24,10.05,0.0,10,0,132700,Rajkot Castings,chain,2026-08-24,in_stock
+VJ100095,B1,chain,CHA-663,gold,22K,H233495,14.25,14.2,0.0,11,0,189100,Kalbadevi Gold Works (Mumbai),chain,2026-10-09,in_stock
+VJ100096,B1,chain,CHA-856,gold,22K,H874630,8.97,8.68,0.0,10,0,114600,Rajkot Castings,chain,2026-09-09,in_stock
+VJ100097,B1,chain,CHA-784,gold,22K,H513524,22.28,22.24,0.0,9,0,290900,Zaveri Bros (Mumbai),chain,2026-09-07,in_stock
+VJ100098,B1,chain,CHA-931,gold,22K,H621221,22.67,22.5,0.0,11,0,299700,Kalbadevi Gold Works (Mumbai),chain,2026-09-19,in_stock
+VJ100099,B1,chain,CHA-660,gold,22K,H301753,21.48,21.41,0.0,9,0,280000,Kalbadevi Gold Works (Mumbai),chain,2026-08-19,in_stock
+VJ100100,B1,chain,CHA-344,gold,22K,H486196,16.45,16.37,0.0,12,0,220000,Shree Ornaments (Mumbai),chain,2026-08-05,in_stock
+VJ100101,B1,chain,CHA-522,gold,22K,H501434,26.36,26.24,0.0,12,0,352700,Shree Ornaments (Mumbai),chain,2026-10-13,in_stock
+VJ100102,B1,chain,CHA-870,gold,22K,H165074,19.2,19.05,0.0,12,0,256000,Kalbadevi Gold Works (Mumbai),chain,2026-08-28,in_stock
+VJ100103,B1,chain,CHA-641,gold,22K,H760211,25.53,25.29,0.0,9,0,330800,Zaveri Bros (Mumbai),chain,2026-09-29,in_stock
+VJ100104,B1,chain,CHA-493,gold,22K,H519175,28.63,28.44,0.0,11,0,378800,Kalbadevi Gold Works (Mumbai),chain,2026-09-11,in_stock
+VJ100105,B1,chain,CHA-826,gold,22K,H900787,30.75,30.48,0.0,11,0,406000,Rajkot Castings,chain,2026-09-29,in_stock
+VJ100106,B1,pendant,PEN-975,gold,22K,H590892,3.56,3.17,0.5,15,27500,71200,Zaveri Bros (Mumbai),pendant,2026-10-06,in_stock
+VJ100107,B1,pendant,PEN-798,gold,22K,H214179,2.84,2.46,0.5,19,27500,62600,Rajkot Castings,pendant,2026-09-17,in_stock
+VJ100108,B1,pendant,PEN-101,gold,22K,H920299,3.69,3.65,0.0,18,0,51700,Zaveri Bros (Mumbai),pendant,2026-10-05,in_stock
+VJ100109,B1,pendant,PEN-357,gold,22K,H653913,5.27,4.88,1.0,19,55000,124700,Zaveri Bros (Mumbai),pendant,2026-09-07,in_stock
+VJ100110,B1,pendant,PEN-696,gold,22K,H301013,2.43,2.21,0.5,15,27500,58000,Zaveri Bros (Mumbai),pendant,2026-10-03,in_stock
+VJ100111,B1,pendant,PEN-385,gold,22K,H431724,3.84,3.61,0.2,15,11000,60800,Rajkot Castings,pendant,2026-10-14,in_stock
+VJ100112,B1,pendant,PEN-129,gold,22K,H531814,2.91,2.7,0.0,16,0,37600,Zaveri Bros (Mumbai),pendant,2026-08-09,in_stock
+VJ100113,B1,pendant,PEN-762,gold,22K,H540418,2.8,2.58,1.0,15,55000,90600,Rajkot Castings,pendant,2026-10-13,in_stock
+VJ100114,B1,pendant,PEN-812,gold,22K,H454472,2.9,2.68,0.0,16,0,37300,Rajkot Castings,pendant,2026-08-29,in_stock
+VJ100115,B1,pendant,PEN-965,gold,22K,H629403,9.2,8.98,1.0,17,55000,181100,Shree Ornaments (Mumbai),pendant,2026-10-15,in_stock
+VJ100116,B1,pendant,PEN-336,gold,22K,H587707,8.89,8.82,0.0,20,0,127000,Kalbadevi Gold Works (Mumbai),pendant,2026-09-06,in_stock
+VJ100117,B1,pendant,PEN-724,gold,22K,H296412,10.06,9.75,0.2,17,11000,147900,Rajkot Castings,pendant,2026-10-02,in_stock
+VJ100118,B1,pendant,PEN-502,gold,22K,H156998,9.79,9.73,0.0,18,0,137800,Shree Ornaments (Mumbai),pendant,2026-10-08,in_stock
+VJ100119,B1,pendant,PEN-288,gold,22K,H512427,5.39,5.26,0.0,19,0,75100,Kalbadevi Gold Works (Mumbai),pendant,2026-08-23,in_stock
+VJ100120,B1,pendant,PEN-437,gold,22K,H299946,10.04,9.98,0.0,18,0,141300,Rajkot Castings,pendant,2026-10-01,in_stock
+VJ100121,B1,pendant,PEN-487,gold,22K,H979888,6.87,6.56,1.0,16,55000,146300,Rajkot Castings,pendant,2026-10-11,in_stock
+VJ100122,B1,pendant,PEN-386,gold,22K,H184686,5.65,5.54,0.0,14,0,75800,Shree Ornaments (Mumbai),pendant,2026-09-24,in_stock
+VJ100123,B1,pendant,PEN-941,gold,22K,H942988,13.97,13.84,0.0,14,0,189300,Rajkot Castings,pendant,2026-08-31,in_stock
+VJ100124,B1,pendant,PEN-297,gold,22K,H439014,12.01,11.86,0.2,17,11000,177500,Zaveri Bros (Mumbai),pendant,2026-09-20,in_stock
+VJ100125,B1,pendant,PEN-885,gold,22K,H524434,11.45,11.24,1.0,14,55000,208800,Rajkot Castings,pendant,2026-08-24,in_stock
+VJ100126,B2,necklace,NEC-164,gold,22K,H735034,14.35,14.05,1.0,16,55000,250600,Kalbadevi Gold Works (Mumbai),necklace,2026-10-08,in_stock
+VJ100132,B2,necklace,NEC-173,gold,22K,H377758,49.88,49.69,0.0,15,0,685700,Zaveri Bros (Mumbai),necklace,2026-09-25,in_stock
+VJ100133,B2,necklace,NEC-557,gold,22K,H281604,42.74,42.47,1.0,17,55000,651300,Rajkot Castings,necklace,2026-08-23,in_stock
+VJ100134,B2,necklace,NEC-877,gold,22K,H227050,46.64,46.21,1.0,16,55000,698200,Kalbadevi Gold Works (Mumbai),necklace,2026-09-15,in_stock
+VJ100135,B2,necklace,NEC-360,gold,22K,H873919,43.58,43.5,0.0,17,0,610700,Shree Ornaments (Mumbai),necklace,2026-09-10,in_stock
+VJ100136,B2,necklace,NEC-552,gold,22K,H297394,52.4,52.1,0.0,18,0,737700,Kalbadevi Gold Works (Mumbai),necklace,2026-06-14,in_stock
+VJ100137,B2,necklace,NEC-765,gold,22K,H947713,62.71,62.68,0.0,17,0,880000,Zaveri Bros (Mumbai),necklace,2026-07-04,in_stock
+VJ100138,B2,bangle,BAN-938,gold,22K,H342340,14.99,14.74,0.0,12,0,198100,Zaveri Bros (Mumbai),bangle,2026-10-15,in_stock
+VJ100139,B2,bangle,BAN-151,gold,22K,H298781,12.51,12.33,0.0,14,0,168700,Shree Ornaments (Mumbai),bangle,2026-09-08,in_stock
+VJ100140,B2,bangle,BAN-986,gold,22K,H286393,13.85,13.72,0.0,12,0,184400,Zaveri Bros (Mumbai),bangle,2026-10-06,in_stock
+VJ100141,B2,bangle,BAN-826,gold,22K,H750062,16.47,16.37,0.0,10,0,216100,Kalbadevi Gold Works (Mumbai),bangle,2026-10-02,in_stock
+VJ100142,B2,bangle,BAN-308,gold,22K,H367296,11.42,11.41,0.0,11,0,152000,Zaveri Bros (Mumbai),bangle,2026-09-02,in_stock
+VJ100143,B2,bangle,BAN-289,gold,22K,H751180,33.65,33.56,0.0,11,0,447000,Zaveri Bros (Mumbai),bangle,2026-08-24,in_stock
+VJ100144,B2,bangle,BAN-164,gold,22K,H527997,30.99,30.96,0.0,13,0,419800,Shree Ornaments (Mumbai),bangle,2026-08-13,in_stock
+VJ100145,B2,bangle,BAN-267,gold,22K,H517094,22.03,21.82,0.0,13,0,295900,Kalbadevi Gold Works (Mumbai),bangle,2026-08-08,in_stock
+VJ100146,B2,bangle,BAN-152,gold,22K,H427535,28.57,28.35,0.0,12,0,381000,Rajkot Castings,bangle,2026-09-06,in_stock
+VJ100147,B2,bangle,BAN-885,gold,22K,H941188,20.47,20.36,0.0,11,0,271200,Rajkot Castings,bangle,2026-08-23,in_stock
+VJ100148,B2,bangle,BAN-106,gold,22K,H555254,24.34,24.07,0.0,13,0,326400,Zaveri Bros (Mumbai),bangle,2026-08-25,in_stock
+VJ100149,B2,bangle,BAN-473,gold,22K,H583295,51.78,51.55,0.0,11,0,686600,Zaveri Bros (Mumbai),bangle,2026-08-25,in_stock
+VJ100150,B2,earrings,EAR-191,gold,22K,H700691,3.94,3.71,0.2,16,11000,62600,Shree Ornaments (Mumbai),earrings,2026-08-06,in_stock
+VJ100151,B2,earrings,EAR-633,gold,22K,H280129,5.02,4.74,0.0,14,0,64800,Rajkot Castings,earrings,2026-09-27,in_stock
+VJ100152,B2,earrings,EAR-408,gold,22K,H232802,7.01,6.76,0.0,14,0,92500,Rajkot Castings,earrings,2026-08-14,in_stock
+VJ100153,B2,earrings,EAR-497,gold,22K,H190486,3.74,3.27,1.0,18,55000,101300,Shree Ornaments (Mumbai),earrings,2026-09-05,in_stock
+VJ100154,B2,earrings,EAR-966,gold,22K,H305639,6.45,6.1,0.5,15,27500,111700,Shree Ornaments (Mumbai),earrings,2026-09-17,in_stock
+VJ100155,B2,earrings,EAR-260,gold,22K,H502208,5.2,4.99,0.5,15,27500,96400,Shree Ornaments (Mumbai),earrings,2026-10-10,in_stock
+VJ100156,B2,earrings,EAR-962,gold,22K,H894255,3.51,3.21,0.5,19,27500,73300,Kalbadevi Gold Works (Mumbai),earrings,2026-09-21,in_stock
+VJ100157,B2,earrings,EAR-663,gold,22K,H990251,5.18,4.95,0.2,16,11000,79900,Rajkot Castings,earrings,2026-09-30,in_stock
+VJ100158,B2,earrings,EAR-498,gold,22K,H790846,6.06,5.91,0.2,18,11000,94700,Rajkot Castings,earrings,2026-09-06,in_stock
+VJ100159,B2,earrings,EAR-576,gold,22K,H346678,8.19,8.02,0.2,18,11000,124600,Rajkot Castings,earrings,2026-10-13,in_stock
+VJ100160,B2,earrings,EAR-209,gold,22K,H170381,13.75,13.67,0.2,17,11000,202900,Kalbadevi Gold Works (Mumbai),earrings,2026-09-23,in_stock
+VJ100161,B2,earrings,EAR-622,gold,22K,H789014,13.72,13.61,0.5,19,27500,221900,Shree Ornaments (Mumbai),earrings,2026-10-04,in_stock
+VJ100162,B2,earrings,EAR-896,gold,22K,H855387,14.6,14.45,0.0,14,0,197700,Rajkot Castings,earrings,2026-10-05,in_stock
+VJ100163,B2,earrings,EAR-728,gold,22K,H867646,8.39,8.18,0.0,14,0,111900,Shree Ornaments (Mumbai),earrings,2026-09-28,in_stock
+VJ100164,B2,earrings,EAR-394,gold,22K,H950389,15.17,14.86,0.2,15,11000,216100,Shree Ornaments (Mumbai),earrings,2026-09-29,in_stock
+VJ100165,B2,earrings,EAR-874,gold,22K,H364472,13.97,13.82,0.5,18,27500,223200,Kalbadevi Gold Works (Mumbai),earrings,2026-10-07,in_stock
+VJ100166,B2,earrings,EAR-591,gold,22K,H318442,9.28,9.0,0.5,18,27500,154900,Shree Ornaments (Mumbai),earrings,2026-08-18,in_stock
+VJ100167,B2,earrings,EAR-513,gold,22K,H269061,15.56,15.37,0.0,16,0,214000,Kalbadevi Gold Works (Mumbai),earrings,2026-08-29,in_stock
+VJ100168,B2,earrings,EAR-217,gold,22K,H905585,16.85,16.69,0.0,19,0,238300,Kalbadevi Gold Works (Mumbai),earrings,2026-08-28,in_stock
+VJ100169,B2,earrings,EAR-805,gold,22K,H209690,20.73,20.55,0.5,18,27500,318500,Rajkot Castings,earrings,2026-08-19,in_stock
+VJ100170,B2,ring,RIN-691,gold,22K,H253297,3.23,3.12,0.0,18,0,44200,Zaveri Bros (Mumbai),ring,2026-09-12,in_stock
+VJ100171,B2,ring,RIN-861,gold,22K,H150637,2.88,2.69,0.5,16,27500,64900,Kalbadevi Gold Works (Mumbai),ring,2026-08-20,in_stock
+VJ100172,B2,ring,RIN-779,gold,22K,H427836,4.23,3.91,0.5,17,27500,82400,Zaveri Bros (Mumbai),ring,2026-09-06,in_stock
+VJ100173,B2,ring,RIN-740,gold,22K,H553229,2.68,2.45,0.5,14,27500,61000,Zaveri Bros (Mumbai),ring,2026-09-17,in_stock
+VJ100174,B2,ring,RIN-768,gold,22K,H147797,3.57,3.46,0.5,12,27500,74000,Kalbadevi Gold Works (Mumbai),ring,2026-09-29,in_stock
+VJ100175,B2,ring,RIN-646,gold,22K,H335152,2.44,2.32,0.0,14,0,31700,Shree Ornaments (Mumbai),ring,2026-09-07,in_stock
+VJ100176,B2,ring,RIN-262,gold,22K,H241294,3.14,3.1,0.2,18,11000,54900,Shree Ornaments (Mumbai),ring,2026-09-19,in_stock
+VJ100177,B2,ring,RIN-753,gold,22K,H251720,3.61,3.35,0.0,18,0,47400,Kalbadevi Gold Works (Mumbai),ring,2026-09-26,in_stock
+VJ100178,B2,ring,RIN-157,gold,22K,H776276,4.68,4.43,0.0,14,0,60600,Rajkot Castings,ring,2026-08-25,in_stock
+VJ100179,B2,ring,RIN-269,gold,22K,H100418,4.2,4.19,0.0,16,0,58300,Zaveri Bros (Mumbai),ring,2026-08-10,in_stock
+VJ100180,B2,ring,RIN-159,gold,22K,H916706,2.59,2.56,0.0,16,0,35600,Shree Ornaments (Mumbai),ring,2026-08-25,in_stock
+VJ100181,B2,ring,RIN-722,gold,22K,H773913,3.49,3.24,0.5,17,27500,73000,Rajkot Castings,ring,2026-09-27,in_stock
+VJ100182,B2,ring,RIN-740,gold,22K,H150846,6.84,6.54,0.0,17,0,91800,Rajkot Castings,ring,2026-08-11,in_stock
+VJ100183,B2,ring,RIN-863,gold,22K,H587866,5.09,5.03,0.2,17,11000,81600,Rajkot Castings,ring,2026-08-08,in_stock
+VJ100184,B2,ring,RIN-367,gold,22K,H343580,6.32,6.13,0.0,12,0,82400,Kalbadevi Gold Works (Mumbai),ring,2026-09-23,in_stock
+VJ100185,B2,ring,RIN-751,gold,22K,H680688,8.75,8.55,0.0,17,0,120000,Kalbadevi Gold Works (Mumbai),ring,2026-09-12,in_stock
+VJ100186,B2,ring,RIN-187,gold,22K,H632077,8.2,8.2,0.0,14,0,112200,Shree Ornaments (Mumbai),ring,2026-09-08,in_stock
+VJ100187,B2,ring,RIN-434,gold,22K,H301260,10.17,9.71,1.0,14,55000,187800,Shree Ornaments (Mumbai),ring,2026-09-20,in_stock
+VJ100188,B2,ring,RIN-809,gold,22K,H797550,9.98,9.53,1.0,16,55000,187700,Rajkot Castings,ring,2026-08-28,in_stock
+VJ100189,B2,ring,RIN-106,gold,22K,H999177,9.4,9.19,1.0,17,55000,184000,Shree Ornaments (Mumbai),ring,2026-08-16,in_stock
+VJ100190,B2,ring,RIN-179,gold,22K,H692659,12.72,12.35,0.5,13,27500,195000,Zaveri Bros (Mumbai),ring,2026-09-18,in_stock
+VJ100191,B2,ring,RIN-265,gold,22K,H461615,11.06,10.67,0.5,17,27500,177300,Zaveri Bros (Mumbai),ring,2026-10-12,in_stock
+VJ100192,B2,ring,RIN-758,gold,22K,H764669,10.46,10.25,1.0,12,55000,192800,Zaveri Bros (Mumbai),ring,2026-10-12,in_stock
+VJ100193,B2,chain,CHA-939,gold,22K,H659828,8.06,7.79,0.0,8,0,101000,Rajkot Castings,chain,2026-08-30,in_stock
+VJ100194,B2,chain,CHA-308,gold,22K,H217408,8.23,8.22,0.0,8,0,106500,Kalbadevi Gold Works (Mumbai),chain,2026-10-02,in_stock
+VJ100195,B2,chain,CHA-200,gold,22K,H930437,7.13,6.9,0.0,9,0,90300,Kalbadevi Gold Works (Mumbai),chain,2026-08-15,in_stock
+VJ100196,B2,chain,CHA-367,gold,22K,H121934,9.14,9.03,0.0,10,0,119200,Zaveri Bros (Mumbai),chain,2026-09-05,in_stock
+VJ100197,B2,chain,CHA-887,gold,22K,H731251,14.33,14.18,0.0,10,0,187200,Zaveri Bros (Mumbai),chain,2026-08-29,in_stock
+VJ100198,B2,chain,CHA-631,gold,22K,H910576,6.31,6.28,0.0,11,0,83600,Zaveri Bros (Mumbai),chain,2026-08-24,in_stock
+VJ100199,B2,chain,CHA-831,gold,22K,H968042,11.12,11.09,0.0,10,0,146400,Shree Ornaments (Mumbai),chain,2026-08-08,in_stock
+VJ100200,B2,chain,CHA-395,gold,22K,H899204,23.08,22.85,0.0,8,0,296100,Zaveri Bros (Mumbai),chain,2026-10-15,in_stock
+VJ100201,B2,chain,CHA-603,gold,22K,H828978,22.6,22.36,0.0,9,0,292500,Rajkot Castings,chain,2026-09-01,in_stock
+VJ100202,B2,chain,CHA-627,gold,22K,H373232,29.52,29.35,0.0,9,0,383900,Kalbadevi Gold Works (Mumbai),chain,2026-09-01,in_stock
+VJ100203,B2,chain,CHA-337,gold,22K,H622521,29.11,29.06,0.0,8,0,376600,Rajkot Castings,chain,2026-09-18,in_stock
+VJ100204,B2,chain,CHA-743,gold,22K,H442511,26.91,26.8,0.0,11,0,357000,Rajkot Castings,chain,2026-08-05,in_stock
+VJ100205,B2,chain,CHA-761,gold,22K,H126396,21.44,21.33,0.0,10,0,281600,Kalbadevi Gold Works (Mumbai),chain,2026-10-04,in_stock
+VJ100206,B2,chain,CHA-613,gold,22K,H279416,28.62,28.51,0.0,9,0,372900,Rajkot Castings,chain,2026-08-22,in_stock
+VJ100207,B2,chain,CHA-805,gold,22K,H889566,39.09,38.91,0.0,8,0,504300,Kalbadevi Gold Works (Mumbai),chain,2026-08-08,in_stock
+VJ100208,B2,chain,CHA-988,gold,22K,H984060,37.96,37.82,0.0,12,0,508300,Kalbadevi Gold Works (Mumbai),chain,2026-09-04,in_stock
+VJ100209,B2,pendant,PEN-693,gold,22K,H342246,3.35,3.31,0.0,17,0,46500,Shree Ornaments (Mumbai),pendant,2026-08-17,in_stock
+VJ100210,B2,pendant,PEN-872,gold,22K,H837323,2.82,2.57,0.0,18,0,36400,Shree Ornaments (Mumbai),pendant,2026-08-12,in_stock
+VJ100211,B2,pendant,PEN-434,gold,22K,H732181,5.27,4.91,1.0,15,55000,122800,Shree Ornaments (Mumbai),pendant,2026-09-26,in_stock
+VJ100212,B2,pendant,PEN-846,gold,22K,H206751,4.91,4.86,0.0,19,0,69400,Zaveri Bros (Mumbai),pendant,2026-09-04,in_stock
+VJ100213,B2,pendant,PEN-913,gold,22K,H416780,3.37,3.15,0.0,17,0,44200,Kalbadevi Gold Works (Mumbai),pendant,2026-09-20,in_stock
+VJ100214,B2,pendant,PEN-387,gold,22K,H316472,2.6,2.33,0.0,17,0,32700,Zaveri Bros (Mumbai),pendant,2026-09-20,in_stock
+VJ100215,B2,pendant,PEN-810,gold,22K,H333258,3.38,3.19,0.2,19,11000,56600,Kalbadevi Gold Works (Mumbai),pendant,2026-10-14,in_stock
+VJ100216,B2,pendant,PEN-718,gold,22K,H874101,2.19,2.07,0.0,19,0,29600,Shree Ornaments (Mumbai),pendant,2026-08-17,in_stock
+VJ100217,B2,pendant,PEN-839,gold,22K,H784180,9.68,9.22,1.0,20,55000,187800,Shree Ornaments (Mumbai),pendant,2026-08-23,in_stock
+VJ100218,B2,pendant,PEN-542,gold,22K,H428219,8.32,8.2,0.2,19,11000,128100,Zaveri Bros (Mumbai),pendant,2026-09-22,in_stock
+VJ100219,B2,pendant,PEN-830,gold,22K,H847252,6.44,6.21,0.2,16,11000,97400,Rajkot Castings,pendant,2026-08-23,in_stock
+VJ100220,B2,pendant,PEN-979,gold,22K,H529228,7.53,7.27,0.5,19,27500,131300,Shree Ornaments (Mumbai),pendant,2026-08-15,in_stock
+VJ100221,B2,pendant,PEN-951,gold,22K,H613634,9.19,8.88,0.2,14,11000,132500,Zaveri Bros (Mumbai),pendant,2026-09-04,in_stock
+VJ100222,B2,pendant,PEN-833,gold,22K,H919768,8.0,7.71,0.0,15,0,106400,Kalbadevi Gold Works (Mumbai),pendant,2026-09-13,in_stock
+VJ100223,B2,pendant,PEN-654,gold,22K,H314939,9.49,9.23,0.2,18,11000,141700,Zaveri Bros (Mumbai),pendant,2026-10-03,in_stock
+VJ100224,B2,pendant,PEN-567,gold,22K,H320294,12.21,11.71,1.0,15,55000,216600,Rajkot Castings,pendant,2026-08-10,in_stock
+VJ100225,B2,pendant,PEN-846,gold,22K,H743828,13.92,13.81,0.0,14,0,188900,Kalbadevi Gold Works (Mumbai),pendant,2026-08-11,in_stock
+VJ100226,B3,necklace,NEC-176,gold,22K,H538915,15.46,15.19,0.0,19,0,216900,Kalbadevi Gold Works (Mumbai),necklace,2026-08-28,in_stock
+VJ100227,B3,necklace,NEC-859,gold,22K,H519931,13.15,12.87,0.0,18,0,182200,Shree Ornaments (Mumbai),necklace,2026-09-12,in_stock
+VJ100228,B3,necklace,NEC-895,gold,22K,H172241,23.42,23.18,0.0,19,0,331000,Shree Ornaments (Mumbai),necklace,2026-08-17,in_stock
+VJ100229,B3,necklace,NEC-331,gold,22K,H954211,30.12,29.63,1.0,16,55000,467400,Rajkot Castings,necklace,2026-08-16,in_stock
+VJ100230,B3,necklace,NEC-765,gold,22K,H231246,35.26,34.93,0.5,17,27500,517900,Kalbadevi Gold Works (Mumbai),necklace,2026-08-17,in_stock
+VJ100231,B3,necklace,NEC-803,gold,22K,H365865,24.34,24.01,0.2,19,11000,353900,Shree Ornaments (Mumbai),necklace,2026-09-16,in_stock
+VJ100232,B3,necklace,NEC-918,gold,22K,H394871,20.35,20.04,1.0,19,55000,341200,Kalbadevi Gold Works (Mumbai),necklace,2026-08-15,in_stock
+VJ100233,B3,necklace,NEC-752,gold,22K,H189570,42.57,42.27,0.5,16,27500,615900,Shree Ornaments (Mumbai),necklace,2026-08-15,in_stock
+VJ100234,B3,necklace,NEC-187,gold,22K,H968115,47.98,47.81,0.0,16,0,665500,Shree Ornaments (Mumbai),necklace,2026-09-07,in_stock
+VJ100235,B3,necklace,NEC-696,gold,22K,H115713,47.86,47.46,1.0,15,55000,709900,Zaveri Bros (Mumbai),necklace,2026-08-09,in_stock
+VJ100236,B3,necklace,NEC-246,gold,22K,H995666,65.37,65.2,0.5,20,27500,966400,Rajkot Castings,necklace,2026-09-13,in_stock
+VJ100237,B3,necklace,NEC-512,gold,22K,H930130,69.77,69.61,0.0,18,0,985700,Zaveri Bros (Mumbai),necklace,2026-09-01,in_stock
+VJ100238,B3,bangle,BAN-318,gold,22K,H656579,14.96,14.94,0.0,13,0,202600,Zaveri Bros (Mumbai),chain,2026-09-20,in_stock
+VJ100239,B3,bangle,BAN-529,gold,22K,H345551,11.43,11.18,0.0,13,0,151600,Rajkot Castings,chain,2026-08-05,in_stock
+VJ100240,B3,bangle,BAN-578,gold,22K,H251436,10.79,10.58,0.0,11,0,140900,Rajkot Castings,chain,2026-08-05,in_stock
+VJ100241,B3,bangle,BAN-983,gold,22K,H870272,15.39,15.39,0.0,12,0,206800,Rajkot Castings,bangle,2026-09-24,in_stock
+VJ100242,B3,bangle,BAN-483,gold,22K,H546498,36.93,36.8,0.0,10,0,485800,Shree Ornaments (Mumbai),bangle,2026-09-08,in_stock
+VJ100243,B3,bangle,BAN-129,gold,22K,H121558,32.9,32.72,0.0,12,0,439800,Zaveri Bros (Mumbai),bangle,2026-08-30,in_stock
+VJ100244,B3,bangle,BAN-875,gold,22K,H251508,29.69,29.68,0.0,13,0,402500,Shree Ornaments (Mumbai),bangle,2026-08-11,in_stock
+VJ100245,B3,bangle,BAN-774,gold,22K,H483944,21.99,21.89,0.0,14,0,299500,Shree Ornaments (Mumbai),bangle,2026-09-02,in_stock
+VJ100246,B3,bangle,BAN-532,gold,22K,H363792,28.87,28.7,0.0,12,0,385700,Kalbadevi Gold Works (Mumbai),bangle,2026-09-09,in_stock
+VJ100247,B3,bangle,BAN-615,gold,22K,H384895,48.33,48.07,0.0,12,0,646100,Shree Ornaments (Mumbai),bangle,2026-08-13,in_stock
+VJ100248,B3,bangle,BAN-438,gold,22K,H301650,55.93,55.83,0.0,12,0,750400,Shree Ornaments (Mumbai),bangle,2026-08-13,in_stock
+VJ100249,B3,earrings,EAR-515,gold,22K,H671894,5.26,4.99,0.5,17,27500,97600,Kalbadevi Gold Works (Mumbai),earrings,2026-10-10,in_stock
+VJ100250,B3,earrings,EAR-941,gold,22K,H598129,3.21,3.03,0.0,19,0,43300,Zaveri Bros (Mumbai),earrings,2026-10-02,in_stock
+VJ100251,B3,earrings,EAR-485,gold,22K,H746655,7.68,7.54,0.5,19,27500,135200,Zaveri Bros (Mumbai),earrings,2026-08-12,in_stock
+VJ100252,B3,earrings,EAR-568,gold,22K,H755651,3.63,3.2,1.0,14,55000,98800,Shree Ornaments (Mumbai),earrings,2026-09-18,in_stock
+VJ100253,B3,earrings,EAR-771,gold,22K,H114078,5.21,5.1,0.0,20,0,73400,Shree Ornaments (Mumbai),earrings,2026-10-11,in_stock
+VJ100254,B3,earrings,EAR-983,gold,22K,H416712,5.86,5.8,0.0,14,0,79300,Kalbadevi Gold Works (Mumbai),earrings,2026-09-06,in_stock
+VJ100255,B3,earrings,EAR-692,gold,22K,H157270,5.5,5.15,1.0,18,55000,127900,Zaveri Bros (Mumbai),earrings,2026-10-13,in_stock
+VJ100256,B3,earrings,EAR-557,gold,22K,H170484,12.06,12.02,0.2,17,11000,179800,Shree Ornaments (Mumbai),earrings,2026-08-23,in_stock
+VJ100257,B3,earrings,EAR-204,gold,22K,H186952,13.67,13.38,0.5,15,27500,212100,Shree Ornaments (Mumbai),earrings,2026-08-16,in_stock
+VJ100258,B3,earrings,EAR-800,gold,22K,H801881,11.02,10.98,0.0,20,0,158100,Zaveri Bros (Mumbai),earrings,2026-10-14,in_stock
+VJ100259,B3,earrings,EAR-583,gold,22K,H118640,14.16,14.08,0.0,18,0,199400,Shree Ornaments (Mumbai),earrings,2026-09-18,in_stock
+VJ100260,B3,earrings,EAR-151,gold,22K,H483646,13.36,13.13,0.0,19,0,187500,Shree Ornaments (Mumbai),earrings,2026-08-19,in_stock
+VJ100261,B3,earrings,EAR-610,gold,22K,H582952,21.68,21.28,1.0,16,55000,351200,Zaveri Bros (Mumbai),earrings,2026-09-08,in_stock
+VJ100262,B3,ring,RIN-803,gold,22K,H957046,2.57,2.18,1.0,15,55000,85100,Kalbadevi Gold Works (Mumbai),ring,2026-10-14,in_stock
+VJ100263,B3,ring,RIN-981,gold,22K,H975472,4.33,4.18,0.0,12,0,56200,Kalbadevi Gold Works (Mumbai),ring,2026-09-06,in_stock
+VJ100264,B3,ring,RIN-549,gold,22K,H592623,5.24,4.84,1.0,13,55000,120600,Zaveri Bros (Mumbai),ring,2026-08-29,in_stock
+VJ100265,B3,ring,RIN-744,gold,22K,H940799,4.98,4.85,0.0,15,0,66900,Rajkot Castings,ring,2026-08-30,in_stock
+VJ100266,B3,ring,RIN-441,gold,22K,H406591,4.53,4.35,0.5,16,27500,88100,Kalbadevi Gold Works (Mumbai),ring,2026-09-11,in_stock
+VJ100267,B3,ring,RIN-952,gold,22K,H423588,4.77,4.49,0.5,13,27500,88400,Rajkot Castings,ring,2026-10-14,in_stock
+VJ100268,B3,ring,RIN-889,gold,22K,H345737,4.39,4.05,0.5,14,27500,82900,Zaveri Bros (Mumbai),ring,2026-08-27,in_stock
+VJ100269,B3,ring,RIN-261,gold,22K,H715139,3.11,2.79,0.2,18,11000,50500,Zaveri Bros (Mumbai),ring,2026-09-04,in_stock
+VJ100270,B3,ring,RIN-250,gold,22K,H387151,9.44,9.05,0.5,18,27500,155600,Rajkot Castings,ring,2026-09-27,in_stock
+VJ100271,B3,ring,RIN-666,gold,22K,H608310,8.01,7.67,0.5,13,27500,131500,Shree Ornaments (Mumbai),ring,2026-09-01,in_stock
+VJ100272,B3,ring,RIN-504,gold,22K,H587926,8.44,8.03,1.0,14,55000,164900,Zaveri Bros (Mumbai),ring,2026-09-06,in_stock
+VJ100273,B3,ring,RIN-649,gold,22K,H945755,7.4,7.29,0.0,12,0,98000,Shree Ornaments (Mumbai),ring,2026-08-27,in_stock
+VJ100274,B3,ring,RIN-953,gold,22K,H647208,7.99,7.89,0.0,16,0,109800,Shree Ornaments (Mumbai),ring,2026-08-26,in_stock
+VJ100275,B3,ring,RIN-285,gold,22K,H945010,6.27,6.06,0.0,14,0,82900,Kalbadevi Gold Works (Mumbai),ring,2026-09-21,in_stock
+VJ100276,B3,ring,RIN-145,gold,22K,H617229,15.24,15.13,0.0,12,0,203300,Kalbadevi Gold Works (Mumbai),ring,2026-08-10,in_stock
+VJ100277,B3,ring,RIN-423,gold,22K,H726222,14.73,14.72,0.0,14,0,201400,Zaveri Bros (Mumbai),ring,2026-08-17,in_stock
+VJ100278,B3,ring,RIN-597,gold,22K,H715211,10.47,10.2,0.5,14,27500,167000,Kalbadevi Gold Works (Mumbai),ring,2026-10-03,in_stock
+VJ100279,B3,chain,CHA-885,gold,22K,H721931,14.76,14.51,0.0,9,0,189800,Kalbadevi Gold Works (Mumbai),chain,2026-10-03,in_stock
+VJ100280,B3,chain,CHA-285,gold,22K,H496573,9.08,9.05,0.0,8,0,117300,Zaveri Bros (Mumbai),chain,2026-10-11,in_stock
+VJ100281,B3,chain,CHA-822,gold,22K,H580542,9.47,9.32,0.0,8,0,120800,Rajkot Castings,chain,2026-08-05,in_stock
+VJ100282,B3,chain,CHA-192,gold,22K,H369687,12.45,12.35,0.0,9,0,161500,Zaveri Bros (Mumbai),chain,2026-09-30,in_stock
+VJ100283,B3,chain,CHA-559,gold,22K,H990969,9.58,9.53,0.0,9,0,124700,Shree Ornaments (Mumbai),chain,2026-08-12,in_stock
+VJ100284,B3,chain,CHA-362,gold,22K,H469110,6.37,6.35,0.0,12,0,85300,Zaveri Bros (Mumbai),chain,2026-09-23,in_stock
+VJ100285,B3,chain,CHA-625,gold,22K,H844078,8.54,8.32,0.0,11,0,110800,Zaveri Bros (Mumbai),chain,2026-10-09,in_stock
+VJ100286,B3,chain,CHA-105,gold,22K,H308615,19.96,19.76,0.0,10,0,260800,Rajkot Castings,chain,2026-09-27,in_stock
+VJ100287,B3,chain,CHA-480,gold,22K,H369495,22.18,22.06,0.0,10,0,291200,Rajkot Castings,chain,2026-10-02,in_stock
+VJ100288,B3,chain,CHA-344,gold,22K,H946781,17.57,17.53,0.0,8,0,227200,Rajkot Castings,chain,2026-08-28,in_stock
+VJ100289,B3,chain,CHA-952,gold,22K,H331265,32.37,32.35,0.0,12,0,434800,Kalbadevi Gold Works (Mumbai),chain,2026-10-11,in_stock
+VJ100290,B3,chain,CHA-199,gold,22K,H503784,41.92,41.67,0.0,8,0,540000,Rajkot Castings,chain,2026-09-28,in_stock
+VJ100291,B3,pendant,PEN-218,gold,22K,H758697,4.61,4.46,0.2,16,11000,73100,Shree Ornaments (Mumbai),pendant,2026-09-04,in_stock
+VJ100292,B3,pendant,PEN-666,gold,22K,H251740,2.71,2.54,0.2,15,11000,46100,Kalbadevi Gold Works (Mumbai),pendant,2026-10-08,in_stock
+VJ100293,B3,pendant,PEN-126,gold,22K,H384276,3.4,3.23,0.0,16,0,45000,Kalbadevi Gold Works (Mumbai),pendant,2026-08-23,in_stock
+VJ100294,B3,pendant,PEN-425,gold,22K,H578344,3.05,2.78,0.0,14,0,38000,Shree Ornaments (Mumbai),pendant,2026-09-24,in_stock
+VJ100295,B3,pendant,PEN-316,gold,22K,H687142,2.51,2.17,1.0,16,55000,85200,Zaveri Bros (Mumbai),pendant,2026-08-11,in_stock
+VJ100296,B3,pendant,PEN-542,gold,22K,H374226,4.56,4.26,0.0,15,0,58800,Zaveri Bros (Mumbai),pendant,2026-09-13,in_stock
+VJ100297,B3,pendant,PEN-158,gold,22K,H972754,7.29,7.07,0.0,16,0,98400,Shree Ornaments (Mumbai),pendant,2026-09-08,in_stock
+VJ100298,B3,pendant,PEN-449,gold,22K,H635596,7.35,7.21,0.5,14,27500,126100,Kalbadevi Gold Works (Mumbai),pendant,2026-10-13,in_stock
+VJ100299,B3,pendant,PEN-518,gold,22K,H328867,6.88,6.8,0.0,15,0,93800,Shree Ornaments (Mumbai),pendant,2026-09-22,in_stock
+VJ100300,B3,pendant,PEN-828,gold,22K,H284158,7.66,7.6,0.0,14,0,104000,Zaveri Bros (Mumbai),pendant,2026-09-22,in_stock
+VJ100301,B3,pendant,PEN-310,gold,22K,H243697,8.98,8.8,0.0,19,0,125700,Shree Ornaments (Mumbai),pendant,2026-08-13,in_stock
+VJ100302,B3,pendant,PEN-850,gold,22K,H644800,10.37,10.05,1.0,19,55000,198500,Zaveri Bros (Mumbai),pendant,2026-09-20,in_stock
+VJ100303,B3,pendant,PEN-388,gold,22K,H982804,14.24,14.05,0.0,17,0,197300,Zaveri Bros (Mumbai),pendant,2026-08-10,in_stock
+VJ100304,B1,necklace,NEC-236,gold,22K,H797808,26.26,26.14,0.2,15,11000,371700,Kalbadevi Gold Works (Mumbai),necklace,2026-09-13,in_stock
+VJ100305,B1,necklace,NEC-688,gold,22K,H723792,22.71,22.45,0.0,16,0,312500,Rajkot Castings,necklace,2026-09-12,in_stock
+VJ100306,B1,necklace,NEC-831,gold,22K,H356613,21.31,21.07,0.0,20,0,303400,Kalbadevi Gold Works (Mumbai),necklace,2026-08-28,in_stock
+VJ100307,B1,necklace,NEC-690,gold,22K,H887811,30.97,30.66,0.2,16,11000,437800,Zaveri Bros (Mumbai),necklace,2026-08-20,in_stock
+VJ100308,B1,necklace,NEC-126,gold,22K,H656280,27.76,27.42,0.5,15,27500,405900,Zaveri Bros (Mumbai),necklace,2026-08-21,in_stock
+VJ100309,B2,necklace,NEC-205,gold,22K,H427064,65.55,65.47,0.0,20,0,942800,Zaveri Bros (Mumbai),necklace,2026-06-17,in_stock
+VJ100310,B2,necklace,NEC-856,gold,22K,H304561,52.69,52.41,1.0,20,55000,809700,Rajkot Castings,necklace,2026-07-13,in_stock
+VJ100311,B2,necklace,NEC-459,gold,22K,H198467,67.78,67.56,0.0,14,0,924200,Kalbadevi Gold Works (Mumbai),necklace,2026-06-15,in_stock
+VJ100312,B2,necklace,NEC-612,gold,22K,H898502,61.8,61.62,0.5,14,27500,870500,Zaveri Bros (Mumbai),necklace,2026-06-30,in_stock
+VJ100313,B2,necklace,NEC-706,gold,22K,H338480,72.46,72.1,0.5,15,27500,1022500,Rajkot Castings,necklace,2026-05-25,in_stock
+VJ100314,B2,necklace,NEC-750,gold,22K,H507628,54.32,54.11,0.0,18,0,766200,Zaveri Bros (Mumbai),necklace,2026-05-26,in_stock
+VJ100315,B2,necklace,NEC-895,gold,22K,H480900,74.35,74.25,0.0,15,0,1024600,Kalbadevi Gold Works (Mumbai),necklace,2026-05-26,in_stock
+VJ100316,B2,necklace,NEC-923,gold,22K,H436204,71.41,71.07,0.5,20,27500,1050900,Zaveri Bros (Mumbai),necklace,2026-05-21,in_stock
+VJ100317,B2,necklace,NEC-461,gold,22K,H361393,63.39,62.93,1.0,19,55000,953600,Zaveri Bros (Mumbai),necklace,2026-06-04,in_stock

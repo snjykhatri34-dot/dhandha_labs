@@ -1,0 +1,47 @@
+{
+  "visit_id": "B2-1014",
+  "branch": "B2",
+  "salesperson": "Akshay",
+  "date": "2026-10-15",
+  "outcome": "walked_out",
+  "asked_for": {
+    "category": "necklace",
+    "weight_band": "20-35",
+    "occasion": "daily office wear"
+  },
+  "shown": [
+    "necklace 52 g (NEC-552)"
+  ],
+  "objections": [
+    {
+      "type": "weight",
+      "at": "00:24"
+    },
+    {
+      "type": "price_making_charge",
+      "at": "00:44",
+      "competitor_mentioned": true
+    }
+  ],
+  "handling_score": 2,
+  "handling_evidence": "00:50 defended on 'quality' with no price breakup; 01:02 no light option offered or transfer from another branch",
+  "customer_sentiment_arc": "interested -> frustrated",
+  "lost_demand": true,
+  "coaching_tip": "When the customer names a weight, show that weight first; break the making charge into rupees and offer to bring a 30 g piece from another branch.",
+  "reason_not_bought": "weight_mismatch",
+  "emotions": [
+    {
+      "at": "00:24",
+      "who": "customer",
+      "emotion": "disappointed",
+      "cue": "words: 'That's far too heavy'"
+    },
+    {
+      "at": "00:44",
+      "who": "customer",
+      "emotion": "skeptical",
+      "cue": "words: compares with another showroom's price"
+    }
+  ],
+  "note": "Hand labels from the transcript only. With video, face/voice cues should add to 'emotions'."
+}
