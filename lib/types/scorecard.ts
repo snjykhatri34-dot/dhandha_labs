@@ -51,6 +51,53 @@ export interface Emotion {
   cue: string;
 }
 
+// Optional fields added to schemas.md on 2026-10-20. Older rows and data/sample_day don't have them.
+export interface CustomerProfile {
+  party: string; // solo | couple | family | group
+  decision_maker: string;
+  intent: string; // high | medium | low
+  intent_evidence: string;
+}
+
+export interface KeyMoment {
+  at: string;
+  by: string;
+  effect: "hurt" | "helped" | string;
+  what: string;
+}
+
+export interface MissedOpportunity {
+  at: string;
+  what: string;
+}
+
+export interface NextStep {
+  what: string;
+  when: string;
+  who: string;
+}
+
+export interface PriceTalk {
+  making_pct: number | null;
+  total_quoted_inr: number | null;
+  breakup_given: boolean | null;
+  notes: string | null;
+}
+
+export interface NotAvailable {
+  item: string;
+  at: string;
+  quote: string;
+  said_by: string;
+  resolution: string; // none | another_branch | order | callback | alternative
+}
+
+export interface Competitor {
+  named: string;
+  claim: string;
+  at: string;
+}
+
 /** The visit JSON from schemas.md (stored in `visits.analysis`). */
 export interface VisitAnalysis {
   visit_id: string;
@@ -68,6 +115,13 @@ export interface VisitAnalysis {
   coaching_tip: string;
   lost_demand: boolean;
   flags: string[];
+  customer?: CustomerProfile | null;
+  key_moments?: KeyMoment[];
+  missed_opportunities?: MissedOpportunity[];
+  next_step?: NextStep | null;
+  price_talk?: PriceTalk | null;
+  not_available?: NotAvailable[];
+  competitor?: Competitor | null;
 }
 
 /** The `visits` table from schemas.md. */

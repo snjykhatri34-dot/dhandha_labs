@@ -12,7 +12,12 @@ export const REASON_LABELS: Record<ReasonNotBought, string> = {
   other: "Other",
 };
 
-export const reasonLabel = (r: string) => REASON_LABELS[r as ReasonNotBought] ?? r.replaceAll("_", " ");
+export const reasonLabel = (r: string) => {
+  const known = REASON_LABELS[r as ReasonNotBought];
+  if (known) return known;
+  const words = r.replaceAll("_", " ");
+  return words.charAt(0).toUpperCase() + words.slice(1);
+};
 
 /** 13 → "1 PM", 0 → "12 AM" */
 export const hourLabel = (h: number) => `${((h + 11) % 12) + 1} ${h < 12 ? "AM" : "PM"}`;
