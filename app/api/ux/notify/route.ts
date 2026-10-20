@@ -44,15 +44,21 @@ export async function POST(req: NextRequest) {
   if (!report) return NextResponse.json<NotifyResponse>({ ok: false, error: "No report found." }, { status: 404 });
 
   // 1. Insert the row first. If it already exists and wasn't a failure, don't send again.
-  let row = await notificationLog.claim(report.id, channel);
-  if (!row) {
-    const existing = await notificationLog.get(report.id);
-    if (existing && existing.status !== "failed") {
-      console.info("[notify] skip, already", existing.status, report.id);
-      return NextResponse.json<NotifyResponse>({ ok: true, result: "already_sent", channel, reportId: report.id, row: existing });
+  let row: NotificationRow | null;
+  try {
+    row = await notificationLog.claim(report.id, channel);
+    if (!row) {
+      const existing = await notificationLog.get(report.id);
+      if (existing && existing.status !== "failed") {
+        console.info("[notify] skip, already", existing.status, report.id);
+        return NextResponse.json<NotifyResponse>({ ok: true, result: "already_sent", channel, reportId: report.id, row: existing });
+      }
+      await notificationLog.update(report.id, { status: "pending", error: null });
+      row = await notificationLog.get(report.id);
     }
-    await notificationLog.update(report.id, { status: "pending", error: null });
-    row = await notificationLog.get(report.id);
+  } catch (e) {
+    console.error("[notify] couldn't record the notification", { reportId: report.id, error: message(e) });
+    return NextResponse.json<NotifyResponse>({ ok: false, error: `Nothing was sent: ${message(e)}` }, { status: 409 });
   }
 
   // 2. Send. 3. Update the row. 4. Log the attempt.
