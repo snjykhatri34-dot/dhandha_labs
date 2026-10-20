@@ -1,0 +1,53 @@
+{
+  "visit_id": "B2-1017",
+  "store": "B2",
+  "salesperson": "Priya",
+  "date": "2026-10-16",
+  "outcome": "deferred_with_follow_up",
+  "asked_for": {
+    "category": "bridal set",
+    "weight_band": null,
+    "occasion": "daughter's wedding in February",
+    "budget_inr": null
+  },
+  "shown": [
+    "bridal set 84 g",
+    "bridal set 91 g"
+  ],
+  "reason_not_bought": "family_decision",
+  "objections": [
+    {
+      "type": "family_decision",
+      "at": "00:49",
+      "quote": "But my daughter and her father need to see it."
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:36",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    },
+    {
+      "at": "00:49",
+      "who": "customer",
+      "emotion": "reassured",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> reassured",
+  "handling_score": 5,
+  "coaching_tip": "Keep doing what you did at 00:56: hold the shortlisted sets in the customer's name and take her number so the family's Sunday visit is locked in.",
+  "lost_demand": false,
+  "flags": [
+    "no band for bridal set; asked for 80-90 g",
+    "making-charge question at 00:36 not counted as an objection: customer asked the rate but did not push back"
+  ]
+}
