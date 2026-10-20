@@ -3,6 +3,7 @@ import Link from "next/link";
 import { EmptyState, OutcomeBadge, ReviewBadge, StatusPill } from "@/components/ux/shared";
 import type { Visit } from "@/lib/data/types";
 import { reasonLabel } from "@/lib/ux/format";
+import { handlingWord } from "@/lib/ux/plain";
 
 export function VisitList({ visits }: { visits: Visit[] }) {
   if (visits.length === 0) return <EmptyState title="No visits match these filters" />;
@@ -22,7 +23,7 @@ export function VisitList({ visits }: { visits: Visit[] }) {
             <span className="flex flex-wrap items-center gap-1.5 text-xs">
               {v.status !== "analysed" ? <StatusPill status={v.status} /> : <OutcomeBadge outcome={v.outcome} />}
               {v.reasonNotBought && <span className="text-muted">{reasonLabel(v.reasonNotBought)}</span>}
-              {v.handlingScore !== null && <span className="text-muted">· handling {v.handlingScore}/5</span>}
+              {v.handlingScore !== null && <span className="text-muted">· Handled: {handlingWord(v.handlingScore).toLowerCase()}</span>}
               <ReviewBadge status={v.review.status} />
               <span className="ml-auto font-mono text-muted">{v.id}</span>
             </span>

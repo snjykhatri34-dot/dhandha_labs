@@ -4,8 +4,10 @@ import { OutcomeBadge } from "@/components/ux/shared";
 import { ReviewButtons } from "./ReviewButtons";
 import type { Visit } from "@/lib/data/types";
 import { formatDate, reasonLabel } from "@/lib/ux/format";
+import { handlingWord, plainNote } from "@/lib/ux/plain";
 
 export function ReviewCard({ visit }: { visit: Visit }) {
+  const notes = visit.flags.filter((f) => plainNote(f) !== null).length;
   return (
     <li className="rounded-xl border border-line p-4">
       <div className="flex items-baseline justify-between gap-2">
@@ -20,12 +22,12 @@ export function ReviewCard({ visit }: { visit: Visit }) {
       <div className="mt-2 flex flex-wrap items-center gap-1.5 text-xs">
         <OutcomeBadge outcome={visit.outcome} />
         {visit.reasonNotBought && <span className="text-muted">{reasonLabel(visit.reasonNotBought)}</span>}
-        {visit.handlingScore !== null && <span className="text-muted">· handling {visit.handlingScore}/5</span>}
+        {visit.handlingScore !== null && <span className="text-muted">· Handled: {handlingWord(visit.handlingScore).toLowerCase()} ({visit.handlingScore}/5)</span>}
       </div>
-      {visit.coachingTip && <p className="mt-2 text-sm">Coaching: {visit.coachingTip}</p>}
-      {visit.flags.length > 0 && (
+      {visit.coachingTip && <p className="mt-2 text-sm">Coaching tip: {visit.coachingTip}</p>}
+      {notes > 0 && (
         <p className="mt-1 text-xs text-warn">
-          {visit.flags.length} flag{visit.flags.length > 1 ? "s" : ""} to check on the full scorecard
+          {notes} point{notes > 1 ? "s" : ""} to double-check: open the scorecard
         </p>
       )}
       <div className="mt-3">

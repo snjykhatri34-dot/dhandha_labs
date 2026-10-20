@@ -23,8 +23,8 @@ export async function ReportForDate({ date }: { date: string | Promise<string> |
     <>
       {report.source === "computed" && (
         <p className="mb-3 rounded-lg border border-line px-3 py-2 text-xs text-muted">
-          Calculated by the app from {report.sourceVisitIds.length} analysed visits. Stream 2&apos;s saved report for this
-          day isn&apos;t in yet, so the action lines are the app&apos;s own.
+          Worked out from this day&apos;s {report.sourceVisitIds.length} visits. The full written report hasn&apos;t
+          arrived yet, so the suggested actions are short ones.
         </p>
       )}
       <DailyReportView view={toReportView(report)} sourceCount={report.sourceVisitIds.length} />

@@ -20,7 +20,7 @@ export async function GatedScorecard({ id }: { id: Promise<string> }) {
   }
   return (
     <>
-      <VisitScorecard visit={visit} view={toVisitView(visit)} />
+      <VisitScorecard visit={visit} view={toVisitView(visit)} showNotes={role === "manager"} />
       {visit.status === "analysed" && visit.review.status === "pending" && canReview(role) && (
         <section className="mt-4 rounded-xl border border-warn/40 bg-warn-bg p-4">
           <p className="mb-3 text-sm text-warn">Staff can&apos;t see this scorecard until a manager approves it.</p>
@@ -29,7 +29,7 @@ export async function GatedScorecard({ id }: { id: Promise<string> }) {
       )}
       {visit.review.status !== "pending" && visit.review.by && (
         <p className="mt-4 text-xs text-muted">
-          {visit.review.status === "approved" ? "Approved" : "Rejected"} by {visit.review.by}
+          {visit.review.status === "approved" ? "Approved" : "Rejected"} by the {visit.review.by}
         </p>
       )}
       {visit.status === "uploaded" && (

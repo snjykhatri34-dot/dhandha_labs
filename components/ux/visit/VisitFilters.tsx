@@ -6,7 +6,7 @@ import type { VisitFilter } from "@/lib/data/types";
 
 const OUTCOME_LABEL: Record<string, string> = {
   bought: "Bought",
-  deferred_with_follow_up: "Follow up",
+  deferred_with_follow_up: "Needs follow-up",
   walked_out: "Walked out",
 };
 

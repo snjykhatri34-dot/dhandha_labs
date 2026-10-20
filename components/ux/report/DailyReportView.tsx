@@ -31,7 +31,7 @@ function Section({ section }: { section: ReportSectionView }) {
       )}
       {section.visitIds && section.visitIds.length > 0 && (
         <details className="mt-3 text-sm">
-          <summary className="cursor-pointer text-muted">Show {section.visitIds.length} visits</summary>
+          <summary className="cursor-pointer text-muted">Show the {section.visitIds.length} visits</summary>
           <ul className="mt-2 flex flex-wrap gap-1.5">
             {section.visitIds.map((id) => (
               <li key={id}>
@@ -69,7 +69,7 @@ export function DailyReportView({ view, sourceCount }: { view: ReportView; sourc
       {view.sections.map((s) => (
         <Section key={s.key} section={s} />
       ))}
-      <p className="text-xs text-muted">Sources: {sourceCount} analysed visits. Tap any visit id to see its scorecard.</p>
+      <p className="text-xs text-muted">Based on {sourceCount} counter visits.</p>
     </article>
   );
 }

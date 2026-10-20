@@ -36,14 +36,14 @@ export function toReportView(report: DailyReport): ReportView {
   const pattern = report.storePattern;
 
   const headline =
-    `${n.visits} counter visits, ${n.bought} sales (${n.conversion_pct}%), ≈${formatInr(n.sales_value_inr)}.` +
-    (topReason ? ` The biggest leak is ${reasonLabel(topReason[0]).toLowerCase()}: ${topReason[1]} visits.` : "");
+    `${n.visits} customers came to the counter and ${n.bought} bought (${n.conversion_pct}%), worth about ${formatInr(n.sales_value_inr)}.` +
+    (topReason ? ` The most common reason for not buying: ${reasonLabel(topReason[0]).toLowerCase()} (${topReason[1]} visits).` : "");
 
   const sections: ReportSectionView[] = [
     {
       key: "lostSales",
-      title: "Lost sales and why",
-      summary: `${notBought} visits did not buy.${n.competitor_mentions ? ` ${n.competitor_mentions} mentioned a competitor.` : ""}`,
+      title: "Why customers didn't buy",
+      summary: `${notBought} customers didn't buy.${n.competitor_mentions ? ` ${n.competitor_mentions} mentioned another shop.` : ""}`,
       rows: n.reasons_not_bought.map(([reason, count]) => ({
         label: reasonLabel(reason),
         value: String(count),
@@ -53,21 +53,21 @@ export function toReportView(report: DailyReport): ReportView {
     },
     {
       key: "lostDemand",
-      title: "Lost demand",
+      title: "What we didn't have",
       summary: hot
-        ? `${hot.store} had ${hot.asks} asks for ${hot.weightBand} g ${hot.category}s and lost ${hot.lost}.`
-        : "No lost demand today.",
+        ? `At store ${hot.store}, ${hot.asks} customers asked for ${hot.weightBand.replace("-", "–")} g ${hot.category}s and ${hot.lost} left without buying.`
+        : "Nobody left because we didn't have what they wanted.",
       action: report.actions.lostDemand,
     },
     {
       key: "storePattern",
-      title: "Store pattern",
+      title: "Stores",
       summary: pattern
-        ? `At ${pattern.store}, ${pattern.count} of ${pattern.losses} losses were about ${reasonLabel(pattern.reason).toLowerCase()}.`
+        ? `At store ${pattern.store}, ${pattern.count} of ${pattern.losses} lost sales were about the ${reasonLabel(pattern.reason).toLowerCase()}.`
         : "No store stands out today.",
       rows: Object.entries(n.by_store).map(([store, [bought, visits]]) => ({
-        label: store,
-        value: `${bought}/${visits}`,
+        label: `Store ${store}`,
+        value: `${bought} of ${visits} bought`,
         share: visits ? bought / visits : 0,
         note: `${Math.round((bought / visits) * 100)}%`,
       })),
@@ -76,10 +76,10 @@ export function toReportView(report: DailyReport): ReportView {
     {
       key: "salespeople",
       title: "Salespeople",
-      summary: "Sold / visits, best conversion first.",
+      summary: "How many visits ended in a sale, best first.",
       rows: n.by_salesperson.map(([name, bought, visits]) => ({
         label: name,
-        value: `${bought}/${visits}`,
+        value: `${bought} of ${visits}`,
         share: visits ? bought / visits : 0,
         note: `${Math.round((bought / visits) * 100)}%`,
       })),
@@ -97,8 +97,8 @@ export function toReportView(report: DailyReport): ReportView {
     },
     {
       key: "followUps",
-      title: "Follow-ups due",
-      summary: `${n.follow_ups_due} customers deferred and need a call.`,
+      title: "Customers to call back",
+      summary: `${n.follow_ups_due} customers said they'd decide later.`,
       visitIds: report.followUpVisitIds,
       action: report.actions.followUps,
     },
@@ -109,8 +109,8 @@ export function toReportView(report: DailyReport): ReportView {
     headline,
     kpis: [
       { label: "Visits", value: String(n.visits) },
-      { label: "Sales", value: `${n.conversion_pct}%`, sub: `${n.bought} bought` },
-      { label: "Value", value: formatInr(n.sales_value_inr) },
+      { label: "Bought", value: `${n.conversion_pct}%`, sub: `${n.bought} of ${n.visits}` },
+      { label: "Sales value", value: formatInr(n.sales_value_inr) },
     ],
     sections,
   };

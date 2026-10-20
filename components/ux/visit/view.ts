@@ -1,131 +1,190 @@
-// Pure: Visit → what the scorecard page renders. Every line cites the visit's own fields.
+// Pure: Visit → what the scorecard page renders, in plain language.
+// Every line comes from the visit's own fields; wording lives in lib/ux/plain.ts.
 import type { Visit } from "@/lib/data/types";
+import type { Outcome } from "@/lib/types/scorecard";
 import { formatDate, formatInr, reasonLabel } from "@/lib/ux/format";
+import {
+  OUTCOME_TEXT,
+  clipTime,
+  concernText,
+  cueText,
+  handlingWord,
+  intentText,
+  moodText,
+  partyText,
+  plainNote,
+  resolutionText,
+} from "@/lib/ux/plain";
 
-export type TimelineKind = "objection" | "emotion" | "moment" | "missed" | "stockGap" | "competitor";
 export type Tone = "good" | "bad" | "warn" | "neutral";
+export type TimelineTag = "Concern" | "Feeling" | "Helped the sale" | "Hurt the sale" | "Missed opportunity" | "Didn't have it" | "Competitor";
 
 export interface TimelineItem {
-  at: string; // "mm:ss"
-  kind: TimelineKind;
+  at: string; // raw "mm:ss", for sorting and keys
+  time: string; // "0:24"
+  tag: TimelineTag;
   tone: Tone;
-  title: string;
+  text: string;
   detail?: string;
-  /** Emotions must name their cue: words, voice or face. */
-  cue?: string;
+}
+
+export interface Row {
+  label: string;
+  value: string;
+  note?: string;
 }
 
 export interface VisitView {
   id: string;
   heading: string;
   when: string;
-  askedFor: string | null;
-  shown: string[];
-  reason: string | null;
+  summary: { outcome: Outcome | null; tone: Tone; title: string; line: string | null };
+  details: Row[];
   lostDemand: boolean;
-  value: string | null;
-  handling: { score: number; evidence: string | null; tip: string | null } | null;
-  customer: { line: string; evidence: string | null } | null;
-  emotionArc: string | null;
+  handling: { score: number; word: string; why: string | null; tip: string | null } | null;
+  customer: Row[];
+  price: Row[];
+  nextStep: Row[];
   timeline: TimelineItem[];
-  facts: { label: string; value: string }[];
-  flags: string[];
-  /** Summary-only visit (e.g. the sample day): no transcript detail to show. */
+  /** The analysis's own "not sure about this" notes, in plain words. Shown to managers only. */
+  notes: string[];
+  /** Only summary fields exist (e.g. the sample day): no step-by-step breakdown. */
   summaryOnly: boolean;
 }
 
-const KIND_LABEL: Record<TimelineKind, string> = {
-  objection: "Objection",
-  emotion: "Emotion",
-  moment: "Key moment",
-  missed: "Missed chance",
-  stockGap: "Not available",
-  competitor: "Competitor",
-};
-export const timelineKindLabel = (k: TimelineKind) => KIND_LABEL[k];
+const OUTCOME_TONE: Record<Outcome, Tone> = { bought: "good", deferred_with_follow_up: "warn", walked_out: "bad" };
 
-const humanise = (s: string) => s.replaceAll("_", " ");
-/** "00:24" → 24 (seconds), for sorting; unknown formats sort last. */
 const seconds = (at: string) => {
   const [m, s] = at.split(":").map(Number);
   return Number.isFinite(m) && Number.isFinite(s) ? m * 60 + s : Number.MAX_SAFE_INTEGER;
 };
 
+const who = (by: string) => (by === "salesperson" ? "Salesperson" : by === "customer" ? "Customer" : by);
+
+function askedForText(v: Visit): string | null {
+  const a = v.askedFor;
+  if (!a) return null;
+  const piece = a.weight_band ? `${a.category} (${a.weight_band.replace("-", "–")} g)` : a.category;
+  return [piece, a.occasion && `for ${a.occasion}`, a.budget_inr && `budget ${formatInr(a.budget_inr)}`].filter(Boolean).join(", ");
+}
+
 export function toVisitView(v: Visit): VisitView {
   const timeline: TimelineItem[] = [
     ...v.objections.map((o): TimelineItem => ({
       at: o.at,
-      kind: "objection",
+      time: clipTime(o.at),
+      tag: "Concern",
       tone: "warn",
-      title: reasonLabel(o.type),
-      detail: [o.quote && `“${o.quote}”`, o.competitor_mentioned && "mentioned a competitor"].filter(Boolean).join(" · ") || undefined,
+      text: concernText(o.type),
+      detail: [o.quote && `“${o.quote}”`, o.competitor_mentioned && "Mentioned another shop"].filter(Boolean).join(" · ") || undefined,
     })),
     ...v.emotions.map((e): TimelineItem => ({
       at: e.at,
-      kind: "emotion",
+      time: clipTime(e.at),
+      tag: "Feeling",
       tone: "neutral",
-      title: `${e.who === "customer" ? "Customer" : e.who} felt ${e.emotion}`,
-      cue: e.cueType ? `${e.cueType}${e.cueEvidence ? `: ${e.cueEvidence}` : ""}` : "no cue given",
+      text: `${who(e.who)} felt ${e.emotion}`,
+      detail: cueText(e.cueType, e.cueEvidence),
     })),
-    ...v.keyMoments.map((k): TimelineItem => ({
-      at: k.at,
-      kind: "moment",
-      tone: k.effect === "helped" ? "good" : k.effect === "hurt" ? "bad" : "neutral",
-      title: `${k.by === "salesperson" ? "Salesperson" : k.by} ${k.effect === "helped" ? "helped" : k.effect === "hurt" ? "hurt" : k.effect}`,
-      detail: k.what,
+    ...v.keyMoments.map((k): TimelineItem => {
+      const helped = k.effect === "helped";
+      return {
+        at: k.at,
+        time: clipTime(k.at),
+        tag: helped ? "Helped the sale" : "Hurt the sale",
+        tone: helped ? "good" : "bad",
+        text: `${who(k.by)} ${k.what}`,
+      };
+    }),
+    ...v.missedOpportunities.map((m): TimelineItem => ({
+      at: m.at,
+      time: clipTime(m.at),
+      tag: "Missed opportunity",
+      tone: "bad",
+      text: m.what.charAt(0).toUpperCase() + m.what.slice(1),
     })),
-    ...v.missedOpportunities.map((m): TimelineItem => ({ at: m.at, kind: "missed", tone: "bad", title: m.what })),
     ...v.notAvailable.map((n): TimelineItem => ({
       at: n.at,
-      kind: "stockGap",
+      time: clipTime(n.at),
+      tag: "Didn't have it",
       tone: n.resolution === "none" ? "bad" : "warn",
-      title: n.item,
-      detail: `“${n.quote}” · resolution: ${humanise(n.resolution)}`,
+      text: `Asked for ${n.item}`,
+      detail: `“${n.quote}” · ${resolutionText(n.resolution)}`,
     })),
     ...(v.competitor
-      ? [{ at: v.competitor.at, kind: "competitor" as const, tone: "warn" as const, title: v.competitor.named, detail: v.competitor.claim }]
+      ? [
+          {
+            at: v.competitor.at,
+            time: clipTime(v.competitor.at),
+            tag: "Competitor" as const,
+            tone: "warn" as const,
+            text: `Mentioned ${v.competitor.named}`,
+            detail: v.competitor.claim,
+          },
+        ]
       : []),
   ].sort((a, b) => seconds(a.at) - seconds(b.at));
 
-  const a = v.askedFor;
-  const askedFor = a
-    ? [a.category, a.weight_band && `${a.weight_band} g`, a.occasion && `for ${a.occasion}`, a.budget_inr && `budget ${formatInr(a.budget_inr)}`]
-        .filter(Boolean)
-        .join(" · ")
-    : null;
+  const asked = askedForText(v);
+  const reason = v.reasonNotBought ? reasonLabel(v.reasonNotBought).toLowerCase() : null;
+  const line =
+    [asked && `Wanted ${asked}.`, v.outcome !== "bought" && reason && `Didn't buy: ${reason}.`, v.outcome === "bought" && v.valueInr ? `Sale of ${formatInr(v.valueInr)}.` : null]
+      .filter(Boolean)
+      .join(" ") || null;
 
-  const facts: VisitView["facts"] = [];
+  const details: Row[] = [];
+  if (asked) details.push({ label: "Asked for", value: asked });
+  if (v.shown.length) details.push({ label: "Shown", value: v.shown.join(", ") });
+  if (v.outcome && v.outcome !== "bought" && v.reasonNotBought) details.push({ label: "Why they didn't buy", value: reasonLabel(v.reasonNotBought) });
+  if (v.valueInr) details.push({ label: "Sale value", value: formatInr(v.valueInr) });
+  if (v.durationMin !== null) details.push({ label: "Visit length", value: `${v.durationMin} min` });
+
+  const customer: Row[] = [];
+  if (v.customer) {
+    customer.push({ label: "Came", value: partyText(v.customer.party) });
+    customer.push({ label: "Interest", value: intentText(v.customer.intent), note: v.customer.intent_evidence || undefined });
+    if (v.customer.decision_maker) customer.push({ label: "Decides", value: v.customer.decision_maker.replace(/^the /, "The ") });
+  }
+  if (v.emotionArc) customer.push({ label: "Mood", value: moodText(v.emotionArc) });
+
+  const price: Row[] = [];
   if (v.priceTalk) {
     const p = v.priceTalk;
-    if (p.making_pct !== null) facts.push({ label: "Making charge", value: `${p.making_pct}%` });
-    if (p.total_quoted_inr !== null) facts.push({ label: "Quoted", value: formatInr(p.total_quoted_inr) });
-    if (p.breakup_given !== null) facts.push({ label: "Price breakup given", value: p.breakup_given ? "Yes" : "No" });
-    if (p.notes) facts.push({ label: "Price notes", value: p.notes });
+    if (p.making_pct !== null) price.push({ label: "Making charge", value: `${p.making_pct}%` });
+    if (p.total_quoted_inr !== null) price.push({ label: "Price quoted", value: formatInr(p.total_quoted_inr) });
+    if (p.breakup_given !== null) price.push({ label: "Explained the price breakup", value: p.breakup_given ? "Yes" : "No" });
+    if (p.notes) price.push({ label: "Notes", value: p.notes.charAt(0).toUpperCase() + p.notes.slice(1) });
   }
-  if (v.nextStep) facts.push({ label: "Next step", value: `${v.nextStep.what} · ${v.nextStep.when} · ${v.nextStep.who}` });
-  if (v.durationMin !== null) facts.push({ label: "Duration", value: `${v.durationMin} min` });
+
+  const nextStep: Row[] = v.nextStep
+    ? [
+        { label: "What", value: v.nextStep.what },
+        { label: "When", value: v.nextStep.when },
+        { label: "Who", value: v.nextStep.who },
+      ]
+    : [];
 
   return {
     id: v.id,
-    heading: `${v.salesperson} · ${v.store}`,
+    heading: `${v.salesperson} · Store ${v.store}`,
     when: [formatDate(v.date), v.startTime].filter(Boolean).join(" · "),
-    askedFor,
-    shown: v.shown,
-    reason: v.reasonNotBought ? reasonLabel(v.reasonNotBought) : null,
+    summary: {
+      outcome: v.outcome,
+      tone: v.outcome ? OUTCOME_TONE[v.outcome] : "neutral",
+      title: v.outcome ? OUTCOME_TEXT[v.outcome] : "No result yet",
+      line,
+    },
+    details,
     lostDemand: v.lostDemand === true,
-    value: v.valueInr ? formatInr(v.valueInr) : null,
     handling:
-      v.handlingScore !== null ? { score: v.handlingScore, evidence: v.handlingEvidence, tip: v.coachingTip } : null,
-    customer: v.customer
-      ? {
-          line: [v.customer.party, `${v.customer.intent} intent`, `decides: ${v.customer.decision_maker}`].join(" · "),
-          evidence: v.customer.intent_evidence || null,
-        }
-      : null,
-    emotionArc: v.emotionArc ? v.emotionArc.replace("->", "→") : null,
+      v.handlingScore !== null
+        ? { score: v.handlingScore, word: handlingWord(v.handlingScore), why: v.handlingEvidence, tip: v.coachingTip }
+        : null,
+    customer,
+    price,
+    nextStep,
     timeline,
-    facts,
-    flags: v.flags,
+    notes: v.flags.map(plainNote).filter((n): n is string => n !== null),
     summaryOnly: timeline.length === 0 && !v.coachingTip,
   };
 }

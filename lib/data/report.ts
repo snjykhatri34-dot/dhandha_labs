@@ -104,7 +104,7 @@ export function storePattern(visits: Visit[]): DailyReport["storePattern"] {
 }
 
 const STORE_PATTERN_ACTIONS: Partial<Record<ReasonNotBought, string>> = {
-  old_gold_exchange_rate: "Publish one written exchange formula.",
+  old_gold_exchange_rate: "Put up one written old-gold exchange formula at every counter.",
   price_making_charge: "Show the making-charge breakup in rupees on every quote.",
   purity_trust: "Offer the purity test at the counter, in front of the customer.",
   family_decision: "Take a number and book a family visit before they leave.",
@@ -121,15 +121,15 @@ export function buildActions(
   const best = ranked[0];
   const worst = ranked[ranked.length - 1];
   return {
-    headline: topReason ? `Biggest fixable leak: ${REASON_LABELS[topReason[0]].toLowerCase()} (${topReason[1]} visits).` : undefined,
-    lostSales: topReason ? `Start with ${REASON_LABELS[topReason[0]].toLowerCase()}: it cost ${topReason[1]} sales.` : undefined,
+    headline: topReason ? `Fix ${REASON_LABELS[topReason[0]].toLowerCase()} first (${topReason[1]} visits).` : undefined,
+    lostSales: topReason ? `Fix ${REASON_LABELS[topReason[0]].toLowerCase()} first: it cost ${topReason[1]} sales.` : undefined,
     lostDemand: hotspot
-      ? `Check ${hotspot.store}'s ${hotspot.weightBand} g ${hotspot.category} stock today.`
+      ? `Check store ${hotspot.store}'s stock of ${hotspot.weightBand.replace("-", "–")} g ${hotspot.category}s today.`
       : undefined,
-    storePattern: pattern ? (STORE_PATTERN_ACTIONS[pattern.reason] ?? `Review ${pattern.store}'s ${REASON_LABELS[pattern.reason].toLowerCase()} losses with the manager.`) : undefined,
-    salespeople: best && worst && best !== worst ? `${worst[0]}: pair with ${best[0]} tomorrow.` : undefined,
-    busiestHours: n.busiest_hours.length ? `Staff the ${hourLabel(n.busiest_hours[0][0])} peak.` : undefined,
-    followUps: n.follow_ups_due ? `Call the ${n.follow_ups_due} deferred customers.` : undefined,
+    storePattern: pattern ? (STORE_PATTERN_ACTIONS[pattern.reason] ?? `Go through store ${pattern.store}'s ${REASON_LABELS[pattern.reason].toLowerCase()} losses with its manager.`) : undefined,
+    salespeople: best && worst && best !== worst ? `Have ${worst[0]} shadow ${best[0]} tomorrow.` : undefined,
+    busiestHours: n.busiest_hours.length ? `Put more staff on the counter around ${hourLabel(n.busiest_hours[0][0])}.` : undefined,
+    followUps: n.follow_ups_due ? `Call these ${n.follow_ups_due} customers today.` : undefined,
   };
 }
 

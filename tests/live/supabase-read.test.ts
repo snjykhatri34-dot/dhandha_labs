@@ -38,6 +38,18 @@ describe("Supabase data layer (live, read-only)", () => {
     expect(report?.numbers).toEqual(reference);
   });
 
+  it("every real scorecard reads in plain language", async () => {
+    const { toVisitView } = await import("@/components/ux/visit/view");
+    const jargon = [/\b[a-z]+_[a-z_]+\b/, /\bmock\b/i, /\bStream \d\b/, /@\d\d:\d\d/];
+    const text = (x: unknown): string[] =>
+      typeof x === "string" ? [x] : Array.isArray(x) ? x.flatMap(text) : x && typeof x === "object"
+        ? Object.entries(x).flatMap(([k, v]) => (["id", "at", "outcome", "tone"].includes(k) ? [] : text(v))) : [];
+    const bad = (await db.visits.list()).flatMap((v) =>
+      text(toVisitView(v)).filter((s) => jargon.some((re) => re.test(s))).map((s) => `${v.id}: ${s}`),
+    );
+    expect(bad).toEqual([]);
+  });
+
   it("lists report dates newest first", async () => {
     const dates = await db.reports.dates();
     console.info("[live] report dates", dates);
