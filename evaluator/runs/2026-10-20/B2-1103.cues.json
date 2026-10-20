@@ -1,0 +1,23 @@
+{
+  "observations": [
+    {
+      "at": "00:38",
+      "who": "Speaker B",
+      "cue_type": "voice",
+      "description": "raises pitch sharply in disbelief",
+      "candidate_emotion": "skeptical",
+      "confidence": "high"
+    },
+    {
+      "at": "00:55",
+      "who": "Speaker B",
+      "cue_type": "voice",
+      "description": "exhales audibly with a deep sigh",
+      "candidate_emotion": "disappointed",
+      "confidence": "high"
+    }
+  ],
+  "flags": [
+    "Customer is off camera"
+  ]
+}

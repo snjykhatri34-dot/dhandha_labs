@@ -1,0 +1,100 @@
+{
+  "visit_id": "B2-1105",
+  "store": "B2",
+  "salesperson": "Akshay",
+  "date": "2026-10-20",
+  "outcome": "deferred_with_follow_up",
+  "asked_for": {
+    "category": "bridal set",
+    "weight_band": null,
+    "occasion": "daughter's wedding in February",
+    "budget_inr": null
+  },
+  "shown": [
+    "bridal set 84 g",
+    "bridal set 91 g"
+  ],
+  "reason_not_bought": "family_decision",
+  "objections": [
+    {
+      "type": "family_decision",
+      "at": "00:54",
+      "quote": "my daughter and her father will need to see it"
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:10",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:39",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "face"
+    },
+    {
+      "at": "00:54",
+      "who": "customer",
+      "emotion": "reassured",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> reassured",
+  "handling_score": 5,
+  "coaching_tip": "Keep doing what you did at 01:01: when the family needs to see the pieces, hold the shortlisted sets in the customer's name and swap numbers so the return visit is locked in.",
+  "lost_demand": false,
+  "flags": [
+    "no band for bridal set; asked for 80-90 g",
+    "one customer speaker present; party set to family from references to daughter and father",
+    "transcript: Single actor enacting both salesperson and customer roles in a roleplay script reading"
+  ],
+  "customer": {
+    "party": "family",
+    "decision_maker": "mother; daughter and father must approve",
+    "intent": "high",
+    "intent_evidence": "00:10 daughter's wedding in February; 00:23 asked for traditional set around 80-90 g"
+  },
+  "key_moments": [
+    {
+      "at": "00:31",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed two traditional sets within the asked 80-90 g range"
+    },
+    {
+      "at": "00:45",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "quoted 17% making and offered gold rate lock on bridal booking"
+    },
+    {
+      "at": "00:54",
+      "by": "customer",
+      "effect": "hurt",
+      "what": "daughter and father must see it before deciding"
+    },
+    {
+      "at": "01:01",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "held both sets till Sunday and took customer's number"
+    }
+  ],
+  "missed_opportunities": [],
+  "next_step": {
+    "what": "family visit; both sets held",
+    "when": "Sunday",
+    "who": "Akshay"
+  },
+  "price_talk": {
+    "making_pct": 17,
+    "total_quoted_inr": null,
+    "breakup_given": false,
+    "notes": "gold rate locked for bridal at 00:45"
+  },
+  "not_available": [],
+  "competitor": null
+}

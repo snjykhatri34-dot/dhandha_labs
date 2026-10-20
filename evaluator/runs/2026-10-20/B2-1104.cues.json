@@ -1,0 +1,23 @@
+{
+  "observations": [
+    {
+      "at": "00:50",
+      "who": "Speaker B",
+      "cue_type": "voice",
+      "description": "sighs heavily before speaking",
+      "candidate_emotion": "hesitant",
+      "confidence": "high"
+    },
+    {
+      "at": "01:05",
+      "who": "Speaker C",
+      "cue_type": "face",
+      "description": "smiles broadly while gesturing",
+      "candidate_emotion": "delighted",
+      "confidence": "high"
+    }
+  ],
+  "flags": [
+    "Single speaker roleplaying all characters and reading script headings aloud"
+  ]
+}

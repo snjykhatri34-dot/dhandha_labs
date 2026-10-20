@@ -1,0 +1,15 @@
+{
+  "observations": [
+    {
+      "at": "00:39",
+      "who": "Speaker B",
+      "cue_type": "face",
+      "description": "gasps with hands to cheeks and wide smile",
+      "candidate_emotion": "delighted",
+      "confidence": "high"
+    }
+  ],
+  "flags": [
+    "Single actor enacting both salesperson and customer roles in a roleplay script reading"
+  ]
+}

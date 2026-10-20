@@ -1,0 +1,107 @@
+{
+  "visit_id": "B2-1104",
+  "store": "B2",
+  "salesperson": "Akshay",
+  "date": "2026-10-20",
+  "outcome": "bought",
+  "asked_for": {
+    "category": "earrings",
+    "weight_band": "8-15",
+    "occasion": "anniversary",
+    "budget_inr": 150000
+  },
+  "shown": [
+    "earrings 11 g",
+    "earrings 10 g"
+  ],
+  "reason_not_bought": null,
+  "objections": [
+    {
+      "type": "price_budget",
+      "at": "00:50",
+      "quote": "That's a little over budget."
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:07",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:29",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    },
+    {
+      "at": "00:50",
+      "who": "customer",
+      "emotion": "hesitant",
+      "cue": "voice"
+    },
+    {
+      "at": "01:05",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "face"
+    }
+  ],
+  "emotion_arc": "interested -> delighted",
+  "handling_score": 5,
+  "coaching_tip": "Keep doing what you did at 00:55: when the total came in over budget, you offered the same design at a lighter weight alongside the old-gold exchange option.",
+  "lost_demand": false,
+  "flags": [
+    "no weight asked; band from chosen 10 g piece",
+    "budget phrased as a question at 00:07 ('around one lakh fifty thousand rupees?'); recorded as 150000",
+    "two of the three earrings shown at 00:22 had no weight stated; only the named pieces are listed",
+    "piece called eleven grams at 00:22 but breakup at 00:35 uses eleven point two grams",
+    "breakup at 00:35 names stones as separate but gives no stone value; breakup_given set true on the components named",
+    "total_quoted_inr is the first quote (162000); the 10 g option was quoted at 148000 at 00:55",
+    "transcript lines carry role prefixes (Husband/Wife/Salesperson); Speaker A taken as salesperson",
+    "transcript: Single speaker roleplaying all characters and reading script headings aloud"
+  ],
+  "customer": {
+    "party": "couple",
+    "decision_maker": "wife; husband set the budget",
+    "intent": "high",
+    "intent_evidence": "00:07 anniversary, earrings for wife, budget around 1.5 lakh"
+  },
+  "key_moments": [
+    {
+      "at": "00:22",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed stone earrings matching the 'bit of sparkle' ask"
+    },
+    {
+      "at": "00:35",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "gave a price breakup with making and GST"
+    },
+    {
+      "at": "00:50",
+      "by": "customer",
+      "effect": "hurt",
+      "what": "husband said the 162000 total was over budget"
+    },
+    {
+      "at": "00:55",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "offered same design at 10 g for 148000, within budget"
+    }
+  ],
+  "missed_opportunities": [],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": 16,
+    "total_quoted_inr": 162000,
+    "breakup_given": true,
+    "notes": "same design at 10 g quoted 148000 at 00:55"
+  },
+  "not_available": [],
+  "competitor": null
+}
