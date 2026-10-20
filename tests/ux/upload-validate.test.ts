@@ -23,6 +23,11 @@ describe("validateClip", () => {
     expect(validateClip({ type: "video/mp4", sizeBytes: 80 * MB, durationSec: 180 })).toBeNull();
     expect(validateClip({ type: "audio/mp4", sizeBytes: 3 * MB, durationSec: 120 })).toBeNull();
   });
+  it("only accepts the formats the recordings bucket allows", () => {
+    expect(validateClip({ type: "video/quicktime", sizeBytes: MB, durationSec: 120 })).toBeNull();
+    expect(validateClip({ type: "audio/mpeg", sizeBytes: MB, durationSec: 120 })).toBeNull();
+    expect(validateClip({ type: "video/webm", sizeBytes: MB, durationSec: 120 })).toMatch(/MP4 or MOV/);
+  });
   it("rejects a missing file and non-media files", () => {
     expect(validateClip(null)).toMatch(/Choose/);
     expect(validateClip({ type: "application/pdf", sizeBytes: MB, durationSec: 120 })).toMatch(/isn't a video/);
@@ -34,7 +39,7 @@ describe("validateClip", () => {
     expect(validateClip({ type: "video/mp4", sizeBytes: MB, durationSec: 300 })).toBeNull();
   });
   it("rejects oversized files and unreadable durations", () => {
-    expect(validateClip({ type: "video/mp4", sizeBytes: 301 * MB, durationSec: 120 })).toMatch(/limit is 300 MB/);
+    expect(validateClip({ type: "video/mp4", sizeBytes: 101 * MB, durationSec: 120 })).toMatch(/limit is 100 MB/);
     expect(validateClip({ type: "video/mp4", sizeBytes: MB, durationSec: null })).toMatch(/Couldn't read/);
   });
 });

@@ -3,9 +3,11 @@ import { STORES, type Store } from "@/lib/types/scorecard";
 
 export const MIN_DURATION_SEC = 60;
 export const MAX_DURATION_SEC = 5 * 60;
-/** A 5-minute phone video is usually well under this. */
-export const MAX_FILE_MB = 300;
-export const ACCEPT = "video/*,audio/*";
+/** Matches Stream 2's `recordings` bucket (file_size_limit 100 MB, supabase/migrations). */
+export const MAX_FILE_MB = 100;
+/** The bucket's allowed_mime_types: mp4/mov video, m4a/mp3 audio. */
+export const ALLOWED_TYPES = ["video/mp4", "video/quicktime", "audio/mp4", "audio/x-m4a", "audio/m4a", "audio/mpeg"] as const;
+export const ACCEPT = [...ALLOWED_TYPES, ".mp4", ".mov", ".m4a", ".mp3"].join(",");
 
 export interface UploadFields {
   store: string;
@@ -48,6 +50,9 @@ export function validateClip(clip: ClipInfo | null): string | null {
   if (!clip) return "Choose a video or audio clip.";
   if (!clip.type.startsWith("video/") && !clip.type.startsWith("audio/")) {
     return "That file isn't a video or audio clip.";
+  }
+  if (!(ALLOWED_TYPES as readonly string[]).includes(clip.type)) {
+    return "Use an MP4 or MOV video, or an M4A or MP3 audio file.";
   }
   if (clip.sizeBytes > MAX_FILE_MB * 1024 * 1024) {
     return `The clip is ${formatMb(clip.sizeBytes)}. The limit is ${MAX_FILE_MB} MB.`;
