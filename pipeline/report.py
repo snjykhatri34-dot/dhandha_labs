@@ -2,6 +2,7 @@
 
     python3 pipeline/report.py                      # sample day, Oct 17
     python3 pipeline/report.py --visits file.json --scorecards evaluator/runs/2026-10-20-v3
+    python3 pipeline/report.py --provider gemini --out evaluator/runs/x/report   # keep reports/ untouched
 
 Writes reports/<date>/numbers.json, daily_report.md (one page, for email) and owner_whatsapp.txt (short).
 Every number comes from compute(); the model may only reword them. Stock transfers are drafts.
@@ -168,6 +169,7 @@ def main():
     ap.add_argument("--visits", default=str(ROOT / "data" / "sample_day" / "visits_2026-10-17.json"))
     ap.add_argument("--scorecards", help="folder of full scorecards to use as coaching examples")
     ap.add_argument("--provider", choices=[p[0] for p in llm.PROVIDERS])
+    ap.add_argument("--out", help="output folder (default reports/<date>)")
     args = ap.parse_args()
 
     visits = json.loads(Path(args.visits).read_text())
@@ -189,7 +191,7 @@ def main():
     text, used = llm.complete(WRITER, user, only=args.provider)
     out = llm.parse_json(text)
 
-    folder = ROOT / "reports" / numbers["date"]
+    folder = Path(args.out) if args.out else ROOT / "reports" / numbers["date"]
     folder.mkdir(parents=True, exist_ok=True)
     (folder / "numbers.json").write_text(json.dumps(numbers, indent=2, ensure_ascii=False) + "\n")
     (folder / "daily_report.md").write_text(out["markdown"].strip() + "\n")

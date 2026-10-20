@@ -1,0 +1,100 @@
+{
+  "visit_id": "B2-1015",
+  "store": "B2",
+  "salesperson": "Priya",
+  "date": "2026-10-15",
+  "outcome": "bought",
+  "asked_for": {
+    "category": "earrings",
+    "weight_band": "8-15",
+    "occasion": "anniversary",
+    "budget_inr": 150000
+  },
+  "shown": [
+    "earrings 11.2 g",
+    "earrings 10 g"
+  ],
+  "reason_not_bought": null,
+  "objections": [
+    {
+      "type": "price_budget",
+      "at": "00:46",
+      "quote": "That's a little over our budget."
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:27",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    },
+    {
+      "at": "00:46",
+      "who": "customer",
+      "emotion": "hesitant",
+      "cue": "words"
+    },
+    {
+      "at": "01:05",
+      "who": "customer",
+      "emotion": "satisfied",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> satisfied",
+  "handling_score": 5,
+  "coaching_tip": "Keep doing what you did at 00:49: seamlessly present a lighter option within budget when price pushback occurs.",
+  "lost_demand": false,
+  "flags": [
+    "no weight asked; band from chosen 10 g piece"
+  ],
+  "customer": {
+    "party": "couple",
+    "decision_maker": "wife",
+    "intent": "high",
+    "intent_evidence": "00:08 anniversary purchase with clear budget and category"
+  },
+  "key_moments": [
+    {
+      "at": "00:31",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "gave transparent price breakup including gold, making, stones, GST"
+    },
+    {
+      "at": "00:46",
+      "by": "customer",
+      "effect": "hurt",
+      "what": "stated price was slightly over budget"
+    },
+    {
+      "at": "00:49",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "suggested old gold exchange and offered 10 g alternative"
+    },
+    {
+      "at": "01:05",
+      "by": "customer",
+      "effect": "helped",
+      "what": "confirmed purchase of the 10 g earrings"
+    }
+  ],
+  "missed_opportunities": [],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": 16,
+    "total_quoted_inr": 162000,
+    "breakup_given": true,
+    "notes": "full breakup given at 00:31"
+  },
+  "not_available": [],
+  "competitor": null
+}

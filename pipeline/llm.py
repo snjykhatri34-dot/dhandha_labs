@@ -11,13 +11,16 @@ import os
 import shutil
 import subprocess
 import tempfile
+import time
 import urllib.error
 import urllib.request
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 CLAUDE_MODEL = "claude-opus-5-5"
-GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-pro")
+# gemini-2.5-pro returns 404 for new keys (Oct 2026). Pro models need a billed key; the free tier gets
+# gemini-3.8-flash. Override with GEMINI_MODEL (env or .env), e.g. gemini-3.1-pro-preview once billing is on.
+GEMINI_DEFAULT = "gemini-3.8-flash"
 
 
 def load_env(path=ROOT / ".env"):
@@ -81,25 +84,53 @@ def _gemini(system, user):
     key = os.environ.get("GEMINI_API_KEY")
     if not key:
         raise LLMError("GEMINI_API_KEY not set")
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL}:generateContent"
+    # Read at call time so a GEMINI_MODEL in .env (loaded by complete()) is honoured.
+    model = os.environ.get("GEMINI_MODEL") or GEMINI_DEFAULT
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
     body = {
         "systemInstruction": {"parts": [{"text": system}]},
         "contents": [{"role": "user", "parts": [{"text": user}]}],
         "generationConfig": {"temperature": 0.2},
     }
-    req = urllib.request.Request(
-        url, data=json.dumps(body).encode(), method="POST",
-        headers={"Content-Type": "application/json", "x-goog-api-key": key},
-    )
+    for attempt in range(4):
+        req = urllib.request.Request(
+            url, data=json.dumps(body).encode(), method="POST",
+            headers={"Content-Type": "application/json", "x-goog-api-key": key},
+        )
+        try:
+            with urllib.request.urlopen(req, timeout=300) as resp:
+                data = json.load(resp)
+            break
+        except urllib.error.HTTPError as e:
+            detail = e.read()
+            # 503 "high demand" and short 429 rate limits are transient; a 429 asking for a long wait
+            # (e.g. a daily or zero quota) is not, so fail fast on it.
+            delay = _gemini_retry_delay(e.code, detail, attempt)
+            if delay is None or attempt == 3:
+                raise LLMError(f"Gemini {model} HTTP {e.code}: {detail[:300]!r}") from e
+            time.sleep(delay)
     try:
-        with urllib.request.urlopen(req, timeout=300) as resp:
-            data = json.load(resp)
-    except urllib.error.HTTPError as e:
-        raise LLMError(f"Gemini HTTP {e.code}: {e.read()[:300]!r}") from e
-    try:
-        return "".join(p.get("text", "") for p in data["candidates"][0]["content"]["parts"])
+        candidate = data["candidates"][0]
+        text = "".join(p.get("text", "") for p in candidate["content"]["parts"] if not p.get("thought"))
     except (KeyError, IndexError) as e:
         raise LLMError(f"Gemini returned no text: {str(data)[:300]}") from e
+    if candidate.get("finishReason") not in (None, "STOP"):
+        raise LLMError(f"Gemini {model} stopped early: {candidate.get('finishReason')}")
+    return text
+
+
+def _gemini_retry_delay(code, detail, attempt):
+    """Seconds to wait before retrying a Gemini error, or None if it isn't worth retrying."""
+    if code in (500, 503):
+        return 5 * 2 ** attempt
+    if code == 429:
+        try:
+            info = json.loads(detail)["error"].get("details", [])
+            wait = next(float(d["retryDelay"].rstrip("s")) for d in info if "retryDelay" in d)
+        except (ValueError, KeyError, StopIteration):
+            wait = 10 * 2 ** attempt
+        return wait + 1 if wait <= 90 else None
+    return None
 
 
 PROVIDERS = [

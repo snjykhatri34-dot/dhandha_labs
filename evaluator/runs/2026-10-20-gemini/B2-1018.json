@@ -1,0 +1,78 @@
+{
+  "visit_id": "B2-1018",
+  "store": "B2",
+  "salesperson": "Akshay",
+  "date": "2026-10-17",
+  "outcome": "bought",
+  "asked_for": {
+    "category": "ring",
+    "weight_band": "5-10",
+    "occasion": null,
+    "budget_inr": null
+  },
+  "shown": [
+    "ring 6.8 g"
+  ],
+  "reason_not_bought": null,
+  "objections": [],
+  "emotions": [
+    {
+      "at": "00:06",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:36",
+      "who": "customer",
+      "emotion": "satisfied",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> satisfied",
+  "handling_score": 4,
+  "coaching_tip": "Suggest a complementary piece, such as a matching chain or bracelet, before packing up a completed purchase.",
+  "lost_demand": false,
+  "flags": [],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer",
+    "intent": "high",
+    "intent_evidence": "00:06 specified item, weight range, and style for himself"
+  },
+  "key_moments": [
+    {
+      "at": "00:12",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed a 6.8 g piece directly matching the 6-7 g ask"
+    },
+    {
+      "at": "00:22",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "promptly quoted making charge and total price"
+    },
+    {
+      "at": "00:36",
+      "by": "customer",
+      "effect": "helped",
+      "what": "confirmed purchase with pack it up"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "00:36",
+      "what": "no add-on item suggested before closing the sale"
+    }
+  ],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": 14,
+    "total_quoted_inr": 94000,
+    "breakup_given": false,
+    "notes": "quoted 14% making and around 94,000 total at 00:22"
+  },
+  "not_available": [],
+  "competitor": null
+}
