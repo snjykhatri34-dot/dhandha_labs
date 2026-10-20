@@ -1,7 +1,7 @@
 // ux_notifications: one row per report, so a report is never sent twice (on whichever channel).
-// Mock: an in-memory Map on globalThis. Supabase: the table from Stream 2's migration (stub for now).
+// Mock: an in-memory Map on globalThis. Supabase: the ux_notifications table from Stream 2's migration.
 import "server-only";
-import { NotImplementedError } from "@/lib/data/types";
+import { eq, rest } from "@/lib/data/supabase/rest";
 
 export type NotificationStatus = "pending" | "sent" | "failed";
 
@@ -45,11 +45,46 @@ export const mockNotificationLog: NotificationLog = {
   },
 };
 
-const notYet = async (): Promise<never> => {
-  throw new NotImplementedError("ux_notifications (Supabase)");
-};
+const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+const COLUMNS = "report_id,channel,status,sent_at,error";
 
-export const supabaseNotificationLog: NotificationLog = { claim: notYet, get: notYet, update: notYet };
+/**
+ * ux_notifications.report_id references daily_reports(id), so only reports Stream 2 has saved
+ * can be recorded. A report the app computed from visits (no saved row) has no uuid yet.
+ */
+function savedReportId(reportId: string): string {
+  if (!UUID.test(reportId)) {
+    throw new Error(
+      `This report isn't saved in daily_reports yet (the app computed it from visits, id "${reportId}"), ` +
+        "so ux_notifications can't record it. Ask Stream 2 to save the day's report, then send again.",
+    );
+  }
+  return reportId;
+}
+
+export const supabaseNotificationLog: NotificationLog = {
+  async claim(reportId, channel) {
+    // Insert first: report_id is unique, so a second claim inserts nothing and returns [].
+    const inserted = await rest<NotificationRow[]>(`ux_notifications?on_conflict=report_id&select=${COLUMNS}`, {
+      method: "POST",
+      prefer: "resolution=ignore-duplicates,return=representation",
+      body: JSON.stringify({ report_id: savedReportId(reportId), channel, status: "pending" }),
+    });
+    return inserted[0] ?? null;
+  },
+  async get(reportId) {
+    if (!UUID.test(reportId)) return null;
+    const rows = await rest<NotificationRow[]>(`ux_notifications?select=${COLUMNS}&report_id=${eq(reportId)}&limit=1`);
+    return rows[0] ?? null;
+  },
+  async update(reportId, patch) {
+    await rest(`ux_notifications?report_id=${eq(savedReportId(reportId))}`, {
+      method: "PATCH",
+      prefer: "return=minimal",
+      body: JSON.stringify(patch),
+    });
+  },
+};
 
 export const notificationLog: NotificationLog =
   process.env.DATA_SOURCE === "supabase" ? supabaseNotificationLog : mockNotificationLog;

@@ -4,7 +4,7 @@
 // uploading → analysing → done, with an error and a Retry button if any step fails.
 import Link from "next/link";
 import { useEffect, useRef, useState, type FormEvent } from "react";
-import type { UploadResponse } from "@/app/api/ux/upload/route";
+import type { UploadCompleteResponse, UploadStartBody, UploadStartResponse } from "@/app/api/ux/upload/shared";
 import type { VisitStatusResponse } from "@/app/api/ux/visits/[id]/route";
 import { Spinner } from "@/components/ux/shared";
 import {
@@ -91,22 +91,45 @@ export function UploadForm({ stores, salespeopleByStore }: UploadFormProps) {
     if (!file || !clip) return;
     stopPolling.current?.();
     setPhase({ kind: "uploading", percent: 0 });
-    const body = new FormData();
-    body.set("store", store);
-    body.set("salesperson", salesperson.trim());
-    body.set("recordedAt", withOffset(recordedAt));
-    body.set("durationSec", String(clip.durationSec ?? ""));
-    body.set("clip", file);
+    const details = { store, salesperson: salesperson.trim(), recordedAt: withOffset(recordedAt) };
 
-    let res: UploadResponse;
+    // 1. Ask the server for a one-time upload link (only details are sent, not the file).
+    let start: UploadStartResponse;
     try {
-      res = await postWithProgress("/api/ux/upload", body, (percent) => setPhase({ kind: "uploading", percent }));
+      start = await postJson<UploadStartResponse>("/api/ux/upload", {
+        ...details,
+        fileName: file.name,
+        contentType: file.type,
+        sizeBytes: file.size,
+        durationSec: clip.durationSec,
+      } satisfies UploadStartBody);
     } catch (err) {
-      setPhase({ kind: "error", message: err instanceof Error ? err.message : "The upload failed. Check your connection." });
+      setPhase({ kind: "error", message: errorText(err, "Couldn't reach the server. Check your connection.") });
+      return;
+    }
+    if (!start.ok) {
+      if (start.errors) setErrors(start.errors as FieldErrors);
+      setPhase({ kind: "error", message: start.error });
+      return;
+    }
+
+    // 2. Upload the clip straight to storage, with progress.
+    try {
+      await putWithProgress(start.url, start.headers, file, (percent) => setPhase({ kind: "uploading", percent }));
+    } catch (err) {
+      setPhase({ kind: "error", message: errorText(err, "The upload failed. Check your connection and try again.") });
+      return;
+    }
+
+    // 3. Tell the server the clip is there: it creates the visit and starts analysis.
+    let res: UploadCompleteResponse;
+    try {
+      res = await postJson<UploadCompleteResponse>("/api/ux/upload/complete", { ...details, path: start.path });
+    } catch (err) {
+      setPhase({ kind: "error", message: errorText(err, "The clip was uploaded but the visit wasn't created. Try again.") });
       return;
     }
     if (!res.ok) {
-      if (res.errors) setErrors(res.errors as FieldErrors);
       setPhase({ kind: "error", message: res.error, visitId: res.id });
       return;
     }
@@ -330,23 +353,39 @@ function withOffset(local: string): string {
   return `${local}:00${sign}${String(Math.floor(abs / 60)).padStart(2, "0")}:${String(abs % 60).padStart(2, "0")}`;
 }
 
-/** fetch() can't report upload progress, so this uses XMLHttpRequest. */
-function postWithProgress(url: string, body: FormData, onProgress: (percent: number) => void): Promise<UploadResponse> {
+function errorText(err: unknown, fallback: string) {
+  return err instanceof Error && err.message ? err.message : fallback;
+}
+
+async function postJson<T>(url: string, body: unknown): Promise<T> {
+  const r = await fetch(url, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+  try {
+    return (await r.json()) as T;
+  } catch {
+    throw new Error(`The server answered ${r.status} without details.`);
+  }
+}
+
+/** fetch() can't report upload progress, so the file goes up with XMLHttpRequest. */
+function putWithProgress(url: string, headers: Record<string, string>, file: File, onProgress: (percent: number) => void): Promise<void> {
   return new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest();
-    xhr.open("POST", url);
+    xhr.open("PUT", url);
+    for (const [k, v] of Object.entries(headers)) xhr.setRequestHeader(k, v);
     xhr.upload.onprogress = (e) => {
       if (e.lengthComputable) onProgress(Math.round((e.loaded / e.total) * 100));
     };
     xhr.onload = () => {
+      if (xhr.status >= 200 && xhr.status < 300) return resolve();
+      let detail = "";
       try {
-        resolve(JSON.parse(xhr.responseText) as UploadResponse);
-      } catch {
-        reject(new Error(`The server answered ${xhr.status} without details.`));
-      }
+        const j = JSON.parse(xhr.responseText) as { message?: string; error?: string };
+        detail = j.message ?? j.error ?? "";
+      } catch {}
+      reject(new Error(`Storage refused the upload (${xhr.status})${detail ? `: ${detail}` : "."}`));
     };
     xhr.onerror = () => reject(new Error("The upload failed. Check your connection and try again."));
-    xhr.send(body);
+    xhr.send(file);
   });
 }
 
