@@ -37,6 +37,7 @@ describe("supabaseClipStore", () => {
       store: "B2", salesperson: "Priya", date: "2026-10-20", fileName: "a.mp4", contentType: "video/mp4",
     });
     expect(calls[0].method).toBe("POST");
+    expect(calls[0].body).toEqual({}); // Supabase rejects an empty JSON body
     expect(calls[0].url).toMatch(/^https:\/\/proj\.supabase\.co\/storage\/v1\/object\/upload\/sign\/recordings\/B2\/2026-10-20\/B2_Priya_2026-10-20_.+\.mp4$/);
     expect(calls[0].headers.Authorization).toBe("Bearer service-key");
     expect(t).toMatchObject({

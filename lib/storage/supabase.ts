@@ -32,7 +32,7 @@ export const supabaseClipStore: ClipStore = {
   async createUpload(clip) {
     const path = clipPath(clip, uploadStamp());
     // Same endpoint as supabase-js createSignedUploadUrl. The link is valid for 2 hours.
-    const { url } = await storage<{ url: string }>(`object/upload/sign/${BUCKET}/${encodePath(path)}`, { method: "POST" });
+    const { url } = await storage<{ url: string }>(`object/upload/sign/${BUCKET}/${encodePath(path)}`, { method: "POST", body: "{}" });
     return {
       path,
       url: `${config().base}${url.startsWith("/") ? url : `/${url}`}`,
