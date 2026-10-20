@@ -3,6 +3,7 @@ import Link from "next/link";
 import { connection } from "next/server";
 import { visits } from "@/lib/data";
 import { filterOptions, PAGE_SIZE, parseVisitFilters, type SearchParams } from "./filters";
+import { ScrollToHash } from "@/components/ux/shared/ScrollToHash";
 import { VisitFilters } from "./VisitFilters";
 import { VisitList } from "./VisitList";
 
@@ -18,6 +19,7 @@ export async function OwnerVisits({ searchParams }: { searchParams: Promise<Sear
 
   return (
     <div className="space-y-3">
+      <ScrollToHash id="visits" />
       <VisitFilters value={filter} options={filterOptions(all, filter.store)} />
       <p className="text-xs text-muted">
         {matching.length} visits{pending > 0 && ` · ${pending} pending review`}

@@ -1,7 +1,7 @@
 // Dumb component: one scorecard in the review queue, with Approve / Reject.
 import Link from "next/link";
-import { reviewVisit } from "@/app/(ux)/manager/review/actions";
 import { OutcomeBadge } from "@/components/ux/shared";
+import { ReviewButtons } from "./ReviewButtons";
 import type { Visit } from "@/lib/data/types";
 import { formatDate, reasonLabel } from "@/lib/ux/format";
 
@@ -28,15 +28,9 @@ export function ReviewCard({ visit }: { visit: Visit }) {
           {visit.flags.length} flag{visit.flags.length > 1 ? "s" : ""} to check on the full scorecard
         </p>
       )}
-      <form action={reviewVisit} className="mt-3 flex gap-2">
-        <input type="hidden" name="id" value={visit.id} />
-        <button name="decision" value="approved" className="flex-1 rounded-lg bg-good px-3 py-2 text-sm font-medium text-paper">
-          Approve
-        </button>
-        <button name="decision" value="rejected" className="flex-1 rounded-lg border border-bad/40 px-3 py-2 text-sm font-medium text-bad">
-          Reject
-        </button>
-      </form>
+      <div className="mt-3">
+        <ReviewButtons id={visit.id} />
+      </div>
     </li>
   );
 }
