@@ -1,4 +1,4 @@
-"""Read and write the Supabase `visits` table and `recordings` bucket (schemas.md), via the REST API.
+"""Read and write the Supabase `visits` and `daily_reports` tables and `recordings` bucket (schemas.md), via REST.
 
 Needs SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY (env or .env). RLS allows only the service role,
 so this runs server side only; never ship the key to a browser.
@@ -67,6 +67,22 @@ def download(media_path):
     return _request("GET", f"/storage/v1/object/{BUCKET}/{urllib.parse.quote(media_path)}", timeout=300)
 
 
-def mark_failed(visit_id):
-    _request("PATCH", f"/rest/v1/visits?id=eq.{urllib.parse.quote(visit_id)}", {"status": "failed"},
-             prefer="return=minimal")
+def mark_failed(visit_id, error):
+    """`failed`, with the reason in analysis.error so the app can show why."""
+    _request("PATCH", f"/rest/v1/visits?id=eq.{urllib.parse.quote(visit_id)}",
+             {"status": "failed", "analysis": {"error": error[:500]}}, prefer="return=minimal")
+
+
+def visits_for_date(date):
+    """The scorecards of every `analysed` visit on that date (analysis.date), for the daily report."""
+    rows = _request("GET", f"/rest/v1/visits?status=eq.analysed&analysis->>date=eq.{date}&select=analysis")
+    return [r["analysis"] for r in json.loads(rows)]
+
+
+def upsert_report(date, numbers, markdown, actions, store_id="ALL"):
+    """One `daily_reports` row per (date, store). A re-run updates it in place and keeps its id,
+    so the UX's ux_notifications row (sent once per report id) still points at it."""
+    row = {"report_date": date, "store": store_id, "numbers": numbers, "markdown": markdown, "actions": actions}
+    body = _request("POST", "/rest/v1/daily_reports?on_conflict=report_date,store", [row],
+                    prefer="resolution=merge-duplicates,return=representation")
+    return json.loads(body)[0]["id"]

@@ -26,13 +26,21 @@ python3 pipeline/evaluate.py --supabase          # also write clean scorecards t
 python3 pipeline/evaluate.py --clips data/recordings   # clips: Gemini transcribes, then the SOP scores
 python3 pipeline/evaluate.py --pending           # every `uploaded` visit in Supabase → `analysed` / `failed`
 python3 pipeline/transcribe.py data/recordings/B2_Akshay_2026-10-15_1014.mp4   # transcript + cues only
+python3 pipeline/report.py --supabase --date 2026-10-17   # visits from Supabase → daily_reports (numbers, markdown, actions)
+python3 pipeline/report.py --supabase --notify           # today; then the app emails the owner (needs APP_BASE_URL)
 ```
+
+## On a schedule
+`.github/workflows/pipeline.yml` runs `evaluate.py --pending` every 5 minutes and `report.py --supabase --notify` at 21:37 IST. Both can also be started by hand (Actions → pipeline → Run workflow). The app starts the pending job straight after an upload when `GITHUB_DISPATCH_TOKEN` and `GITHUB_PIPELINE_REPO` are set in Vercel; otherwise the next scheduled run picks the clip up. GitHub can delay scheduled runs by a few minutes when it's busy.
+
+Repo secrets: `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `GEMINI_API_KEY`, optional `ANTHROPIC_API_KEY`. Repo variables: `APP_BASE_URL` (the Vercel URL; without it the report is saved but not sent), optional `GEMINI_MODEL`.
+
+## Daily report row
+`report.py --supabase` upserts one `daily_reports` row per date with `store = 'ALL'`: `numbers` (the reference shape plus the visit ids behind each number), `markdown` (the one-page report) and `actions` (one line per section: `headline`, `lostSales`, `lostDemand`, `storePattern`, `salespeople`, `busiestHours`, `followUps`). A re-run updates the row in place and keeps its id, so the owner's "sent once" record in `ux_notifications` still points at it.
 
 Keys go in `.env` at the repo root (git-ignored) or in the environment. Names: `ANTHROPIC_API_KEY`, `GEMINI_API_KEY`, `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`.
 
 ## Not done yet
-- `--supabase` is untested against the live project: this environment has no `SUPABASE_URL` / `SUPABASE_SERVICE_ROLE_KEY` yet (the host is reachable). The 6 test transcripts include two dated 2026-10-17 (B2-1018, B2-1019); writing them would add to that day's 102 seeded visits.
-- Something to start `--pending` after each upload (a schedule or a webhook). It runs by hand for now.
 - Where the transcript lives. It's saved next to the scorecard locally (`<id>.transcript.txt`, `<id>.cues.json`) but not in Supabase: `analysis` has no field for it and the bucket only takes media. The team needs to pick a column or table.
 - `data/recordings/B2_Akshay_2026-10-15_1014.mp4` is a synthetic test clip: the B2-1014 transcript read by Gemini text-to-speech over a grey picture (so expect a "camera" flag and no face cues). Tested end to end: `evaluator/runs/2026-10-20-clip/`.
-- Sending the email (Resend) and the WhatsApp message (Ayse's `ux_notifications`).
+- The schedule hasn't run on GitHub yet: it needs the repo secrets above.

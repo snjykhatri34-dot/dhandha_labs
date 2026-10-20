@@ -142,12 +142,13 @@ def run_pending(args, out):
                 clip.write_bytes(store.download(row["media_path"]))
                 card, used, problems = evaluate_one(clip, meta, args.provider, out)
         except Exception as e:  # one bad clip must not stop the rest, and must not stay "uploaded"
-            store.mark_failed(visit_id)
+            store.mark_failed(visit_id, str(e))
             summary[visit_id] = {"error": str(e)}
             print(f"{visit_id}  FAILED: {e}")
             continue
         if problems:
             card["flags"] = list(card["flags"]) + [f"rule check: {p}" for p in problems]
+            card["error"] = "The scorecard broke the SOP's rules: " + "; ".join(problems)
         status = "failed" if problems else "analysed"
         store.upsert_visits([card], status=status)
         (out / f"{visit_id}.json").write_text(json.dumps(card, indent=2, ensure_ascii=False) + "\n")

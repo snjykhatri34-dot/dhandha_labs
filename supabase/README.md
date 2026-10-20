@@ -1,15 +1,16 @@
 # Supabase (Stream 2)
 
-Project: `dhandalabs_1` (ref `hhvylkdtqlkuolscmoux`). Both files below are already applied to it.
+Project: `dhandalabs_1` (ref `hhvylkdtqlkuolscmoux`). All files below are already applied to it.
 
 | File | What it does |
 |---|---|
 | `migrations/20261020160000_init.sql` | `visits`, `daily_reports`, `ux_visit_reviews`, `ux_notifications`; private `recordings` bucket |
+| `migrations/20261021090000_daily_report_actions.sql` | `daily_reports.actions`: one action line per report section |
 | `seed.sql` | the 102 visits from `data/sample_day/` (regenerate with `python3 supabase/make_seed.py > supabase/seed.sql`) |
 
 ## Tables
 - **`visits`**: as in `schemas.md`. `analysis` holds the scorecard JSON. Sample-day visits also carry `start`, `duration_min`, `competitor_mentioned` and `value_inr` inside `analysis`. `recorded_at` is the visit's start time (Asia/Kolkata).
-- **`daily_reports`**: one row per `(report_date, store)`; `store = 'ALL'` for all stores. `numbers` has the same shape as `expected_outputs/daily_report_reference.json`. Inserting a row is the "report ready" signal.
+- **`daily_reports`**: one row per `(report_date, store)`; `store = 'ALL'` for all stores. `numbers` has the same shape as `expected_outputs/daily_report_reference.json` (plus the visit ids behind each number), `markdown` is the one-page report, `actions` holds one line per section (`headline`, `lostSales`, `lostDemand`, `storePattern`, `salespeople`, `busiestHours`, `followUps`). Written by `pipeline/report.py --supabase`; `--notify` then calls the app's `/api/ux/notify`.
 - **`ux_visit_reviews`**, **`ux_notifications`**: the UX team's tables, as in `docs/ux-plan.md`.
 
 ## Access

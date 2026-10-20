@@ -3,19 +3,29 @@
     python3 pipeline/report.py                      # sample day, Oct 17
     python3 pipeline/report.py --visits file.json --scorecards evaluator/runs/2026-10-20-v3
     python3 pipeline/report.py --provider gemini --out evaluator/runs/x/report   # keep reports/ untouched
+    python3 pipeline/report.py --supabase --date 2026-10-17   # visits from Supabase, report saved to daily_reports
+    python3 pipeline/report.py --supabase --notify            # today (store time), then ask the app to send it
 
 Writes reports/<date>/numbers.json, daily_report.md (one page, for email) and owner_whatsapp.txt (short).
+With --supabase the day's analysed visits are read from the `visits` table and the report is upserted into
+`daily_reports` (store 'ALL'): numbers, markdown, and actions (one line per section, for the owner page).
+With --notify, the app's /api/ux/notify (APP_BASE_URL) is called for the date; it sends at most once per report.
 Every number comes from compute(); the model may only reword them. Stock transfers are drafts.
 """
 import argparse
 import collections
 import csv
+import datetime
 import json
+import os
 import sys
+import urllib.request
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import llm  # noqa: E402
+import store  # noqa: E402
 
 ROOT = llm.ROOT
 LOST_DEMAND = {"weight_mismatch", "design_not_available"}
@@ -54,6 +64,8 @@ def stock_check(category, weight_band):
 
 
 def compute(visits):
+    # Visit-id order, so ties (two reasons with 9 visits) come out the same whatever order rows arrive in.
+    visits = sorted(visits, key=lambda v: v["visit_id"])
     not_bought = [v for v in visits if v["outcome"] != "bought"]
     reasons = collections.Counter(v["reason_not_bought"] for v in not_bought)
     by_store = {s: [sum(v["outcome"] == "bought" for v in vs), len(vs)]
@@ -144,8 +156,8 @@ WRITER = """You write the daily report for the owner of Verma Jewellers (3 store
 The owner reads it on a phone. He wants to know what to fix today, not every detail.
 
 You get a JSON object of numbers already computed by code, plus optional scored example visits.
-The example visits are recent recorded clips (each has its own date). They are not part of today's numbers:
-use them only as coaching examples (what to copy, what to fix), cited with their visit id and timestamp.
+The example visits are recorded clips with full scorecards (each has its own date; the numbers already count any
+from this date). Use them only as coaching examples (what to copy, what to fix), cited with their visit id and timestamp.
 Rules:
 - Use only numbers and visit ids that appear in the input. Never compute, estimate or round differently.
 - Every claim cites its source: visit ids (and a timestamp when an example visit gives one, e.g. B2-1015 @00:31).
@@ -158,35 +170,76 @@ Rules:
 - Plain English, short sentences. INR as ₹ with lakh/crore (₹1.19 crore).
 
 Return ONE JSON object, no prose, no fences:
-{"markdown": "<one-page report>", "whatsapp": "<owner summary>"}
+{"markdown": "<one-page report>", "whatsapp": "<owner summary>", "actions": {<section key>: "<action line>"}}
 
 markdown: sections in this order: **Headline** · **Lost sales and why** (a small table) · **Lost demand** (include the stock check and the draft transfer if given) · **Store pattern** · **Salespeople** (sold/visits, who needs coaching on what, who to copy) · **Busiest hours** · **Follow-ups due** · **Sources** (the visit ids per section).
-whatsapp: at most 8 lines, WhatsApp formatting (*bold*, • bullets). Line 1 is the headline with visits, sales and conversion. Then the 3 most important actions for today, each one line with its number. End with "Full report in your inbox." No ids in the WhatsApp version."""
+whatsapp: at most 8 lines, WhatsApp formatting (*bold*, • bullets). Line 1 is the headline with visits, sales and conversion. Then the 3 most important actions for today, each one line with its number. End with "Full report in your inbox." No ids in the WhatsApp version.
+actions: the markdown's "→" action lines, word for word without the arrow, keyed by section:
+headline, lostSales, lostDemand, storePattern, salespeople, busiestHours, followUps. Leave out a section with no action."""
+
+ACTION_KEYS = ("headline", "lostSales", "lostDemand", "storePattern", "salespeople", "busiestHours", "followUps")
+
+
+def clean_actions(raw):
+    """Only the known section keys, one line each, without the arrow."""
+    raw = raw if isinstance(raw, dict) else {}
+    return {k: " ".join(str(raw[k]).split()).lstrip("→ ").strip() for k in ACTION_KEYS
+            if isinstance(raw.get(k), str) and raw[k].strip()}
+
+
+def store_today():
+    return datetime.datetime.now(ZoneInfo("Asia/Kolkata")).date().isoformat()
+
+
+def notify(date):
+    """Ask the app to send the owner the report. The app records it in ux_notifications and sends once."""
+    base = os.environ.get("APP_BASE_URL", "").rstrip("/")
+    if not base:
+        raise SystemExit("--notify needs APP_BASE_URL (the deployed app)")
+    req = urllib.request.Request(f"{base}/api/ux/notify", method="POST", data=json.dumps({"date": date}).encode(),
+                                 headers={"Content-Type": "application/json"})
+    with urllib.request.urlopen(req, timeout=60) as resp:
+        reply = json.loads(resp.read())
+    print("notify:", reply.get("result") or reply.get("error"), reply.get("channel", ""))
 
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--visits", default=str(ROOT / "data" / "sample_day" / "visits_2026-10-17.json"))
+    ap.add_argument("--visits", help="visits JSON file (default: the sample day, or Supabase with --supabase)")
+    ap.add_argument("--supabase", action="store_true",
+                    help="read the day's analysed visits from Supabase and save the report to daily_reports")
+    ap.add_argument("--date", help="report date with --supabase (default: today in store time)")
+    ap.add_argument("--notify", action="store_true", help="after saving, ask the app to send the owner the report")
     ap.add_argument("--scorecards", help="folder of full scorecards to use as coaching examples")
     ap.add_argument("--provider", choices=[p[0] for p in llm.PROVIDERS])
     ap.add_argument("--out", help="output folder (default reports/<date>)")
     args = ap.parse_args()
+    if (args.supabase or args.notify) and not store.configured():
+        sys.exit("--supabase needs SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY")
+    if args.notify and not args.supabase:
+        sys.exit("--notify needs --supabase (the app sends the saved report)")
 
-    visits = json.loads(Path(args.visits).read_text())
+    if args.visits or not args.supabase:
+        visits = json.loads(Path(args.visits or ROOT / "data" / "sample_day" / "visits_2026-10-17.json").read_text())
+    else:
+        date = args.date or store_today()
+        visits = store.visits_for_date(date)
+        print(f"supabase: {len(visits)} analysed visit(s) on {date}")
+        if not visits:
+            print("no visits, no report")
+            return
     numbers = compute(visits)
     mismatches = check_against_reference(numbers) if numbers["date"] == "2026-10-17" else []
     print("reference check:", "all numbers match" if not mismatches else f"MISMATCH in {mismatches}")
     if mismatches:
         sys.exit(1)
 
-    examples = []
-    if args.scorecards:
-        for f in sorted(Path(args.scorecards).glob("*.json")):
-            card = json.loads(f.read_text())
-            if "key_moments" in card:
-                examples.append({k: card.get(k) for k in ("visit_id", "date", "salesperson", "outcome",
-                                                          "handling_score", "key_moments", "missed_opportunities",
-                                                          "not_available", "coaching_tip")})
+    # Coaching examples: full scorecards (with key moments) from a folder, else the day's own clips.
+    cards = ([json.loads(f.read_text()) for f in sorted(Path(args.scorecards).glob("*.json"))] if args.scorecards
+             else visits if args.supabase and not args.visits else [])
+    examples = [{k: card.get(k) for k in ("visit_id", "date", "salesperson", "outcome", "handling_score",
+                                          "key_moments", "missed_opportunities", "not_available", "coaching_tip")}
+                for card in cards if "key_moments" in card]
     user = json.dumps({"numbers": numbers, "example_visits": examples}, ensure_ascii=False)
     text, used = llm.complete(WRITER, user, only=args.provider)
     out = llm.parse_json(text)
@@ -196,7 +249,15 @@ def main():
     (folder / "numbers.json").write_text(json.dumps(numbers, indent=2, ensure_ascii=False) + "\n")
     (folder / "daily_report.md").write_text(out["markdown"].strip() + "\n")
     (folder / "owner_whatsapp.txt").write_text(out["whatsapp"].strip() + "\n")
+    actions = clean_actions(out.get("actions"))
+    (folder / "actions.json").write_text(json.dumps(actions, indent=2, ensure_ascii=False) + "\n")
     print(f"written by {used} to {folder}")
+
+    if args.supabase:
+        report_id = store.upsert_report(numbers["date"], numbers, out["markdown"].strip(), actions)
+        print(f"supabase: daily_reports {numbers['date']} ALL saved ({report_id})")
+        if args.notify:
+            notify(numbers["date"])
 
 
 if __name__ == "__main__":
