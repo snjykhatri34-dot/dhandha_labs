@@ -1,0 +1,105 @@
+{
+  "visit_id": "B2-1015",
+  "store": "B2",
+  "salesperson": "Priya",
+  "date": "2026-10-15",
+  "outcome": "bought",
+  "asked_for": {
+    "category": "earrings",
+    "weight_band": "8-15",
+    "occasion": "anniversary",
+    "budget_inr": 150000
+  },
+  "shown": [
+    "earrings 11 g",
+    "earrings",
+    "earrings",
+    "earrings 10 g"
+  ],
+  "reason_not_bought": null,
+  "objections": [
+    {
+      "type": "price_budget",
+      "at": "00:46",
+      "quote": "That's a little over our budget."
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:27",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    },
+    {
+      "at": "00:46",
+      "who": "customer",
+      "emotion": "concerned",
+      "cue": "words"
+    },
+    {
+      "at": "01:05",
+      "who": "customer",
+      "emotion": "satisfied",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> satisfied",
+  "handling_score": 5,
+  "coaching_tip": "Keep doing what you did at 00:49: when the price goes over budget, offer an old-gold exchange or the same design at a lighter weight.",
+  "lost_demand": false,
+  "flags": [
+    "no weight asked; band from chosen 10 g piece",
+    "two of the three earrings shown at 00:19 had no weight stated",
+    "first piece called 11 g at 00:19 and 11.2 g at 00:31; shown uses 11 g",
+    "breakup at 00:31 named gold, making, stones and GST but gave no rupee figure for the gold rate or the stones",
+    "total_quoted_inr is the first quote (11 g piece); the chosen 10 g piece was quoted at 148000 at 00:49"
+  ],
+  "customer": {
+    "party": "couple",
+    "decision_maker": "wife; husband set the budget",
+    "intent": "high",
+    "intent_evidence": "00:08 anniversary earrings with a budget of one lakh fifty"
+  },
+  "key_moments": [
+    {
+      "at": "00:31",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "gave a full price breakup before being asked"
+    },
+    {
+      "at": "00:46",
+      "by": "customer",
+      "effect": "hurt",
+      "what": "said the 1.62 lakh quote was over budget"
+    },
+    {
+      "at": "00:49",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "offered old-gold exchange or the same design at 10 g for 1.48 lakh"
+    },
+    {
+      "at": "01:05",
+      "by": "customer",
+      "effect": "helped",
+      "what": "chose the 10 g piece and agreed to buy"
+    }
+  ],
+  "missed_opportunities": [],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": 16,
+    "total_quoted_inr": 162000,
+    "breakup_given": true,
+    "notes": "10 g version quoted at 148000 within budget at 00:49"
+  },
+  "competitor": null
+}

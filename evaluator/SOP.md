@@ -139,13 +139,28 @@ the clip.
 | `asked_for` | What the customer asked for: `category`, `weight_band`, `occasion`, `budget_inr` (number, INR). Each is `null` if not stated. Use the customer's first clear request. If the request changes, use the latest one and add a flag. |
 | `shown` | Items the salesperson actually showed or named, each as category plus weight where stated, e.g. `"necklace 52 g"`. Empty list if nothing was shown. |
 | `reason_not_bought` | One value from 5.2, or `null` if bought. Choose the **main** reason, the one that most directly ended the visit. Put secondary reasons in `objections`. |
-| `objections` | **One entry per objection type.** Later lines about the same concern are restatements: do not add them as new entries, even if they add detail or cite a competitor. `at` is the customer's **first** line on that concern, and a question counts ("What rate will you give for the old gold?" raises `old_gold_exchange_rate`). `quote` is exact, from that first line. If the first line or any restatement cites another shop, set `"competitor_mentioned": true` on the single entry. |
+| `objections` | **One entry per objection type.** Later lines about the same concern are restatements: do not add them as new entries, even if they add detail or cite a competitor. `at` is the customer's **first** line on that concern, and a question counts ("What rate will you give for the old gold?" raises `old_gold_exchange_rate`). `quote` is exact, from that first line. If the first line or any restatement cites another shop **as part of that concern** (e.g. "the other shop was offering the full rate"), set `"competitor_mentioned": true` on the single entry. A shop named only as the customer leaves goes in `competitor`, not on an objection. |
 | `emotions` | Section 4. Include only moments with evidence. Two to four entries is typical for a short clip. |
 | `emotion_arc` | Section 4. |
 | `handling_score` | Integer 1 to 5 from the rubric. |
-| `coaching_tip` | One sentence a manager could say out loud to the salesperson. Specific to this visit and actionable (what to do differently), not generic ("be more attentive"). No blame. For a `handling_score` of 5, do not invent an improvement: name the move to keep doing, with its timestamp, e.g. `"Keep doing what you did at 00:49: offer the same design at a lighter weight when the price is over budget."` |
+| `coaching_tip` | One sentence a manager could say out loud to the salesperson. Specific to this visit and actionable (what to do differently), not generic ("be more attentive"). No blame. For a `handling_score` of 5, do not invent an improvement: name the move to keep doing, with its timestamp, e.g. `"Keep doing what you did at 00:49: offer the same design at a lighter weight when the price is over budget."` If `not_available` has an entry with resolution `none`, the tip must say what to do when we don't have the piece (offer to bring it from another branch or order it, and take the number). Write the tip in your own words for this visit; never copy the worked example's tip. |
 | `lost_demand` | `true` if and only if `reason_not_bought` is `weight_mismatch` or `design_not_available` (the definition in `CLAUDE.md`). Otherwise `false`, including every `bought` visit. Decide it from what was shown and said in the clip, not from what the store stocks. You cannot see stock. |
 | `flags` | List of short strings per rule 3. Empty list if there is nothing uncertain. |
+
+### 6.1 Nuance fields
+
+These say **why** the visit went the way it did. The evidence rules in section 3 apply to every one: each claim
+needs a timestamp from the transcript, or it is left out.
+
+| Field | How to fill it |
+|---|---|
+| `customer` | `party`: `solo`, `couple`, `family` or `group`, from the number of customer speakers and what they say ("our daughter", "my wife"). `decision_maker`: who decides, in the transcript's words ("mother", "husband", "the customer"); if someone absent must approve, say so ("mother; daughter and father must approve"). `intent`: `high` (a dated occasion, a specific ask, or a budget), `medium` (a clear category but no urgency), `low` (browsing). `intent_evidence`: the timestamp and the words that justify it. |
+| `key_moments` | 2 to 4 turning points, in time order. Each is `{"at", "by", "effect", "what"}`: `by` is `salesperson` or `customer`, `effect` is `helped` or `hurt` (for the sale), and `what` is under 15 words. Pick the moments that changed the direction of the visit, not every line. Include at least one salesperson move. |
+| `missed_opportunities` | What a top salesperson would have done that didn't happen, at the moment it was possible: `{"at", "what"}`. Base it only on what was said (a lighter piece offered, a number taken, a breakup given, an add-on suggested, a purity test offered). Do not assume stock or other branches. Empty list if nothing was missed. |
+| `next_step` | For `deferred_with_follow_up`: `{"what", "when", "who"}`, e.g. `{"what": "family visit; both sets held", "when": "Sunday", "who": "Priya"}`. `when` is `null` if no time was given (then also flag it). For any other outcome: `null`. |
+| `price_talk` | `making_pct` (number, or `null` if not quoted), `total_quoted_inr` (number, or `null`), `breakup_given` (`true` only if the salesperson split the price into gold, making, stones and GST), `notes` (one short phrase with a timestamp, e.g. `"gold rate locked for bridal at 00:40"`, or `null`). If price never came up, every field is `null` and `breakup_given` is `false`. |
+| `not_available` | **What the customer wanted that we said we don't have.** A list, one entry per item: `{"item", "at", "quote", "said_by", "resolution"}`. Add an entry when the salesperson says the asked item isn't in stock ("Not in that range right now", "We don't have much variety in smaller pieces"), or the customer asks for it again and nothing matching is shown. `item` is category plus the asked weight or design (`"necklace 20-35 g"`). `at` and `quote` are the line where unavailability was said (exact quote). `said_by` is `salesperson` or `customer`. `resolution` is what the salesperson did about it: `another_branch` (offered to bring it from another store), `order` (offered to order or make it), `callback` (took a number to call when it arrives), `alternative` (showed a close match in the asked weight or design), or `none`. Empty list if everything asked for was available or shown. When `resolution` is `none`, also add a `missed_opportunities` entry at that timestamp: "no offer to source it from another branch or order, and no number taken". This is the one place a missed opportunity may mention other branches, because the salesperson has said we don't have it here. |
+| `competitor` | If the customer names or cites another shop: `{"named", "claim", "at"}`. `named` is in the customer's words ("another showroom", "the showroom in Shimla"), `claim` is what they said it offers (`null` if nothing), `at` is the first mention. Otherwise `null`. A shop named only as the customer leaves still goes here, but it does **not** set `competitor_mentioned` on an objection. |
 
 ## 7. Output rules
 
@@ -191,9 +206,28 @@ Expected scorecard:
   "handling_score": 2,
   "coaching_tip": "Show the weight the customer asks for first, then price it with a breakup.",
   "lost_demand": true,
-  "flags": []
+  "flags": [],
+  "customer": {"party": "solo", "decision_maker": "the customer", "intent": "high", "intent_evidence": "00:09 named a weight ceiling and daily office use"},
+  "key_moments": [
+    {"at": "00:16", "by": "salesperson", "effect": "hurt", "what": "showed a 52 g piece after a 35 g ask"},
+    {"at": "00:44", "by": "customer", "effect": "hurt", "what": "compared making charge with another showroom's 12%"},
+    {"at": "00:50", "by": "salesperson", "effect": "hurt", "what": "called the rate fixed instead of explaining it"}
+  ],
+  "missed_opportunities": [
+    {"at": "00:24", "what": "no lighter piece offered after 'far too heavy'"},
+    {"at": "00:50", "what": "no price breakup given against the competitor quote"},
+    {"at": "01:08", "what": "no number taken to follow up"}
+  ],
+  "next_step": null,
+  "price_talk": {"making_pct": 18, "total_quoted_inr": null, "breakup_given": false, "notes": "rate called fixed at 00:50"},
+  "not_available": [
+    {"item": "necklace 20-35 g", "at": "01:02", "quote": "Not in that range right now, ma'am.", "said_by": "salesperson", "resolution": "none"}
+  ],
+  "competitor": {"named": "another showroom", "claim": "twelve percent making", "at": "00:44"}
 }
 ```
+
+(The worked transcript above is shortened. In the full B2-1014 transcript the customer asks "Do you have anything lighter? Around thirty grams?" at 00:57 and the salesperson replies at 01:02.)
 
 Why this is right: the customer stated a 35 g ceiling at 00:09 and was shown 52 g at 00:16, so the main
 reason is weight, and `lost_demand` is true. The making-charge objection is secondary, so it appears in
