@@ -5,6 +5,7 @@ Project: `dhandalabs_1` (ref `hhvylkdtqlkuolscmoux`). All files below are alread
 | File | What it does |
 |---|---|
 | `migrations/20261020160000_init.sql` | `visits`, `daily_reports`, `ux_visit_reviews`, `ux_notifications`; private `recordings` bucket |
+| `migrations/20261020233000_visit_transcripts_messages.sql` | `visit_transcripts`, `visit_messages` |
 | `migrations/20261021090000_daily_report_actions.sql` | `daily_reports.actions`: one action line per report section |
 | `seed.sql` | the 102 visits from `data/sample_day/` (regenerate with `python3 supabase/make_seed.py > supabase/seed.sql`) |
 
@@ -12,6 +13,8 @@ Project: `dhandalabs_1` (ref `hhvylkdtqlkuolscmoux`). All files below are alread
 - **`visits`**: as in `schemas.md`. `analysis` holds the scorecard JSON. Sample-day visits also carry `start`, `duration_min`, `competitor_mentioned` and `value_inr` inside `analysis`. `recorded_at` is the visit's start time (Asia/Kolkata).
 - **`daily_reports`**: one row per `(report_date, store)`; `store = 'ALL'` for all stores. `numbers` has the same shape as `expected_outputs/daily_report_reference.json` (plus the visit ids behind each number), `markdown` is the one-page report, `actions` holds one line per section (`headline`, `lostSales`, `lostDemand`, `storePattern`, `salespeople`, `busiestHours`, `followUps`). Written by `pipeline/report.py --supabase`; `--notify` then calls the app's `/api/ux/notify`.
 - **`ux_visit_reviews`**, **`ux_notifications`**: the UX team's tables, as in `docs/ux-plan.md`.
+- **`visit_transcripts`**: one row per analysed clip. `turns` is `[{at, speaker, role, tone, text}]`, `readable` is the `[mm:ss] Salesperson: (tone) text` version, `transcript` is what the SOP scored, plus `observations`, `flags` and the Gemini `model`.
+- **`visit_messages`**: the owner's WhatsApp text per visit (`pipeline/message.py`), keyed by `(visit_id, channel)`. `sent_at` is null until the UX layer sends it.
 
 ## Access
 RLS is on for every table with no policies, so only the service role key (server side) can read or write. The anon key sees nothing. Add policies if the browser ever needs to read directly.
