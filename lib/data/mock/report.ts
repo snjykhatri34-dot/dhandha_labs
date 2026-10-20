@@ -5,6 +5,7 @@
 import type { DailyReport, Visit } from "@/lib/data/types";
 import type { DailyReportReference, ReasonNotBought } from "@/lib/types/scorecard";
 import { LOST_DEMAND_REASONS } from "@/lib/types/scorecard";
+import { hourLabel, REASON_LABELS } from "@/lib/ux/format";
 
 const pct = (n: number, d: number) => (d === 0 ? 0 : Math.round((n / d) * 100));
 
@@ -98,25 +99,12 @@ export function storePattern(visits: Visit[]): DailyReport["storePattern"] {
   return best;
 }
 
-export const REASON_LABELS: Record<ReasonNotBought, string> = {
-  weight_mismatch: "Weight mismatch",
-  design_not_available: "Design not available",
-  price_making_charge: "Price / making charge",
-  old_gold_exchange_rate: "Old-gold exchange rate",
-  purity_trust: "Purity / trust",
-  family_decision: "Family decision",
-  just_browsing: "Just browsing",
-  other: "Other",
-};
-
 const STORE_PATTERN_ACTIONS: Partial<Record<ReasonNotBought, string>> = {
   old_gold_exchange_rate: "Publish one written exchange formula.",
   price_making_charge: "Show the making-charge breakup in rupees on every quote.",
   purity_trust: "Offer the purity test at the counter, in front of the customer.",
   family_decision: "Take a number and book a family visit before they leave.",
 };
-
-const hourLabel = (h: number) => `${((h + 11) % 12) + 1} ${h < 12 ? "AM" : "PM"}`;
 
 /** Mock action lines, written from the numbers with simple rules. Stream 2's report will supply real ones. */
 export function buildActions(
