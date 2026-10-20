@@ -66,11 +66,45 @@ describe("metaSender", () => {
   });
 });
 
+describe("email", () => {
+  it("turns the summary into a subject, plain text and HTML with a clickable link", async () => {
+    const { toEmail } = await import("@/lib/notify/email");
+    const m = toEmail("*Counter Intelligence · Sat 17 Oct*\n102 visits <b>\nFull report: https://x/owner/reports/2026-10-17");
+    expect(m.subject).toBe("Counter Intelligence · Sat 17 Oct");
+    expect(m.text).not.toContain("*");
+    expect(m.html).toContain('<a href="https://x/owner/reports/2026-10-17">');
+    expect(m.html).toContain("&lt;b&gt;");
+  });
+
+  it("sends through Gmail SMTP with the app password, spaces removed", async () => {
+    vi.resetModules();
+    const sent: Record<string, unknown>[] = [];
+    const created: Record<string, unknown>[] = [];
+    vi.doMock("nodemailer", () => ({
+      default: {
+        createTransport: (opts: Record<string, unknown>) => {
+          created.push(opts);
+          return { sendMail: async (m: Record<string, unknown>) => (sent.push(m), { messageId: "<m1>" }) };
+        },
+      },
+    }));
+    vi.stubEnv("GMAIL_USER", "me@gmail.com");
+    vi.stubEnv("GMAIL_APP_PASSWORD", "abcd efgh ijkl mnop");
+    const { gmailSender } = await import("@/lib/notify/email");
+    await expect(gmailSender.sendReport("owner@example.com", "*Title*\nLine")).resolves.toEqual({ id: "<m1>" });
+    expect(created[0]).toMatchObject({ host: "smtp.gmail.com", port: 465, auth: { user: "me@gmail.com", pass: "abcdefghijklmnop" } });
+    expect(sent[0]).toMatchObject({ to: "owner@example.com", subject: "Title", from: "Counter Intelligence <me@gmail.com>" });
+    vi.doUnmock("nodemailer");
+    vi.unstubAllEnvs();
+  });
+});
+
 describe("POST /api/ux/notify", () => {
   beforeEach(() => {
     vi.resetModules();
     vi.unstubAllEnvs();
     vi.stubEnv("OWNER_WHATSAPP_TO", "whatsapp:+15550000000");
+    vi.stubEnv("OWNER_EMAIL_TO", "owner@example.com");
     delete (globalThis as { __uxNotifications?: unknown }).__uxNotifications;
   });
 
@@ -78,22 +112,30 @@ describe("POST /api/ux/notify", () => {
     vi.stubEnv("NOTIFY_DRY_RUN", "1");
     const { POST } = await import("@/app/api/ux/notify/route");
     const first = await (await POST(notifyRequest({}))).json();
-    expect(first).toMatchObject({ ok: true, result: "sent", row: { status: "sent", channel: "whatsapp" } });
+    expect(first).toMatchObject({ ok: true, result: "sent", channel: "email", row: { status: "sent", channel: "email" } });
     expect(first.row.sent_at).toBeTruthy();
 
     const second = await (await POST(notifyRequest({ reportId: first.reportId }))).json();
     expect(second).toMatchObject({ ok: true, result: "already_sent", reportId: first.reportId });
   });
 
-  it("logs a WhatsApp failure, returns 200, and allows a retry", async () => {
+  it("uses WhatsApp when NOTIFY_CHANNEL=whatsapp", async () => {
+    vi.stubEnv("NOTIFY_DRY_RUN", "1");
+    vi.stubEnv("NOTIFY_CHANNEL", "whatsapp");
+    const { POST } = await import("@/app/api/ux/notify/route");
+    const body = await (await POST(notifyRequest({}))).json();
+    expect(body).toMatchObject({ result: "sent", channel: "whatsapp", row: { channel: "whatsapp" } });
+  });
+
+  it("logs a failure, returns 200, and allows a retry", async () => {
     vi.stubEnv("NOTIFY_DRY_RUN", "0");
-    vi.stubEnv("TWILIO_ACCOUNT_SID", ""); // makes the Twilio sender fail before any network call
+    vi.stubEnv("GMAIL_USER", ""); // makes the Gmail sender fail before any network call
     const { POST } = await import("@/app/api/ux/notify/route");
     const res = await POST(notifyRequest({}));
     expect(res.status).toBe(200);
     const body = await res.json();
     expect(body).toMatchObject({ ok: true, result: "failed", row: { status: "failed" } });
-    expect(body.row.error).toMatch(/TWILIO_ACCOUNT_SID/);
+    expect(body.row.error).toMatch(/GMAIL_USER/);
 
     // Retry after fixing the cause: a failed row doesn't block the next attempt.
     vi.resetModules();

@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "next": "16.4.2",
+    "nodemailer": "^7.0.13",
     "react": "19.3.0",
     "react-dom": "19.3.0",
     "server-only": "^0.0.1"
@@ -19,6 +20,7 @@
   "devDependencies": {
     "@tailwindcss/turbopack": "^4",
     "@types/node": "^20",
+    "@types/nodemailer": "^7.0.12",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",

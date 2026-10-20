@@ -6,14 +6,10 @@
 // {{1}} with the summary on one line and {{2}} with the report link.
 import "server-only";
 
-export interface SendResult {
-  /** Provider message id, e.g. Twilio's SM… sid. */
-  id: string;
-}
+import type { NotifySender } from "./sender";
 
-export interface WhatsAppSender {
-  sendReport(to: string, text: string): Promise<SendResult>;
-}
+/** Kept for readability: a WhatsApp sender is a NotifySender. */
+export type WhatsAppSender = NotifySender;
 
 function env(name: string): string {
   const v = process.env[name];
@@ -52,13 +48,6 @@ export function messageContent(text: string, contentSid = process.env.TWILIO_CON
   const summary = lines.filter((l) => !l.startsWith("Full report:")).join(" · ");
   return { ContentSid: contentSid, ContentVariables: JSON.stringify({ "1": summary, "2": link }) };
 }
-
-export const dryRunSender: WhatsAppSender = {
-  async sendReport(to, text) {
-    console.info(`[notify] DRY RUN to ${to}:\n${text}`);
-    return { id: `dry-run-${Date.now()}` };
-  },
-};
 
 /** "whatsapp:+16175551234" or "+1 617…" → "16175551234" (Meta wants digits only). */
 export function digitsOnly(to: string): string {
@@ -103,5 +92,5 @@ export const metaSender: WhatsAppSender = {
 
 export const provider = process.env.WHATSAPP_PROVIDER === "meta" ? "meta" : "twilio";
 
-export const whatsapp: WhatsAppSender =
-  process.env.NOTIFY_DRY_RUN === "1" ? dryRunSender : provider === "meta" ? metaSender : twilioSender;
+/** The WhatsApp provider in use (only when NOTIFY_CHANNEL=whatsapp). */
+export const whatsapp: WhatsAppSender = provider === "meta" ? metaSender : twilioSender;

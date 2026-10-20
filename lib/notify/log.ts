@@ -1,4 +1,4 @@
-// ux_notifications: one row per report, so a report is never sent twice.
+// ux_notifications: one row per report, so a report is never sent twice (on whichever channel).
 // Mock: an in-memory Map on globalThis. Supabase: the table from Stream 2's migration (stub for now).
 import "server-only";
 import { NotImplementedError } from "@/lib/data/types";
@@ -7,7 +7,7 @@ export type NotificationStatus = "pending" | "sent" | "failed";
 
 export interface NotificationRow {
   report_id: string;
-  channel: "whatsapp";
+  channel: "email" | "whatsapp";
   status: NotificationStatus;
   sent_at: string | null;
   error: string | null;
@@ -15,7 +15,7 @@ export interface NotificationRow {
 
 export interface NotificationLog {
   /** Inserts a pending row. Returns null if a row for this report already exists (unique report_id). */
-  claim(reportId: string, channel: "whatsapp"): Promise<NotificationRow | null>;
+  claim(reportId: string, channel: "email" | "whatsapp"): Promise<NotificationRow | null>;
   get(reportId: string): Promise<NotificationRow | null>;
   update(reportId: string, patch: Partial<Pick<NotificationRow, "status" | "sent_at" | "error">>): Promise<void>;
 }

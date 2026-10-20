@@ -5,10 +5,15 @@ import { NotifyButton } from "@/components/ux/dev/NotifyButton";
 import { EmptyState, ErrorState, LoadingBlock } from "@/components/ux/shared";
 import { dataSource, reports, type DailyReport } from "@/lib/data";
 import { formatReportSummary } from "@/lib/notify/format";
+import { channel, recipient } from "@/lib/notify";
 import { provider } from "@/lib/notify/whatsapp";
 
-function maskNumber(to: string | undefined) {
+function maskRecipient(to: string | undefined) {
   if (!to) return "not set";
+  if (to.includes("@")) {
+    const [name, domain] = to.split("@");
+    return `${name.slice(0, 2)}…@${domain}`;
+  }
   const digits = to.replace(/\D/g, "");
   return `+${digits.slice(0, 2)}…${digits.slice(-2)}`;
 }
@@ -33,10 +38,13 @@ async function NotifyPanel() {
           {report.date} <code className="text-xs">{report.id}</code>
         </dd>
         <dt className="text-muted">Send to</dt>
-        <dd>{maskNumber(process.env.OWNER_WHATSAPP_TO)}</dd>
+        <dd>
+          {maskRecipient(recipient())} by {channel === "email" ? "email (Gmail)" : "WhatsApp"}
+        </dd>
         <dt className="text-muted">Mode</dt>
         <dd>
-          DATA_SOURCE={dataSource} · WHATSAPP_PROVIDER={provider} · NOTIFY_TRIGGER={process.env.NOTIFY_TRIGGER ?? "report_ready"}
+          DATA_SOURCE={dataSource} · NOTIFY_CHANNEL={channel}
+          {channel === "whatsapp" && ` · WHATSAPP_PROVIDER=${provider}`} · NOTIFY_TRIGGER={process.env.NOTIFY_TRIGGER ?? "report_ready"}
           {process.env.NOTIFY_DRY_RUN === "1" && " · dry run (nothing is sent)"}
         </dd>
       </dl>
@@ -44,7 +52,7 @@ async function NotifyPanel() {
       {local && (
         <p className="rounded-lg bg-warn-bg p-3 text-sm text-warn">
           APP_BASE_URL is {baseUrl}, so the link in the message only opens on this laptop. Use the deployed URL or an
-          ngrok tunnel for the demo phone.
+          ngrok tunnel if the owner reads it on a phone.
         </p>
       )}
 
@@ -53,7 +61,7 @@ async function NotifyPanel() {
         <pre className="whitespace-pre-wrap rounded-lg border border-line p-3 text-sm">{formatReportSummary(report, baseUrl)}</pre>
       </div>
 
-      <NotifyButton reportId={report.id} />
+      <NotifyButton reportId={report.id} channelLabel={channel === "email" ? "email" : "WhatsApp"} />
     </div>
   );
 }
@@ -63,7 +71,7 @@ export default function DevPage() {
     <>
       <h1 className="text-xl font-semibold">Demo controls</h1>
       <p className="mt-1 mb-6 text-sm text-muted">
-        Sends today&apos;s report summary to the owner&apos;s WhatsApp. One report is sent once; a second click sends nothing.
+        Sends today&apos;s report summary to the owner by email (or WhatsApp, if NOTIFY_CHANNEL=whatsapp). One report is sent once; a second click sends nothing.
       </p>
       <Suspense fallback={<LoadingBlock label="Loading the report…" />}>
         <NotifyPanel />
