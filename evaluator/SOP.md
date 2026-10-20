@@ -51,10 +51,17 @@ The conversation is in English. Prices are in INR. Jewelry is sold by weight (gr
 - Use `voice` or `face` only when an `observations` entry at or near that timestamp supports it. Treat
   observations as evidence, not fact. If an observation conflicts with the words, say so in `flags` and
   go with the stronger evidence.
-- Do not label an emotion from a single neutral line. A customer saying "okay" is not agreement or
-  disappointment unless the surrounding lines show it.
-- `emotion_arc` is the start and end state in one short string, in the form `"interested -> frustrated"`.
-  It must be consistent with the emotion entries.
+- `emotion` uses only these words: `curious`, `interested`, `delighted`, `satisfied`, `relaxed`, `reassured`,
+  `neutral`, `concerned`, `hesitant`, `skeptical`, `disappointed`, `frustrated`, `bored`, `dismissive`.
+  If none fits, leave the moment out and add a flag.
+- Do not label an emotion from a single neutral line. Plain acceptance or acknowledgement ("okay", "that works",
+  "check the size") is not an emotion. A line that shows feeling ("Oh, I love this one!", "That's far too heavy")
+  is. One exception: the customer's closing purchase line ("Okay, pack it up", "We'll take it") may be recorded
+  once as `satisfied`.
+- `emotion_arc` is `"<start> -> <end>"`, e.g. `"interested -> frustrated"`. `<start>` is the emotion of the
+  **first** entry in `emotions` and `<end>` is the emotion of the **last** entry. Both words must appear in
+  `emotions`. If the customer's opening request shows a feeling (e.g. a keen, specific ask), add an entry for it
+  at that timestamp. If there is only one entry, the arc is `"<x> -> <x>"`. If there are no entries, the arc is `null`.
 
 ## 5. Fixed lists
 
@@ -100,9 +107,15 @@ Add `"competitor_mentioned": true` to an objection when the customer names or ci
 
 `asked_for.weight_band` uses this format and these bands only. A stated ceiling or range maps to the band that
 contains it: "up to thirty-five grams" → `20-35`. A weight exactly on a boundary goes in the lower band (35 g → `20-35`).
-`asked_for.category` uses the category names that appear in `CLAUDE.md`. If the customer gave no weight, or the
-category has no bands (for example a bridal set), set `weight_band` to `null` and add a flag with the weight they
-stated, e.g. `"no band for bridal set; asked for 80-90 g"`.
+`asked_for.category` uses the category names that appear in `CLAUDE.md`.
+
+If the customer gave no weight:
+- and they **chose** a piece whose weight was said aloud (bought it, or asked to hold it), use that piece's band
+  and add a flag, e.g. `"no weight asked; band from chosen 10 g piece"`.
+- otherwise set `weight_band` to `null` and add a flag (`"no weight stated"`).
+
+If the category has no bands (for example a bridal set), set `weight_band` to `null` and add a flag with the
+weight they stated, e.g. `"no band for bridal set; asked for 80-90 g"`.
 
 ### 5.5 Handling score (1 to 5)
 
@@ -126,11 +139,11 @@ the clip.
 | `asked_for` | What the customer asked for: `category`, `weight_band`, `occasion`, `budget_inr` (number, INR). Each is `null` if not stated. Use the customer's first clear request. If the request changes, use the latest one and add a flag. |
 | `shown` | Items the salesperson actually showed or named, each as category plus weight where stated, e.g. `"necklace 52 g"`. Empty list if nothing was shown. |
 | `reason_not_bought` | One value from 5.2, or `null` if bought. Choose the **main** reason, the one that most directly ended the visit. Put secondary reasons in `objections`. |
-| `objections` | Each distinct objection once: `type` (5.3), `at` (timestamp of the first time it was raised), `quote` (exact). Do not repeat an objection that is simply restated. |
+| `objections` | **One entry per objection type.** Later lines about the same concern are restatements: do not add them as new entries, even if they add detail or cite a competitor. `at` is the customer's **first** line on that concern, and a question counts ("What rate will you give for the old gold?" raises `old_gold_exchange_rate`). `quote` is exact, from that first line. If the first line or any restatement cites another shop, set `"competitor_mentioned": true` on the single entry. |
 | `emotions` | Section 4. Include only moments with evidence. Two to four entries is typical for a short clip. |
 | `emotion_arc` | Section 4. |
 | `handling_score` | Integer 1 to 5 from the rubric. |
-| `coaching_tip` | One sentence a manager could say out loud to the salesperson. Specific to this visit and actionable (what to do differently), not generic ("be more attentive"). No blame. |
+| `coaching_tip` | One sentence a manager could say out loud to the salesperson. Specific to this visit and actionable (what to do differently), not generic ("be more attentive"). No blame. For a `handling_score` of 5, do not invent an improvement: name the move to keep doing, with its timestamp, e.g. `"Keep doing what you did at 00:49: offer the same design at a lighter weight when the price is over budget."` |
 | `lost_demand` | `true` if and only if `reason_not_bought` is `weight_mismatch` or `design_not_available` (the definition in `CLAUDE.md`). Otherwise `false`, including every `bought` visit. Decide it from what was shown and said in the clip, not from what the store stocks. You cannot see stock. |
 | `flags` | List of short strings per rule 3. Empty list if there is nothing uncertain. |
 
@@ -171,6 +184,7 @@ Expected scorecard:
     {"type": "price_making_charge", "at": "00:44", "quote": "Another showroom quoted me twelve", "competitor_mentioned": true}
   ],
   "emotions": [
+    {"at": "00:09", "who": "customer", "emotion": "interested", "cue": "words"},
     {"at": "00:24", "who": "customer", "emotion": "disappointed", "cue": "words"}
   ],
   "emotion_arc": "interested -> disappointed",
