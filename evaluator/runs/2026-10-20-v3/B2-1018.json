@@ -1,0 +1,83 @@
+{
+  "visit_id": "B2-1018",
+  "store": "B2",
+  "salesperson": "Akshay",
+  "date": "2026-10-17",
+  "outcome": "bought",
+  "asked_for": {
+    "category": "ring",
+    "weight_band": "5-10",
+    "occasion": null,
+    "budget_inr": null
+  },
+  "shown": [
+    "ring 6.8 g"
+  ],
+  "reason_not_bought": null,
+  "objections": [],
+  "emotions": [
+    {
+      "at": "00:06",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:36",
+      "who": "customer",
+      "emotion": "satisfied",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> satisfied",
+  "handling_score": 4,
+  "coaching_tip": "When the customer says 'pack it up' at 00:36, suggest a matching add-on such as a chain, and take his number for future occasions.",
+  "lost_demand": false,
+  "flags": [
+    "total quoted as approximate ('around ninety-four thousand')"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer",
+    "intent": "high",
+    "intent_evidence": "00:06 asked for a men's ring for himself, six or seven grams, simple"
+  },
+  "key_moments": [
+    {
+      "at": "00:12",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed a 6.8 g matte ring matching the 6-7 g ask"
+    },
+    {
+      "at": "00:22",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "quoted 14% making and total upfront"
+    },
+    {
+      "at": "00:36",
+      "by": "customer",
+      "effect": "helped",
+      "what": "agreed to buy after size check"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "00:22",
+      "what": "no breakup of gold, making and GST given"
+    },
+    {
+      "at": "00:36",
+      "what": "no add-on suggested and no number taken for follow-up"
+    }
+  ],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": 14,
+    "total_quoted_inr": 94000,
+    "breakup_given": false,
+    "notes": "making and approximate total quoted at 00:22"
+  },
+  "competitor": null
+}

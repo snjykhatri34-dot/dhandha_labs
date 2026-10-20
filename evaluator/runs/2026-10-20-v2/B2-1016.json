@@ -1,0 +1,61 @@
+{
+  "visit_id": "B2-1016",
+  "store": "B2",
+  "salesperson": "Akshay",
+  "date": "2026-10-16",
+  "outcome": "walked_out",
+  "asked_for": {
+    "category": "necklace",
+    "weight_band": "20-35",
+    "occasion": "gift for daughter's new job",
+    "budget_inr": null
+  },
+  "shown": [
+    "necklace set 58 g",
+    "chain with pendant",
+    "bangles"
+  ],
+  "reason_not_bought": "weight_mismatch",
+  "objections": [
+    {
+      "type": "weight",
+      "at": "00:23",
+      "quote": "she won't wear something that big",
+      "competitor_mentioned": true
+    },
+    {
+      "type": "design_not_available",
+      "at": "00:36",
+      "quote": "She already has a chain. We wanted a necklace."
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:09",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:23",
+      "who": "customer",
+      "emotion": "disappointed",
+      "cue": "words"
+    },
+    {
+      "at": "00:46",
+      "who": "customer",
+      "emotion": "frustrated",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> frustrated",
+  "handling_score": 1,
+  "coaching_tip": "When the family asks for a slim 25-30 g necklace, show necklaces in that weight first, and if none are on hand, offer to source one and take their number instead of switching to a chain or bangles.",
+  "lost_demand": true,
+  "flags": [
+    "competitor mention at 00:46 ('showroom in Shimla') follows the bangle offer; attributed to the weight objection as the main unmet ask",
+    "'chain with pendant' and 'bangles' were named but not shown with weights",
+    "salesperson said at 00:29 there is little variety in smaller pieces; stock not verified"
+  ]
+}

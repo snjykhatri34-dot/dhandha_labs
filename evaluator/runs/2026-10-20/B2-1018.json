@@ -1,0 +1,37 @@
+{
+  "visit_id": "B2-1018",
+  "store": "B2",
+  "salesperson": "Akshay",
+  "date": "2026-10-17",
+  "outcome": "bought",
+  "asked_for": {
+    "category": "ring",
+    "weight_band": "5-10",
+    "occasion": null,
+    "budget_inr": null
+  },
+  "shown": [
+    "ring 6.8 g"
+  ],
+  "reason_not_bought": null,
+  "objections": [],
+  "emotions": [
+    {
+      "at": "00:19",
+      "who": "customer",
+      "emotion": "satisfied",
+      "cue": "words"
+    },
+    {
+      "at": "00:36",
+      "who": "customer",
+      "emotion": "decided",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> satisfied",
+  "handling_score": 4,
+  "coaching_tip": "Once the customer says pack it up, suggest one matching add-on and take his number for an aftercare or resizing follow-up.",
+  "lost_demand": false,
+  "flags": []
+}

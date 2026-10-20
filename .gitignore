@@ -6,6 +6,7 @@ node_modules/
 __pycache__/
 .venv/
 .DS_Store
+.vercel/
 
 # next.js / node
 /coverage
@@ -13,7 +14,6 @@ __pycache__/
 /build
 *.tsbuildinfo
 next-env.d.ts
-.vercel
 *.pem
 npm-debug.log*
 

@@ -1,0 +1,59 @@
+{
+  "visit_id": "B2-1019",
+  "store": "B2",
+  "salesperson": "Rohit",
+  "date": "2026-10-17",
+  "outcome": "walked_out",
+  "asked_for": {
+    "category": "bangle",
+    "weight_band": null,
+    "occasion": null,
+    "budget_inr": null
+  },
+  "shown": [
+    "bangle"
+  ],
+  "reason_not_bought": "old_gold_exchange_rate",
+  "objections": [
+    {
+      "type": "old_gold_exchange_rate",
+      "at": "00:10",
+      "quote": "First tell me what rate you'll give for the old gold.",
+      "competitor_mentioned": true
+    },
+    {
+      "type": "purity_trust",
+      "at": "00:36",
+      "quote": "And do these new bangles have a HUID? Show me the hallmark."
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:10",
+      "who": "customer",
+      "emotion": "concerned",
+      "cue": "words"
+    },
+    {
+      "at": "00:28",
+      "who": "customer",
+      "emotion": "skeptical",
+      "cue": "words"
+    },
+    {
+      "at": "00:44",
+      "who": "customer",
+      "emotion": "hesitant",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "concerned -> hesitant",
+  "handling_score": 2,
+  "coaching_tip": "When a customer asks about the old-gold deduction, explain how the purity test and the usual deduction range work and offer to test the gold right there, rather than saying 'we'll only know after testing'.",
+  "lost_demand": false,
+  "flags": [
+    "no weight stated",
+    "shown bangles had no weight stated",
+    "outcome borderline: 'we'll think about it and come back' at 00:44 gives no date or concrete next step, scored walked_out"
+  ]
+}

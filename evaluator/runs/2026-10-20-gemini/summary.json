@@ -1,0 +1,37 @@
+{
+  "B2-1014": {
+    "provider": "gemini",
+    "problems": [],
+    "vs_label": {}
+  },
+  "B2-1016": {
+    "provider": "gemini",
+    "problems": [],
+    "vs_label": {}
+  },
+  "B2-1018": {
+    "provider": "gemini",
+    "problems": [],
+    "vs_label": {}
+  },
+  "B2-1015": {
+    "provider": "gemini",
+    "problems": [],
+    "vs_label": {}
+  },
+  "B2-1017": {
+    "provider": "gemini",
+    "problems": [],
+    "vs_label": {
+      "weight_band": {
+        "label": "80-90 g set",
+        "got": null
+      }
+    }
+  },
+  "B2-1019": {
+    "provider": "gemini",
+    "problems": [],
+    "vs_label": {}
+  }
+}
