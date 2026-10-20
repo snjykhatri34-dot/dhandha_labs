@@ -2,8 +2,10 @@
 
     python3 pipeline/evaluate.py                       # all of data/transcripts/
     python3 pipeline/evaluate.py --out evaluator/runs/x --provider gemini
+    python3 pipeline/evaluate.py --supabase            # also upsert clean scorecards into `visits`
 
 Each scorecard is validated against the SOP's hard rules; problems are listed in summary.json.
+With --supabase, only scorecards with no rule problems are written; the rest are listed for review.
 If hand labels exist in expected_outputs/visits/, the key fields are compared too.
 """
 import argparse
@@ -15,6 +17,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import llm  # noqa: E402
+import store  # noqa: E402
 from validate import validate  # noqa: E402
 
 ROOT = llm.ROOT
@@ -71,7 +74,10 @@ def main():
     ap.add_argument("--transcripts", default=str(ROOT / "data" / "transcripts"))
     ap.add_argument("--out", default=str(ROOT / "evaluator" / "runs" / datetime.date.today().isoformat()))
     ap.add_argument("--provider", choices=[p[0] for p in llm.PROVIDERS])
+    ap.add_argument("--supabase", action="store_true", help="upsert clean scorecards into the visits table")
     args = ap.parse_args()
+    if args.supabase and not store.configured():
+        sys.exit("--supabase needs SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY")
 
     paths = sorted(Path(args.transcripts).glob("*.txt"))
     out = Path(args.out)
@@ -94,6 +100,14 @@ def main():
             print(f"    - {p}")
     (out / "summary.json").write_text(json.dumps(summary, indent=2) + "\n")
     print(f"\nwrote {len(results)} scorecards to {out}")
+
+    if args.supabase:
+        clean = [card for _, card, _, problems in results if not problems]
+        held = [visit_id for visit_id, _, _, problems in results if problems]
+        if clean:
+            print("supabase: upserted", ", ".join(store.upsert_visits(clean)))
+        if held:
+            print("supabase: not written (rule problems, review first):", ", ".join(held))
 
 
 if __name__ == "__main__":
