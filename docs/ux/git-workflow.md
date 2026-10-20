@@ -9,7 +9,7 @@ There is **one shared repo and one `main`**. Everyone, both of us and Stream 2, 
 
 ## One-time setup
 
-1. The Stream 2 owner creates the GitHub repo, adds A and B as collaborators, and protects `main`: Settings → Branches → require a pull request before merging.
+1. Sanjay (Stream 2 owner) creates the GitHub repo, adds A and B as collaborators, and protects `main`: Settings → Branches → require a pull request before merging.
 2. Each of us runs:
 
 ```bash

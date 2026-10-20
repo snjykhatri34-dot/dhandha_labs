@@ -1,6 +1,6 @@
-# Person A build plan: upload flow and WhatsApp push
+# Person A (Ayse) build plan: upload flow and WhatsApp push
 
-Give Claude Code this file **and** `docs/ux-plan.md` (the master plan). This file decides who does what; the master plan decides how.
+Give Claude Code this file **and** `docs/ux-plan.md` (the master plan). Read `docs/ux/README.md` first: it records decisions that override the master plan. This file decides who does what; the master plan decides how.
 
 ## What you own
 
