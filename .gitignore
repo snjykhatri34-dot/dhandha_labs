@@ -6,3 +6,16 @@ node_modules/
 __pycache__/
 .venv/
 .DS_Store
+
+# next.js / node
+/coverage
+/out/
+/build
+*.tsbuildinfo
+next-env.d.ts
+.vercel
+*.pem
+npm-debug.log*
+
+# local uploads (mock ClipStore)
+/.uploads/
