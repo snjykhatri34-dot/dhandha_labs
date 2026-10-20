@@ -1,0 +1,48 @@
+{
+  "visit_id": "B2-1016",
+  "branch": "B2",
+  "salesperson": "Akshay",
+  "date": "2026-10-16",
+  "outcome": "walked_out",
+  "asked_for": {
+    "category": "necklace",
+    "weight_band": "20-35",
+    "occasion": "gift, daughter's new job"
+  },
+  "shown": [
+    "necklace set 58 g",
+    "chain with pendant",
+    "bangles (suggested)"
+  ],
+  "objections": [
+    {
+      "type": "weight",
+      "at": "00:23"
+    },
+    {
+      "type": "design_not_available",
+      "at": "00:36"
+    }
+  ],
+  "handling_score": 1,
+  "handling_evidence": "00:29 and 00:41 pushed unrelated categories instead of finding a light necklace; customer named a competitor showroom at 00:46",
+  "customer_sentiment_arc": "warm -> dismissive",
+  "lost_demand": true,
+  "coaching_tip": "Do not switch category when the ask is clear; take the number and promise a call when a 25-30 g piece arrives.",
+  "reason_not_bought": "weight_mismatch",
+  "emotions": [
+    {
+      "at": "00:23",
+      "who": "customer",
+      "emotion": "frustrated",
+      "cue": "words: 'she won't wear something that big'"
+    },
+    {
+      "at": "00:46",
+      "who": "customer",
+      "emotion": "dismissive",
+      "cue": "words: names a competitor showroom"
+    }
+  ],
+  "note": "Hand labels from the transcript only. With video, face/voice cues should add to 'emotions'."
+}

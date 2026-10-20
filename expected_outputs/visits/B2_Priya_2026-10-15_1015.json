@@ -1,0 +1,38 @@
+{
+  "visit_id": "B2-1015",
+  "branch": "B2",
+  "salesperson": "Priya",
+  "date": "2026-10-15",
+  "outcome": "bought",
+  "asked_for": {
+    "category": "earrings",
+    "weight_band": "8-15",
+    "occasion": "anniversary",
+    "budget_inr": 150000
+  },
+  "shown": [
+    "earrings 11.2 g",
+    "earrings 10 g"
+  ],
+  "objections": [
+    {
+      "type": "price_budget",
+      "at": "00:46"
+    }
+  ],
+  "handling_score": 5,
+  "handling_evidence": "00:31 transparent price breakup; 00:49 offered old-gold exchange and a lighter same-design option",
+  "customer_sentiment_arc": "positive -> positive",
+  "lost_demand": false,
+  "coaching_tip": "Model visit: use as the training example for the budget objection.",
+  "reason_not_bought": null,
+  "emotions": [
+    {
+      "at": "00:27",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words: 'Oh, I love this one!'"
+    }
+  ],
+  "note": "Hand labels from the transcript only. With video, face/voice cues should add to 'emotions'."
+}
