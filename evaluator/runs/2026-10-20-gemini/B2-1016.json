@@ -1,0 +1,115 @@
+{
+  "visit_id": "B2-1016",
+  "store": "B2",
+  "salesperson": "Akshay",
+  "date": "2026-10-16",
+  "outcome": "walked_out",
+  "asked_for": {
+    "category": "necklace",
+    "weight_band": "20-35",
+    "occasion": "new job gift",
+    "budget_inr": null
+  },
+  "shown": [
+    "necklace 58 g"
+  ],
+  "reason_not_bought": "weight_mismatch",
+  "objections": [
+    {
+      "type": "weight",
+      "at": "00:23",
+      "quote": "she won't wear something that big"
+    },
+    {
+      "type": "design_not_available",
+      "at": "00:36",
+      "quote": "We wanted a necklace"
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:09",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:23",
+      "who": "customer",
+      "emotion": "disappointed",
+      "cue": "words"
+    },
+    {
+      "at": "00:46",
+      "who": "customer",
+      "emotion": "frustrated",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> frustrated",
+  "handling_score": 1,
+  "coaching_tip": "When a requested light necklace is unavailable, offer to bring it from another branch or order it, and take their phone number instead of deflecting to other categories.",
+  "lost_demand": true,
+  "flags": [],
+  "customer": {
+    "party": "couple",
+    "decision_maker": "parents",
+    "intent": "high",
+    "intent_evidence": "00:09 specific ask for a 25-30 g slim necklace for daughter's new job"
+  },
+  "key_moments": [
+    {
+      "at": "00:17",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "showed a 58 g set after a 25-30 g slim necklace ask"
+    },
+    {
+      "at": "00:29",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "admitted low variety in smaller pieces and suggested a chain"
+    },
+    {
+      "at": "00:46",
+      "by": "customer",
+      "effect": "hurt",
+      "what": "decided to leave for the Shimla showroom after bangles pitch"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "00:23",
+      "what": "no lighter necklace shown after customer asked for something smaller"
+    },
+    {
+      "at": "00:29",
+      "what": "no offer to source it from another branch or order, and no number taken"
+    },
+    {
+      "at": "00:41",
+      "what": "switched categories to bangles instead of addressing the necklace request"
+    }
+  ],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": null,
+    "total_quoted_inr": null,
+    "breakup_given": false,
+    "notes": null
+  },
+  "not_available": [
+    {
+      "item": "necklace 20-35 g",
+      "at": "00:29",
+      "quote": "We don't have much variety in smaller pieces right now.",
+      "said_by": "salesperson",
+      "resolution": "none"
+    }
+  ],
+  "competitor": {
+    "named": "the showroom in Shimla",
+    "claim": null,
+    "at": "00:46"
+  }
+}

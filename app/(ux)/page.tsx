@@ -1,11 +1,12 @@
 import Link from "next/link";
 
 const STEPS = [
-  { href: "/upload", title: "1. Upload a counter clip", who: "Staff", note: "Store, salesperson, time and a 1–5 minute clip." },
-  { href: "/owner", title: "2. Read today's report", who: "Owner", note: "Why people bought or walked out, with one action per section." },
-  { href: "/manager/review", title: "3. Review scorecards", who: "Manager", note: "Approve before staff see them." },
-  { href: "/ux-debug", title: "Data layer check", who: "Dev", note: "Every visit the app can see." },
-];
+  { href: "/upload", title: "1. Upload a counter clip", who: "Staff", note: "Store, salesperson, time and a clip of up to 5 minutes." },
+  { href: "/owner#visits", title: "2. See the scorecard", who: "Owner", note: "Outcome, why, objections, emotions with cues, handling score and coaching." },
+  { href: "/manager/review", title: "3. Approve it", who: "Manager", note: "Scorecards reach staff only after a manager approves them." },
+  { href: "/owner", title: "4. Read the daily report", who: "Owner", note: "Why people bought or walked out, with one action per section." },
+  { href: "/staff", title: "5. Staff see their coaching", who: "Staff", note: "Approved scorecards only. Never the sole basis for pay." },
+]
 
 export default function Home() {
   return (

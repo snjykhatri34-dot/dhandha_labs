@@ -5,9 +5,16 @@
 
 import type {
   AskedFor,
+  Competitor,
+  CustomerProfile,
   DailyReportReference,
   EmotionCue,
+  KeyMoment,
+  MissedOpportunity,
+  NextStep,
+  NotAvailable,
   Objection,
+  PriceTalk,
   Outcome,
   ReasonNotBought,
   Store,
@@ -60,6 +67,15 @@ export interface Visit {
   competitorMentioned: boolean | null;
   valueInr: number | null;
   flags: string[];
+  // Optional nuance fields (schemas.md, 2026-10-20). Empty/null for older rows and the sample day.
+  customer: CustomerProfile | null;
+  keyMoments: KeyMoment[];
+  missedOpportunities: MissedOpportunity[];
+  nextStep: NextStep | null;
+  priceTalk: PriceTalk | null;
+  /** Stock gaps: what the customer wanted that we said we don't have. */
+  notAvailable: NotAvailable[];
+  competitor: Competitor | null;
   /** Error shown to the user when status is "failed". */
   error: string | null;
   // UX-owned (stored in ux_visit_reviews, not in `visits`)

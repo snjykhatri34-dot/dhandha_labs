@@ -1,0 +1,116 @@
+{
+  "visit_id": "B2-1014",
+  "store": "B2",
+  "salesperson": "Akshay",
+  "date": "2026-10-15",
+  "outcome": "walked_out",
+  "asked_for": {
+    "category": "necklace",
+    "weight_band": "20-35",
+    "occasion": "office wear",
+    "budget_inr": null
+  },
+  "shown": [
+    "necklace 52 g"
+  ],
+  "reason_not_bought": "weight_mismatch",
+  "objections": [
+    {
+      "type": "weight",
+      "at": "00:24",
+      "quote": "That's far too heavy."
+    },
+    {
+      "type": "price_making_charge",
+      "at": "00:38",
+      "quote": "What's the making charge on this?",
+      "competitor_mentioned": true
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:09",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:24",
+      "who": "customer",
+      "emotion": "disappointed",
+      "cue": "words"
+    },
+    {
+      "at": "00:44",
+      "who": "customer",
+      "emotion": "skeptical",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> skeptical",
+  "handling_score": 2,
+  "coaching_tip": "When the customer says 'far too heavy' and asks for around thirty grams, show a piece in her stated range or take her number to call when one arrives, rather than arguing that heavier pieces hold value.",
+  "lost_demand": true,
+  "flags": [
+    "making-charge objection dated from the 00:38 question; the pushback and competitor quote came at 00:44",
+    "salesperson said 'Maybe next week' at 01:02, but no time, callback or held piece was agreed, so outcome is walked_out"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "the customer",
+    "intent": "high",
+    "intent_evidence": "00:09 asked for a necklace for office wear, up to thirty-five grams"
+  },
+  "key_moments": [
+    {
+      "at": "00:16",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "showed a 52 g piece after a 35 g ask"
+    },
+    {
+      "at": "00:31",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "argued resale value instead of offering a lighter piece"
+    },
+    {
+      "at": "00:50",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "called the rate fixed instead of explaining it"
+    },
+    {
+      "at": "01:02",
+      "by": "salesperson",
+      "effect": "hurt",
+      "what": "said nothing in the 30 g range, offered no follow-up"
+    }
+  ],
+  "missed_opportunities": [
+    {
+      "at": "00:24",
+      "what": "no lighter piece offered after 'far too heavy'"
+    },
+    {
+      "at": "00:50",
+      "what": "no price breakup given against the competitor's 12% quote"
+    },
+    {
+      "at": "01:02",
+      "what": "no number taken to call when a 30 g piece arrives"
+    }
+  ],
+  "next_step": null,
+  "price_talk": {
+    "making_pct": 18,
+    "total_quoted_inr": null,
+    "breakup_given": false,
+    "notes": "rate called fixed at 00:50"
+  },
+  "competitor": {
+    "named": "another showroom",
+    "claim": "twelve percent making last week for something similar",
+    "at": "00:44"
+  }
+}

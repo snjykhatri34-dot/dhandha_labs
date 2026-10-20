@@ -1,0 +1,92 @@
+{
+  "visit_id": "B2-1017",
+  "store": "B2",
+  "salesperson": "Priya",
+  "date": "2026-10-16",
+  "outcome": "deferred_with_follow_up",
+  "asked_for": {
+    "category": "bridal set",
+    "weight_band": null,
+    "occasion": "wedding",
+    "budget_inr": null
+  },
+  "shown": [
+    "bridal set 84 g",
+    "bridal set 91 g"
+  ],
+  "reason_not_bought": "family_decision",
+  "objections": [
+    {
+      "type": "family_decision",
+      "at": "00:49",
+      "quote": "my daughter and her father need to see it"
+    }
+  ],
+  "emotions": [
+    {
+      "at": "00:08",
+      "who": "customer",
+      "emotion": "interested",
+      "cue": "words"
+    },
+    {
+      "at": "00:36",
+      "who": "customer",
+      "emotion": "delighted",
+      "cue": "words"
+    },
+    {
+      "at": "00:49",
+      "who": "customer",
+      "emotion": "reassured",
+      "cue": "words"
+    }
+  ],
+  "emotion_arc": "interested -> reassured",
+  "handling_score": 5,
+  "coaching_tip": "Keep doing what you did at 00:40 and 00:56: reassure on price with the gold rate lock and secure the return visit by holding the sets and taking contact details.",
+  "lost_demand": false,
+  "flags": [
+    "no band for bridal set; asked for 80-90 g"
+  ],
+  "customer": {
+    "party": "solo",
+    "decision_maker": "mother; daughter and father must approve",
+    "intent": "high",
+    "intent_evidence": "00:08 daughter getting married in February"
+  },
+  "key_moments": [
+    {
+      "at": "00:27",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "showed two pieces accurately matching the 80-90 g request"
+    },
+    {
+      "at": "00:40",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "offered gold rate lock on bridal booking to address price risk"
+    },
+    {
+      "at": "00:56",
+      "by": "salesperson",
+      "effect": "helped",
+      "what": "offered to hold both sets until Sunday and took contact number"
+    }
+  ],
+  "missed_opportunities": [],
+  "next_step": {
+    "what": "family visit; both sets held",
+    "when": "Sunday",
+    "who": "Priya"
+  },
+  "price_talk": {
+    "making_pct": 17,
+    "total_quoted_inr": null,
+    "breakup_given": false,
+    "notes": "gold rate locked for bridal at 00:40"
+  },
+  "not_available": [],
+  "competitor": null
+}

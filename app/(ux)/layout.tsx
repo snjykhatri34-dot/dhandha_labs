@@ -1,13 +1,7 @@
 import Link from "next/link";
 import { Suspense } from "react";
+import { NavLinks, NavLinksStatic } from "@/components/ux/shared/NavLinks";
 import { RoleSwitch } from "@/components/ux/shared/RoleSwitch";
-
-const NAV = [
-  { href: "/owner", label: "Owner" },
-  { href: "/upload", label: "Upload" },
-  { href: "/manager/review", label: "Review" },
-  { href: "/staff", label: "Staff" },
-];
 
 export default function UxLayout({ children }: LayoutProps<"/">) {
   return (
@@ -17,13 +11,9 @@ export default function UxLayout({ children }: LayoutProps<"/">) {
           <Link href="/owner" className="font-semibold tracking-tight">
             Counter Intelligence
           </Link>
-          <nav className="flex gap-3 text-sm text-muted">
-            {NAV.map((item) => (
-              <Link key={item.href} href={item.href} className="hover:text-ink">
-                {item.label}
-              </Link>
-            ))}
-          </nav>
+          <Suspense fallback={<NavLinksStatic />}>
+            <NavLinks />
+          </Suspense>
           <div className="ml-auto">
             <Suspense fallback={null}>
               <RoleSwitch />
