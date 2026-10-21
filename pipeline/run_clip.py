@@ -11,6 +11,8 @@ Does in one go what upload.py and evaluate.py --pending do separately, for this 
      with each turn's role and tone; the transcript is saved to `visit_transcripts`
   3. the SOP scores it; the scorecard goes to `visits.analysis`, status `analysed` (or `failed`)
   4. if analysed, the owner's WhatsApp text goes to `visit_messages`
+  5. if analysed, that day's report is rebuilt from all its scorecards and transcripts → `daily_reports`
+     (--no-report skips it)
 Then prints the transcript, the key scorecard fields and the message. Local copies land in --out.
 Exit code 1 if the visit ended `failed`.
 """
@@ -23,6 +25,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import evaluate  # noqa: E402
 import llm  # noqa: E402
+import report  # noqa: E402
 import upload  # noqa: E402
 
 
@@ -32,6 +35,7 @@ def main():
     ap.add_argument("--visit", help="a visit whose clip is already in Supabase, e.g. B2-1020 (no upload)")
     ap.add_argument("--out", default=str(llm.ROOT / "evaluator" / "runs" / datetime.date.today().isoformat()))
     ap.add_argument("--provider", choices=[p[0] for p in llm.PROVIDERS], help="provider for the SOP step")
+    ap.add_argument("--no-report", action="store_true", help="don't rebuild the day's report afterwards")
     args = ap.parse_args()
     upload_args = (args.clip, args.store, args.salesperson, args.at)
     if bool(args.visit) == any(upload_args + (args.visit_no,)) or (not args.visit and not all(upload_args)):
@@ -72,6 +76,12 @@ def main():
         sys.exit(1)
     print("4. owner message saved to visit_messages\n")
     print((out / f"{visit_id}.message.txt").read_text())
+    if not args.no_report and entry.get("date"):
+        print(f"5. daily report for {entry['date']}")
+        try:
+            report.report_for_date(entry["date"], args.provider, out / "report" / entry["date"])
+        except Exception as e:  # the visit is saved; the report job retries at closing
+            sys.exit(f"daily report {entry['date']} failed: {e}")
 
 
 def existing(visit_id):

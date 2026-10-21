@@ -1,5 +1,6 @@
 # Stream 2 pipeline on a schedule.
 # - pending: every uploaded clip → transcript → scorecard → visits row `analysed` / `failed`.
+#   Then the day's report is rebuilt from all its scorecards and transcripts → daily_reports (no email).
 #   Runs every 5 minutes, and straight away when the app dispatches it after an upload.
 # - report: at closing (21:37 IST), the day's report → daily_reports, then the app emails the owner.
 # Secrets (Settings → Secrets and variables → Actions): SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY,

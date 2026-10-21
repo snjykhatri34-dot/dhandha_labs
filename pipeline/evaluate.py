@@ -14,7 +14,9 @@ With --supabase, only scorecards with no rule problems are written; the rest are
 With --pending, the clip comes from the `recordings` bucket and everything goes back to Supabase: the transcript
 to `visit_transcripts` as soon as Gemini returns it, the scorecard to `visits.analysis`, and the owner message to
 `visit_messages`. A clean scorecard sets the visit to `analysed`; rule problems or errors set it to `failed`
-(no message then: a manager checks it first).
+(no message then: a manager checks it first). Then, for each day that got a new analysed clip, the daily report is
+rebuilt from all that day's scorecards and transcripts and saved to `daily_reports` (pipeline/report.py), which the
+app's owner email sends. --no-report skips that.
 If hand labels exist in expected_outputs/visits/, the key fields are compared too.
 """
 import argparse
@@ -30,6 +32,7 @@ from zoneinfo import ZoneInfo
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import llm  # noqa: E402
 import message  # noqa: E402
+import report  # noqa: E402
 import store  # noqa: E402
 import transcribe  # noqa: E402
 from validate import validate  # noqa: E402
@@ -143,6 +146,19 @@ def run_pending(args, out):
     print(f"{len(rows)} uploaded visit(s) waiting")
     summary = {row["id"]: process_visit(row, args.provider, out) for row in rows}
     (out / "summary.json").write_text(json.dumps(summary, indent=2) + "\n")
+    if args.no_report:
+        return
+    # Rebuild the daily report for every day that got a new analysed clip, from all that day's transcripts.
+    # The owner email (report job, /api/ux/notify) sends the saved report, so it is current when it goes.
+    failed = []
+    for date in sorted({e["date"] for e in summary.values() if e["status"] == "analysed" and e.get("date")}):
+        try:
+            report.report_for_date(date, args.provider, out / "report" / date)
+        except Exception as e:  # the clips are saved either way; the report job retries at closing
+            failed.append(date)
+            print(f"daily report {date} FAILED: {e}")
+    if failed:
+        sys.exit(f"daily report failed for {', '.join(failed)}")
 
 
 def process_visit(row, provider, out):
@@ -174,7 +190,7 @@ def process_visit(row, provider, out):
     status = "failed" if problems else "analysed"
     store.upsert_visits([card], status=status)
     (out / f"{visit_id}.json").write_text(json.dumps(card, indent=2, ensure_ascii=False) + "\n")
-    entry = {"provider": used, "problems": problems, "status": status}
+    entry = {"provider": used, "problems": problems, "status": status, "date": card.get("date") or date}
     if status == "analysed":
         text = message.visit_message(card, base_url())
         store.save_message(visit_id, text)
@@ -197,6 +213,8 @@ def main():
     ap.add_argument("--out", default=str(ROOT / "evaluator" / "runs" / datetime.date.today().isoformat()))
     ap.add_argument("--provider", choices=[p[0] for p in llm.PROVIDERS], help="provider for the SOP step")
     ap.add_argument("--supabase", action="store_true", help="upsert clean scorecards into the visits table")
+    ap.add_argument("--no-report", action="store_true",
+                    help="with --pending, don't rebuild the daily report for the days that got new clips")
     args = ap.parse_args()
     if (args.supabase or args.pending) and not store.configured():
         sys.exit("Supabase needs SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY")

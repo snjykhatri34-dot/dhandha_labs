@@ -81,6 +81,15 @@ def visits_for_date(date):
     return [r["analysis"] for r in json.loads(rows)]
 
 
+def transcripts_for(visit_ids):
+    """`visit_transcripts` rows (turns with role + tone, voice/face observations) for those visits, by visit id."""
+    if not visit_ids:
+        return {}
+    ids = ",".join(urllib.parse.quote(f'"{v}"') for v in visit_ids)
+    rows = _request("GET", f"/rest/v1/visit_transcripts?visit_id=in.({ids})&select=visit_id,turns,observations")
+    return {r["visit_id"]: r for r in json.loads(rows)}
+
+
 def upsert_report(date, numbers, markdown, actions, store_id="ALL"):
     """One `daily_reports` row per (date, store). A re-run updates it in place and keeps its id,
     so the UX's ux_notifications row (sent once per report id) still points at it."""

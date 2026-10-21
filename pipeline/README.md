@@ -21,7 +21,7 @@ The SOP still gets `[mm:ss] Speaker X: text` plus `observations`, so the tone la
 | `upload.py` | Puts a local clip into `recordings` and creates its `uploaded` visit with the web app's rules: bucket path with an upload stamp (`lib/storage/path.ts`) and the next visit id (`nextVisitId`). `--visit-no` picks the id instead; an existing id is refused unless `--replace`. |
 | `run_clip.py` | One clip, start to finish: upload (for a local file) or `--visit <id>` (already in Supabase), then everything `--pending` does for that visit, and prints the transcript, scorecard and message. The `evaluate-clip` skill (`.claude/skills/`) runs it. |
 | `validate.py` | The SOP's hard rules as code: fixed lists, exact quotes, real timestamps, arc = first→last emotion, lost_demand ⇔ reason, and every stock gap left unresolved has a matching missed opportunity. |
-| `report.py` | Computes the day's numbers (checked against `daily_report_reference.json`), checks stock in `data/mock_erp/`, drafts a transfer, then has the model write the one-page report and the owner WhatsApp. Writes `reports/<date>/`. |
+| `report.py` | Computes the day's numbers (checked against `daily_report_reference.json`), checks stock in `data/mock_erp/`, drafts a transfer, counts the customer's emotions from the day's transcripts (`customer_mood`), then has the model write the one-page report and the owner WhatsApp, quoting the transcripts. Writes `reports/<date>/`; with `--supabase`, also `daily_reports`. |
 
 ## Run
 
@@ -46,15 +46,28 @@ python3 pipeline/run_clip.py --visit B2-1020     # clip already in the bucket
 `--pending` for each `uploaded` visit: download the clip from `recordings` → transcribe → save to `visit_transcripts`
 (before scoring, so a scoring error doesn't lose it) → score → `visits.analysis` + status → if `analysed`, build the
 owner message and save it to `visit_messages`. A visit set to `failed` gets no message, and the reason goes in
-`analysis.error`; a manager checks it first.
+`analysis.error`; a manager checks it first. After the batch, each day that got a new `analysed` clip has its daily
+report rebuilt from all that day's scorecards and transcripts (`report.report_for_date`) and saved to `daily_reports`,
+so the report the owner email sends is always current. `--no-report` skips it.
 
 ## On a schedule
-`.github/workflows/pipeline.yml` runs `evaluate.py --pending` every 5 minutes and `report.py --supabase --notify` at 21:37 IST. Both can also be started by hand (Actions → pipeline → Run workflow). The app starts the pending job straight after an upload when `GITHUB_DISPATCH_TOKEN` and `GITHUB_PIPELINE_REPO` are set in Vercel; otherwise the next scheduled run picks the clip up. GitHub can delay scheduled runs by a few minutes when it's busy.
+`.github/workflows/pipeline.yml` runs `evaluate.py --pending` every 5 minutes (which also refreshes the day's report when new clips land) and `report.py --supabase --notify` at 21:37 IST (a final rebuild, then the owner email). Both can also be started by hand (Actions → pipeline → Run workflow). The app starts the pending job straight after an upload when `GITHUB_DISPATCH_TOKEN` and `GITHUB_PIPELINE_REPO` are set in Vercel; otherwise the next scheduled run picks the clip up. GitHub can delay scheduled runs by a few minutes when it's busy.
 
 Repo secrets: `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `GEMINI_API_KEY`, optional `ANTHROPIC_API_KEY`. Repo variables: `APP_BASE_URL` (the Vercel URL; without it the report is saved but not sent), optional `GEMINI_MODEL`.
 
 ## Daily report row
-`report.py --supabase` upserts one `daily_reports` row per date with `store = 'ALL'`: `numbers` (the reference shape plus the visit ids behind each number), `markdown` (the one-page report) and `actions` (one line per section: `headline`, `lostSales`, `lostDemand`, `storePattern`, `salespeople`, `busiestHours`, `followUps`). A re-run updates the row in place and keeps its id, so the owner's "sent once" record in `ux_notifications` still points at it.
+`report.py --supabase` upserts one `daily_reports` row per date with `store = 'ALL'`: `numbers` (the reference shape plus the visit ids behind each number), `markdown` (the one-page report, with a **Customer mood** section) and `actions` (one line per section: `headline`, `lostSales`, `lostDemand`, `storePattern`, `salespeople`, `customerMood`, `busiestHours`, `followUps`).
+
+`numbers.customer_mood` comes from the day's `visit_transcripts`: only the customer's voice/face cues (the speaker whose turns have role `customer`), counted by code. `emotions` counts every cue, `ended` each visit's last cue (how the customer left), with `emotion_ids` / `ended_ids` naming the visits, plus `transcripts` and `visits_with_cues`. For example:
+
+```json
+"customer_mood": {"transcripts": 3, "visits_with_cues": 3,
+  "emotions": [["hesitant", 4], ["skeptical", 3], ["delighted", 2], ["satisfied", 2], ["frustrated", 1]],
+  "ended": [["satisfied", 2], ["skeptical", 1]],
+  "emotion_ids": {"hesitant": ["B2-1107", "B2-1108"], "skeptical": ["B2-1106", "B2-1107", "B2-1108"],
+                  "delighted": ["B2-1107", "B2-1108"], "satisfied": ["B2-1107", "B2-1108"], "frustrated": ["B2-1106"]},
+  "ended_ids": {"satisfied": ["B2-1107", "B2-1108"], "skeptical": ["B2-1106"]}}
+``` A re-run updates the row in place and keeps its id, so the owner's "sent once" record in `ux_notifications` still points at it.
 
 Keys go in `.env` at the repo root (git-ignored) or in the environment. Names: `ANTHROPIC_API_KEY`, `GEMINI_API_KEY`, `GEMINI_MODEL`, `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `APP_BASE_URL` (optional, for the link in the message).
 
