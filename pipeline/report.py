@@ -19,6 +19,7 @@ import datetime
 import json
 import os
 import sys
+import urllib.error
 import urllib.request
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -198,8 +199,11 @@ def notify(date):
         raise SystemExit("--notify needs APP_BASE_URL (the deployed app)")
     req = urllib.request.Request(f"{base}/api/ux/notify", method="POST", data=json.dumps({"date": date}).encode(),
                                  headers={"Content-Type": "application/json"})
-    with urllib.request.urlopen(req, timeout=60) as resp:
-        reply = json.loads(resp.read())
+    try:
+        with urllib.request.urlopen(req, timeout=60) as resp:
+            reply = json.loads(resp.read())
+    except urllib.error.HTTPError as e:  # the report is saved; only the send failed
+        raise SystemExit(f"notify: HTTP {e.code}: {e.read()[:300].decode(errors='replace')}")
     print("notify:", reply.get("result") or reply.get("error"), reply.get("channel", ""))
 
 
