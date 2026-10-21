@@ -40,8 +40,8 @@ describe("validateClip", () => {
     expect(validateClip({ type: "video/mp4", sizeBytes: MB, durationSec: 60 })).toBeNull();
     expect(validateClip({ type: "video/mp4", sizeBytes: MB, durationSec: 300 })).toBeNull();
   });
-  it("rejects oversized files and unreadable durations", () => {
+  it("rejects oversized files; lets an unreadable duration through", () => {
     expect(validateClip({ type: "video/mp4", sizeBytes: 101 * MB, durationSec: 120 })).toMatch(/limit is 100 MB/);
-    expect(validateClip({ type: "video/mp4", sizeBytes: MB, durationSec: null })).toMatch(/Couldn't read/);
+    expect(validateClip({ type: "video/mp4", sizeBytes: MB, durationSec: null })).toBeNull();
   });
 });

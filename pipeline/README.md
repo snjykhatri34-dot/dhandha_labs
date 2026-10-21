@@ -41,7 +41,21 @@ python3 pipeline/report.py --supabase --notify           # today; then the app e
 # One clip, all through Supabase:
 python3 pipeline/run_clip.py clip.mp4 --store B2 --salesperson Akshay --at "2026-10-20 10:44"
 python3 pipeline/run_clip.py --visit B2-1020     # clip already in the bucket
+python3 pipeline/run_clip.py --visit B2-1020 --notify   # ...then the app emails the owner that visit (APP_BASE_URL)
 ```
+
+## Upload → analysis → owner email, straight away
+After an upload the app starts the pipeline for that visit at once, in one of two ways:
+
+| Where the app runs | Set | What happens |
+|---|---|---|
+| A machine with Python (`npm run dev` / `next start`, a laptop or server) | `PIPELINE_RUNNER=local` (+ the pipeline keys) | The app runs `run_clip.py --visit <id> --notify` in the background; output in `logs/pipeline/<id>.log` |
+| Vercel | `GITHUB_DISPATCH_TOKEN`, `GITHUB_PIPELINE_REPO` | The app dispatches the `pending` job; it runs `--pending --notify` when the repo variable `APP_BASE_URL` is set |
+
+Either way, once a visit is `analysed`, `/api/ux/notify/visit` emails the owner that visit's message (the
+`visit_messages` text) and stamps `sent_at`, so it goes once. A failed or dry-run send leaves `sent_at` empty
+for a retry. A `failed` visit sends nothing: a manager checks it first. If the Gemini model is out of quota
+(HTTP 429 with a long wait), `llm.py` tries `GEMINI_FALLBACK_MODELS` (default `gemini-3.6-flash`).
 
 `--pending` for each `uploaded` visit: download the clip from `recordings` → transcribe → save to `visit_transcripts`
 (before scoring, so a scoring error doesn't lose it) → score → `visits.analysis` + status → if `analysed`, build the
@@ -60,6 +74,10 @@ Keys go in `.env` at the repo root (git-ignored) or in the environment. Names: `
 
 ## Not done yet
 - The schedule hasn't run on GitHub yet: it needs the repo secrets above.
-- Tested end to end on the live project (21 Oct): the web upload form (with `DATA_SOURCE=supabase`) put a clip in `recordings` and created B2-1106 as `uploaded`; `--pending` scored it (transcript and owner message saved; outcome, reason and score match the B2-1014 label); `report.py --supabase --notify --date 2026-10-21` saved the report and the app's `/api/ux/notify` handled it. The send was a dry run (`NOTIFY_DRY_RUN=1`, no Gmail password here), which is stored as `dry_run` in `ux_notifications` and doesn't block the real email. The real Gmail send hasn't been tried.
+- Tested end to end through the browser on the live project (21 Oct, `PIPELINE_RUNNER=local`, `NOTIFY_DRY_RUN=1`):
+  the upload page put the B2-1014 test clip in `recordings` as B2-1112, the app started the pipeline at once, and
+  52 s later the visit was `analysed` (walked_out, weight_mismatch, 2/5, matching the label), with transcript and
+  message saved, the owner email sent as a dry run, and the scorecard on `/owner/visits/B2-1112` and the owner page.
+- Earlier end-to-end test on the live project (21 Oct): the web upload form (with `DATA_SOURCE=supabase`) put a clip in `recordings` and created B2-1106 as `uploaded`; `--pending` scored it (transcript and owner message saved; outcome, reason and score match the B2-1014 label); `report.py --supabase --notify --date 2026-10-21` saved the report and the app's `/api/ux/notify` handled it. The send was a dry run (`NOTIFY_DRY_RUN=1`, no Gmail password here), which is stored as `dry_run` in `ux_notifications` and doesn't block the real email. The real Gmail send hasn't been tried.
 - `data/recordings/B2_Akshay_2026-10-15_1014.mp4` is a synthetic test clip: the B2-1014 transcript read by Gemini text-to-speech over a grey picture (so expect a "camera" flag and no face cues). Tested end to end: `evaluator/runs/2026-10-20-clip/`. A real phone recording of the same script went through `--clips` (`gemini-3.6-flash` + Claude): every turn got a role and tone, rules clean, and outcome, reason and score match the B2-1014 label.
 - Sending the per-visit WhatsApp messages waiting in `visit_messages` (`sent_at` is null until sent). The daily report email is sent by the app (`--notify`).

@@ -2,6 +2,9 @@
 // Row shapes are mapped to UX types in ./mapping.ts.
 import "server-only";
 
+import { spawn } from "node:child_process";
+import { mkdirSync, openSync } from "node:fs";
+import path from "node:path";
 import { buildDailyReport } from "@/lib/data/report";
 import type { DailyReport, DataLayer, Visit } from "@/lib/data/types";
 import { byNewest, matchesFilter, nextVisitId } from "@/lib/data/visit-list";
@@ -97,6 +100,9 @@ export const supabaseDataLayer: DataLayer = {
   },
   analyser: {
     async analyse(visitId) {
+      // PIPELINE_RUNNER=local: the app's own machine has Python and the pipeline keys, so score this clip
+      // now and email the owner (run_clip.py --notify). Not for Vercel, which can't run Python.
+      if (process.env.PIPELINE_RUNNER === "local") return runLocally(visitId);
       // Stream 2's pipeline (.github/workflows/pipeline.yml) picks up every `uploaded` visit every
       // 5 minutes and sets it to `analysed` or `failed`. With a token set, start it now instead.
       // A failed dispatch only means the clip waits for the next scheduled run.
@@ -120,3 +126,20 @@ export const supabaseDataLayer: DataLayer = {
     },
   },
 };
+
+/** Starts `run_clip.py --visit <id> --notify` in the background; its output goes to logs/pipeline/<id>.log. */
+function runLocally(visitId: string) {
+  const root = process.cwd();
+  const logDir = path.join(root, "logs", "pipeline");
+  mkdirSync(logDir, { recursive: true });
+  const log = openSync(path.join(logDir, `${visitId}.log`), "a");
+  const child = spawn(process.env.PIPELINE_PYTHON ?? "python3", ["pipeline/run_clip.py", "--visit", visitId, "--notify", "--out", path.join(logDir, "runs")], {
+    cwd: root,
+    detached: true,
+    stdio: ["ignore", log, log],
+    env: { ...process.env, APP_BASE_URL: process.env.APP_BASE_URL ?? "http://localhost:3000" },
+  });
+  child.on("error", (e) => console.error("[ux/analyse] couldn't start the local pipeline", visitId, e));
+  child.unref();
+  console.info("[ux/analyse] local pipeline started", visitId, `logs/pipeline/${visitId}.log`);
+}

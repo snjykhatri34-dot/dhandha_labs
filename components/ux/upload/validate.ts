@@ -56,9 +56,9 @@ export function validateClip(clip: ClipInfo | null): string | null {
   if (clip.sizeBytes > MAX_FILE_MB * 1024 * 1024) {
     return `The clip is ${formatMb(clip.sizeBytes)}. The limit is ${MAX_FILE_MB} MB.`;
   }
-  if (clip.durationSec === null || !Number.isFinite(clip.durationSec)) {
-    return "Couldn't read the clip's length. Try another file or format.";
-  }
+  // Some browsers can't decode every codec (e.g. Chromium without H.264, or iPhone HEVC .mov), so the length
+  // may be unreadable even for a good clip. Type and size are checked; let it through and Gemini reads it.
+  if (clip.durationSec === null || !Number.isFinite(clip.durationSec)) return null;
   // No minimum length; a zero-length clip is empty or broken.
   if (clip.durationSec <= 0) return "The clip is empty. Try another file.";
   if (clip.durationSec > MAX_DURATION_SEC) return `The clip is ${formatDuration(clip.durationSec)}. It must be 5 minutes or less.`;

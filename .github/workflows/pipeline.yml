@@ -49,7 +49,8 @@ jobs:
           python-version: "3.12"
       - run: pip install anthropic
         if: env.ANTHROPIC_API_KEY != ''
-      - run: python3 pipeline/evaluate.py --pending --out "$RUNNER_TEMP/runs"
+      # With APP_BASE_URL set, the app emails the owner each visit as soon as it is analysed.
+      - run: python3 pipeline/evaluate.py --pending --out "$RUNNER_TEMP/runs" ${APP_BASE_URL:+--notify}
 
   report:
     if: (github.event_name == 'schedule' && github.event.schedule == '7 16 * * *') || inputs.job == 'report'

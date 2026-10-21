@@ -5,6 +5,7 @@
     python3 pipeline/evaluate.py --supabase            # also upsert clean scorecards into `visits`
     python3 pipeline/evaluate.py --clips data/recordings   # video/audio: Gemini transcribes, then the SOP
     python3 pipeline/evaluate.py --pending             # every `uploaded` visit in Supabase, end to end
+    python3 pipeline/evaluate.py --pending --notify    # ...and email the owner each analysed visit (APP_BASE_URL)
 
 Clips go through pipeline/transcribe.py first (Gemini: transcript with each turn's role and tone, plus voice/face
 cues), and the cues are passed to the SOP as `observations`. The transcript and cues are saved next to each
@@ -23,6 +24,8 @@ import json
 import os
 import sys
 import tempfile
+import urllib.error
+import urllib.request
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -141,12 +144,14 @@ def run_pending(args, out):
     """Every `uploaded` visit in Supabase: download the clip, transcribe, score, write back, build the message."""
     rows = store.pending_visits()
     print(f"{len(rows)} uploaded visit(s) waiting")
-    summary = {row["id"]: process_visit(row, args.provider, out) for row in rows}
+    summary = {row["id"]: process_visit(row, args.provider, out, notify=args.notify) for row in rows}
     (out / "summary.json").write_text(json.dumps(summary, indent=2) + "\n")
 
 
-def process_visit(row, provider, out):
+def process_visit(row, provider, out, notify=False):
     """One `uploaded` visit row, end to end; everything goes back to Supabase. Returns its summary entry.
+
+    With notify, an analysed visit's message is then sent to the owner by the app (notify_visit).
 
     Never raises for a bad clip: the visit is set to `failed` instead, so it doesn't stay `uploaded`.
     """
@@ -180,8 +185,36 @@ def process_visit(row, provider, out):
         store.save_message(visit_id, text)
         (out / f"{visit_id}.message.txt").write_text(text + "\n")
         entry["message"] = "saved"
+        if notify:
+            entry["notify"] = notify_visit(visit_id)
     print(f"{visit_id}  [{used}]  {status}" + (f" ({len(problems)} rule problem(s))" if problems else ""))
     return entry
+
+
+def notify_visit(visit_id):
+    """Ask the app to email the owner this visit's message (/api/ux/notify/visit; it sends at most once).
+
+    Never raises: the scorecard is saved either way, and the result goes in the summary.
+    """
+    base = (base_url() or "").rstrip("/")
+    if not base:
+        print(f"{visit_id}  notify skipped: APP_BASE_URL is not set")
+        return "skipped: APP_BASE_URL not set"
+    req = urllib.request.Request(f"{base}/api/ux/notify/visit", method="POST",
+                                 data=json.dumps({"visitId": visit_id}).encode(),
+                                 headers={"Content-Type": "application/json"})
+    try:
+        with urllib.request.urlopen(req, timeout=60) as resp:
+            reply = json.loads(resp.read())
+        result = reply.get("result") or reply.get("error")
+        if reply.get("error"):
+            result = f"{result}: {reply['error']}"
+    except urllib.error.HTTPError as e:
+        result = f"HTTP {e.code}: {e.read()[:300].decode(errors='replace')}"
+    except (urllib.error.URLError, TimeoutError, ValueError) as e:
+        result = f"couldn't reach the app: {e}"
+    print(f"{visit_id}  notify: {result}")
+    return result
 
 
 def base_url():
@@ -197,6 +230,8 @@ def main():
     ap.add_argument("--out", default=str(ROOT / "evaluator" / "runs" / datetime.date.today().isoformat()))
     ap.add_argument("--provider", choices=[p[0] for p in llm.PROVIDERS], help="provider for the SOP step")
     ap.add_argument("--supabase", action="store_true", help="upsert clean scorecards into the visits table")
+    ap.add_argument("--notify", action="store_true",
+                    help="with --pending: email the owner each analysed visit through the app (needs APP_BASE_URL)")
     args = ap.parse_args()
     if (args.supabase or args.pending) and not store.configured():
         sys.exit("Supabase needs SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY")

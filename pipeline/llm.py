@@ -13,6 +13,7 @@ import json
 import os
 import shutil
 import subprocess
+import sys
 import tempfile
 import time
 import urllib.error
@@ -24,6 +25,10 @@ CLAUDE_MODEL = "claude-opus-5-5"
 # gemini-2.5-pro returns 404 for new keys (Oct 2026). Pro models need a billed key; the free tier gets
 # gemini-3.8-flash. Override with GEMINI_MODEL (env or .env), e.g. gemini-3.1-pro-preview once billing is on.
 GEMINI_DEFAULT = "gemini-3.8-flash"
+# When the model's quota is used up (free tier: 20 requests a day per model), try these next, in order.
+# Override with GEMINI_FALLBACK_MODELS (comma-separated; empty = no fallback).
+GEMINI_FALLBACK_DEFAULT = "gemini-3.6-flash"
+_gemini_used = None  # the model that last answered, for the record (visit_transcripts.model)
 
 
 def load_env(path=ROOT / ".env"):
@@ -90,10 +95,31 @@ INLINE_MAX_BYTES = 70 * 1024 * 1024
 
 
 def _gemini(system, user, media_part=None):
+    """Ask the configured model; if its quota is used up, the fallback models in turn."""
+    global _gemini_used
     key = os.environ.get("GEMINI_API_KEY")
     if not key:
         raise LLMError("GEMINI_API_KEY not set")
-    model = gemini_model()
+    configured = os.environ.get("GEMINI_MODEL") or GEMINI_DEFAULT
+    fallbacks = os.environ.get("GEMINI_FALLBACK_MODELS", GEMINI_FALLBACK_DEFAULT)
+    models = list(dict.fromkeys([configured] + [m.strip() for m in fallbacks.split(",") if m.strip()]))
+    for i, model in enumerate(models):
+        try:
+            text = _gemini_once(key, model, system, user, media_part)
+        except GeminiQuotaError as e:
+            if i == len(models) - 1:
+                raise
+            print(f"gemini: {e}; trying {models[i + 1]}", file=sys.stderr)
+            continue
+        _gemini_used = model
+        return text
+
+
+class GeminiQuotaError(LLMError):
+    """A 429 that asks for a long wait (daily or zero quota): another model may still have quota."""
+
+
+def _gemini_once(key, model, system, user, media_part):
     url = f"{GEMINI_API}/v1beta/models/{model}:generateContent"
     parts = ([media_part] if media_part else []) + [{"text": user}]
     body = {
@@ -116,7 +142,8 @@ def _gemini(system, user, media_part=None):
             # (e.g. a daily or zero quota) is not, so fail fast on it.
             delay = _gemini_retry_delay(e.code, detail, attempt)
             if delay is None or attempt == 3:
-                raise LLMError(f"Gemini {model} HTTP {e.code}: {detail[:300]!r}") from e
+                error = GeminiQuotaError if e.code == 429 else LLMError
+                raise error(f"Gemini {model} HTTP {e.code}: {detail[:300]!r}") from e
             time.sleep(delay)
     try:
         candidate = data["candidates"][0]
@@ -129,8 +156,9 @@ def _gemini(system, user, media_part=None):
 
 
 def gemini_model():
-    # Read at call time so a GEMINI_MODEL in .env (loaded by complete()) is honoured.
-    return os.environ.get("GEMINI_MODEL") or GEMINI_DEFAULT
+    # The model that last answered (a fallback, if the configured one was out of quota). Otherwise read at
+    # call time so a GEMINI_MODEL in .env (loaded by complete()) is honoured.
+    return _gemini_used or os.environ.get("GEMINI_MODEL") or GEMINI_DEFAULT
 
 
 def _gemini_retry_delay(code, detail, attempt):

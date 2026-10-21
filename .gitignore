@@ -19,3 +19,6 @@ npm-debug.log*
 
 # local uploads (mock ClipStore)
 /.uploads/
+
+# local pipeline runs started by the app (PIPELINE_RUNNER=local)
+/logs/
