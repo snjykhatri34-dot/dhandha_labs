@@ -1,6 +1,7 @@
 // Pure: DailyReport → what the owner report renders. Every number traces to report.numbers.
 import type { DailyReport } from "@/lib/data/types";
 import { formatDate, formatInr, hourLabel, reasonLabel } from "@/lib/ux/format";
+import { plainAction } from "@/lib/ux/plain";
 
 export interface ReportRow {
   label: string;
@@ -23,6 +24,8 @@ export interface ReportSectionView {
 export interface ReportView {
   title: string;
   headline: string;
+  /** The day's top action, under the headline. */
+  topAction?: string;
   kpis: { label: string; value: string; sub?: string }[];
   sections: ReportSectionView[];
 }
@@ -39,6 +42,8 @@ export function toReportView(report: DailyReport): ReportView {
     `${n.visits} customers came to the counter and ${n.bought} bought (${n.conversion_pct}%), worth about ${formatInr(n.sales_value_inr)}.` +
     (topReason ? ` The most common reason for not buying: ${reasonLabel(topReason[0]).toLowerCase()} (${topReason[1]} visits).` : "");
 
+  const act = (a?: string) => (a ? plainAction(a) : undefined);
+
   const sections: ReportSectionView[] = [
     {
       key: "lostSales",
@@ -49,7 +54,7 @@ export function toReportView(report: DailyReport): ReportView {
         value: String(count),
         share: count / maxReason,
       })),
-      action: report.actions.lostSales,
+      action: act(report.actions.lostSales),
     },
     {
       key: "lostDemand",
@@ -57,7 +62,7 @@ export function toReportView(report: DailyReport): ReportView {
       summary: hot
         ? `At store ${hot.store}, ${hot.asks} customers asked for ${hot.weightBand.replace("-", "–")} g ${hot.category}s and ${hot.lost} left without buying.`
         : "Nobody left because we didn't have what they wanted.",
-      action: report.actions.lostDemand,
+      action: act(report.actions.lostDemand),
     },
     {
       key: "storePattern",
@@ -71,7 +76,7 @@ export function toReportView(report: DailyReport): ReportView {
         share: visits ? bought / visits : 0,
         note: `${Math.round((bought / visits) * 100)}%`,
       })),
-      action: report.actions.storePattern,
+      action: act(report.actions.storePattern),
     },
     {
       key: "salespeople",
@@ -83,7 +88,7 @@ export function toReportView(report: DailyReport): ReportView {
         share: visits ? bought / visits : 0,
         note: `${Math.round((bought / visits) * 100)}%`,
       })),
-      action: report.actions.salespeople,
+      action: act(report.actions.salespeople),
     },
     {
       key: "busiestHours",
@@ -93,20 +98,21 @@ export function toReportView(report: DailyReport): ReportView {
         value: `${visits} visits`,
         share: visits / (n.busiest_hours[0]?.[1] || 1),
       })),
-      action: report.actions.busiestHours,
+      action: act(report.actions.busiestHours),
     },
     {
       key: "followUps",
       title: "Customers to call back",
       summary: `${n.follow_ups_due} customers said they'd decide later.`,
       visitIds: report.followUpVisitIds,
-      action: report.actions.followUps,
+      action: act(report.actions.followUps),
     },
   ];
 
   return {
     title: `Daily report · ${formatDate(report.date)}${report.store ? ` · ${report.store}` : " · all stores"}`,
     headline,
+    topAction: act(report.actions.headline),
     kpis: [
       { label: "Visits", value: String(n.visits) },
       { label: "Bought", value: `${n.conversion_pct}%`, sub: `${n.bought} of ${n.visits}` },

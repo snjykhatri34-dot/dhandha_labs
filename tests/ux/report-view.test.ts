@@ -13,6 +13,7 @@ describe("owner report view shows the reference numbers", () => {
     expect(view.headline).toBe(
       "102 customers came to the counter and 42 bought (41%), worth about ₹1.19 crore. The most common reason for not buying: weight mismatch (16 visits).",
     );
+    expect(view.topAction).toBe("Fix weight mismatch first (16 visits).");
     expect(view.kpis.map((k) => k.value)).toEqual(["102", "41%", "₹1.19 crore"]);
     expect(view.title).toBe("Daily report · Sat 17 Oct 2026 · all stores");
   });

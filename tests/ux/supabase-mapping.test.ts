@@ -77,3 +77,43 @@ describe("Supabase row mapping", () => {
     expect(storeLocal("2026-10-17T20:00:00Z")).toEqual({ date: "2026-10-18", time: "01:30" });
   });
 });
+
+describe("Stream 2 report actions", () => {
+  // Same layout as pipeline/report.py writes to daily_reports.markdown.
+  const markdown = [
+    "**Headline**",
+    "",
+    "2026-10-17: 102 visits, 42 bought.",
+    "",
+    "→ Approve the draft transfer into B2 today.",
+    "",
+    "**Lost sales and why**",
+    "| Reason | Visits |",
+    "→ Give a full price breakup, the way it was done in B2-1015 @00:31.",
+    "**Lost demand**",
+    "→ Offer to bring it from another branch.",
+    "→ A second arrow line is ignored.",
+    "**Salespeople**",
+    "→ Pair Akshay with Priya today.",
+    "**Follow-ups due**",
+    "→ Call all 23 today.",
+    "**Sources**",
+    "→ not an action section",
+  ].join("\n");
+
+  it("takes the first action line of each known section", async () => {
+    const { actionsFromMarkdown } = await import("@/lib/data/supabase/mapping");
+    expect(actionsFromMarkdown(markdown)).toEqual({
+      headline: "Approve the draft transfer into B2 today.",
+      lostSales: "Give a full price breakup, the way it was done in B2-1015 @00:31.",
+      lostDemand: "Offer to bring it from another branch.",
+      salespeople: "Pair Akshay with Priya today.",
+      followUps: "Call all 23 today.",
+    });
+  });
+
+  it("reads clip moments in plain words", async () => {
+    const { plainAction } = await import("@/lib/ux/plain");
+    expect(plainAction("the way it was done in B2-1015 @00:31.")).toBe("the way it was done in B2-1015 at 0:31.");
+  });
+});
