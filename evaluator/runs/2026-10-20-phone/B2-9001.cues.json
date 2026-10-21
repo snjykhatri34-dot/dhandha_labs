@@ -1,0 +1,15 @@
+{
+  "observations": [
+    {
+      "at": "00:55",
+      "who": "Speaker B",
+      "cue_type": "voice",
+      "description": "sighs softly before speaking",
+      "candidate_emotion": "disappointed",
+      "confidence": "medium"
+    }
+  ],
+  "flags": [
+    "speaker off camera"
+  ]
+}

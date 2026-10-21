@@ -221,7 +221,7 @@
     {
       "store": "B1",
       "category": "bridal set",
-      "weight_band": "80-120",
+      "weight_band": null,
       "asks": 8,
       "lost": 1,
       "lost_ids": [
