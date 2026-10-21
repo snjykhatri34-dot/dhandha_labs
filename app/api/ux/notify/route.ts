@@ -44,12 +44,14 @@ export async function POST(req: NextRequest) {
   if (!report) return NextResponse.json<NotifyResponse>({ ok: false, error: "No report found." }, { status: 404 });
 
   // 1. Insert the row first. If it already exists and wasn't a failure, don't send again.
+  // A dry run only blocks another dry run, so testing never stops the owner's real message.
+  const dryRun = process.env.NOTIFY_DRY_RUN === "1";
   let row: NotificationRow | null;
   try {
     row = await notificationLog.claim(report.id, channel);
     if (!row) {
       const existing = await notificationLog.get(report.id);
-      if (existing && existing.status !== "failed") {
+      if (existing && existing.status !== "failed" && !(existing.status === "dry_run" && !dryRun)) {
         console.info("[notify] skip, already", existing.status, report.id);
         return NextResponse.json<NotifyResponse>({ ok: true, result: "already_sent", channel, reportId: report.id, row: existing });
       }
@@ -65,7 +67,7 @@ export async function POST(req: NextRequest) {
   const text = formatReportSummary(report, baseUrl);
   try {
     const { id } = await notifier.sendReport(to, text);
-    await notificationLog.update(report.id, { status: "sent", sent_at: new Date().toISOString(), error: null });
+    await notificationLog.update(report.id, dryRun ? { status: "dry_run", error: null } : { status: "sent", sent_at: new Date().toISOString(), error: null });
     console.info("[notify] sent", { channel, reportId: report.id, messageId: id });
     return NextResponse.json<NotifyResponse>({
       ok: true,

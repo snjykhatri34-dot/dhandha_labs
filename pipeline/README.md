@@ -60,6 +60,6 @@ Keys go in `.env` at the repo root (git-ignored) or in the environment. Names: `
 
 ## Not done yet
 - The schedule hasn't run on GitHub yet: it needs the repo secrets above.
-- `--pending` with transcripts and messages, and `upload.py`, haven't run against the live project end to end yet (no clip has been uploaded since). The tables exist on the live project.
+- Tested end to end on the live project (21 Oct): the web upload form (with `DATA_SOURCE=supabase`) put a clip in `recordings` and created B2-1106 as `uploaded`; `--pending` scored it (transcript and owner message saved; outcome, reason and score match the B2-1014 label); `report.py --supabase --notify --date 2026-10-21` saved the report and the app's `/api/ux/notify` handled it. The send was a dry run (`NOTIFY_DRY_RUN=1`, no Gmail password here), which is stored as `dry_run` in `ux_notifications` and doesn't block the real email. The real Gmail send hasn't been tried.
 - `data/recordings/B2_Akshay_2026-10-15_1014.mp4` is a synthetic test clip: the B2-1014 transcript read by Gemini text-to-speech over a grey picture (so expect a "camera" flag and no face cues). Tested end to end: `evaluator/runs/2026-10-20-clip/`. A real phone recording of the same script went through `--clips` (`gemini-3.6-flash` + Claude): every turn got a role and tone, rules clean, and outcome, reason and score match the B2-1014 label.
 - Sending the per-visit WhatsApp messages waiting in `visit_messages` (`sent_at` is null until sent). The daily report email is sent by the app (`--notify`).

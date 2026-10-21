@@ -3,7 +3,8 @@
 import "server-only";
 import { eq, rest } from "@/lib/data/supabase/rest";
 
-export type NotificationStatus = "pending" | "sent" | "failed";
+// dry_run: logged with NOTIFY_DRY_RUN=1, nothing went out. A real send still goes ahead.
+export type NotificationStatus = "pending" | "sent" | "failed" | "dry_run";
 
 export interface NotificationRow {
   report_id: string;
