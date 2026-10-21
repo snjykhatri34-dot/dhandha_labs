@@ -56,6 +56,11 @@ export function DailyReportView({ view, sourceCount }: { view: ReportView; sourc
       <header>
         <p className="text-xs uppercase tracking-wide text-muted">{view.title}</p>
         <p className="mt-1 text-lg font-medium leading-snug">{view.headline}</p>
+        {view.topAction && (
+          <p className="mt-3 rounded-xl bg-ink px-3 py-2.5 text-sm font-medium text-paper">
+            <span className="mr-1 text-xs uppercase tracking-wide opacity-70">Today</span> {view.topAction}
+          </p>
+        )}
       </header>
       <dl className="grid grid-cols-3 gap-2">
         {view.kpis.map((k) => (

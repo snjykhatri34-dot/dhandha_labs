@@ -5,7 +5,7 @@ import "server-only";
 import { buildDailyReport } from "@/lib/data/report";
 import type { DailyReport, DataLayer, Visit } from "@/lib/data/types";
 import { byNewest, matchesFilter, nextVisitId } from "@/lib/data/visit-list";
-import { rowToVisit, type DailyReportDbRow, type ReviewDbRow, type VisitDbRow } from "./mapping";
+import { actionsFromMarkdown, rowToVisit, type DailyReportDbRow, type ReviewDbRow, type VisitDbRow } from "./mapping";
 import { eq, rest } from "./rest";
 
 async function loadVisits(): Promise<Visit[]> {
@@ -34,7 +34,15 @@ async function reportFor(date: string, all: Visit[]): Promise<DailyReport | null
   if (!row && dayVisits.length === 0) return null;
   const computed = buildDailyReport(date, dayVisits, row?.created_at ?? new Date().toISOString());
   if (!row) return computed;
-  return { ...computed, id: row.id, source: "stream2", numbers: row.numbers, generatedAt: row.created_at };
+  return {
+    ...computed,
+    id: row.id,
+    source: "stream2",
+    // Stream 2's numbers win; their markdown's action lines replace the app's short ones.
+    numbers: { ...computed.numbers, ...row.numbers },
+    actions: { ...computed.actions, ...actionsFromMarkdown(row.markdown) },
+    generatedAt: row.created_at,
+  };
 }
 
 async function reportDates(all: Visit[]): Promise<string[]> {

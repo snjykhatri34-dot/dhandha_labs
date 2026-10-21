@@ -1,7 +1,7 @@
 // Maps Stream 2's tables (supabase/migrations) to the UX types. All schema differences are
 // absorbed here, never in components.
 import { analysisFields, NO_ANALYSIS, type ScorecardJson } from "@/lib/data/normalise";
-import type { Review, Visit } from "@/lib/data/types";
+import type { DailyReport, ReportSection, Review, Visit } from "@/lib/data/types";
 import type { DailyReportReference, Store, VisitStatus } from "@/lib/types/scorecard";
 
 /** Stores are in India; recorded_at is stored in UTC. */
@@ -75,4 +75,31 @@ export function rowToVisit(row: VisitDbRow, review?: ReviewDbRow): Visit {
     error: row.status === "failed" ? (a?.error ?? "Analysis failed. Stream 2's pipeline didn't record why.") : null,
     review: reviewFromRow(review),
   };
+}
+
+// pipeline/report.py writes one "→ action" line at the end of each **Section** of the markdown.
+const SECTION_KEYS: Record<string, ReportSection> = {
+  headline: "headline",
+  "lost sales and why": "lostSales",
+  "lost demand": "lostDemand",
+  "store pattern": "storePattern",
+  salespeople: "salespeople",
+  "busiest hours": "busiestHours",
+  "follow-ups due": "followUps",
+};
+
+/** The action line of each section in Stream 2's saved report. Unknown sections are ignored. */
+export function actionsFromMarkdown(markdown: string): DailyReport["actions"] {
+  const actions: DailyReport["actions"] = {};
+  let section: ReportSection | undefined;
+  for (const raw of markdown.split("\n")) {
+    const line = raw.trim();
+    const heading = line.match(/^\*\*(.+?)\*\*$/);
+    if (heading) {
+      section = SECTION_KEYS[heading[1].trim().toLowerCase()];
+    } else if (section && line.startsWith("→") && !actions[section]) {
+      actions[section] = line.replace(/^→\s*/, "");
+    }
+  }
+  return actions;
 }

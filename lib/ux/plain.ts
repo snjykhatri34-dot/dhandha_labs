@@ -58,6 +58,9 @@ export const moodText = (arc: string) =>
     .map((m) => sentence(words(m)))
     .join(" → ");
 
+/** Action lines cite moments as "B2-1015 @00:31": read that as "B2-1015 at 0:31". */
+export const plainAction = (text: string) => text.replace(/@(\d\d:\d\d)/g, (_, t: string) => `at ${clipTime(t)}`);
+
 /** "00:24" → "0:24" (minutes into the clip) */
 export const clipTime = (at: string) => at.replace(/^0(\d:)/, "$1");
 
