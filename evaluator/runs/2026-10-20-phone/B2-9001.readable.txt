@@ -1,0 +1,13 @@
+[00:01] Salesperson: (Welcoming, courteous, and attentive) Good afternoon ma'am, please have a seat. What can I show you?
+[00:07] Customer: (Pleasant, hopeful, and clearly specifying) I'm looking for a light necklace, something I can wear to office, up to 30 35 grams.
+[00:14] Salesperson: (Enthusiastic, proud, and subtly upselling) Ma'am, have a look at this. It's our latest design from our Diwali collection, 52 grams.
+[00:22] Customer: (Taken aback, overwhelmed, and firm in rejection) That's far too heavy! I'll wear it every day, I don't want something this big.
+[00:27] Salesperson: (Persuasive, reassuring, and value-focused) Heavier pieces hold their value ma'am. You get a good price if you ever sell.
+[00:32] Customer: (Curious, skeptical, and probing) Hmm, what's the making charge on this?
+[00:35] Salesperson: (Direct, neutral, and matter-of-fact) 18% ma'am.
+[00:38] Customer: (Surprised, critical, and bargaining) 18? Another showroom quoted me 12% last week for something similar.
+[00:44] Salesperson: (Defensive, firm, and uncompromising) Ours is hallmark ma'am. The quality is different, the rate is fixed.
+[00:48] Customer: (Persistent, hopeful, and redirecting) Do you have anything lighter? Around 30 grams?
+[00:51] Salesperson: (Indifferent, mildly apologetic, and dismissive) Not in that range now ma'am, maybe next week.
+[00:55] Customer: (Disappointed, resigned, and politely exiting) Okay, I'll think about it and let you know.
+[00:58] Salesperson: (Polite, neutral, and wrapping up) Sure ma'am, please do come back.

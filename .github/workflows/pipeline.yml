@@ -1,0 +1,75 @@
+# Stream 2 pipeline on a schedule.
+# - pending: every uploaded clip → transcript → scorecard → visits row `analysed` / `failed`.
+#   Runs every 5 minutes, and straight away when the app dispatches it after an upload.
+# - report: at closing (21:37 IST), the day's report → daily_reports, then the app emails the owner.
+# Secrets (Settings → Secrets and variables → Actions): SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY,
+# GEMINI_API_KEY, optional ANTHROPIC_API_KEY (Claude scores the SOP when set, else Gemini does).
+# Variables: GEMINI_MODEL (optional), APP_BASE_URL (the Vercel URL, needed for the owner email).
+name: pipeline
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"   # pending
+    - cron: "7 16 * * *"    # report, 21:37 Asia/Kolkata
+  workflow_dispatch:
+    inputs:
+      job:
+        description: "pending or report"
+        default: pending
+        type: choice
+        options: [pending, report]
+      date:
+        description: "report date (YYYY-MM-DD); empty = today in store time"
+        required: false
+
+permissions:
+  contents: read
+
+env:
+  SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+  SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+  GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+  ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+  GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
+  APP_BASE_URL: ${{ vars.APP_BASE_URL }}
+
+jobs:
+  pending:
+    if: (github.event_name == 'schedule' && github.event.schedule == '*/5 * * * *') || inputs.job == 'pending'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    # One run at a time, so a clip is never scored twice. A run that arrives meanwhile waits.
+    concurrency:
+      group: pipeline-pending
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install anthropic
+        if: env.ANTHROPIC_API_KEY != ''
+      - run: python3 pipeline/evaluate.py --pending --out "$RUNNER_TEMP/runs"
+
+  report:
+    if: (github.event_name == 'schedule' && github.event.schedule == '7 16 * * *') || inputs.job == 'report'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    concurrency:
+      group: pipeline-report
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install anthropic
+        if: env.ANTHROPIC_API_KEY != ''
+      - name: Daily report → daily_reports (+ owner email when APP_BASE_URL is set)
+        env:
+          DATE: ${{ inputs.date }}
+        run: |
+          args=(--supabase --out "$RUNNER_TEMP/report")
+          [ -n "$DATE" ] && args+=(--date "$DATE")
+          [ -n "$APP_BASE_URL" ] && args+=(--notify)
+          python3 pipeline/report.py "${args[@]}"

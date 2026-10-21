@@ -6,16 +6,21 @@
     python3 pipeline/evaluate.py --clips data/recordings   # video/audio: Gemini transcribes, then the SOP
     python3 pipeline/evaluate.py --pending             # every `uploaded` visit in Supabase, end to end
 
-Clips go through pipeline/transcribe.py first (Gemini: transcript + voice/face cues), and the cues are passed
-to the SOP as `observations`. The transcript and cues are saved next to each scorecard.
+Clips go through pipeline/transcribe.py first (Gemini: transcript with each turn's role and tone, plus voice/face
+cues), and the cues are passed to the SOP as `observations`. The transcript and cues are saved next to each
+scorecard, and each scorecard's owner message (pipeline/message.py) next to it as `<id>.message.txt`.
 Each scorecard is validated against the SOP's hard rules; problems are listed in summary.json.
 With --supabase, only scorecards with no rule problems are written; the rest are listed for review.
-With --pending, a clean scorecard sets the visit to `analysed`; rule problems or errors set it to `failed`.
+With --pending, the clip comes from the `recordings` bucket and everything goes back to Supabase: the transcript
+to `visit_transcripts` as soon as Gemini returns it, the scorecard to `visits.analysis`, and the owner message to
+`visit_messages`. A clean scorecard sets the visit to `analysed`; rule problems or errors set it to `failed`
+(no message then: a manager checks it first).
 If hand labels exist in expected_outputs/visits/, the key fields are compared too.
 """
 import argparse
 import datetime
 import json
+import os
 import sys
 import tempfile
 from concurrent.futures import ThreadPoolExecutor
@@ -24,6 +29,7 @@ from zoneinfo import ZoneInfo
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import llm  # noqa: E402
+import message  # noqa: E402
 import store  # noqa: E402
 import transcribe  # noqa: E402
 from validate import validate  # noqa: E402
@@ -65,13 +71,20 @@ def score(meta, transcript, observations=(), provider=None):
     return card, used, validate(card, transcript, has_observations=bool(observations))
 
 
-def evaluate_one(path, meta, provider=None, out=None):
-    """Score one transcript (.txt) or clip (video/audio). Returns (card, provider, problems)."""
+def evaluate_one(path, meta, provider=None, out=None, on_transcript=None):
+    """Score one transcript (.txt) or clip (video/audio). Returns (card, provider, problems).
+
+    `on_transcript(heard)` runs as soon as a clip is transcribed, before scoring, so the transcript is kept
+    even if scoring fails.
+    """
     if path.suffix == ".txt":
         return score(meta, path.read_text(), provider=provider)
     heard = transcribe.transcribe(path)
+    if on_transcript:
+        on_transcript(heard)
     if out:
         (out / f"{meta['visit_id']}.transcript.txt").write_text(heard["transcript"])
+        (out / f"{meta['visit_id']}.readable.txt").write_text(heard["readable"])
         (out / f"{meta['visit_id']}.cues.json").write_text(
             json.dumps({"observations": heard["observations"], "flags": heard["flags"]}, indent=2,
                        ensure_ascii=False) + "\n")
@@ -101,6 +114,7 @@ def run_files(paths, args, out):
     summary = {}
     for (visit_id, card, used, problems), path in zip(results, paths):
         (out / f"{visit_id}.json").write_text(json.dumps(card, indent=2, ensure_ascii=False) + "\n")
+        (out / f"{visit_id}.message.txt").write_text(message.visit_message(card, base_url()) + "\n")
         entry = {"provider": used, "problems": problems}
         label_path = ROOT / "expected_outputs" / "visits" / f"{path.stem}.json"
         if label_path.exists():
@@ -124,36 +138,54 @@ def run_files(paths, args, out):
 
 
 def run_pending(args, out):
-    """Every `uploaded` visit in Supabase: download the clip, transcribe, score, write back."""
+    """Every `uploaded` visit in Supabase: download the clip, transcribe, score, write back, build the message."""
     rows = store.pending_visits()
     print(f"{len(rows)} uploaded visit(s) waiting")
-    summary = {}
-    for row in rows:
-        visit_id = row["id"]
-        recorded = row.get("recorded_at")
-        date = (datetime.datetime.fromisoformat(recorded).astimezone(ZoneInfo("Asia/Kolkata")).date().isoformat()
-                if recorded else None)
-        meta = {"visit_id": visit_id, "store": row["store"], "salesperson": row["salesperson"], "date": date}
-        try:
-            if not row.get("media_path"):
-                raise store.StoreError("visit has no media_path")
-            with tempfile.TemporaryDirectory() as tmp:
-                clip = Path(tmp) / Path(row["media_path"]).name
-                clip.write_bytes(store.download(row["media_path"]))
-                card, used, problems = evaluate_one(clip, meta, args.provider, out)
-        except Exception as e:  # one bad clip must not stop the rest, and must not stay "uploaded"
-            store.mark_failed(visit_id)
-            summary[visit_id] = {"error": str(e)}
-            print(f"{visit_id}  FAILED: {e}")
-            continue
-        if problems:
-            card["flags"] = list(card["flags"]) + [f"rule check: {p}" for p in problems]
-        status = "failed" if problems else "analysed"
-        store.upsert_visits([card], status=status)
-        (out / f"{visit_id}.json").write_text(json.dumps(card, indent=2, ensure_ascii=False) + "\n")
-        summary[visit_id] = {"provider": used, "problems": problems, "status": status}
-        print(f"{visit_id}  [{used}]  {status}" + (f" ({len(problems)} rule problem(s))" if problems else ""))
+    summary = {row["id"]: process_visit(row, args.provider, out) for row in rows}
     (out / "summary.json").write_text(json.dumps(summary, indent=2) + "\n")
+
+
+def process_visit(row, provider, out):
+    """One `uploaded` visit row, end to end; everything goes back to Supabase. Returns its summary entry.
+
+    Never raises for a bad clip: the visit is set to `failed` instead, so it doesn't stay `uploaded`.
+    """
+    visit_id = row["id"]
+    recorded = row.get("recorded_at")
+    date = (datetime.datetime.fromisoformat(recorded).astimezone(ZoneInfo("Asia/Kolkata")).date().isoformat()
+            if recorded else None)
+    meta = {"visit_id": visit_id, "store": row["store"], "salesperson": row["salesperson"], "date": date}
+    try:
+        if not row.get("media_path"):
+            raise store.StoreError("visit has no media_path")
+        with tempfile.TemporaryDirectory() as tmp:
+            clip = Path(tmp) / Path(row["media_path"]).name
+            clip.write_bytes(store.download(row["media_path"]))
+            card, used, problems = evaluate_one(
+                clip, meta, provider, out,
+                on_transcript=lambda heard: store.save_transcript(visit_id, heard, llm.gemini_model()))
+    except Exception as e:  # one bad clip must not stop the rest, and must not stay "uploaded"
+        store.mark_failed(visit_id, str(e))
+        print(f"{visit_id}  FAILED: {e}")
+        return {"error": str(e), "status": "failed"}
+    if problems:
+        card["flags"] = list(card["flags"]) + [f"rule check: {p}" for p in problems]
+        card["error"] = "The scorecard broke the SOP's rules: " + "; ".join(problems)
+    status = "failed" if problems else "analysed"
+    store.upsert_visits([card], status=status)
+    (out / f"{visit_id}.json").write_text(json.dumps(card, indent=2, ensure_ascii=False) + "\n")
+    entry = {"provider": used, "problems": problems, "status": status}
+    if status == "analysed":
+        text = message.visit_message(card, base_url())
+        store.save_message(visit_id, text)
+        (out / f"{visit_id}.message.txt").write_text(text + "\n")
+        entry["message"] = "saved"
+    print(f"{visit_id}  [{used}]  {status}" + (f" ({len(problems)} rule problem(s))" if problems else ""))
+    return entry
+
+
+def base_url():
+    return os.environ.get("APP_BASE_URL")
 
 
 def main():

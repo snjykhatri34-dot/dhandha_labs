@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { rowToVisit, storeLocal, type VisitDbRow } from "@/lib/data/supabase/mapping";
+import { buildDailyReport } from "@/lib/data/report";
+import { rowToVisit, savedReport, storeLocal, type DailyReportDbRow, type VisitDbRow } from "@/lib/data/supabase/mapping";
 
 // Shapes copied from the live `visits` table (synthetic data).
 const sampleRow: VisitDbRow = {
@@ -75,5 +76,33 @@ describe("Supabase row mapping", () => {
 
   it("converts UTC to store time across midnight", () => {
     expect(storeLocal("2026-10-17T20:00:00Z")).toEqual({ date: "2026-10-18", time: "01:30" });
+  });
+});
+
+describe("saved daily report", () => {
+  const computed = buildDailyReport("2026-10-17", [rowToVisit(sampleRow)], "2026-10-17T16:00:00Z");
+  const row: DailyReportDbRow = {
+    id: "8d7c0f0e-0000-4000-8000-000000000001",
+    report_date: "2026-10-17",
+    store: "ALL",
+    numbers: { ...computed.numbers, visits: 102 },
+    markdown: "**Headline**",
+    actions: { lostDemand: "Approve the draft necklace transfer to B2 today.", followUps: "  " },
+    created_at: "2026-10-17T16:30:00Z",
+  };
+
+  it("uses the row's id, numbers and action lines, and keeps computed lines it lacks", () => {
+    const r = savedReport(computed, row);
+    expect(r).toMatchObject({ id: row.id, source: "stream2", generatedAt: row.created_at });
+    expect(r.numbers.visits).toBe(102);
+    expect(r.actions.lostDemand).toBe("Approve the draft necklace transfer to B2 today.");
+    expect(r.actions.headline).toBe(computed.actions.headline);
+    expect(r.actions.followUps).toBe(computed.actions.followUps);
+  });
+
+  it("falls back to computed numbers and actions for an older row without them", () => {
+    const r = savedReport(computed, { ...row, numbers: { visits: 102 }, actions: null });
+    expect(r.numbers.by_store).toEqual(computed.numbers.by_store);
+    expect(r.actions).toEqual(computed.actions);
   });
 });

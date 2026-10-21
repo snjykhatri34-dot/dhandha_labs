@@ -5,7 +5,7 @@ import "server-only";
 import { buildDailyReport } from "@/lib/data/report";
 import type { DailyReport, DataLayer, Visit } from "@/lib/data/types";
 import { byNewest, matchesFilter, nextVisitId } from "@/lib/data/visit-list";
-import { rowToVisit, type DailyReportDbRow, type ReviewDbRow, type VisitDbRow } from "./mapping";
+import { rowToVisit, savedReport, type DailyReportDbRow, type ReviewDbRow, type VisitDbRow } from "./mapping";
 import { eq, rest } from "./rest";
 
 async function loadVisits(): Promise<Visit[]> {
@@ -25,7 +25,7 @@ async function reportRow(date: string): Promise<DailyReportDbRow | null> {
 }
 
 /**
- * Stream 2's saved report for the date if there is one (its numbers win), else a report computed
+ * Stream 2's saved report for the date if there is one (its numbers and actions win), else a report computed
  * from that day's analysed visits so the owner view still works. `source` says which.
  */
 async function reportFor(date: string, all: Visit[]): Promise<DailyReport | null> {
@@ -34,7 +34,7 @@ async function reportFor(date: string, all: Visit[]): Promise<DailyReport | null
   if (!row && dayVisits.length === 0) return null;
   const computed = buildDailyReport(date, dayVisits, row?.created_at ?? new Date().toISOString());
   if (!row) return computed;
-  return { ...computed, id: row.id, source: "stream2", numbers: row.numbers, generatedAt: row.created_at };
+  return savedReport(computed, row);
 }
 
 async function reportDates(all: Visit[]): Promise<string[]> {
@@ -97,10 +97,26 @@ export const supabaseDataLayer: DataLayer = {
   },
   analyser: {
     async analyse(visitId) {
-      // Stream 2's pipeline picks up every `uploaded` visit (python3 pipeline/evaluate.py --pending)
-      // and sets it to `analysed` or `failed`. There's no trigger yet, so the visit waits as
-      // "Analysing" until that runs. Wire a webhook or schedule here once Stream 2 has one.
-      console.info("[ux/analyse] queued for Stream 2's pipeline", visitId);
+      // Stream 2's pipeline (.github/workflows/pipeline.yml) picks up every `uploaded` visit every
+      // 5 minutes and sets it to `analysed` or `failed`. With a token set, start it now instead.
+      // A failed dispatch only means the clip waits for the next scheduled run.
+      const token = process.env.GITHUB_DISPATCH_TOKEN;
+      const repo = process.env.GITHUB_PIPELINE_REPO;
+      if (!token || !repo) {
+        console.info("[ux/analyse] queued for the scheduled pipeline", visitId);
+        return;
+      }
+      try {
+        const res = await fetch(`https://api.github.com/repos/${repo}/actions/workflows/pipeline.yml/dispatches`, {
+          method: "POST",
+          headers: { Authorization: `Bearer ${token}`, Accept: "application/vnd.github+json" },
+          body: JSON.stringify({ ref: process.env.GITHUB_PIPELINE_REF ?? "main", inputs: { job: "pending" } }),
+        });
+        if (!res.ok) throw new Error(`HTTP ${res.status}: ${(await res.text()).slice(0, 200)}`);
+        console.info("[ux/analyse] pipeline started", visitId);
+      } catch (e) {
+        console.error("[ux/analyse] couldn't start the pipeline; the scheduled run will pick it up", visitId, e);
+      }
     },
   },
 };

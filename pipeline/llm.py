@@ -93,8 +93,7 @@ def _gemini(system, user, media_part=None):
     key = os.environ.get("GEMINI_API_KEY")
     if not key:
         raise LLMError("GEMINI_API_KEY not set")
-    # Read at call time so a GEMINI_MODEL in .env (loaded by complete()) is honoured.
-    model = os.environ.get("GEMINI_MODEL") or GEMINI_DEFAULT
+    model = gemini_model()
     url = f"{GEMINI_API}/v1beta/models/{model}:generateContent"
     parts = ([media_part] if media_part else []) + [{"text": user}]
     body = {
@@ -127,6 +126,11 @@ def _gemini(system, user, media_part=None):
     if candidate.get("finishReason") not in (None, "STOP"):
         raise LLMError(f"Gemini {model} stopped early: {candidate.get('finishReason')}")
     return text
+
+
+def gemini_model():
+    # Read at call time so a GEMINI_MODEL in .env (loaded by complete()) is honoured.
+    return os.environ.get("GEMINI_MODEL") or GEMINI_DEFAULT
 
 
 def _gemini_retry_delay(code, detail, attempt):

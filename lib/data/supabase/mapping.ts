@@ -1,7 +1,7 @@
 // Maps Stream 2's tables (supabase/migrations) to the UX types. All schema differences are
 // absorbed here, never in components.
 import { analysisFields, NO_ANALYSIS, type ScorecardJson } from "@/lib/data/normalise";
-import type { Review, Visit } from "@/lib/data/types";
+import type { DailyReport, ReportSection, Review, Visit } from "@/lib/data/types";
 import type { DailyReportReference, Store, VisitStatus } from "@/lib/types/scorecard";
 
 /** Stores are in India; recorded_at is stored in UTC. */
@@ -29,9 +29,29 @@ export interface DailyReportDbRow {
   id: string;
   report_date: string; // YYYY-MM-DD
   store: string; // "ALL" = all stores
-  numbers: DailyReportReference;
+  numbers: Partial<DailyReportReference>;
   markdown: string;
+  /** One action line per section, written by report.py; {} on rows saved before it had them. */
+  actions: Partial<Record<ReportSection, string>> | null;
   created_at: string;
+}
+
+/**
+ * A saved daily_reports row laid over the report computed from the same day's visits: its numbers
+ * and action lines win, and anything the row lacks falls back to the computed one.
+ */
+export function savedReport(computed: DailyReport, row: DailyReportDbRow): DailyReport {
+  const actions = Object.fromEntries(
+    Object.entries(row.actions ?? {}).filter(([, line]) => typeof line === "string" && line.trim()),
+  );
+  return {
+    ...computed,
+    id: row.id,
+    source: "stream2",
+    numbers: { ...computed.numbers, ...row.numbers },
+    actions: { ...computed.actions, ...actions },
+    generatedAt: row.created_at,
+  };
 }
 
 /** UTC timestamp → { date: "2026-10-17", time: "19:10" } in the stores' time zone. */

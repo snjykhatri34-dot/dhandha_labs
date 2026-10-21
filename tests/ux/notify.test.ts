@@ -112,8 +112,7 @@ describe("POST /api/ux/notify", () => {
     vi.stubEnv("NOTIFY_DRY_RUN", "1");
     const { POST } = await import("@/app/api/ux/notify/route");
     const first = await (await POST(notifyRequest({}))).json();
-    expect(first).toMatchObject({ ok: true, result: "sent", channel: "email", row: { status: "sent", channel: "email" } });
-    expect(first.row.sent_at).toBeTruthy();
+    expect(first).toMatchObject({ ok: true, result: "sent", channel: "email", row: { status: "dry_run", channel: "email" } });
 
     const second = await (await POST(notifyRequest({ reportId: first.reportId }))).json();
     expect(second).toMatchObject({ ok: true, result: "already_sent", reportId: first.reportId });
@@ -143,6 +142,31 @@ describe("POST /api/ux/notify", () => {
     const retry = await import("@/app/api/ux/notify/route");
     const again = await (await retry.POST(notifyRequest({ reportId: body.reportId }))).json();
     expect(again.result).toBe("sent");
+  });
+
+  it("a dry run doesn't stop the real send, and a real send isn't repeated", async () => {
+    vi.stubEnv("NOTIFY_DRY_RUN", "1");
+    const dry = await import("@/app/api/ux/notify/route");
+    const first = await (await dry.POST(notifyRequest({}))).json();
+    expect(first.row).toMatchObject({ status: "dry_run", sent_at: null });
+
+    vi.resetModules();
+    vi.stubEnv("NOTIFY_DRY_RUN", "0");
+    vi.stubEnv("NOTIFY_CHANNEL", "whatsapp");
+    vi.stubEnv("WHATSAPP_PROVIDER", "twilio");
+    vi.stubEnv("TWILIO_ACCOUNT_SID", "ACtest");
+    vi.stubEnv("TWILIO_AUTH_TOKEN", "secret");
+    vi.stubEnv("TWILIO_WHATSAPP_FROM", "whatsapp:+14155238886");
+    const fetchMock = vi.fn(async () => new Response(JSON.stringify({ sid: "SM1" }), { status: 201 }));
+    vi.stubGlobal("fetch", fetchMock);
+    const real = await import("@/app/api/ux/notify/route");
+    const sent = await (await real.POST(notifyRequest({ reportId: first.reportId }))).json();
+    expect(sent).toMatchObject({ result: "sent", row: { status: "sent" } });
+    expect(sent.row.sent_at).toBeTruthy();
+    const again = await (await real.POST(notifyRequest({ reportId: first.reportId }))).json();
+    expect(again.result).toBe("already_sent");
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+    vi.unstubAllGlobals();
   });
 
   it("returns 404 for an unknown report", async () => {
